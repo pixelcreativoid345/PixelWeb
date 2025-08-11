@@ -14,7 +14,8 @@
 
         // Global variables provided by Canvas environment - EXPLICITLY ATTACH TO WINDOW
         window.appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        window.firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        // Asegurarse de que window.firebaseConfig sea un objeto, incluso si __firebase_config es undefined o null
+        window.firebaseConfig = (typeof __firebase_config !== 'undefined' && __firebase_config) ? JSON.parse(__firebase_config) : {};
 
         window.firebaseApp = null;
         window.firebaseAuth = null;
@@ -23,14 +24,15 @@
         window.developerUserId = null; // To store the specific developer's UID
         window.developerEmailRegistered = false; // Flag to track if a developer email is registered
 
-        if (Object.keys(window.firebaseConfig).length > 0) { // Use window.firebaseConfig
-            window.firebaseApp = initializeApp(window.firebaseConfig); // Use window.firebaseConfig
+        // Intenta inicializar Firebase, incluso si la configuración está vacía, para evitar ReferenceErrors
+        try {
+            window.firebaseApp = initializeApp(window.firebaseConfig);
             window.firebaseAuth = getAuth(window.firebaseApp);
             window.firebaseDb = getFirestore(window.firebaseApp);
 
-            const DEVELOPER_LOGGED_IN_KEY = `dev_logged_in_${window.appId}`; // Use window.appId
-            const DEVELOPER_UID_KEY = `dev_uid_${window.appId}`; // Use window.appId
-            const developerEmailStoreRef = collection(window.firebaseDb, `artifacts/${window.appId}/developerSettings`); // Use window.appId
+            const DEVELOPER_LOGGED_IN_KEY = `dev_logged_in_${window.appId}`;
+            const DEVELOPER_UID_KEY = `dev_uid_${window.appId}`;
+            const developerEmailStoreRef = collection(window.firebaseDb, `artifacts/${window.appId}/developerSettings`);
             let currentDeveloperConfigDocId = null; // Store the doc ID for the developer config
 
             async function checkDeveloperRegistrationStatus() {
@@ -50,7 +52,14 @@
                         document.getElementById('dev-login-submit-btn').textContent = 'Registrarme y Entrar';
                     }
                 } catch (error) {
+                    // Este error es esperado si las reglas de seguridad de developerSettings no están bien configuradas,
+                    // o si no hay conexión a Firebase.
                     console.error("Error al verificar estado de registro de desarrollador:", error);
+                    // Si ocurre un error aquí, asumimos que no hay desarrollador registrado por seguridad
+                    // y mantenemos la opción de registro visible.
+                    window.developerEmailRegistered = false;
+                    document.getElementById('dev-register-checkbox-container').classList.remove('hidden');
+                    document.getElementById('dev-login-submit-btn').textContent = 'Registrarme y Entrar';
                 }
             }
 
@@ -91,7 +100,8 @@
                             return;
                         }
                         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                        await setDoc(doc(developerEmailStoreRef, 'config'), { email: email, uid: userCredential.user.uid }); // Use setDoc with fixed ID for single config
+                        // Usamos un ID fijo 'config' para asegurar que solo haya un documento de configuración de desarrollador
+                        await setDoc(doc(developerEmailStoreRef, 'config'), { email: email, uid: userCredential.user.uid });
                         alert("Registro de desarrollador exitoso. ¡Bienvenido!");
                         localStorage.setItem(DEVELOPER_LOGGED_IN_KEY, 'true');
                         localStorage.setItem(DEVELOPER_UID_KEY, userCredential.user.uid);
@@ -135,11 +145,20 @@
             });
 
             checkDeveloperRegistrationStatus(); // Initial check on load
-        } else {
-            console.warn("Firebase config not found. Developer mode and Firebase features will not be available.");
-            document.getElementById('developer-mode').classList.add('hidden');
-            document.getElementById('developer-login-modal').classList.add('hidden');
-            document.getElementById('dev-mode-nav-link').classList.add('hidden');
+        } catch (e) {
+            console.error("Error al inicializar Firebase. Asegúrate de que __firebase_config esté definida y sea válida:", e);
+            // Si Firebase no se inicializa, ocultamos todos los elementos dependientes
+            const devModeSection = document.getElementById('developer-mode');
+            const devLoginModal = document.getElementById('developer-login-modal');
+            const devModeNavLink = document.getElementById('dev-mode-nav-link');
+            const devLogoutBtn = document.getElementById('dev-logout-btn');
+
+            devModeSection.classList.add('hidden');
+            devLoginModal.classList.add('hidden');
+            devModeNavLink.classList.add('hidden');
+            devLogoutBtn.classList.add('hidden');
+            // Informar al usuario si está en un entorno donde la config no se pasa
+            alert("Advertencia: Las funciones de desarrollador no están disponibles. Falta la configuración de Firebase.");
         }
     </script>
 
