@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,9 +53,18 @@
             width: 100%;
             height: 100%;
         }
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animation.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="themed-bg transition-colors duration-500">
+<body class="themed-bg transition-colors duration-500 overflow-y-auto">
 
     <div id="app" class="min-h-screen p-4 flex flex-col items-center justify-center">
 
@@ -101,6 +110,9 @@
                 Iniciar Sesión
             </button>
             <div id="login-message" class="mt-4 text-center text-red-400"></div>
+            <button id="go-to-home-button-from-login" class="w-full mt-4 py-3 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button text-white font-bold rounded-xl transition-colors duration-200">
+                Volver a la Vidriera
+            </button>
         </div>
 
         <!-- User Dashboard -->
@@ -110,14 +122,14 @@
                 <p class="mt-2 text-xl text-gray-400">Aquí están tus tareas para esta semana.</p>
             </header>
 
-            <section id="user-tasks-section" class="themed-card p-8 rounded-2xl">
+            <section id="user-tasks-section" class="themed-card p-8 rounded-2xl scroll-animation">
                 <h2 class="text-2xl font-bold mb-4 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Mis Tareas</h2>
                 <div id="tasks-list" class="space-y-4">
                     <!-- Tareas dinámicas -->
                 </div>
             </section>
 
-            <section id="lab-section" class="themed-card p-8 rounded-2xl space-y-8 hidden">
+            <section id="lab-section" class="themed-card p-8 rounded-2xl space-y-8 hidden scroll-animation">
                 <h2 class="text-3xl font-bold text-center themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Laboratorio (Editor de Contenido)</h2>
                 <div class="space-y-6">
                     <div>
@@ -130,11 +142,11 @@
                     </div>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label for="creator-video" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">URL del Video</label>
+                            <label for="creator-video" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">URL del Video (Sección "El Porqué")</label>
                             <input type="url" id="creator-video" class="w-full p-3 rounded-xl themed-input">
                         </div>
                         <div>
-                            <label for="creator-text" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Descripción del Creador</label>
+                            <label for="creator-text" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Descripción del Creador (Sección "El Porqué")</label>
                             <textarea id="creator-text" class="w-full p-3 rounded-xl themed-input h-24"></textarea>
                         </div>
                     </div>
@@ -145,6 +157,13 @@
                     <div class="space-y-4">
                         <h3 class="text-xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Creadores</h3>
                         <div id="creators-container" class="space-y-4"></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Mini Portafolio</h3>
+                        <div id="portfolio-container" class="space-y-4"></div>
+                        <button id="add-portfolio-item" class="w-full py-2 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button text-white font-bold rounded-xl transition-colors duration-200 mt-4">
+                            + Añadir Ítem al Portafolio
+                        </button>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row gap-4">
@@ -163,11 +182,11 @@
 
         <!-- Home Page (Página Pública) -->
         <div id="home-page" class="hidden w-full container p-4 space-y-16">
-            <section id="welcome-section" class="text-center pt-16 pb-12 themed-card rounded-3xl themed-title-glow transition-all duration-500">
+            <section id="welcome-section" class="text-center pt-16 pb-12 themed-card rounded-3xl themed-title-glow scroll-animation">
                 <h1 id="home-main-title" class="text-5xl md:text-6xl font-extrabold mb-4 text-white"></h1>
                 <p id="home-sub-title" class="text-lg md:text-xl max-w-2xl mx-auto text-gray-300"></p>
             </section>
-            <section class="grid lg:grid-cols-2 gap-8 items-center themed-card p-8 rounded-3xl">
+            <section class="grid lg:grid-cols-2 gap-8 items-center themed-card p-8 rounded-3xl scroll-animation">
                 <div class="video-wrapper">
                     <video id="home-creator-video" class="w-full rounded-2xl" controls autoplay loop muted></video>
                 </div>
@@ -176,19 +195,22 @@
                     <p id="home-creator-text" class="text-gray-300 leading-relaxed"></p>
                 </div>
             </section>
-            <section>
+            <section class="scroll-animation">
                 <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Nuestros Principios</h2>
                 <div id="home-principles-container" class="grid md:grid-cols-3 gap-8"></div>
             </section>
-            <section>
+            <section class="scroll-animation">
                 <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">El Equipo de Pixel Creativo</h2>
                 <div id="home-creators-container" class="grid md:grid-cols-3 gap-8"></div>
             </section>
+            <section class="scroll-animation">
+                <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Mini Portafolio</h2>
+                <div id="home-portfolio-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </section>
             <footer class="text-center py-8">
-                <button id="go-to-login-button" class="py-2 px-4 themed-button themed-bg-main-button themed-hover-main-button font-bold rounded-xl transition-colors duration-200">
-                    Acceso Staff
-                </button>
                 <p class="mt-4 text-gray-500">&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
+                <!-- Staff login button hidden from view. Click on it to show the login screen. -->
+                <span id="staff-login-link" class="absolute bottom-4 right-4 text-gray-400 opacity-20 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Staff</span>
             </footer>
         </div>
     </div>
@@ -260,6 +282,7 @@
         const userNameDisplay = document.getElementById('user-name');
         const tasksList = document.getElementById('tasks-list');
         const labSection = document.getElementById('lab-section');
+        const addPortfolioItemButton = document.getElementById('add-portfolio-item');
 
         const saveButton = document.getElementById('save-button');
         const adminMessage = document.getElementById('admin-message');
@@ -307,6 +330,11 @@
                 { name: "Matías", role: "Coordinador y Diseñador", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Matias" },
                 { name: "Mar", role: "Estratega Social", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Mar" },
                 { name: "Valentín", role: "Embajador Pixel", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Valentin" }
+            ],
+            portfolioItems: [
+                { title: "Proyecto 1: Diseño Gráfico", description: "Un ejemplo de identidad visual para un cliente de la industria de la moda.", mediaUrl: "https://placehold.co/600x400/1a1523/6b21a8?text=Proyecto+de+Diseño" },
+                { title: "Proyecto 2: Video Promocional", description: "Reel corto para redes sociales que destaca un nuevo producto.", mediaUrl: "https://placehold.co/600x400/1a1523/6b21a8?text=Video+Promocional" },
+                { title: "Proyecto 3: Carrete Creativo", description: "Un carrusel de Instagram que educa a la audiencia sobre un tema complejo.", mediaUrl: "https://placehold.co/600x400/1a1523/6b21a8?text=Carrusel+Educativo" }
             ]
         };
 
@@ -337,6 +365,12 @@
             userDashboard.classList.add('hidden');
             homePage.classList.add('hidden');
             document.getElementById(screenId).classList.remove('hidden');
+            
+            // Re-apply animations when screen is shown
+            if (screenId === 'home-page') {
+                document.querySelectorAll('.scroll-animation').forEach(el => el.classList.remove('is-visible'));
+                setupScrollAnimations();
+            }
         }
 
         function renderHomePage(data) {
@@ -364,6 +398,26 @@
                 card.className = "themed-card p-6 rounded-2xl text-center";
                 card.innerHTML = `<img src="${c.photo}" onerror="this.src='https://placehold.co/500x500/1a1523/6b21a8?text=Imagen+no+encontrada';" alt="${c.name}" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700 themed-title-glow"><h3 class="text-2xl font-bold">${c.name}</h3><p class="text-gray-400">${c.role}</p>`;
                 creatorsContainer.appendChild(card);
+            });
+            
+            const portfolioContainer = document.getElementById('home-portfolio-container');
+            portfolioContainer.innerHTML = '';
+            data.portfolioItems.forEach(item => {
+                const isVideo = item.mediaUrl.match(/\.(mp4|webm|ogg)$/i);
+                const mediaHtml = isVideo 
+                    ? `<video src="${item.mediaUrl}" class="w-full h-auto rounded-xl" controls autoplay loop muted></video>` 
+                    : `<img src="${item.mediaUrl}" onerror="this.src='https://placehold.co/600x400/1a1523/6b21a8?text=Contenido+no+encontrado';" alt="${item.title}" class="w-full h-auto rounded-xl">`;
+
+                const card = document.createElement('div');
+                card.className = "themed-card p-4 rounded-2xl space-y-2";
+                card.innerHTML = `
+                    <div class="rounded-xl overflow-hidden aspect-video">
+                        ${mediaHtml}
+                    </div>
+                    <h3 class="text-lg font-bold mt-2">${item.title}</h3>
+                    <p class="text-sm text-gray-400">${item.description}</p>
+                `;
+                portfolioContainer.appendChild(card);
             });
         }
 
@@ -422,6 +476,31 @@
                 `;
                 creatorsContainer.appendChild(creatorDiv);
             });
+
+            const portfolioContainer = document.getElementById('portfolio-container');
+            portfolioContainer.innerHTML = '';
+            data.portfolioItems.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = "themed-card p-4 rounded-xl space-y-2 relative";
+                itemDiv.innerHTML = `
+                    <button class="absolute top-2 right-2 text-red-500 hover:text-red-700" data-index="${index}" data-action="remove-portfolio">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                    <h4 class="text-lg font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Ítem de Portafolio ${index + 1}</h4>
+                    <input type="text" placeholder="Título del Proyecto" class="p-2 rounded themed-input w-full" data-type="portfolio-title" data-index="${index}" value="${item.title}">
+                    <input type="text" placeholder="URL de Imagen o Video" class="p-2 rounded themed-input w-full" data-type="portfolio-media" data-index="${index}" value="${item.mediaUrl}">
+                    <textarea placeholder="Descripción/Comentario" class="p-2 rounded themed-input w-full h-24" data-type="portfolio-description" data-index="${index}">${item.description}</textarea>
+                `;
+                portfolioContainer.appendChild(itemDiv);
+            });
+            // Re-attach event listeners for dynamic content
+            document.querySelectorAll('[data-action="remove-portfolio"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.closest('button').dataset.index);
+                    content.portfolioItems.splice(index, 1);
+                    renderAdminPanel(content);
+                });
+            });
         }
 
         function getAdminData() {
@@ -431,7 +510,8 @@
                 creatorVideo: document.getElementById('creator-video').value,
                 creatorText: document.getElementById('creator-text').value,
                 principles: [],
-                creators: []
+                creators: [],
+                portfolioItems: []
             };
 
             document.querySelectorAll('[data-type="principle-title"]').forEach(input => {
@@ -447,7 +527,30 @@
                 const photo = document.querySelector(`[data-type="creator-photo"][data-index="${index}"]`).value;
                 newContent.creators.push({ name: input.value, role, photo });
             });
+
+            document.querySelectorAll('[data-type="portfolio-title"]').forEach(input => {
+                const index = input.dataset.index;
+                const mediaUrl = document.querySelector(`[data-type="portfolio-media"][data-index="${index}"]`).value;
+                const description = document.querySelector(`[data-type="portfolio-description"][data-index="${index}"]`).value;
+                newContent.portfolioItems.push({ title: input.value, description, mediaUrl });
+            });
             return newContent;
+        }
+
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.scroll-animation').forEach(el => {
+                observer.observe(el);
+            });
         }
 
         // --- CORE LOGIC & EVENT LISTENERS ---
@@ -486,19 +589,20 @@
                 isInitialized = true;
                 const savedTheme = localStorage.getItem('pixel-theme') || 'dark-pixel';
                 applyTheme(savedTheme);
-                showScreen('home-page');
+                
+                // First time load logic
+                if (!localStorage.getItem('pixel-theme')) {
+                    showScreen('theme-selector');
+                } else {
+                    renderHomePage(content);
+                    showScreen('home-page');
+                }
             } catch (e) {
                 console.error("Error initializing Firebase or loading data:", e);
                 renderHomePage(content);
                 showScreen('home-page');
             } finally {
                 loadingScreen.classList.add('hidden');
-                // First time load logic
-                if (!localStorage.getItem('pixel-theme')) {
-                    showScreen('theme-selector');
-                } else {
-                    showScreen('home-page');
-                }
             }
         }
 
@@ -514,6 +618,11 @@
             } else {
                 loginMessage.textContent = 'Usuario o contraseña incorrectos.';
             }
+        });
+
+        addPortfolioItemButton.addEventListener('click', () => {
+            content.portfolioItems.push({ title: "", description: "", mediaUrl: "" });
+            renderAdminPanel(content);
         });
 
         saveButton.addEventListener('click', async () => {
@@ -539,15 +648,19 @@
             renderHomePage(content);
             showScreen('home-page');
         });
-        document.getElementById('go-to-login-button').addEventListener('click', () => {
-            showScreen('login-screen');
-            usernameInput.value = '';
-            passwordInput.value = '';
-            loginMessage.textContent = '';
+        document.getElementById('go-to-home-button-from-login').addEventListener('click', () => {
+            renderHomePage(content);
+            showScreen('home-page');
         });
         document.getElementById('logout-button').addEventListener('click', () => {
             renderHomePage(content);
             showScreen('home-page');
+        });
+        document.getElementById('staff-login-link').addEventListener('click', () => {
+            showScreen('login-screen');
+            usernameInput.value = '';
+            passwordInput.value = '';
+            loginMessage.textContent = '';
         });
 
         window.onload = initializeAndLoad;
