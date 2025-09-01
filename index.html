@@ -4,164 +4,278 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Creativo</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Un gris claro para el fondo */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .themed-card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+        }
+        .themed-input {
+            background-color: var(--input-bg-color);
+            border: 1px solid var(--input-border-color);
+            color: var(--text-color);
+        }
+        .themed-button {
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+        }
+        .themed-button:hover {
+            background-color: var(--button-hover-bg-color);
+        }
+        .collapsible-header {
+            cursor: pointer;
+        }
+        .content {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+        }
+        .content.open {
+            max-height: 1000px; /* Suficientemente grande para cualquier contenido */
+            transition: max-height 0.5s ease-in;
+        }
+        .arrow {
+            transition: transform 0.3s;
+        }
+        .arrow.rotate {
+            transform: rotate(180deg);
         }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
 
     <!-- Contenedor principal de la tarjeta -->
-    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-4xl">
+    <div id="main-container" class="themed-card p-8 rounded-2xl shadow-2xl w-full max-w-4xl">
 
         <!-- Logo y Título -->
         <div class="text-center mb-8">
-            <h1 class="text-4xl font-extrabold text-blue-900 mb-2">Pixel Creativo</h1>
-            <p class="text-gray-600 text-lg">Tu visión, nuestro arte.</p>
+            <h1 class="text-4xl font-extrabold mb-2">Pixel Creativo</h1>
+            <p class="text-lg">Tu visión, nuestro arte.</p>
         </div>
 
-        <!-- Secciones de Contenido -->
-        <div class="space-y-12">
-
-            <!-- Sección de Nuestros Servicios -->
-            <div class="bg-blue-50 p-6 rounded-lg shadow-inner">
-                <h2 class="text-2xl font-bold text-blue-800 mb-4">Nuestros Servicios</h2>
-                <ul class="list-disc list-inside space-y-2 text-gray-700">
-                    <li><strong class="font-semibold text-blue-900">Diseño con Propósito:</strong> Creación de piezas visuales que cuentan una historia.</li>
-                    <li><strong class="font-semibold text-blue-900">Servicios "Listos para Publicar":</strong> Contenido optimizado para redes sociales, blogs y web.</li>
-                    <li><strong class="font-semibold text-blue-900">Asesoría Estratégica:</strong> Guía para potenciar tu presencia digital y alcanzar tus metas.</li>
-                </ul>
-            </div>
-
-            <!-- Sección de Planes y Precios -->
-            <div>
-                <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">Nuestros Planes</h2>
-                
-                <!-- Explicación de Community Manager (CM) -->
-                <div class="mb-8 text-center bg-yellow-50 p-4 rounded-lg shadow-md">
-                    <p class="text-gray-700">El **Community Manager (CM)** se encarga de gestionar tus redes sociales, responder a comentarios y mensajes, y crear una comunidad activa alrededor de tu marca.</p>
-                </div>
-
-                <!-- Contenedor de las tarjetas de planes (responsive grid) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Tarjeta Plan Básico -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Plan Básico</h3>
-                        <p class="text-gray-600 mb-4">Ideal para quienes están comenzando y necesitan una base sólida.</p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-blue-700">Sin CM</h4>
-                                <p class="text-gray-800 font-bold text-xl">ARS$ 15.000</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-2">
-                                    <li>4 publicaciones semanales</li>
-                                    <li>Reel narrativo mensual</li>
-                                </ul>
-                            </div>
-                            <hr class="border-gray-300">
-                            <div>
-                                <h4 class="font-semibold text-blue-700">Con CM</h4>
-                                <p class="text-gray-800 font-bold text-xl">ARS$ 25.000</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-2">
-                                    <li>4 publicaciones semanales</li>
-                                    <li>Reel narrativo mensual</li>
-                                    <li>Gestión de comunidad y respuestas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta Plan Avanzado -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Plan Avanzado</h3>
-                        <p class="text-gray-600 mb-4">Para emprendimientos que buscan un crecimiento sostenido.</p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-blue-700">Sin CM</h4>
-                                <p class="text-gray-800 font-bold text-xl">ARS$ 30.000</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-2">
-                                    <li>6 publicaciones semanales</li>
-                                    <li>2 Reels narrativos mensuales</li>
-                                    <li>Asesoría de estrategia</li>
-                                </ul>
-                            </div>
-                            <hr class="border-gray-300">
-                            <div>
-                                <h4 class="font-semibold text-blue-700">Con CM</h4>
-                                <p class="text-gray-800 font-bold text-xl">ARS$ 45.000</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-2">
-                                    <li>6 publicaciones semanales</li>
-                                    <li>2 Reels narrativos mensuales</li>
-                                    <li>Gestión de comunidad y respuestas</li>
-                                    <li>Asesoría de estrategia</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta Plan Premium -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg border border-gray-200">
-                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Plan Premium</h3>
-                        <p class="text-gray-600 mb-4">La solución integral para maximizar tu impacto digital.</p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-blue-700">Sin CM</h4>
-                                <p class="text-gray-800 font-bold text-xl">ARS$ 50.000</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-2">
-                                    <li>Publicaciones diarias</li>
-                                    <li>4 Reels narrativos mensuales</li>
-                                    <li>Consultoría y reportes</li>
-                                </ul>
-                            </div>
-                            <hr class="border-gray-300">
-                            <div>
-                                <h4 class="font-semibold text-blue-700">Con CM</h4>
-                                <p class="text-gray-800 font-bold text-xl">ARS$ 70.000</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-2">
-                                    <li>Publicaciones diarias</li>
-                                    <li>4 Reels narrativos mensuales</li>
-                                    <li>Gestión de comunidad y respuestas</li>
-                                    <li>Consultoría y reportes</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Promoción de Septiembre -->
-                <div class="mt-8 text-center bg-purple-100 p-6 rounded-lg shadow-xl border-4 border-purple-300 animate-pulse">
-                    <h3 class="text-3xl font-extrabold text-purple-800 mb-2">¡Promoción de Septiembre!</h3>
-                    <p class="text-purple-700 text-2xl font-semibold">2x1 en cualquier plan.</p>
-                    <p class="text-purple-600 text-lg">Contrata un plan y obtén el segundo mes de servicio ¡completamente gratis!</p>
+        <!-- Formulario y Selector de Tema -->
+        <div class="mb-8 p-6 rounded-lg themed-card shadow-inner">
+            <h2 class="text-2xl font-bold mb-4">¡Hablemos de tu Proyecto!</h2>
+            
+            <!-- Selector de Tema Visual -->
+            <div class="mb-4">
+                <p class="font-semibold mb-2">Elige tu tema visual:</p>
+                <div class="flex space-x-4">
+                    <button id="theme-light" class="themed-button px-4 py-2 rounded-full border">Claro</button>
+                    <button id="theme-dark" class="themed-button px-4 py-2 rounded-full border">Oscuro</button>
                 </div>
             </div>
 
-            <!-- Botones de Acción -->
-            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-                <!-- Botón CONTACTANOS -->
-                <a href="#" class="w-full sm:w-auto px-6 py-3 bg-green-500 text-white font-semibold rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 text-center">
-                    CONTÁCTANOS
-                </a>
-                
-                <!-- Enlace Acceso Staff -->
-                <a href="#" class="w-full sm:w-auto px-6 py-3 text-blue-600 font-semibold border-2 border-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300 text-center">
-                    Acceso Staff
-                </a>
+            <!-- Input para Tipo de Emprendimiento -->
+            <div class="mb-4">
+                <label for="emprendimiento-input" class="block font-semibold mb-2">¿Cuál es el rubro de tu emprendimiento?</label>
+                <input type="text" id="emprendimiento-input" class="w-full p-3 rounded-lg themed-input" placeholder="Ej. Tienda de ropa, cafetería, consultoría...">
+            </div>
+            <button id="contact-button" class="w-full px-6 py-3 rounded-full text-white font-semibold shadow-lg bg-green-500 hover:bg-green-600 transition-colors duration-300">
+                CONTÁCTANOS
+            </button>
+        </div>
+        
+        <!-- Sección de Contenido Desplegable -->
+        <div class="space-y-4">
+            
+            <!-- Collapsible: Nuestros Servicios -->
+            <div class="p-6 rounded-lg themed-card shadow-lg">
+                <div class="flex justify-between items-center collapsible-header">
+                    <h2 class="text-xl font-bold">Nuestros Servicios</h2>
+                    <svg class="arrow w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="content mt-4">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong class="font-semibold">Diseño con Propósito:</strong> Creación de piezas visuales que cuentan una historia.</li>
+                        <li><strong class="font-semibold">Servicios "Listos para Publicar":</strong> Contenido optimizado para redes sociales, blogs y web.</li>
+                        <li><strong class="font-semibold">Asesoría Estratégica:</strong> Guía para potenciar tu presencia digital y alcanzar tus metas.</li>
+                    </ul>
+                </div>
             </div>
 
+            <!-- Collapsible: Nuestros Planes -->
+            <div class="p-6 rounded-lg themed-card shadow-lg">
+                <div class="flex justify-between items-center collapsible-header">
+                    <h2 class="text-xl font-bold">Nuestros Planes</h2>
+                    <svg class="arrow w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="content mt-4 space-y-8">
+                    <!-- Explicación de Community Manager (CM) -->
+                    <div class="p-4 rounded-lg themed-card">
+                        <p class="text-sm">El **Community Manager (CM)** se encarga de gestionar tus redes sociales, responder a comentarios y crear una comunidad activa alrededor de tu marca.</p>
+                    </div>
+
+                    <!-- Contenedor de las tarjetas de planes -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Tarjeta Plan Básico -->
+                        <div class="p-4 rounded-lg themed-card border">
+                            <h3 class="text-xl font-bold mb-2">Plan Básico</h3>
+                            <p class="text-sm mb-4">Ideal para quienes están comenzando.</p>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold">Sin CM</h4>
+                                    <p class="font-bold text-lg">ARS$ 15.000</p>
+                                </div>
+                                <hr class="border-t-2">
+                                <div>
+                                    <h4 class="font-semibold">Con CM</h4>
+                                    <p class="font-bold text-lg">ARS$ 25.000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta Plan Avanzado -->
+                        <div class="p-4 rounded-lg themed-card border">
+                            <h3 class="text-xl font-bold mb-2">Plan Avanzado</h3>
+                            <p class="text-sm mb-4">Para un crecimiento sostenido.</p>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold">Sin CM</h4>
+                                    <p class="font-bold text-lg">ARS$ 30.000</p>
+                                </div>
+                                <hr class="border-t-2">
+                                <div>
+                                    <h4 class="font-semibold">Con CM</h4>
+                                    <p class="font-bold text-lg">ARS$ 45.000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta Plan Premium -->
+                        <div class="p-4 rounded-lg themed-card border">
+                            <h3 class="text-xl font-bold mb-2">Plan Premium</h3>
+                            <p class="text-sm mb-4">La solución integral.</p>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold">Sin CM</h4>
+                                    <p class="font-bold text-lg">ARS$ 50.000</p>
+                                </div>
+                                <hr class="border-t-2">
+                                <div>
+                                    <h4 class="font-semibold">Con CM</h4>
+                                    <p class="font-bold text-lg">ARS$ 70.000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible: Promoción de Septiembre -->
+            <div class="p-6 rounded-lg themed-card shadow-lg">
+                <div class="flex justify-between items-center collapsible-header">
+                    <h2 class="text-xl font-bold">Promoción de Septiembre</h2>
+                    <svg class="arrow w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <div class="content mt-4">
+                    <div class="p-4 rounded-lg text-center bg-purple-100 text-purple-800 border-4 border-purple-300 animate-pulse">
+                        <h3 class="text-2xl font-extrabold mb-1">¡Promoción!</h3>
+                        <p class="text-xl font-semibold">2x1 en flyers y reels.</p>
+                        <p class="text-sm mt-2">Contrata un mes de servicio de flyers o reels y obtén el segundo mes completamente gratis.</p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
-        <!-- Pie de página -->
-        <footer class="text-center text-gray-500 text-sm mt-12">
-            © 2025 Pixel Creativo. Todos los derechos reservados.
+        <!-- Enlace para el staff -->
+        <footer class="text-center mt-8">
+            <a href="#" class="text-sm opacity-50 hover:opacity-100 transition-opacity duration-300" id="staff-link">Acceso Staff</a>
         </footer>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Temas ---
+            const themes = {
+                light: {
+                    '--bg-color': '#f0f4f8',
+                    '--text-color': '#1f2937',
+                    '--card-bg-color': '#ffffff',
+                    '--border-color': '#d1d5db',
+                    '--input-bg-color': '#f9fafb',
+                    '--input-border-color': '#e5e7eb',
+                },
+                dark: {
+                    '--bg-color': '#121212',
+                    '--text-color': '#e0e0e0',
+                    '--card-bg-color': '#1f2937',
+                    '--border-color': '#4b5563',
+                    '--input-bg-color': '#2d3748',
+                    '--input-border-color': '#4a5568',
+                }
+            };
+
+            function applyTheme(themeName) {
+                const theme = themes[themeName];
+                if (theme) {
+                    for (const [key, value] of Object.entries(theme)) {
+                        document.documentElement.style.setProperty(key, value);
+                    }
+                    localStorage.setItem('pixel-theme', themeName);
+                }
+            }
+
+            const savedTheme = localStorage.getItem('pixel-theme') || 'light';
+            applyTheme(savedTheme);
+
+            document.getElementById('theme-light').addEventListener('click', () => applyTheme('light'));
+            document.getElementById('theme-dark').addEventListener('click', () => applyTheme('dark'));
+
+            // --- Collapsible Logic ---
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const arrow = header.querySelector('.arrow');
+
+                    // Toggle open class for animation
+                    content.classList.toggle('open');
+                    
+                    // Toggle arrow rotation
+                    arrow.classList.toggle('rotate');
+
+                    // Close other open sections
+                    collapsibleHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header) {
+                            const otherContent = otherHeader.nextElementSibling;
+                            const otherArrow = otherHeader.querySelector('.arrow');
+                            otherContent.classList.remove('open');
+                            otherArrow.classList.remove('rotate');
+                        }
+                    });
+                });
+            });
+
+            // --- Botón de Contacto ---
+            document.getElementById('contact-button').addEventListener('click', () => {
+                const emprendimiento = document.getElementById('emprendimiento-input').value;
+                const theme = localStorage.getItem('pixel-theme');
+                const message = `Hola Pixel Creativo, estoy interesado/a en sus servicios. Mi emprendimiento es de "${emprendimiento}". Elegí el tema "${theme}".`;
+                // En un entorno real, aquí se podría redirigir a WhatsApp o mostrar un formulario
+                console.log(message);
+                
+                // Mostrar un mensaje de confirmación temporal
+                const contactButton = document.getElementById('contact-button');
+                const originalText = contactButton.textContent;
+                contactButton.textContent = "¡Mensaje enviado!";
+                contactButton.classList.add('bg-blue-500');
+                
+                setTimeout(() => {
+                    contactButton.textContent = originalText;
+                    contactButton.classList.remove('bg-blue-500');
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
