@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Creativo - Narrativas Inmersivas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font: Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0a11; /* Negro/Violeta oscuro */
+            color: #f3f4f6; /* Blanco roto */
+        }
+        .text-gradient-main {
+            background-image: linear-gradient(to right, #6b21a8, #3b82f6); /* Violeta a Azul */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-accent {
+            background-image: linear-gradient(to right, #f97316, #ef4444); /* Naranja a Rojo */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-card {
+            background-color: #1a1523; /* Fondo de tarjeta más oscuro */
+        }
+        .border-ladrillo {
+            border-image: linear-gradient(to right, #cc5500, #ff8c00) 1;
+        }
+        .shadow-ladrillo {
+            box-shadow: 0 4px 6px -1px rgba(204, 85, 0, 0.2), 0 2px 4px -1px rgba(204, 85, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+    <div class="min-h-screen flex flex-col items-center">
+        <!-- Header -->
+        <header class="w-full max-w-7xl mx-auto p-6 md:p-8 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="https://placehold.co/120x120/1a1523/f3f4f6?text=PC" alt="logo_pixelcreativo_120x120.png" title="pixelcreativo_logo_120x120.png" class="rounded-full w-16 h-16 md:w-20 md:h-20 border-2 border-violet-700">
+                <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                    <span class="text-gradient-main">Pixel Creativo</span>
+                </h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#filosofia" class="text-gray-400 hover:text-white transition-colors duration-300">Filosofía</a>
+                <a href="#metodologia" class="text-gray-400 hover:text-white transition-colors duration-300">Metodología</a>
+                <a href="#equipo" class="text-gray-400 hover:text-white transition-colors duration-300">Equipo</a>
+                <a href="#contacto" class="px-4 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors duration-300">Contacto</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="flex-grow w-full">
+            <section class="py-16 md:py-24 px-6 md:px-8 text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(13, 10, 17, 0.8), rgba(13, 10, 17, 0.8));">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Video de la narrativa visual con la nomenclatura solicitada -->
+                    <video src="https://placehold.co/800x450/1a1523/3b82f6.mp4?text=Reel+Creativo" alt="reel_pixelcreativo_id345.mp4" title="reel_pixelcreativo_id345.mp4" class="mx-auto w-3/4 h-auto rounded-3xl shadow-lg mb-6 transform hover:scale-105 transition-transform duration-300" autoplay loop muted playsinline></video>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                        Donde cada narrativa construye un universo.
+                    </h2>
+                    <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                        Transformamos ideas en experiencias que conectan, con la precisión de un artesano y la visión de un arquitecto digital.
+                    </p>
+                    <a href="#contacto" class="px-8 py-3 bg-white text-black font-semibold rounded-full shadow-xl hover:bg-gray-200 transform hover:scale-105 transition-transform duration-300">
+                        Agenda un Viaje
+                    </a>
+                </div>
+            </section>
+
+            <!-- Philosophy Section -->
+            <section id="filosofia" class="py-16 md:py-24 px-6 md:px-8 max-w-7xl mx-auto text-center">
+                <h3 class="text-3xl font-bold mb-4 text-gradient-main">Nuestra Filosofía: El Efecto Kiosco</h3>
+                <p class="text-gray-400 max-w-4xl mx-auto mb-10">
+                    Así como un kiosco atrae con su variedad, generamos un ecosistema de contenido que engancha a tu audiencia y los mantiene siempre interesados.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-card p-6 rounded-3xl shadow-xl border-ladrillo border-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-orange-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <h4 class="text-lg font-bold mb-2">Diseño con Propósito</h4>
+                        <p class="text-sm text-gray-500">
+                            Cada pieza es una historia, cada píxel tiene una intención clara para conectar con tu público.
+                        </p>
+                    </div>
+                    <div class="bg-card p-6 rounded-3xl shadow-xl border-ladrillo border-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-orange-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 10.5v6.75A2.25 2.25 0 0111.25 20.25H6.75A2.25 2.25 0 014.5 18V6.75A2.25 2.25 0 016.75 4.5h6.75a2.25 2.25 0 012.25 2.25v1.5m-8.25 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm6.75-1.5a.75.75 0 100 1.5.75.75 0 000-1.5zM21 12h-3M18 12h-3" />
+                        </svg>
+                        <h4 class="text-lg font-bold mb-2">Alquimia de la Variedad</h4>
+                        <p class="text-sm text-gray-500">
+                            Ofrecemos un menú creativo diverso que se adapta a cada necesidad, manteniendo el interés y la atención.
+                        </p>
+                    </div>
+                    <div class="bg-card p-6 rounded-3xl shadow-xl border-ladrillo border-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-orange-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487z" />
+                        </svg>
+                        <h4 class="text-lg font-bold mb-2">Conexión Genuina</h4>
+                        <p class="text-sm text-gray-500">
+                            Creamos narrativas que resuenan con la autenticidad de cada proyecto, cultivando una conexión real.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process Section -->
+            <section id="metodologia" class="py-16 md:py-24 px-6 md:px-8 text-center max-w-7xl mx-auto">
+                <h3 class="text-3xl font-bold mb-4 text-gradient-main">Nuestra Hoja de Ruta</h3>
+                <p class="text-gray-400 max-w-4xl mx-auto mb-10">
+                    Tu emprendimiento es un viaje. Nosotros te proporcionamos la brújula y el mapa para que encuentres tu camino hacia el éxito.
+                </p>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="space-y-6 text-left">
+                        <div class="bg-card p-6 rounded-2xl shadow-xl">
+                            <h4 class="text-xl font-bold mb-2">1. Diagnóstico Creativo</h4>
+                            <p class="text-gray-500">
+                                Un análisis detallado de tu proyecto y tu visión para entender su verdadera esencia.
+                            </p>
+                        </div>
+                        <div class="bg-card p-6 rounded-2xl shadow-xl">
+                            <h4 class="text-xl font-bold mb-2">2. Creación de Narrativas</h4>
+                            <p class="text-gray-500">
+                                Damos vida a tu historia con diseños, contenido y estrategias de comunicación que impactan.
+                            </p>
+                        </div>
+                        <div class="bg-card p-6 rounded-2xl shadow-xl">
+                            <h4 class="text-xl font-bold mb-2">3. Lanzamiento y Acompañamiento</h4>
+                            <p class="text-gray-500">
+                                Te guiamos en la difusión de tus ideas, observando y ajustando la trayectoria en tiempo real.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <img src="https://placehold.co/1200x800/1a1523/3b82f6?text=Mundo+Digital" alt="mundo_digital_1200x800.png" title="mundo_digital_1200x800.png" class="rounded-3xl shadow-2xl transform hover:rotate-2 transition-transform duration-500">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section id="equipo" class="py-16 md:py-24 px-6 md:px-8 text-center max-w-7xl mx-auto">
+                <h3 class="text-3xl font-bold mb-4 text-gradient-main">Nuestros Creadores</h3>
+                <h4 class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                    El equipo que le pone el cuerpo y el alma a laburar.
+                </h4>
+                <div class="grid sm:grid-cols-3 gap-8">
+                    <div class="bg-card p-6 rounded-3xl shadow-xl">
+                        <img src="https://placehold.co/500x500/1a1523/6b21a8?text=Matias" alt="creador_matias_500x500.png" title="creador_matias_500x500.png" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700">
+                        <h4 class="text-lg font-bold">Matías</h4>
+                        <p class="text-gray-500 text-sm">Coordinador y Diseñador (Mendoza)</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-3xl shadow-xl">
+                        <img src="https://placehold.co/500x500/1a1523/6b21a8?text=Mar" alt="creadora_mar_500x500.png" title="creadora_mar_500x500.png" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700">
+                        <h4 class="text-lg font-bold">Mar</h4>
+                        <p class="text-gray-500 text-sm">Estratega Social (Mendoza)</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-3xl shadow-xl">
+                        <img src="https://placehold.co/500x500/1a1523/6b21a8?text=Valentin" alt="creador_valentin_500x500.png" title="creador_valentin_500x500.png" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700">
+                        <h4 class="text-lg font-bold">Valentín</h4>
+                        <p class="text-gray-500 text-sm">Embajador de Marca (San Juan)</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contacto" class="w-full bg-card py-10 text-center rounded-t-3xl shadow-inner mt-12">
+            <h4 class="text-2xl font-bold mb-4">¿Listo para crear tu próxima narrativa?</h4>
+            <p class="text-gray-500 mb-6 max-w-xl mx-auto">
+                Estamos listos para transformar tu idea en una historia inolvidable. Contáctanos y empecemos a trazar tu hoja de ruta.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors duration-300">
+                    Hablemos de tu Proyecto
+                </a>
+            </div>
+            <p class="text-sm text-gray-600 mt-8">
+                &copy; 2025 Pixel Creativo. Todos los derechos reservados.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
