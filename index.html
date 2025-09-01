@@ -1,670 +1,167 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo - Acceso Staff</title>
+    <title>Pixel Creativo</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-        }
-        .themed-bg {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        .themed-card {
-            background-color: var(--card-bg-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-        }
-        .themed-input {
-            background-color: var(--input-bg-color);
-            border: 1px solid var(--input-border-color);
-            color: var(--text-color);
-        }
-        .themed-button {
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
-        }
-        .themed-button:hover {
-            background-color: var(--button-hover-bg-color);
-        }
-        .themed-title-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .themed-title-glow {
-            box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 1rem;
-        }
-        .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .scroll-animation {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .scroll-animation.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+            background-color: #f0f4f8; /* Un gris claro para el fondo */
         }
     </style>
 </head>
-<body class="themed-bg transition-colors duration-500 overflow-y-auto">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
 
-    <div id="app" class="min-h-screen p-4 flex flex-col items-center justify-center">
+    <!-- Contenedor principal de la tarjeta -->
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-4xl">
 
-        <!-- Loading Screen -->
-        <div id="loading-screen" class="fixed inset-0 flex items-center justify-center themed-bg z-50">
-            <div class="text-center">
-                <svg class="animate-spin h-10 w-10 text-violet-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <p>Cargando aplicación...</p>
-            </div>
+        <!-- Logo y Título -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-extrabold text-blue-900 mb-2">Pixel Creativo</h1>
+            <p class="text-gray-600 text-lg">Tu visión, nuestro arte.</p>
         </div>
 
-        <!-- Theme Selector Screen -->
-        <div id="theme-selector" class="hidden w-full max-w-lg p-8 themed-card rounded-2xl shadow-2xl text-center space-y-6">
-            <h2 class="text-3xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Elige tu Tema Visual</h2>
-            <p class="text-gray-400">Selecciona el ambiente que mejor te represente para comenzar.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <button data-theme="dark-pixel" class="py-4 px-6 rounded-xl themed-button border border-transparent hover:border-violet-500 transition-all duration-300">
-                    <div class="text-xl">🌌 Pixel Oscuro</div>
-                    <p class="text-sm mt-1 opacity-75">Púrpura, violeta y rosa.</p>
-                </button>
-                <button data-theme="blue-sky" class="py-4 px-6 rounded-xl themed-button border border-transparent hover:border-blue-500 transition-all duration-300">
-                    <div class="text-xl">☀️ Cielo Azul</div>
-                    <p class="text-sm mt-1 opacity-75">Azul, blanco y plata.</p>
-                </button>
-            </div>
-        </div>
+        <!-- Secciones de Contenido -->
+        <div class="space-y-12">
 
-        <!-- Login Screen -->
-        <div id="login-screen" class="hidden w-full max-w-sm p-8 themed-card rounded-2xl shadow-2xl">
-            <h2 class="text-3xl font-bold text-center mb-6 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Acceso Staff</h2>
-            <div class="mb-4">
-                <label for="username-input" class="block text-sm font-medium text-gray-400 mb-2">Usuario</label>
-                <input type="text" id="username-input" class="w-full p-3 rounded-xl themed-input focus:outline-none focus:ring-2 focus:ring-violet-500" placeholder="Ingresa tu usuario">
+            <!-- Sección de Nuestros Servicios -->
+            <div class="bg-blue-50 p-6 rounded-lg shadow-inner">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Nuestros Servicios</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><strong class="font-semibold text-blue-900">Diseño con Propósito:</strong> Creación de piezas visuales que cuentan una historia.</li>
+                    <li><strong class="font-semibold text-blue-900">Servicios "Listos para Publicar":</strong> Contenido optimizado para redes sociales, blogs y web.</li>
+                    <li><strong class="font-semibold text-blue-900">Asesoría Estratégica:</strong> Guía para potenciar tu presencia digital y alcanzar tus metas.</li>
+                </ul>
             </div>
-            <div class="mb-4">
-                <label for="password-input" class="block text-sm font-medium text-gray-400 mb-2">Contraseña</label>
-                <input type="password" id="password-input" class="w-full p-3 rounded-xl themed-input focus:outline-none focus:ring-2 focus:ring-violet-500" placeholder="Ingresa la contraseña">
-            </div>
-            <button id="login-button" class="w-full py-3 px-4 themed-button themed-bg-main-button themed-hover-main-button text-white font-bold rounded-xl transition-colors duration-200">
-                Iniciar Sesión
-            </button>
-            <div id="login-message" class="mt-4 text-center text-red-400"></div>
-            <button id="go-to-home-button-from-login" class="w-full mt-4 py-3 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button text-white font-bold rounded-xl transition-colors duration-200">
-                Volver a la Vidriera
-            </button>
-        </div>
 
-        <!-- User Dashboard -->
-        <div id="user-dashboard" class="hidden w-full container p-4 space-y-8">
-            <header class="text-center py-8">
-                <h1 class="text-4xl font-extrabold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">¡Bienvenido, <span id="user-name"></span>!</h1>
-                <p class="mt-2 text-xl text-gray-400">Aquí están tus tareas para esta semana.</p>
-            </header>
-
-            <section id="user-tasks-section" class="themed-card p-8 rounded-2xl scroll-animation">
-                <h2 class="text-2xl font-bold mb-4 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Mis Tareas</h2>
-                <div id="tasks-list" class="space-y-4">
-                    <!-- Tareas dinámicas -->
+            <!-- Sección de Planes y Precios -->
+            <div>
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">Nuestros Planes</h2>
+                
+                <!-- Explicación de Community Manager (CM) -->
+                <div class="mb-8 text-center bg-yellow-50 p-4 rounded-lg shadow-md">
+                    <p class="text-gray-700">El **Community Manager (CM)** se encarga de gestionar tus redes sociales, responder a comentarios y mensajes, y crear una comunidad activa alrededor de tu marca.</p>
                 </div>
-            </section>
 
-            <section id="lab-section" class="themed-card p-8 rounded-2xl space-y-8 hidden scroll-animation">
-                <h2 class="text-3xl font-bold text-center themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Laboratorio (Editor de Contenido)</h2>
-                <div class="space-y-6">
-                    <div>
-                        <label for="main-title" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Título Principal</label>
-                        <input type="text" id="main-title" class="w-full p-3 rounded-xl themed-input">
-                    </div>
-                    <div>
-                        <label for="sub-title" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Subtítulo</label>
-                        <textarea id="sub-title" class="w-full p-3 rounded-xl themed-input h-24"></textarea>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="creator-video" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">URL del Video (Sección "El Porqué")</label>
-                            <input type="url" id="creator-video" class="w-full p-3 rounded-xl themed-input">
-                        </div>
-                        <div>
-                            <label for="creator-text" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Descripción del Creador (Sección "El Porqué")</label>
-                            <textarea id="creator-text" class="w-full p-3 rounded-xl themed-input h-24"></textarea>
+                <!-- Contenedor de las tarjetas de planes (responsive grid) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta Plan Básico -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Plan Básico</h3>
+                        <p class="text-gray-600 mb-4">Ideal para quienes están comenzando y necesitan una base sólida.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Sin CM</h4>
+                                <p class="text-gray-800 font-bold text-xl">ARS$ 15.000</p>
+                                <ul class="list-disc list-inside text-gray-600 mt-2">
+                                    <li>4 publicaciones semanales</li>
+                                    <li>Reel narrativo mensual</li>
+                                </ul>
+                            </div>
+                            <hr class="border-gray-300">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Con CM</h4>
+                                <p class="text-gray-800 font-bold text-xl">ARS$ 25.000</p>
+                                <ul class="list-disc list-inside text-gray-600 mt-2">
+                                    <li>4 publicaciones semanales</li>
+                                    <li>Reel narrativo mensual</li>
+                                    <li>Gestión de comunidad y respuestas</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Principios</h3>
-                        <div id="principles-container" class="space-y-4"></div>
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Creadores</h3>
-                        <div id="creators-container" class="space-y-4"></div>
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Mini Portafolio</h3>
-                        <div id="portfolio-container" class="space-y-4"></div>
-                        <button id="add-portfolio-item" class="w-full py-2 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button text-white font-bold rounded-xl transition-colors duration-200 mt-4">
-                            + Añadir Ítem al Portafolio
-                        </button>
-                    </div>
-                </div>
-                <div class="flex flex-col md:flex-row gap-4">
-                    <button id="save-button" class="w-full py-3 px-4 themed-button themed-bg-main-button themed-hover-main-button text-white font-bold rounded-xl transition-colors duration-200">
-                        Guardar Cambios
-                    </button>
-                    <button id="go-to-home-button" class="w-full py-3 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button text-white font-bold rounded-xl transition-colors duration-200">
-                        Ver Página Principal
-                    </button>
-                </div>
-                <div id="admin-message" class="mt-4 text-center text-green-400"></div>
-            </section>
 
-            <button id="logout-button" class="mt-8 py-2 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button font-bold rounded-xl">Cerrar Sesión</button>
+                    <!-- Tarjeta Plan Avanzado -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Plan Avanzado</h3>
+                        <p class="text-gray-600 mb-4">Para emprendimientos que buscan un crecimiento sostenido.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Sin CM</h4>
+                                <p class="text-gray-800 font-bold text-xl">ARS$ 30.000</p>
+                                <ul class="list-disc list-inside text-gray-600 mt-2">
+                                    <li>6 publicaciones semanales</li>
+                                    <li>2 Reels narrativos mensuales</li>
+                                    <li>Asesoría de estrategia</li>
+                                </ul>
+                            </div>
+                            <hr class="border-gray-300">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Con CM</h4>
+                                <p class="text-gray-800 font-bold text-xl">ARS$ 45.000</p>
+                                <ul class="list-disc list-inside text-gray-600 mt-2">
+                                    <li>6 publicaciones semanales</li>
+                                    <li>2 Reels narrativos mensuales</li>
+                                    <li>Gestión de comunidad y respuestas</li>
+                                    <li>Asesoría de estrategia</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Plan Premium -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Plan Premium</h3>
+                        <p class="text-gray-600 mb-4">La solución integral para maximizar tu impacto digital.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Sin CM</h4>
+                                <p class="text-gray-800 font-bold text-xl">ARS$ 50.000</p>
+                                <ul class="list-disc list-inside text-gray-600 mt-2">
+                                    <li>Publicaciones diarias</li>
+                                    <li>4 Reels narrativos mensuales</li>
+                                    <li>Consultoría y reportes</li>
+                                </ul>
+                            </div>
+                            <hr class="border-gray-300">
+                            <div>
+                                <h4 class="font-semibold text-blue-700">Con CM</h4>
+                                <p class="text-gray-800 font-bold text-xl">ARS$ 70.000</p>
+                                <ul class="list-disc list-inside text-gray-600 mt-2">
+                                    <li>Publicaciones diarias</li>
+                                    <li>4 Reels narrativos mensuales</li>
+                                    <li>Gestión de comunidad y respuestas</li>
+                                    <li>Consultoría y reportes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promoción de Septiembre -->
+                <div class="mt-8 text-center bg-purple-100 p-6 rounded-lg shadow-xl border-4 border-purple-300 animate-pulse">
+                    <h3 class="text-3xl font-extrabold text-purple-800 mb-2">¡Promoción de Septiembre!</h3>
+                    <p class="text-purple-700 text-2xl font-semibold">2x1 en cualquier plan.</p>
+                    <p class="text-purple-600 text-lg">Contrata un plan y obtén el segundo mes de servicio ¡completamente gratis!</p>
+                </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                <!-- Botón CONTACTANOS -->
+                <a href="#" class="w-full sm:w-auto px-6 py-3 bg-green-500 text-white font-semibold rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 text-center">
+                    CONTÁCTANOS
+                </a>
+                
+                <!-- Enlace Acceso Staff -->
+                <a href="#" class="w-full sm:w-auto px-6 py-3 text-blue-600 font-semibold border-2 border-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-300 text-center">
+                    Acceso Staff
+                </a>
+            </div>
+
         </div>
 
-        <!-- Home Page (Página Pública) -->
-        <div id="home-page" class="hidden w-full container p-4 space-y-16">
-            <section id="welcome-section" class="text-center pt-16 pb-12 themed-card rounded-3xl themed-title-glow scroll-animation">
-                <h1 id="home-main-title" class="text-5xl md:text-6xl font-extrabold mb-4 text-white"></h1>
-                <p id="home-sub-title" class="text-lg md:text-xl max-w-2xl mx-auto text-gray-300"></p>
-            </section>
-            <section class="grid lg:grid-cols-2 gap-8 items-center themed-card p-8 rounded-3xl scroll-animation">
-                <div class="video-wrapper">
-                    <video id="home-creator-video" class="w-full rounded-2xl" controls autoplay loop muted></video>
-                </div>
-                <div class="text-center lg:text-left">
-                    <h2 class="text-4xl font-bold themed-title-gradient bg-gradient-to-r from-violet-400 to-fuchsia-500 mb-4">El Porqué de Nuestro Estudio</h2>
-                    <p id="home-creator-text" class="text-gray-300 leading-relaxed"></p>
-                </div>
-            </section>
-            <section class="scroll-animation">
-                <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Nuestros Principios</h2>
-                <div id="home-principles-container" class="grid md:grid-cols-3 gap-8"></div>
-            </section>
-            <section class="scroll-animation">
-                <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">El Equipo de Pixel Creativo</h2>
-                <div id="home-creators-container" class="grid md:grid-cols-3 gap-8"></div>
-            </section>
-            <section class="scroll-animation">
-                <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Mini Portafolio</h2>
-                <div id="home-portfolio-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-            </section>
-            <footer class="text-center py-8">
-                <p class="mt-4 text-gray-500">&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
-                <!-- Staff login button hidden from view. Click on it to show the login screen. -->
-                <span id="staff-login-link" class="absolute bottom-4 right-4 text-gray-400 opacity-20 hover:opacity-100 transition-opacity duration-300 cursor-pointer">Staff</span>
-            </footer>
-        </div>
+        <!-- Pie de página -->
+        <footer class="text-center text-gray-500 text-sm mt-12">
+            © 2025 Pixel Creativo. Todos los derechos reservados.
+        </footer>
     </div>
-
-    <!-- Firebase SDKs -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-        import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
-
-        setLogLevel('debug');
-
-        // Firestore constants
-        const __app_id = typeof window.__app_id !== 'undefined' ? window.__app_id : 'default-app-id';
-        const __firebase_config = typeof window.__firebase_config !== 'undefined' ? window.__firebase_config : '{}';
-        const __initial_auth_token = typeof window.__initial_auth_token !== 'undefined' ? window.__initial_auth_token : '';
-        const PUBLIC_DATA_PATH = `/artifacts/${__app_id}/public/data/site-content`;
-        
-        let db;
-        let auth;
-        let isInitialized = false;
-
-        // User credentials and data. In a real app, this would be in a database.
-        const users = {
-            "Matias": {
-                password: "magic-staff",
-                role: "Coordinador y Diseñador",
-                tasks: [
-                    "Diseñar la narrativa visual y las estrategias de contenido.",
-                    "Gestionar el portafolio y los testimonios de clientes.",
-                    "Preparar la Promo Mensual y el contenido para su difusión.",
-                    "Liderar la sección de 'Laboratorio' para editar la página."
-                ]
-            },
-            "Lolo": {
-                password: "lolo-nit",
-                role: "Estratega Digital",
-                tasks: [
-                    "Investigar nuevas tendencias y herramientas digitales para el estudio.",
-                    "Optimizar la presencia online de Pixel Creativo.",
-                    "Asistir en la creación de contenido para la 'Alquimia de la Variedad'.",
-                    "Analizar las métricas de rendimiento de la página web."
-                ]
-            },
-            "Mar": {
-                password: "REspadas25",
-                role: "Estratega Social",
-                tasks: [
-                    "Liderar la difusión viral y el marketing de valor en redes sociales.",
-                    "Supervisar las misiones de los embajadores del equipo.",
-                    "Generar contenido para mantener el 'efecto kiosco' en nuestros canales.",
-                    "Asegurar que cada publicación conecte con la audiencia."
-                ]
-            }
-        };
-
-        // UI elements
-        const themeSelectorScreen = document.getElementById('theme-selector');
-        const loginScreen = document.getElementById('login-screen');
-        const userDashboard = document.getElementById('user-dashboard');
-        const homePage = document.getElementById('home-page');
-        const loadingScreen = document.getElementById('loading-screen');
-
-        const usernameInput = document.getElementById('username-input');
-        const passwordInput = document.getElementById('password-input');
-        const loginButton = document.getElementById('login-button');
-        const loginMessage = document.getElementById('login-message');
-
-        const userNameDisplay = document.getElementById('user-name');
-        const tasksList = document.getElementById('tasks-list');
-        const labSection = document.getElementById('lab-section');
-        const addPortfolioItemButton = document.getElementById('add-portfolio-item');
-
-        const saveButton = document.getElementById('save-button');
-        const adminMessage = document.getElementById('admin-message');
-
-        // Themed styles
-        const themes = {
-            'dark-pixel': {
-                '--bg-color': '#121212',
-                '--text-color': '#e0e0e0',
-                '--card-bg-color': '#1a1523',
-                '--border-color': '#6b21a8',
-                '--input-bg-color': '#2c253d',
-                '--input-border-color': '#4a3e63',
-                '--button-bg-color': '#6b21a8',
-                '--button-hover-bg-color': '#8b5cf6',
-                '--button-text-color': '#ffffff',
-                '--glow-color': '#6b21a8'
-            },
-            'blue-sky': {
-                '--bg-color': '#e6eef6',
-                '--text-color': '#1f2937',
-                '--card-bg-color': '#f3f4f6',
-                '--border-color': '#93c5fd',
-                '--input-bg-color': '#d1d5db',
-                '--input-border-color': '#9ca3af',
-                '--button-bg-color': '#3b82f6',
-                '--button-hover-bg-color': '#2563eb',
-                '--button-text-color': '#ffffff',
-                '--glow-color': '#3b82f6'
-            }
-        };
-
-        // Content structure (default)
-        let content = {
-            mainTitle: "Pixel Creativo",
-            subTitle: "Creamos narrativas visuales y estrategias de contenido que conectan con tu audiencia y potencian tu presencia digital.",
-            creatorVideo: "https://placehold.co/1080x1920/1a1523/6b21a8?text=Video%20del%20creador",
-            creatorText: "En Pixel Creativo, transformamos ideas en impacto visual. Creemos que cada emprendimiento tiene una historia única que merece ser contada de forma inolvidable. Te ayudamos a conectar con tu audiencia y potenciar tu presencia digital con diseños que realmente funcionan.",
-            principles: [
-                { icon: "🎨", title: "Diseño con Propósito", description: "Cada pieza es creada para contar una historia y tener un objetivo claro." },
-                { icon: "🎯", title: "Servicios 'Listos para Publicar'", description: "Entregamos productos optimizados y listos para su uso inmediato, ahorrándote tiempo." },
-                { icon: "💡", title: "Asesoría y Acompañamiento", description: "Brindamos una guía con sugerencias para que puedas usar el material de forma autónoma." }
-            ],
-            creators: [
-                { name: "Matías", role: "Coordinador y Diseñador", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Matias" },
-                { name: "Mar", role: "Estratega Social", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Mar" },
-                { name: "Valentín", role: "Embajador Pixel", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Valentin" }
-            ],
-            portfolioItems: [
-                { title: "Proyecto 1: Diseño Gráfico", description: "Un ejemplo de identidad visual para un cliente de la industria de la moda.", mediaUrl: "https://placehold.co/600x400/1a1523/6b21a8?text=Proyecto+de+Diseño" },
-                { title: "Proyecto 2: Video Promocional", description: "Reel corto para redes sociales que destaca un nuevo producto.", mediaUrl: "https://placehold.co/600x400/1a1523/6b21a8?text=Video+Promocional" },
-                { title: "Proyecto 3: Carrete Creativo", description: "Un carrusel de Instagram que educa a la audiencia sobre un tema complejo.", mediaUrl: "https://placehold.co/600x400/1a1523/6b21a8?text=Carrusel+Educativo" }
-            ]
-        };
-
-        // --- THEME LOGIC ---
-        function applyTheme(themeName) {
-            const theme = themes[themeName];
-            if (theme) {
-                for (const [key, value] of Object.entries(theme)) {
-                    document.documentElement.style.setProperty(key, value);
-                }
-                localStorage.setItem('pixel-theme', themeName);
-            }
-        }
-
-        document.querySelectorAll('[data-theme]').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const themeName = e.target.closest('button').dataset.theme;
-                applyTheme(themeName);
-                showScreen('login-screen');
-            });
-        });
-
-        // --- UI & DATA FUNCTIONS ---
-        function showScreen(screenId) {
-            loadingScreen.classList.add('hidden');
-            themeSelectorScreen.classList.add('hidden');
-            loginScreen.classList.add('hidden');
-            userDashboard.classList.add('hidden');
-            homePage.classList.add('hidden');
-            document.getElementById(screenId).classList.remove('hidden');
-            
-            // Re-apply animations when screen is shown
-            if (screenId === 'home-page') {
-                document.querySelectorAll('.scroll-animation').forEach(el => el.classList.remove('is-visible'));
-                setupScrollAnimations();
-            }
-        }
-
-        function renderHomePage(data) {
-            document.getElementById('home-main-title').textContent = data.mainTitle;
-            document.getElementById('home-sub-title').textContent = data.subTitle;
-            
-            const videoElement = document.getElementById('home-creator-video');
-            videoElement.src = data.creatorVideo;
-            
-            document.getElementById('home-creator-text').textContent = data.creatorText;
-
-            const principlesContainer = document.getElementById('home-principles-container');
-            principlesContainer.innerHTML = '';
-            data.principles.forEach(p => {
-                const card = document.createElement('div');
-                card.className = "themed-card p-6 rounded-2xl text-center hover:scale-105 transition-transform duration-300";
-                card.innerHTML = `<div class="text-5xl mb-4">${p.icon}</div><h3 class="text-xl font-semibold mb-2">${p.title}</h3><p class="text-gray-400">${p.description}</p>`;
-                principlesContainer.appendChild(card);
-            });
-
-            const creatorsContainer = document.getElementById('home-creators-container');
-            creatorsContainer.innerHTML = '';
-            data.creators.forEach(c => {
-                const card = document.createElement('div');
-                card.className = "themed-card p-6 rounded-2xl text-center";
-                card.innerHTML = `<img src="${c.photo}" onerror="this.src='https://placehold.co/500x500/1a1523/6b21a8?text=Imagen+no+encontrada';" alt="${c.name}" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700 themed-title-glow"><h3 class="text-2xl font-bold">${c.name}</h3><p class="text-gray-400">${c.role}</p>`;
-                creatorsContainer.appendChild(card);
-            });
-            
-            const portfolioContainer = document.getElementById('home-portfolio-container');
-            portfolioContainer.innerHTML = '';
-            data.portfolioItems.forEach(item => {
-                const isVideo = item.mediaUrl.match(/\.(mp4|webm|ogg)$/i);
-                const mediaHtml = isVideo 
-                    ? `<video src="${item.mediaUrl}" class="w-full h-auto rounded-xl" controls autoplay loop muted></video>` 
-                    : `<img src="${item.mediaUrl}" onerror="this.src='https://placehold.co/600x400/1a1523/6b21a8?text=Contenido+no+encontrado';" alt="${item.title}" class="w-full h-auto rounded-xl">`;
-
-                const card = document.createElement('div');
-                card.className = "themed-card p-4 rounded-2xl space-y-2";
-                card.innerHTML = `
-                    <div class="rounded-xl overflow-hidden aspect-video">
-                        ${mediaHtml}
-                    </div>
-                    <h3 class="text-lg font-bold mt-2">${item.title}</h3>
-                    <p class="text-sm text-gray-400">${item.description}</p>
-                `;
-                portfolioContainer.appendChild(card);
-            });
-        }
-
-        function renderUserDashboard(user) {
-            userNameDisplay.textContent = user.username;
-            tasksList.innerHTML = '';
-            user.tasks.forEach(task => {
-                const li = document.createElement('div');
-                li.className = "themed-card p-4 rounded-xl flex items-center space-x-4";
-                li.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <p>${task}</p>
-                `;
-                tasksList.appendChild(li);
-            });
-            if (user.username === "Matias") {
-                labSection.classList.remove('hidden');
-                renderAdminPanel(content);
-            } else {
-                labSection.classList.add('hidden');
-            }
-        }
-
-        function renderAdminPanel(data) {
-            document.getElementById('main-title').value = data.mainTitle;
-            document.getElementById('sub-title').value = data.subTitle;
-            document.getElementById('creator-video').value = data.creatorVideo;
-            document.getElementById('creator-text').value = data.creatorText;
-
-            const principlesContainer = document.getElementById('principles-container');
-            principlesContainer.innerHTML = '';
-            data.principles.forEach((p, index) => {
-                const principleDiv = document.createElement('div');
-                principleDiv.className = "themed-card p-4 rounded-xl space-y-2";
-                principleDiv.innerHTML = `
-                    <h4 class="text-lg font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Principio ${index + 1}</h4>
-                    <div class="grid grid-cols-3 gap-2">
-                        <input type="text" placeholder="Ícono (ej. 🎨)" class="p-2 rounded themed-input" data-type="principle-icon" data-index="${index}" value="${p.icon}">
-                        <input type="text" placeholder="Título" class="p-2 rounded col-span-2 themed-input" data-type="principle-title" data-index="${index}" value="${p.title}">
-                    </div>
-                    <textarea placeholder="Descripción" class="p-2 rounded themed-input w-full h-24" data-type="principle-description" data-index="${index}">${p.description}</textarea>
-                `;
-                principlesContainer.appendChild(principleDiv);
-            });
-
-            const creatorsContainer = document.getElementById('creators-container');
-            creatorsContainer.innerHTML = '';
-            data.creators.forEach((c, index) => {
-                const creatorDiv = document.createElement('div');
-                creatorDiv.className = "themed-card p-4 rounded-xl space-y-2";
-                creatorDiv.innerHTML = `
-                    <h4 class="text-lg font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Creador ${index + 1}</h4>
-                    <input type="text" placeholder="Nombre" class="p-2 rounded themed-input w-full" data-type="creator-name" data-index="${index}" value="${c.name}">
-                    <input type="text" placeholder="Rol" class="p-2 rounded themed-input w-full" data-type="creator-role" data-index="${index}" value="${c.role}">
-                    <input type="text" placeholder="URL de la Foto" class="p-2 rounded themed-input w-full" data-type="creator-photo" data-index="${index}" value="${c.photo}">
-                `;
-                creatorsContainer.appendChild(creatorDiv);
-            });
-
-            const portfolioContainer = document.getElementById('portfolio-container');
-            portfolioContainer.innerHTML = '';
-            data.portfolioItems.forEach((item, index) => {
-                const itemDiv = document.createElement('div');
-                itemDiv.className = "themed-card p-4 rounded-xl space-y-2 relative";
-                itemDiv.innerHTML = `
-                    <button class="absolute top-2 right-2 text-red-500 hover:text-red-700" data-index="${index}" data-action="remove-portfolio">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                    <h4 class="text-lg font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Ítem de Portafolio ${index + 1}</h4>
-                    <input type="text" placeholder="Título del Proyecto" class="p-2 rounded themed-input w-full" data-type="portfolio-title" data-index="${index}" value="${item.title}">
-                    <input type="text" placeholder="URL de Imagen o Video" class="p-2 rounded themed-input w-full" data-type="portfolio-media" data-index="${index}" value="${item.mediaUrl}">
-                    <textarea placeholder="Descripción/Comentario" class="p-2 rounded themed-input w-full h-24" data-type="portfolio-description" data-index="${index}">${item.description}</textarea>
-                `;
-                portfolioContainer.appendChild(itemDiv);
-            });
-            // Re-attach event listeners for dynamic content
-            document.querySelectorAll('[data-action="remove-portfolio"]').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const index = parseInt(e.target.closest('button').dataset.index);
-                    content.portfolioItems.splice(index, 1);
-                    renderAdminPanel(content);
-                });
-            });
-        }
-
-        function getAdminData() {
-            const newContent = {
-                mainTitle: document.getElementById('main-title').value,
-                subTitle: document.getElementById('sub-title').value,
-                creatorVideo: document.getElementById('creator-video').value,
-                creatorText: document.getElementById('creator-text').value,
-                principles: [],
-                creators: [],
-                portfolioItems: []
-            };
-
-            document.querySelectorAll('[data-type="principle-title"]').forEach(input => {
-                const index = input.dataset.index;
-                const icon = document.querySelector(`[data-type="principle-icon"][data-index="${index}"]`).value;
-                const description = document.querySelector(`[data-type="principle-description"][data-index="${index}"]`).value;
-                newContent.principles.push({ icon, title: input.value, description });
-            });
-
-            document.querySelectorAll('[data-type="creator-name"]').forEach(input => {
-                const index = input.dataset.index;
-                const role = document.querySelector(`[data-type="creator-role"][data-index="${index}"]`).value;
-                const photo = document.querySelector(`[data-type="creator-photo"][data-index="${index}"]`).value;
-                newContent.creators.push({ name: input.value, role, photo });
-            });
-
-            document.querySelectorAll('[data-type="portfolio-title"]').forEach(input => {
-                const index = input.dataset.index;
-                const mediaUrl = document.querySelector(`[data-type="portfolio-media"][data-index="${index}"]`).value;
-                const description = document.querySelector(`[data-type="portfolio-description"][data-index="${index}"]`).value;
-                newContent.portfolioItems.push({ title: input.value, description, mediaUrl });
-            });
-            return newContent;
-        }
-
-        function setupScrollAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    } else {
-                        entry.target.classList.remove('is-visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            document.querySelectorAll('.scroll-animation').forEach(el => {
-                observer.observe(el);
-            });
-        }
-
-        // --- CORE LOGIC & EVENT LISTENERS ---
-        async function initializeAndLoad() {
-            try {
-                const firebaseConfig = JSON.parse(__firebase_config);
-                if (Object.keys(firebaseConfig).length === 0) {
-                    console.error("Firebase config is empty. Cannot initialize.");
-                    renderHomePage(content);
-                    showScreen('home-page');
-                    return;
-                }
-
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-
-                if (__initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                    console.log("Signed in with custom token.");
-                } else {
-                    await signInAnonymously(auth);
-                    console.log("Signed in anonymously.");
-                }
-
-                const docRef = doc(db, PUBLIC_DATA_PATH, "main");
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    content = docSnap.data();
-                    console.log("Data loaded from Firestore.");
-                } else {
-                    console.log("No data found, using default content.");
-                }
-                
-                isInitialized = true;
-                const savedTheme = localStorage.getItem('pixel-theme') || 'dark-pixel';
-                applyTheme(savedTheme);
-                
-                // First time load logic
-                if (!localStorage.getItem('pixel-theme')) {
-                    showScreen('theme-selector');
-                } else {
-                    renderHomePage(content);
-                    showScreen('home-page');
-                }
-            } catch (e) {
-                console.error("Error initializing Firebase or loading data:", e);
-                renderHomePage(content);
-                showScreen('home-page');
-            } finally {
-                loadingScreen.classList.add('hidden');
-            }
-        }
-
-        loginButton.addEventListener('click', () => {
-            const username = usernameInput.value;
-            const password = passwordInput.value;
-            const user = users[username];
-
-            if (user && user.password === password) {
-                renderUserDashboard({ username, tasks: user.tasks });
-                showScreen('user-dashboard');
-                loginMessage.textContent = '';
-            } else {
-                loginMessage.textContent = 'Usuario o contraseña incorrectos.';
-            }
-        });
-
-        addPortfolioItemButton.addEventListener('click', () => {
-            content.portfolioItems.push({ title: "", description: "", mediaUrl: "" });
-            renderAdminPanel(content);
-        });
-
-        saveButton.addEventListener('click', async () => {
-            const newContent = getAdminData();
-            const docRef = doc(db, PUBLIC_DATA_PATH, "main");
-            
-            try {
-                await setDoc(docRef, newContent);
-                content = newContent;
-                adminMessage.textContent = "¡Cambios guardados con éxito!";
-                adminMessage.classList.remove('text-red-400');
-                adminMessage.classList.add('text-green-400');
-                console.log("Document successfully written!");
-            } catch (e) {
-                adminMessage.textContent = "Error al guardar: " + e.message;
-                adminMessage.classList.remove('text-green-400');
-                adminMessage.classList.add('text-red-400');
-                console.error("Error writing document: ", e);
-            }
-        });
-
-        document.getElementById('go-to-home-button').addEventListener('click', () => {
-            renderHomePage(content);
-            showScreen('home-page');
-        });
-        document.getElementById('go-to-home-button-from-login').addEventListener('click', () => {
-            renderHomePage(content);
-            showScreen('home-page');
-        });
-        document.getElementById('logout-button').addEventListener('click', () => {
-            renderHomePage(content);
-            showScreen('home-page');
-        });
-        document.getElementById('staff-login-link').addEventListener('click', () => {
-            showScreen('login-screen');
-            usernameInput.value = '';
-            passwordInput.value = '';
-            loginMessage.textContent = '';
-        });
-
-        window.onload = initializeAndLoad;
-    </script>
 
 </body>
 </html>
