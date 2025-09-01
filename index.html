@@ -3,185 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo - Narrativas Inmersivas</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Pixel Creativo - Acceso Staff</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d0a11; /* Negro/Violeta oscuro */
-            color: #f3f4f6; /* Blanco roto */
         }
-        .text-gradient-main {
-            background-image: linear-gradient(to right, #6b21a8, #3b82f6); /* Violeta a Azul */
+        .themed-bg {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .themed-card {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        .themed-input {
+            background-color: var(--input-bg-color);
+            border: 1px solid var(--input-border-color);
+            color: var(--text-color);
+        }
+        .themed-button {
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+        }
+        .themed-button:hover {
+            background-color: var(--button-hover-bg-color);
+        }
+        .themed-title-gradient {
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .text-gradient-accent {
-            background-image: linear-gradient(to right, #f97316, #ef4444); /* Naranja a Rojo */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .themed-title-glow {
+            box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
         }
-        .bg-card {
-            background-color: #1a1523; /* Fondo de tarjeta más oscuro */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
         }
-        .border-ladrillo {
-            border-image: linear-gradient(to right, #cc5500, #ff8c00) 1;
-        }
-        .shadow-ladrillo {
-            box-shadow: 0 4px 6px -1px rgba(204, 85, 0, 0.2), 0 2px 4px -1px rgba(204, 85, 0, 0.1);
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden">
-    <div class="min-h-screen flex flex-col items-center">
-        <!-- Header -->
-        <header class="w-full max-w-7xl mx-auto p-6 md:p-8 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <img src="https://placehold.co/120x120/1a1523/f3f4f6?text=PC" alt="logo_pixelcreativo_120x120.png" title="pixelcreativo_logo_120x120.png" class="rounded-full w-16 h-16 md:w-20 md:h-20 border-2 border-violet-700">
-                <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                    <span class="text-gradient-main">Pixel Creativo</span>
-                </h1>
+<body class="themed-bg transition-colors duration-500">
+
+    <div id="app" class="min-h-screen p-4 flex flex-col items-center justify-center">
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="fixed inset-0 flex items-center justify-center themed-bg z-50">
+            <div class="text-center">
+                <svg class="animate-spin h-10 w-10 text-violet-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p>Cargando aplicación...</p>
             </div>
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#filosofia" class="text-gray-400 hover:text-white transition-colors duration-300">Filosofía</a>
-                <a href="#metodologia" class="text-gray-400 hover:text-white transition-colors duration-300">Metodología</a>
-                <a href="#equipo" class="text-gray-400 hover:text-white transition-colors duration-300">Equipo</a>
-                <a href="#contacto" class="px-4 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors duration-300">Contacto</a>
-            </nav>
-        </header>
+        </div>
 
-        <!-- Hero Section -->
-        <main class="flex-grow w-full">
-            <section class="py-16 md:py-24 px-6 md:px-8 text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(13, 10, 17, 0.8), rgba(13, 10, 17, 0.8));">
-                <div class="max-w-3xl mx-auto">
-                    <!-- Video de la narrativa visual con la nomenclatura solicitada -->
-                    <video src="https://placehold.co/800x450/1a1523/3b82f6.mp4?text=Reel+Creativo" alt="reel_pixelcreativo_id345.mp4" title="reel_pixelcreativo_id345.mp4" class="mx-auto w-3/4 h-auto rounded-3xl shadow-lg mb-6 transform hover:scale-105 transition-transform duration-300" autoplay loop muted playsinline></video>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-                        Donde cada narrativa construye un universo.
-                    </h2>
-                    <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                        Transformamos ideas en experiencias que conectan, con la precisión de un artesano y la visión de un arquitecto digital.
-                    </p>
-                    <a href="#contacto" class="px-8 py-3 bg-white text-black font-semibold rounded-full shadow-xl hover:bg-gray-200 transform hover:scale-105 transition-transform duration-300">
-                        Agenda un Viaje
-                    </a>
-                </div>
-            </section>
-
-            <!-- Philosophy Section -->
-            <section id="filosofia" class="py-16 md:py-24 px-6 md:px-8 max-w-7xl mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-4 text-gradient-main">Nuestra Filosofía: El Efecto Kiosco</h3>
-                <p class="text-gray-400 max-w-4xl mx-auto mb-10">
-                    Así como un kiosco atrae con su variedad, generamos un ecosistema de contenido que engancha a tu audiencia y los mantiene siempre interesados.
-                </p>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-card p-6 rounded-3xl shadow-xl border-ladrillo border-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-orange-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m7.5-7.5h-15" />
-                        </svg>
-                        <h4 class="text-lg font-bold mb-2">Diseño con Propósito</h4>
-                        <p class="text-sm text-gray-500">
-                            Cada pieza es una historia, cada píxel tiene una intención clara para conectar con tu público.
-                        </p>
-                    </div>
-                    <div class="bg-card p-6 rounded-3xl shadow-xl border-ladrillo border-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-orange-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 10.5v6.75A2.25 2.25 0 0111.25 20.25H6.75A2.25 2.25 0 014.5 18V6.75A2.25 2.25 0 016.75 4.5h6.75a2.25 2.25 0 012.25 2.25v1.5m-8.25 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm6.75-1.5a.75.75 0 100 1.5.75.75 0 000-1.5zM21 12h-3M18 12h-3" />
-                        </svg>
-                        <h4 class="text-lg font-bold mb-2">Alquimia de la Variedad</h4>
-                        <p class="text-sm text-gray-500">
-                            Ofrecemos un menú creativo diverso que se adapta a cada necesidad, manteniendo el interés y la atención.
-                        </p>
-                    </div>
-                    <div class="bg-card p-6 rounded-3xl shadow-xl border-ladrillo border-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto text-orange-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487z" />
-                        </svg>
-                        <h4 class="text-lg font-bold mb-2">Conexión Genuina</h4>
-                        <p class="text-sm text-gray-500">
-                            Creamos narrativas que resuenan con la autenticidad de cada proyecto, cultivando una conexión real.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Process Section -->
-            <section id="metodologia" class="py-16 md:py-24 px-6 md:px-8 text-center max-w-7xl mx-auto">
-                <h3 class="text-3xl font-bold mb-4 text-gradient-main">Nuestra Hoja de Ruta</h3>
-                <p class="text-gray-400 max-w-4xl mx-auto mb-10">
-                    Tu emprendimiento es un viaje. Nosotros te proporcionamos la brújula y el mapa para que encuentres tu camino hacia el éxito.
-                </p>
-                <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="space-y-6 text-left">
-                        <div class="bg-card p-6 rounded-2xl shadow-xl">
-                            <h4 class="text-xl font-bold mb-2">1. Diagnóstico Creativo</h4>
-                            <p class="text-gray-500">
-                                Un análisis detallado de tu proyecto y tu visión para entender su verdadera esencia.
-                            </p>
-                        </div>
-                        <div class="bg-card p-6 rounded-2xl shadow-xl">
-                            <h4 class="text-xl font-bold mb-2">2. Creación de Narrativas</h4>
-                            <p class="text-gray-500">
-                                Damos vida a tu historia con diseños, contenido y estrategias de comunicación que impactan.
-                            </p>
-                        </div>
-                        <div class="bg-card p-6 rounded-2xl shadow-xl">
-                            <h4 class="text-xl font-bold mb-2">3. Lanzamiento y Acompañamiento</h4>
-                            <p class="text-gray-500">
-                                Te guiamos en la difusión de tus ideas, observando y ajustando la trayectoria en tiempo real.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="hidden md:block">
-                        <img src="https://placehold.co/1200x800/1a1523/3b82f6?text=Mundo+Digital" alt="mundo_digital_1200x800.png" title="mundo_digital_1200x800.png" class="rounded-3xl shadow-2xl transform hover:rotate-2 transition-transform duration-500">
-                    </div>
-                </div>
-            </section>
-
-            <!-- Team Section -->
-            <section id="equipo" class="py-16 md:py-24 px-6 md:px-8 text-center max-w-7xl mx-auto">
-                <h3 class="text-3xl font-bold mb-4 text-gradient-main">Nuestros Creadores</h3>
-                <h4 class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                    El equipo que le pone el cuerpo y el alma a laburar.
-                </h4>
-                <div class="grid sm:grid-cols-3 gap-8">
-                    <div class="bg-card p-6 rounded-3xl shadow-xl">
-                        <img src="https://placehold.co/500x500/1a1523/6b21a8?text=Matias" alt="creador_matias_500x500.png" title="creador_matias_500x500.png" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700">
-                        <h4 class="text-lg font-bold">Matías</h4>
-                        <p class="text-gray-500 text-sm">Coordinador y Diseñador (Mendoza)</p>
-                    </div>
-                    <div class="bg-card p-6 rounded-3xl shadow-xl">
-                        <img src="https://placehold.co/500x500/1a1523/6b21a8?text=Mar" alt="creadora_mar_500x500.png" title="creadora_mar_500x500.png" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700">
-                        <h4 class="text-lg font-bold">Mar</h4>
-                        <p class="text-gray-500 text-sm">Estratega Social (Mendoza)</p>
-                    </div>
-                    <div class="bg-card p-6 rounded-3xl shadow-xl">
-                        <img src="https://placehold.co/500x500/1a1523/6b21a8?text=Valentin" alt="creador_valentin_500x500.png" title="creador_valentin_500x500.png" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700">
-                        <h4 class="text-lg font-bold">Valentín</h4>
-                        <p class="text-gray-500 text-sm">Embajador de Marca (San Juan)</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer id="contacto" class="w-full bg-card py-10 text-center rounded-t-3xl shadow-inner mt-12">
-            <h4 class="text-2xl font-bold mb-4">¿Listo para crear tu próxima narrativa?</h4>
-            <p class="text-gray-500 mb-6 max-w-xl mx-auto">
-                Estamos listos para transformar tu idea en una historia inolvidable. Contáctanos y empecemos a trazar tu hoja de ruta.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#" class="px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors duration-300">
-                    Hablemos de tu Proyecto
-                </a>
+        <!-- Theme Selector Screen -->
+        <div id="theme-selector" class="hidden w-full max-w-lg p-8 themed-card rounded-2xl shadow-2xl text-center space-y-6">
+            <h2 class="text-3xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Elige tu Tema Visual</h2>
+            <p class="text-gray-400">Selecciona el ambiente que mejor te represente para comenzar.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <button data-theme="dark-pixel" class="py-4 px-6 rounded-xl themed-button border border-transparent hover:border-violet-500 transition-all duration-300">
+                    <div class="text-xl">🌌 Pixel Oscuro</div>
+                    <p class="text-sm mt-1 opacity-75">Púrpura, violeta y rosa.</p>
+                </button>
+                <button data-theme="blue-sky" class="py-4 px-6 rounded-xl themed-button border border-transparent hover:border-blue-500 transition-all duration-300">
+                    <div class="text-xl">☀️ Cielo Azul</div>
+                    <p class="text-sm mt-1 opacity-75">Azul, blanco y plata.</p>
+                </button>
             </div>
-            <p class="text-sm text-gray-600 mt-8">
-                &copy; 2025 Pixel Creativo. Todos los derechos reservados.
-            </p>
-        </footer>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="login-screen" class="hidden w-full max-w-sm p-8 themed-card rounded-2xl shadow-2xl">
+            <h2 class="text-3xl font-bold text-center mb-6 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Acceso Staff</h2>
+            <div class="mb-4">
+                <label for="username-input" class="block text-sm font-medium text-gray-400 mb-2">Usuario</label>
+                <input type="text" id="username-input" class="w-full p-3 rounded-xl themed-input focus:outline-none focus:ring-2 focus:ring-violet-500" placeholder="Ingresa tu usuario">
+            </div>
+            <div class="mb-4">
+                <label for="password-input" class="block text-sm font-medium text-gray-400 mb-2">Contraseña</label>
+                <input type="password" id="password-input" class="w-full p-3 rounded-xl themed-input focus:outline-none focus:ring-2 focus:ring-violet-500" placeholder="Ingresa la contraseña">
+            </div>
+            <button id="login-button" class="w-full py-3 px-4 themed-button themed-bg-main-button themed-hover-main-button text-white font-bold rounded-xl transition-colors duration-200">
+                Iniciar Sesión
+            </button>
+            <div id="login-message" class="mt-4 text-center text-red-400"></div>
+        </div>
+
+        <!-- User Dashboard -->
+        <div id="user-dashboard" class="hidden w-full container p-4 space-y-8">
+            <header class="text-center py-8">
+                <h1 class="text-4xl font-extrabold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">¡Bienvenido, <span id="user-name"></span>!</h1>
+                <p class="mt-2 text-xl text-gray-400">Aquí están tus tareas para esta semana.</p>
+            </header>
+
+            <section id="user-tasks-section" class="themed-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-4 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Mis Tareas</h2>
+                <div id="tasks-list" class="space-y-4">
+                    <!-- Tareas dinámicas -->
+                </div>
+            </section>
+
+            <section id="lab-section" class="themed-card p-8 rounded-2xl space-y-8 hidden">
+                <h2 class="text-3xl font-bold text-center themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Laboratorio (Editor de Contenido)</h2>
+                <div class="space-y-6">
+                    <div>
+                        <label for="main-title" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Título Principal</label>
+                        <input type="text" id="main-title" class="w-full p-3 rounded-xl themed-input">
+                    </div>
+                    <div>
+                        <label for="sub-title" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Subtítulo</label>
+                        <textarea id="sub-title" class="w-full p-3 rounded-xl themed-input h-24"></textarea>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="creator-video" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">URL del Video</label>
+                            <input type="url" id="creator-video" class="w-full p-3 rounded-xl themed-input">
+                        </div>
+                        <div>
+                            <label for="creator-text" class="block text-lg font-semibold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600 mb-2">Descripción del Creador</label>
+                            <textarea id="creator-text" class="w-full p-3 rounded-xl themed-input h-24"></textarea>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Principios</h3>
+                        <div id="principles-container" class="space-y-4"></div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Creadores</h3>
+                        <div id="creators-container" class="space-y-4"></div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <button id="save-button" class="w-full py-3 px-4 themed-button themed-bg-main-button themed-hover-main-button text-white font-bold rounded-xl transition-colors duration-200">
+                        Guardar Cambios
+                    </button>
+                    <button id="go-to-home-button" class="w-full py-3 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button text-white font-bold rounded-xl transition-colors duration-200">
+                        Ver Página Principal
+                    </button>
+                </div>
+                <div id="admin-message" class="mt-4 text-center text-green-400"></div>
+            </section>
+
+            <button id="logout-button" class="mt-8 py-2 px-4 themed-button themed-bg-secondary-button themed-hover-secondary-button font-bold rounded-xl">Cerrar Sesión</button>
+        </div>
+
+        <!-- Home Page (Página Pública) -->
+        <div id="home-page" class="hidden w-full container p-4 space-y-16">
+            <section id="welcome-section" class="text-center pt-16 pb-12 themed-card rounded-3xl themed-title-glow transition-all duration-500">
+                <h1 id="home-main-title" class="text-5xl md:text-6xl font-extrabold mb-4 text-white"></h1>
+                <p id="home-sub-title" class="text-lg md:text-xl max-w-2xl mx-auto text-gray-300"></p>
+            </section>
+            <section class="grid lg:grid-cols-2 gap-8 items-center themed-card p-8 rounded-3xl">
+                <div class="video-wrapper">
+                    <video id="home-creator-video" class="w-full rounded-2xl" controls autoplay loop muted></video>
+                </div>
+                <div class="text-center lg:text-left">
+                    <h2 class="text-4xl font-bold themed-title-gradient bg-gradient-to-r from-violet-400 to-fuchsia-500 mb-4">El Porqué de Nuestro Estudio</h2>
+                    <p id="home-creator-text" class="text-gray-300 leading-relaxed"></p>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Nuestros Principios</h2>
+                <div id="home-principles-container" class="grid md:grid-cols-3 gap-8"></div>
+            </section>
+            <section>
+                <h2 class="text-4xl font-bold text-center mb-10 themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">El Equipo de Pixel Creativo</h2>
+                <div id="home-creators-container" class="grid md:grid-cols-3 gap-8"></div>
+            </section>
+            <footer class="text-center py-8">
+                <button id="go-to-login-button" class="py-2 px-4 themed-button themed-bg-main-button themed-hover-main-button font-bold rounded-xl transition-colors duration-200">
+                    Acceso Staff
+                </button>
+                <p class="mt-4 text-gray-500">&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
+            </footer>
+        </div>
     </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
+
+        setLogLevel('debug');
+
+        // Firestore constants
+        const __app_id = typeof window.__app_id !== 'undefined' ? window.__app_id : 'default-app-id';
+        const __firebase_config = typeof window.__firebase_config !== 'undefined' ? window.__firebase_config : '{}';
+        const __initial_auth_token = typeof window.__initial_auth_token !== 'undefined' ? window.__initial_auth_token : '';
+        const PUBLIC_DATA_PATH = `/artifacts/${__app_id}/public/data/site-content`;
+        
+        let db;
+        let auth;
+        let isInitialized = false;
+
+        // User credentials and data. In a real app, this would be in a database.
+        const users = {
+            "Matias": {
+                password: "magic-staff",
+                role: "Coordinador y Diseñador",
+                tasks: [
+                    "Diseñar la narrativa visual y las estrategias de contenido.",
+                    "Gestionar el portafolio y los testimonios de clientes.",
+                    "Preparar la Promo Mensual y el contenido para su difusión.",
+                    "Liderar la sección de 'Laboratorio' para editar la página."
+                ]
+            },
+            "Lolo": {
+                password: "lolo-nit",
+                role: "Estratega Digital",
+                tasks: [
+                    "Investigar nuevas tendencias y herramientas digitales para el estudio.",
+                    "Optimizar la presencia online de Pixel Creativo.",
+                    "Asistir en la creación de contenido para la 'Alquimia de la Variedad'.",
+                    "Analizar las métricas de rendimiento de la página web."
+                ]
+            },
+            "Mar": {
+                password: "REspadas25",
+                role: "Estratega Social",
+                tasks: [
+                    "Liderar la difusión viral y el marketing de valor en redes sociales.",
+                    "Supervisar las misiones de los embajadores del equipo.",
+                    "Generar contenido para mantener el 'efecto kiosco' en nuestros canales.",
+                    "Asegurar que cada publicación conecte con la audiencia."
+                ]
+            }
+        };
+
+        // UI elements
+        const themeSelectorScreen = document.getElementById('theme-selector');
+        const loginScreen = document.getElementById('login-screen');
+        const userDashboard = document.getElementById('user-dashboard');
+        const homePage = document.getElementById('home-page');
+        const loadingScreen = document.getElementById('loading-screen');
+
+        const usernameInput = document.getElementById('username-input');
+        const passwordInput = document.getElementById('password-input');
+        const loginButton = document.getElementById('login-button');
+        const loginMessage = document.getElementById('login-message');
+
+        const userNameDisplay = document.getElementById('user-name');
+        const tasksList = document.getElementById('tasks-list');
+        const labSection = document.getElementById('lab-section');
+
+        const saveButton = document.getElementById('save-button');
+        const adminMessage = document.getElementById('admin-message');
+
+        // Themed styles
+        const themes = {
+            'dark-pixel': {
+                '--bg-color': '#121212',
+                '--text-color': '#e0e0e0',
+                '--card-bg-color': '#1a1523',
+                '--border-color': '#6b21a8',
+                '--input-bg-color': '#2c253d',
+                '--input-border-color': '#4a3e63',
+                '--button-bg-color': '#6b21a8',
+                '--button-hover-bg-color': '#8b5cf6',
+                '--button-text-color': '#ffffff',
+                '--glow-color': '#6b21a8'
+            },
+            'blue-sky': {
+                '--bg-color': '#e6eef6',
+                '--text-color': '#1f2937',
+                '--card-bg-color': '#f3f4f6',
+                '--border-color': '#93c5fd',
+                '--input-bg-color': '#d1d5db',
+                '--input-border-color': '#9ca3af',
+                '--button-bg-color': '#3b82f6',
+                '--button-hover-bg-color': '#2563eb',
+                '--button-text-color': '#ffffff',
+                '--glow-color': '#3b82f6'
+            }
+        };
+
+        // Content structure (default)
+        let content = {
+            mainTitle: "Pixel Creativo",
+            subTitle: "Creamos narrativas visuales y estrategias de contenido que conectan con tu audiencia y potencian tu presencia digital.",
+            creatorVideo: "https://placehold.co/1080x1920/1a1523/6b21a8?text=Video%20del%20creador",
+            creatorText: "En Pixel Creativo, transformamos ideas en impacto visual. Creemos que cada emprendimiento tiene una historia única que merece ser contada de forma inolvidable. Te ayudamos a conectar con tu audiencia y potenciar tu presencia digital con diseños que realmente funcionan.",
+            principles: [
+                { icon: "🎨", title: "Diseño con Propósito", description: "Cada pieza es creada para contar una historia y tener un objetivo claro." },
+                { icon: "🎯", title: "Servicios 'Listos para Publicar'", description: "Entregamos productos optimizados y listos para su uso inmediato, ahorrándote tiempo." },
+                { icon: "💡", title: "Asesoría y Acompañamiento", description: "Brindamos una guía con sugerencias para que puedas usar el material de forma autónoma." }
+            ],
+            creators: [
+                { name: "Matías", role: "Coordinador y Diseñador", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Matias" },
+                { name: "Mar", role: "Estratega Social", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Mar" },
+                { name: "Valentín", role: "Embajador Pixel", photo: "https://placehold.co/500x500/1a1523/6b21a8?text=Valentin" }
+            ]
+        };
+
+        // --- THEME LOGIC ---
+        function applyTheme(themeName) {
+            const theme = themes[themeName];
+            if (theme) {
+                for (const [key, value] of Object.entries(theme)) {
+                    document.documentElement.style.setProperty(key, value);
+                }
+                localStorage.setItem('pixel-theme', themeName);
+            }
+        }
+
+        document.querySelectorAll('[data-theme]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const themeName = e.target.closest('button').dataset.theme;
+                applyTheme(themeName);
+                showScreen('login-screen');
+            });
+        });
+
+        // --- UI & DATA FUNCTIONS ---
+        function showScreen(screenId) {
+            loadingScreen.classList.add('hidden');
+            themeSelectorScreen.classList.add('hidden');
+            loginScreen.classList.add('hidden');
+            userDashboard.classList.add('hidden');
+            homePage.classList.add('hidden');
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        function renderHomePage(data) {
+            document.getElementById('home-main-title').textContent = data.mainTitle;
+            document.getElementById('home-sub-title').textContent = data.subTitle;
+            
+            const videoElement = document.getElementById('home-creator-video');
+            videoElement.src = data.creatorVideo;
+            
+            document.getElementById('home-creator-text').textContent = data.creatorText;
+
+            const principlesContainer = document.getElementById('home-principles-container');
+            principlesContainer.innerHTML = '';
+            data.principles.forEach(p => {
+                const card = document.createElement('div');
+                card.className = "themed-card p-6 rounded-2xl text-center hover:scale-105 transition-transform duration-300";
+                card.innerHTML = `<div class="text-5xl mb-4">${p.icon}</div><h3 class="text-xl font-semibold mb-2">${p.title}</h3><p class="text-gray-400">${p.description}</p>`;
+                principlesContainer.appendChild(card);
+            });
+
+            const creatorsContainer = document.getElementById('home-creators-container');
+            creatorsContainer.innerHTML = '';
+            data.creators.forEach(c => {
+                const card = document.createElement('div');
+                card.className = "themed-card p-6 rounded-2xl text-center";
+                card.innerHTML = `<img src="${c.photo}" onerror="this.src='https://placehold.co/500x500/1a1523/6b21a8?text=Imagen+no+encontrada';" alt="${c.name}" class="rounded-full w-32 h-32 mx-auto mb-4 border-2 border-violet-700 themed-title-glow"><h3 class="text-2xl font-bold">${c.name}</h3><p class="text-gray-400">${c.role}</p>`;
+                creatorsContainer.appendChild(card);
+            });
+        }
+
+        function renderUserDashboard(user) {
+            userNameDisplay.textContent = user.username;
+            tasksList.innerHTML = '';
+            user.tasks.forEach(task => {
+                const li = document.createElement('div');
+                li.className = "themed-card p-4 rounded-xl flex items-center space-x-4";
+                li.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <p>${task}</p>
+                `;
+                tasksList.appendChild(li);
+            });
+            if (user.username === "Matias") {
+                labSection.classList.remove('hidden');
+                renderAdminPanel(content);
+            } else {
+                labSection.classList.add('hidden');
+            }
+        }
+
+        function renderAdminPanel(data) {
+            document.getElementById('main-title').value = data.mainTitle;
+            document.getElementById('sub-title').value = data.subTitle;
+            document.getElementById('creator-video').value = data.creatorVideo;
+            document.getElementById('creator-text').value = data.creatorText;
+
+            const principlesContainer = document.getElementById('principles-container');
+            principlesContainer.innerHTML = '';
+            data.principles.forEach((p, index) => {
+                const principleDiv = document.createElement('div');
+                principleDiv.className = "themed-card p-4 rounded-xl space-y-2";
+                principleDiv.innerHTML = `
+                    <h4 class="text-lg font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Principio ${index + 1}</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <input type="text" placeholder="Ícono (ej. 🎨)" class="p-2 rounded themed-input" data-type="principle-icon" data-index="${index}" value="${p.icon}">
+                        <input type="text" placeholder="Título" class="p-2 rounded col-span-2 themed-input" data-type="principle-title" data-index="${index}" value="${p.title}">
+                    </div>
+                    <textarea placeholder="Descripción" class="p-2 rounded themed-input w-full h-24" data-type="principle-description" data-index="${index}">${p.description}</textarea>
+                `;
+                principlesContainer.appendChild(principleDiv);
+            });
+
+            const creatorsContainer = document.getElementById('creators-container');
+            creatorsContainer.innerHTML = '';
+            data.creators.forEach((c, index) => {
+                const creatorDiv = document.createElement('div');
+                creatorDiv.className = "themed-card p-4 rounded-xl space-y-2";
+                creatorDiv.innerHTML = `
+                    <h4 class="text-lg font-bold themed-title-gradient bg-gradient-to-r from-purple-400 to-pink-600">Creador ${index + 1}</h4>
+                    <input type="text" placeholder="Nombre" class="p-2 rounded themed-input w-full" data-type="creator-name" data-index="${index}" value="${c.name}">
+                    <input type="text" placeholder="Rol" class="p-2 rounded themed-input w-full" data-type="creator-role" data-index="${index}" value="${c.role}">
+                    <input type="text" placeholder="URL de la Foto" class="p-2 rounded themed-input w-full" data-type="creator-photo" data-index="${index}" value="${c.photo}">
+                `;
+                creatorsContainer.appendChild(creatorDiv);
+            });
+        }
+
+        function getAdminData() {
+            const newContent = {
+                mainTitle: document.getElementById('main-title').value,
+                subTitle: document.getElementById('sub-title').value,
+                creatorVideo: document.getElementById('creator-video').value,
+                creatorText: document.getElementById('creator-text').value,
+                principles: [],
+                creators: []
+            };
+
+            document.querySelectorAll('[data-type="principle-title"]').forEach(input => {
+                const index = input.dataset.index;
+                const icon = document.querySelector(`[data-type="principle-icon"][data-index="${index}"]`).value;
+                const description = document.querySelector(`[data-type="principle-description"][data-index="${index}"]`).value;
+                newContent.principles.push({ icon, title: input.value, description });
+            });
+
+            document.querySelectorAll('[data-type="creator-name"]').forEach(input => {
+                const index = input.dataset.index;
+                const role = document.querySelector(`[data-type="creator-role"][data-index="${index}"]`).value;
+                const photo = document.querySelector(`[data-type="creator-photo"][data-index="${index}"]`).value;
+                newContent.creators.push({ name: input.value, role, photo });
+            });
+            return newContent;
+        }
+
+        // --- CORE LOGIC & EVENT LISTENERS ---
+        async function initializeAndLoad() {
+            try {
+                const firebaseConfig = JSON.parse(__firebase_config);
+                if (Object.keys(firebaseConfig).length === 0) {
+                    console.error("Firebase config is empty. Cannot initialize.");
+                    renderHomePage(content);
+                    showScreen('home-page');
+                    return;
+                }
+
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                if (__initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                    console.log("Signed in with custom token.");
+                } else {
+                    await signInAnonymously(auth);
+                    console.log("Signed in anonymously.");
+                }
+
+                const docRef = doc(db, PUBLIC_DATA_PATH, "main");
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    content = docSnap.data();
+                    console.log("Data loaded from Firestore.");
+                } else {
+                    console.log("No data found, using default content.");
+                }
+                
+                isInitialized = true;
+                const savedTheme = localStorage.getItem('pixel-theme') || 'dark-pixel';
+                applyTheme(savedTheme);
+                showScreen('home-page');
+            } catch (e) {
+                console.error("Error initializing Firebase or loading data:", e);
+                renderHomePage(content);
+                showScreen('home-page');
+            } finally {
+                loadingScreen.classList.add('hidden');
+                // First time load logic
+                if (!localStorage.getItem('pixel-theme')) {
+                    showScreen('theme-selector');
+                } else {
+                    showScreen('home-page');
+                }
+            }
+        }
+
+        loginButton.addEventListener('click', () => {
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+            const user = users[username];
+
+            if (user && user.password === password) {
+                renderUserDashboard({ username, tasks: user.tasks });
+                showScreen('user-dashboard');
+                loginMessage.textContent = '';
+            } else {
+                loginMessage.textContent = 'Usuario o contraseña incorrectos.';
+            }
+        });
+
+        saveButton.addEventListener('click', async () => {
+            const newContent = getAdminData();
+            const docRef = doc(db, PUBLIC_DATA_PATH, "main");
+            
+            try {
+                await setDoc(docRef, newContent);
+                content = newContent;
+                adminMessage.textContent = "¡Cambios guardados con éxito!";
+                adminMessage.classList.remove('text-red-400');
+                adminMessage.classList.add('text-green-400');
+                console.log("Document successfully written!");
+            } catch (e) {
+                adminMessage.textContent = "Error al guardar: " + e.message;
+                adminMessage.classList.remove('text-green-400');
+                adminMessage.classList.add('text-red-400');
+                console.error("Error writing document: ", e);
+            }
+        });
+
+        document.getElementById('go-to-home-button').addEventListener('click', () => {
+            renderHomePage(content);
+            showScreen('home-page');
+        });
+        document.getElementById('go-to-login-button').addEventListener('click', () => {
+            showScreen('login-screen');
+            usernameInput.value = '';
+            passwordInput.value = '';
+            loginMessage.textContent = '';
+        });
+        document.getElementById('logout-button').addEventListener('click', () => {
+            renderHomePage(content);
+            showScreen('home-page');
+        });
+
+        window.onload = initializeAndLoad;
+    </script>
+
 </body>
 </html>
