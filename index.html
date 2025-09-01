@@ -25,6 +25,23 @@
         .header-bg {
             background-color: var(--primary-blue);
         }
+        
+        /* Animación para el logo */
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .logo-container {
+            position: relative;
+            display: inline-block;
+        }
+        .logo-container img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadeInScale 1s ease-out forwards;
+        }
     </style>
 </head>
 <body class="antialiased text-gray-800">
@@ -33,11 +50,15 @@
     <div class="min-h-screen flex flex-col items-center justify-center p-4">
         <main class="w-full max-w-4xl themed-card rounded-3xl shadow-2xl overflow-hidden my-8">
 
-            <!-- Sección de Cabecera (simulando el logo del documento) -->
+            <!-- Sección de Cabecera -->
             <div class="header-bg text-white p-8 sm:p-12 text-center rounded-t-3xl">
-                <h1 class="text-3xl sm:text-4xl font-extrabold mb-1 tracking-wide">
-                    Pixel <span class="text-orange-400">Creativo</span>
-                </h1>
+                <div class="logo-container">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold mb-1 tracking-wide">
+                        <span class="text-white">Pixel</span> <span class="text-orange-400">Creativo</span>
+                    </h1>
+                    <!-- Imagen del logo (Editable: nombre: logo.svg, dimensiones: 50x50) -->
+                    <img src="https://placehold.co/50x50/ff8c42/FFFFFF?text=Logo" alt="Logo de Pixel Creativo" class="w-12 h-12" id="logo-image">
+                </div>
                 <h2 class="text-xl sm:text-2xl font-medium opacity-90 mt-2">
                     Tu Impulso Digital
                 </h2>
@@ -102,7 +123,7 @@
                         Planes de Diseño y Contenido
                     </h3>
                     <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-6">
-                        Estos planes están pensados para darte ese empuje visual que tu emprendimiento necesita, asegurando contenido fresco y estratégico.
+                        Estos planes están pensados para darte ese empuje visual que tu emprendimiento necesita, asegurando contenido fresco y estratégico. La renovación de los planes es **mensual**, sin contratos de permanencia.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         
@@ -162,7 +183,7 @@
                         Flexibilidad y Pagos
                     </h3>
                     <p class="text-sm sm:text-base opacity-90 leading-relaxed">
-                        Entendemos la importancia de cuidar la economía de tu emprendimiento. Por ello, el Paquete BÁSICO puede ser reactivado semana a semana. Para el resto de los planes, la renovación es mensual, sin contratos de permanencia.
+                        Entendemos la importancia de cuidar la economía de tu emprendimiento. Por ello, el Paquete BÁSICO (con o sin CM) puede ser reactivado semana a semana. Para el resto de los planes, la renovación es mensual, sin contratos de permanencia. Si en algún momento no estás satisfecho con los resultados, puedes optar por no renovar. La flexibilidad es clave en nuestra forma de trabajar, buscando siempre que te sientas cómodo y respaldado en tu decisión de seguir con nosotros.
                     </p>
                     <div class="mt-4">
                         <h4 class="font-semibold text-lg" style="color: var(--accent-orange);">Modalidad de Pago</h4>
@@ -208,14 +229,38 @@
                 
             </div>
             
-            <!-- Pie de página con el enlace para staff -->
-            <footer class="text-center p-6 text-sm opacity-60">
-                <a href="#" class="hover:underline">Acceso Staff</a>
-                <p class="mt-2">Validez de Precios: Agosto 2025. Todos los precios están expresados en Pesos Argentinos (ARS).</p>
+            <!-- Pie de página con los botones de acción -->
+            <footer class="flex flex-col sm:flex-row items-center justify-center p-6 text-sm">
+                <a href="https://wa.me/c/5492617484266" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full text-white font-semibold shadow-lg transition-colors duration-300 text-center contact-button-animation" style="background-color: var(--primary-blue);">
+                    CONTÁCTANOS
+                </a>
+                <a href="#" class="w-full sm:w-auto px-6 py-3 mt-4 sm:mt-0 sm:ml-4 text-sm opacity-50 hover:opacity-100 transition-opacity duration-300 text-center">
+                    Acceso Staff
+                </a>
             </footer>
 
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoImage = document.getElementById('logo-image');
+            const logoContainer = document.querySelector('.logo-container');
+            const h1Element = logoContainer.querySelector('h1');
+
+            // Posicionar la imagen al centro del H1 para la animación
+            const h1Rect = h1Element.getBoundingClientRect();
+            logoImage.style.top = `${h1Rect.height / 2}px`;
+            logoImage.style.left = `${h1Rect.width / 2}px`;
+            
+            // Reajustar la posición del logo si la ventana cambia de tamaño
+            window.addEventListener('resize', () => {
+                const newH1Rect = h1Element.getBoundingClientRect();
+                logoImage.style.top = `${newH1Rect.height / 2}px`;
+                logoImage.style.left = `${newH1Rect.width / 2}px`;
+            });
+        });
+    </script>
 
 </body>
 </html>
