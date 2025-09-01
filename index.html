@@ -7,242 +7,215 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter para un look moderno -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #1f2937; /* Azul profundo del logo */
-            --accent-orange: #ff8c42; /* Naranja vibrante del logo */
-            --background-light: #f3f4f6;
-            --text-light: #1f2937;
-            --card-light: #ffffff;
-
-            --background-dark: #121212;
-            --text-dark: #e0e0e0;
-            --card-dark: #1f2937;
+            --primary-blue: #1f2937;
+            --accent-orange: #ff8c42;
         }
-
-        /* Estilos base para el tema claro */
-        body.light-theme {
-            background-color: var(--background-light);
-            color: var(--text-light);
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
         }
-        .light-theme .themed-card {
-            background-color: var(--card-light);
+        .themed-card {
+            background-color: #ffffff;
             border: 1px solid #e5e7eb;
         }
-
-        /* Estilos para el tema oscuro */
-        body.dark-theme {
-            background-color: var(--background-dark);
-            color: var(--text-dark);
-        }
-        .dark-theme .themed-card {
-            background-color: var(--card-dark);
-            border: 1px solid #374151;
-        }
-
-        /* Animación para el botón flotante */
-        @keyframes bounce-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        .contact-button-animation {
-            animation: bounce-pulse 2s infinite;
+        .header-bg {
+            background-color: var(--primary-blue);
         }
     </style>
 </head>
-<body class="light-theme font-sans">
+<body class="antialiased text-gray-800">
 
-    <!-- Contenedor principal centrado -->
-    <div class="min-h-screen flex items-center justify-center p-4">
+    <!-- Contenedor Principal -->
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <main class="w-full max-w-4xl themed-card rounded-3xl shadow-2xl overflow-hidden my-8">
 
-        <!-- Tarjeta principal del sitio -->
-        <div class="themed-card w-full max-w-4xl rounded-2xl shadow-2xl p-8 md:p-12">
-            
-            <!-- Encabezado y logo de Pixel Creativo -->
-            <header class="text-center mb-12">
-                <h1 class="text-5xl md:text-6xl font-extrabold mb-2" style="color: var(--primary-blue);">
-                    Pixel <span style="color: var(--accent-orange);">Creativo</span>
+            <!-- Sección de Cabecera (simulando el logo del documento) -->
+            <div class="header-bg text-white p-8 sm:p-12 text-center rounded-t-3xl">
+                <h1 class="text-3xl sm:text-4xl font-extrabold mb-1 tracking-wide">
+                    Pixel <span class="text-orange-400">Creativo</span>
                 </h1>
-                <p class="text-lg md:text-xl font-medium" style="color: var(--text-color);">
+                <h2 class="text-xl sm:text-2xl font-medium opacity-90 mt-2">
+                    Tu Impulso Digital
+                </h2>
+                <p class="text-sm sm:text-base mt-2 opacity-75">
                     Transformamos ideas en impacto visual.
                 </p>
-                <!-- Botón para cambiar de tema -->
-                <button id="theme-toggle" class="mt-4 px-4 py-2 text-sm font-semibold rounded-full border-2" style="border-color: var(--primary-blue); color: var(--primary-blue);">
-                    Cambiar Tema
-                </button>
-            </header>
-
-            <!-- Sección: Nuestra Filosofía -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--accent-orange);">Nuestra Alquimia Creativa</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    
-                    <!-- Pilar 1: Diseño con Propósito -->
-                    <div class="themed-card p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
-                        <div class="text-5xl mb-4" style="color: var(--accent-orange);">🎨</div>
-                        <h3 class="text-xl font-bold mb-2">Diseño con Propósito</h3>
-                        <p class="text-sm opacity-80">Cada pieza visual está pensada para contar una historia y alcanzar un objetivo claro.</p>
-                    </div>
-
-                    <!-- Pilar 2: Servicios "Listos para Publicar" -->
-                    <div class="themed-card p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
-                        <div class="text-5xl mb-4" style="color: var(--accent-orange);">🚀</div>
-                        <h3 class="text-xl font-bold mb-2">Listos para Publicar</h3>
-                        <p class="text-sm opacity-80">Entregamos productos optimizados y listos para usar en tus redes sociales y web.</p>
-                    </div>
-
-                    <!-- Pilar 3: Asesoría Estratégica -->
-                    <div class="themed-card p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
-                        <div class="text-5xl mb-4" style="color: var(--accent-orange);">💡</div>
-                        <h3 class="text-xl font-bold mb-2">Asesoría Estratégica</h3>
-                        <p class="text-sm opacity-80">Te guiamos en la creación de narrativas que conectan con tu audiencia y potencian tu marca.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección: Planes y Precios -->
-            <section class="mb-12">
-                <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--accent-orange);">Elige tu Plan</h2>
-                <div class="space-y-6">
-                    <!-- Contenedor para la explicación del Community Manager -->
-                    <div class="themed-card p-4 rounded-lg">
-                        <p class="text-sm italic">
-                            El <strong class="font-bold">Community Manager (CM)</strong> se encarga de la gestión diaria de tus redes, creando una comunidad activa alrededor de tu marca.
-                        </p>
-                    </div>
-
-                    <!-- Planes -->
-                    <div class="themed-card p-6 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Plan Básico</h3>
-                        <p class="text-sm opacity-80 mb-4">Ideal para comenzar y establecer tu presencia digital.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Sin CM -->
-                            <div class="themed-card p-4 rounded-lg">
-                                <h4 class="text-lg font-bold">Sin CM</h4>
-                                <p class="text-2xl font-extrabold mt-1" style="color: var(--accent-orange);">ARS$ 15.000</p>
-                                <ul class="list-disc list-inside text-sm mt-2 opacity-90">
-                                    <li>4 publicaciones semanales</li>
-                                    <li>1 Reel narrativo mensual</li>
-                                </ul>
-                            </div>
-                            <!-- Con CM -->
-                            <div class="themed-card p-4 rounded-lg">
-                                <h4 class="text-lg font-bold">Con CM</h4>
-                                <p class="text-2xl font-extrabold mt-1" style="color: var(--accent-orange);">ARS$ 25.000</p>
-                                <ul class="list-disc list-inside text-sm mt-2 opacity-90">
-                                    <li>Todo lo del Plan Básico</li>
-                                    <li>Gestión de comunidad y respuestas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Planes avanzados y premium podrían seguir un formato similar aquí -->
-                    <!-- Ejemplo de Plan Avanzado -->
-                    <div class="themed-card p-6 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Plan Avanzado</h3>
-                        <p class="text-sm opacity-80 mb-4">Para emprendimientos que buscan un crecimiento sostenido.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Sin CM -->
-                            <div class="themed-card p-4 rounded-lg">
-                                <h4 class="text-lg font-bold">Sin CM</h4>
-                                <p class="text-2xl font-extrabold mt-1" style="color: var(--accent-orange);">ARS$ 30.000</p>
-                                <ul class="list-disc list-inside text-sm mt-2 opacity-90">
-                                    <li>6 publicaciones semanales</li>
-                                    <li>2 Reels narrativos mensuales</li>
-                                    <li>Asesoría de estrategia</li>
-                                </ul>
-                            </div>
-                            <!-- Con CM -->
-                            <div class="themed-card p-4 rounded-lg">
-                                <h4 class="text-lg font-bold">Con CM</h4>
-                                <p class="text-2xl font-extrabold mt-1" style="color: var(--accent-orange);">ARS$ 45.000</p>
-                                <ul class="list-disc list-inside text-sm mt-2 opacity-90">
-                                    <li>Todo lo del Plan Avanzado</li>
-                                    <li>Gestión de comunidad y respuestas</li>
-                                    <li>Asesoría de estrategia</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ejemplo de Plan Premium -->
-                    <div class="themed-card p-6 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Plan Premium</h3>
-                        <p class="text-sm opacity-80 mb-4">La solución integral para maximizar tu impacto.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Sin CM -->
-                            <div class="themed-card p-4 rounded-lg">
-                                <h4 class="text-lg font-bold">Sin CM</h4>
-                                <p class="text-2xl font-extrabold mt-1" style="color: var(--accent-orange);">ARS$ 50.000</p>
-                                <ul class="list-disc list-inside text-sm mt-2 opacity-90">
-                                    <li>Publicaciones diarias</li>
-                                    <li>4 Reels narrativos mensuales</li>
-                                    <li>Consultoría y reportes</li>
-                                </ul>
-                            </div>
-                            <!-- Con CM -->
-                            <div class="themed-card p-4 rounded-lg">
-                                <h4 class="text-lg font-bold">Con CM</h4>
-                                <p class="text-2xl font-extrabold mt-1" style="color: var(--accent-orange);">ARS$ 70.000</p>
-                                <ul class="list-disc list-inside text-sm mt-2 opacity-90">
-                                    <li>Todo lo del Plan Premium</li>
-                                    <li>Gestión de comunidad y respuestas</li>
-                                    <li>Consultoría y reportes</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Botones de Acción -->
-            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-                <a href="#" class="w-full sm:w-auto px-6 py-3 rounded-full text-white font-semibold shadow-lg transition-colors duration-300 text-center contact-button-animation" style="background-color: var(--primary-blue);">
-                    CONTÁCTANOS
-                </a>
-                <a href="#" class="w-full sm:w-auto px-6 py-3 text-sm opacity-50 hover:opacity-100 transition-opacity duration-300 text-center">
-                    Acceso Staff
-                </a>
             </div>
 
-            <!-- Pie de página -->
-            <footer class="text-center text-sm mt-12 opacity-60">
-                © 2025 Pixel Creativo. Todos los derechos reservados.
+            <!-- Contenido del Presupuesto -->
+            <div class="p-8 sm:p-12 space-y-12">
+
+                <!-- Sección: ¡Tu Emprendimiento, Nuestra Historia! -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Nuestra Propuesta de Valor
+                    </h3>
+                    <p class="text-sm sm:text-base opacity-90 leading-relaxed">
+                        En Pixel Creativo, creemos que cada emprendimiento tiene una historia única que merece ser contada de forma inolvidable. Te ayudamos a conectar con tu audiencia y potenciar tu presencia digital con diseños que realmente funcionan y una estrategia clara, enfocada en la creación de narrativas visuales y estrategias de contenido que resuenan con la autenticidad de tu proyecto.
+                    </p>
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-start">
+                            <span class="text-xl mr-3">💡</span>
+                            <div>
+                                <h4 class="font-semibold">Diseño con Propósito</h4>
+                                <p class="text-sm opacity-80">Cada pieza es creada para contar una historia y tener un objetivo claro.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-xl mr-3">🚀</span>
+                            <div>
+                                <h4 class="font-semibold">Servicios "Listos para Publicar"</h4>
+                                <p class="text-sm opacity-80">Entregamos productos optimizados y listos para su uso inmediato.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-xl mr-3">🗺️</span>
+                            <div>
+                                <h4 class="font-semibold">Asesoría y Acompañamiento ("Hoja de Ruta")</h4>
+                                <p class="text-sm opacity-80">Brindamos una guía con sugerencias de frecuencia de publicación y una visión estratégica para que puedas utilizar el material de forma autónoma.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-xl mr-3">🎨</span>
+                            <div>
+                                <h4 class="font-semibold">Identidad Visual</h4>
+                                <p class="text-sm opacity-80">Apoyo en logos, paletas de colores y tipografías.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-xl mr-3">📢</span>
+                            <div>
+                                <h4 class="font-semibold">Difusión Viral Estratégica</h4>
+                                <p class="text-sm opacity-80">Potenciamos tu contenido a través de nuestros propios canales de WhatsApp y grupos de Facebook con fuerte presencia en Mendoza.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección: Planes y Precios -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Planes de Diseño y Contenido
+                    </h3>
+                    <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-6">
+                        Estos planes están pensados para darte ese empuje visual que tu emprendimiento necesita, asegurando contenido fresco y estratégico.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <!-- Tarjeta de Plan Básico -->
+                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete BÁSICO</h4>
+                            <p class="text-sm mb-4 opacity-80">Ideal para comenzar y establecer tu presencia.</p>
+                            <div class="space-y-4 text-center">
+                                <div class="bg-gray-100 p-3 rounded-md">
+                                    <p class="font-medium text-sm">Sin Community Manager</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 15.000</p>
+                                </div>
+                                <div class="bg-gray-100 p-3 rounded-md">
+                                    <p class="font-medium text-sm">Con Community Manager</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 25.000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta de Plan Avanzado -->
+                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete AVANZADO</h4>
+                            <p class="text-sm mb-4 opacity-80">Para un crecimiento sostenido y mayor impacto.</p>
+                            <div class="space-y-4 text-center">
+                                <div class="bg-gray-100 p-3 rounded-md">
+                                    <p class="font-medium text-sm">Sin Community Manager</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 30.000</p>
+                                </div>
+                                <div class="bg-gray-100 p-3 rounded-md">
+                                    <p class="font-medium text-sm">Con Community Manager</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 45.000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta de Plan Premium -->
+                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete PREMIUM</h4>
+                            <p class="text-sm mb-4 opacity-80">La solución integral para el máximo posicionamiento.</p>
+                            <div class="space-y-4 text-center">
+                                <div class="bg-gray-100 p-3 rounded-md">
+                                    <p class="font-medium text-sm">Sin Community Manager</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 50.000</p>
+                                </div>
+                                <div class="bg-gray-100 p-3 rounded-md">
+                                    <p class="font-medium text-sm">Con Community Manager</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 70.000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección: Flexibilidad y Pagos -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Flexibilidad y Pagos
+                    </h3>
+                    <p class="text-sm sm:text-base opacity-90 leading-relaxed">
+                        Entendemos la importancia de cuidar la economía de tu emprendimiento. Por ello, el Paquete BÁSICO puede ser reactivado semana a semana. Para el resto de los planes, la renovación es mensual, sin contratos de permanencia.
+                    </p>
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-lg" style="color: var(--accent-orange);">Modalidad de Pago</h4>
+                        <ul class="list-disc list-inside text-sm sm:text-base opacity-90 mt-2">
+                            <li>70% al iniciar el proyecto.</li>
+                            <li>30% al finalizar el trabajo (o al inicio de cada periodo para planes mensuales/semanales).</li>
+                        </ul>
+                        <p class="text-sm sm:text-base opacity-90 mt-4">
+                            Aceptamos pagos vía <strong class="font-bold">Mercado Pago</strong> y <strong class="font-bold">Cuenta del Banco Nación</strong>.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Sección: Contacto -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        ¡Hablemos de tu Proyecto!
+                    </h3>
+                    <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-4">
+                        ¿Listo para llevar tu emprendimiento al siguiente nivel? Queremos escuchar tu idea y crear algo increíble juntos.
+                    </p>
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">📞</span>
+                            <div>
+                                <p class="text-sm font-semibold">Matías (Coordinador y Diseñador): <span class="text-base font-bold text-gray-700">2617484266</span></p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">📞</span>
+                            <div>
+                                <p class="text-sm font-semibold">Mar (Estratega Social - Mendoza): <span class="text-base font-bold text-gray-700">2612904484</span></p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-3">📞</span>
+                            <div>
+                                <p class="text-sm font-semibold">Valentín (Embajador Pixel - San Juan): <span class="text-base font-bold text-gray-700">2645211394</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+            
+            <!-- Pie de página con el enlace para staff -->
+            <footer class="text-center p-6 text-sm opacity-60">
+                <a href="#" class="hover:underline">Acceso Staff</a>
+                <p class="mt-2">Validez de Precios: Agosto 2025. Todos los precios están expresados en Pesos Argentinos (ARS).</p>
             </footer>
-        </div>
+
+        </main>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggle = document.getElementById('theme-toggle');
-            const body = document.body;
-
-            // Función para alternar el tema
-            function toggleTheme() {
-                const isDark = body.classList.toggle('dark-theme');
-                if (isDark) {
-                    body.classList.remove('light-theme');
-                } else {
-                    body.classList.add('light-theme');
-                }
-                // Guardar la preferencia del usuario en el localStorage
-                localStorage.setItem('pixel-theme', isDark ? 'dark' : 'light');
-            }
-
-            // Aplicar el tema guardado al cargar la página
-            const savedTheme = localStorage.getItem('pixel-theme') || 'light';
-            if (savedTheme === 'dark') {
-                body.classList.add('dark-theme');
-                body.classList.remove('light-theme');
-            }
-
-            // Asignar el evento al botón
-            themeToggle.addEventListener('click', toggleTheme);
-        });
-    </script>
 </body>
 </html>
