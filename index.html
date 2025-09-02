@@ -25,40 +25,27 @@
         .header-bg {
             background-color: var(--primary-blue);
         }
-        
-        /* Animación para el logo */
-        @keyframes fadeInScale {
-            0% { opacity: 0; transform: scale(0.5) translate(-50%, -50%); }
-            100% { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+        .staff-bg {
+            background-color: #4b5563; /* Color oscuro para la sección de staff */
         }
-        .logo-container {
-            position: relative;
-            display: inline-block;
-        }
-        .logo-container img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            animation: fadeInScale 1s ease-out forwards;
-            /* Se ha corregido la animación moviendo el transform a los keyframes */
+        .staff-card {
+            background-color: #e5e7eb;
         }
     </style>
 </head>
 <body class="antialiased text-gray-800">
 
-    <!-- Contenedor Principal -->
-    <div class="min-h-screen flex flex-col items-center justify-center p-4">
-        <main class="w-full max-w-4xl themed-card rounded-3xl shadow-2xl overflow-hidden my-8">
+    <!-- Contenedor Principal de Vistas -->
+    <div id="app" class="min-h-screen flex flex-col items-center justify-center p-4">
+
+        <!-- Vista Pública: Presupuesto -->
+        <main id="public-view" class="w-full max-w-4xl themed-card rounded-3xl shadow-2xl overflow-hidden my-8">
 
             <!-- Sección de Cabecera -->
             <div class="header-bg text-white p-8 sm:p-12 text-center rounded-t-3xl">
-                <div class="logo-container">
-                    <h1 class="text-3xl sm:text-4xl font-extrabold mb-1 tracking-wide">
-                        <span class="text-white">Pixel</span> <span class="text-orange-400">Creativo</span>
-                    </h1>
-                    <!-- Imagen del logo (Editable: nombre: logo.svg, dimensiones: 50x50) -->
-                    <img src="https://placehold.co/50x50/ff8c42/FFFFFF?text=Logo" alt="Logo de Pixel Creativo" class="w-12 h-12" id="logo-image">
-                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold mb-1 tracking-wide">
+                    <span class="text-white">Pixel</span> <span class="text-orange-400">Creativo</span>
+                </h1>
                 <h2 class="text-xl sm:text-2xl font-medium opacity-90 mt-2">
                     Tu Impulso Digital
                 </h2>
@@ -69,14 +56,12 @@
 
             <!-- Contenido del Presupuesto -->
             <div class="p-8 sm:p-12 space-y-12">
-
-                <!-- Sección: ¡Tu Emprendimiento, Nuestra Historia! -->
                 <section>
                     <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
                         Nuestra Propuesta de Valor
                     </h3>
                     <p class="text-sm sm:text-base opacity-90 leading-relaxed">
-                        En Pixel Creativo, creemos que cada emprendimiento tiene una historia única que merece ser contada de forma inolvidable. Te ayudamos a conectar con tu audiencia y potenciar tu presencia digital con diseños que realmente funcionan y una estrategia clara, enfocada en la creación de narrativas visuales y estrategias de contenido que resuenan con la autenticidad de tu proyecto.
+                        En **Pixel Creativo** nos dedicamos a colaborar en la identidad visual de los emprendimientos. Te ayudamos a conectar con tu audiencia en redes sociales para encontrar a tus clientes y conocer toda una comunidad detrás. No importa si tu negocio es local; a través de nuestra estrategia, te ayudamos a **romper distancias** y a asegurar clientes en zonas aledañas.
                     </p>
                     <div class="mt-6 space-y-4">
                         <div class="flex items-start">
@@ -97,7 +82,7 @@
                             <span class="text-xl mr-3">🗺️</span>
                             <div>
                                 <h4 class="font-semibold">Asesoría y Acompañamiento ("Hoja de Ruta")</h4>
-                                <p class="text-sm opacity-80">Brindamos una guía con sugerencias de frecuencia de publicación y una visión estratégica para que puedas utilizar el material de forma autónoma.</p>
+                                <p class="text-sm opacity-80">Brindamos una guía con sugerencias de frecuencia de publicación y una visión estratégica.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -111,23 +96,21 @@
                             <span class="text-xl mr-3">📢</span>
                             <div>
                                 <h4 class="font-semibold">Difusión Viral Estratégica</h4>
-                                <p class="text-sm opacity-80">Potenciamos tu contenido a través de nuestros propios canales de WhatsApp y grupos de Facebook con fuerte presencia en Mendoza.</p>
+                                <p class="text-sm opacity-80">Potenciamos tu contenido a través de nuestros propios canales de WhatsApp y grupos de Facebook.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Sección: Planes y Precios -->
                 <section>
                     <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Planes de Diseño y Contenido
+                        Paquetes (Sin Community Manager)
                     </h3>
                     <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-6">
-                        Estos planes están pensados para darte ese empuje visual que tu emprendimiento necesita, asegurando contenido fresco y estratégico. La renovación de los planes es **mensual**, sin contratos de permanencia.
+                        Estos paquetes están pensados para darte ese empuje visual que tu emprendimiento necesita, asegurando contenido fresco y estratégico listo para publicar. La renovación de los paquetes es **mensual**, sin contratos de permanencia.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         
-                        <!-- Tarjeta de Plan Básico -->
                         <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                             <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete BÁSICO</h4>
                             <p class="text-sm mb-4 opacity-80">Ideal para comenzar y establecer tu presencia.</p>
@@ -136,14 +119,9 @@
                                     <p class="font-medium text-sm">Sin Community Manager</p>
                                     <p class="text-2xl font-extrabold mt-1">ARS$ 15.000</p>
                                 </div>
-                                <div class="bg-gray-100 p-3 rounded-md">
-                                    <p class="font-medium text-sm">Con Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 25.000</p>
-                                </div>
                             </div>
                         </div>
 
-                        <!-- Tarjeta de Plan Avanzado -->
                         <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                             <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete AVANZADO</h4>
                             <p class="text-sm mb-4 opacity-80">Perfecto para escalar tu presencia en redes y generar más impacto.</p>
@@ -155,7 +133,6 @@
                             </div>
                         </div>
 
-                        <!-- Tarjeta de Plan Premium -->
                         <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                             <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete PREMIUM</h4>
                             <p class="text-sm mb-4 opacity-80">La opción más completa para posicionar tu marca y lograr la máxima visibilidad.</p>
@@ -168,8 +145,29 @@
                         </div>
                     </div>
                 </section>
+                
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Planes (Con Community Manager)
+                    </h3>
+                    <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-6">
+                        Estos planes incluyen un servicio de **publicidad paga** y gestión profesional de tus redes, asegurando una presencia constante y atractiva para tu negocio. La renovación es **mensual**.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+                        
+                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete BÁSICO con CM</h4>
+                            <p class="text-sm mb-4 opacity-80">Ideal para comenzar y establecer tu presencia.</p>
+                            <div class="space-y-4 text-center">
+                                <div class="bg-gray-100 p-3 rounded-md">
+                                    <p class="font-medium text-sm">Con Community Manager</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 25.000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                <!-- Sección: Flexibilidad y Pagos -->
                 <section>
                     <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
                         Flexibilidad y Pagos
@@ -189,7 +187,6 @@
                     </div>
                 </section>
 
-                <!-- Sección: Contacto -->
                 <section>
                     <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
                         ¡Hablemos de tu Proyecto!
@@ -221,17 +218,316 @@
                 
             </div>
             
-            <!-- Pie de página con los botones de acción -->
             <footer class="flex flex-col sm:flex-row items-center justify-center p-6 text-sm">
                 <a href="https://wa.me/c/5492617484266" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full text-white font-semibold shadow-lg transition-colors duration-300 text-center contact-button-animation" style="background-color: var(--primary-blue);">
                     CONTÁCTANOS
                 </a>
-                <a href="#" class="w-full sm:w-auto px-6 py-3 mt-4 sm:mt-0 sm:ml-4 text-sm opacity-50 hover:opacity-100 transition-opacity duration-300 text-center">
+                <a href="#" id="staff-link" class="w-full sm:w-auto px-6 py-3 mt-4 sm:mt-0 sm:ml-4 text-sm opacity-50 hover:opacity-100 transition-opacity duration-300 text-center">
                     Acceso Staff
                 </a>
             </footer>
 
         </main>
+
+        <!-- Vista del Staff (Inicialmente oculta) -->
+        <main id="staff-view" class="hidden w-full max-w-4xl themed-card rounded-3xl shadow-2xl overflow-hidden my-8 staff-bg text-white">
+            <div class="header-bg p-8 text-center">
+                <h1 class="text-3xl font-extrabold mb-1 tracking-wide">
+                    <span class="text-white">Portal</span> <span class="text-orange-400">Staff</span>
+                </h1>
+                <h2 class="text-xl font-medium opacity-90 mt-2">
+                    Panel de Control Colaborativo
+                </h2>
+                <p class="text-sm opacity-75 mt-2">
+                    <span id="user-id-display"></span>
+                </p>
+            </div>
+            <div class="p-8 space-y-8 staff-card text-gray-800">
+
+                <!-- Sección de Metas Semanales -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Metas Semanales
+                    </h3>
+                    <div id="goals-container" class="space-y-4">
+                        <p class="text-sm">Cargando metas...</p>
+                    </div>
+                    
+                    <div id="add-goal-form" class="mt-6 p-4 border-2 border-gray-300 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-2">Agregar Nueva Meta</h4>
+                        <input type="text" id="goal-title" placeholder="Título de la meta" class="w-full p-2 border border-gray-300 rounded-md mb-2">
+                        <textarea id="goal-description" placeholder="Descripción detallada de la meta" rows="3" class="w-full p-2 border border-gray-300 rounded-md mb-2"></textarea>
+                        <button id="add-goal-button" class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600 transition-colors">Guardar Meta</button>
+                    </div>
+                </section>
+
+                <!-- Sección de Tareas -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Tareas del Equipo
+                    </h3>
+                    <div id="tasks-container" class="space-y-4">
+                        <p class="text-sm">Cargando tareas...</p>
+                    </div>
+                </section>
+                
+                <!-- Sección de Perfiles de Usuario -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
+                        Perfiles del Staff
+                    </h3>
+                    <div id="profiles-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <p class="text-sm">Cargando perfiles...</p>
+                    </div>
+                </section>
+                
+                <button id="logout-button" class="w-full mt-8 bg-red-500 text-white font-bold py-2 rounded-md hover:bg-red-600 transition-colors">Cerrar Sesión</button>
+            </div>
+        </main>
     </div>
+
+    <!-- Script de Firebase (Importante: debe ser tipo "module") -->
+    <script type="module">
+        // Importa los módulos de Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, collection, query, onSnapshot, addDoc, updateDoc, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Referencias a los elementos del DOM
+        const publicView = document.getElementById('public-view');
+        const staffView = document.getElementById('staff-view');
+        const staffLink = document.getElementById('staff-link');
+        const goalsContainer = document.getElementById('goals-container');
+        const tasksContainer = document.getElementById('tasks-container');
+        const profilesContainer = document.getElementById('profiles-container');
+        const addGoalButton = document.getElementById('add-goal-button');
+        const goalTitleInput = document.getElementById('goal-title');
+        const goalDescriptionInput = document.getElementById('goal-description');
+        const userIdDisplay = document.getElementById('user-id-display');
+        const logoutButton = document.getElementById('logout-button');
+
+        // Firestore paths
+        const publicDataPath = `/artifacts/${appId}/public/data`;
+        let privateDataPath = '';
+
+        // Definir los datos de los usuarios del staff
+        const staffUsers = {
+            'matias_uid': { name: 'Matías', role: 'Coordinador y Diseñador', phone: '2617484266', is_admin: true },
+            'mar_uid': { name: 'Mar', role: 'Estratega Social - Mendoza', phone: '2612904484', is_admin: false },
+            'valentin_uid': { name: 'Valentín', role: 'Embajador Pixel - San Juan', phone: '2645211394', is_admin: false }
+        };
+
+        // --- Funciones de Lógica y UI ---
+
+        // Función para cambiar de vista
+        function showView(viewId) {
+            publicView.classList.add('hidden');
+            staffView.classList.add('hidden');
+            if (viewId === 'public') {
+                publicView.classList.remove('hidden');
+            } else {
+                staffView.classList.remove('hidden');
+            }
+        }
+        
+        // Listener para la autenticación
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // El usuario está autenticado
+                const userId = user.uid;
+                userIdDisplay.textContent = `ID de Usuario: ${userId}`;
+                privateDataPath = `/artifacts/${appId}/users/${userId}`;
+
+                // Cargar datos de la base de datos
+                await setupUserInDB(userId);
+                setupRealtimeListeners();
+            } else {
+                // El usuario no está autenticado, redirigir a la vista pública
+                showView('public');
+            }
+        });
+
+        // Configurar el usuario en la base de datos
+        async function setupUserInDB(userId) {
+            const userDocRef = doc(db, `${privateDataPath}/profile/data`);
+            const userDocSnap = await getDoc(userDocRef);
+
+            if (!userDocSnap.exists()) {
+                const staffInfo = staffUsers[userId] || { name: 'Usuario', role: 'Staff', phone: 'N/A', is_admin: false };
+                await setDoc(userDocRef, {
+                    ...staffInfo,
+                    uid: userId
+                });
+                console.log("Documento de usuario creado.");
+            }
+        }
+
+        // Configurar los listeners de Firestore en tiempo real
+        function setupRealtimeListeners() {
+            // Listener para Metas Semanales
+            const goalsQuery = query(collection(db, `${publicDataPath}/goals`), orderBy('created_at', 'desc'), limit(5));
+            onSnapshot(goalsQuery, (querySnapshot) => {
+                goalsContainer.innerHTML = '';
+                if (querySnapshot.empty) {
+                    goalsContainer.innerHTML = '<p class="text-sm text-gray-500">No hay metas semanales definidas aún.</p>';
+                } else {
+                    querySnapshot.forEach((doc) => {
+                        const goal = doc.data();
+                        const goalElement = document.createElement('div');
+                        goalElement.className = 'p-4 rounded-lg shadow-sm staff-card';
+                        goalElement.innerHTML = `
+                            <h4 class="font-bold">${goal.title}</h4>
+                            <p class="text-sm mt-1">${goal.description}</p>
+                            <p class="text-xs text-gray-500 mt-2">Creado por: ${goal.created_by}</p>
+                        `;
+                        goalsContainer.appendChild(goalElement);
+                    });
+                }
+            });
+
+            // Listener para Tareas
+            const tasksQuery = query(collection(db, `${publicDataPath}/tasks`));
+            onSnapshot(tasksQuery, (querySnapshot) => {
+                tasksContainer.innerHTML = '';
+                if (querySnapshot.empty) {
+                    tasksContainer.innerHTML = '<p class="text-sm text-gray-500">No hay tareas asignadas aún.</p>';
+                } else {
+                    querySnapshot.forEach((doc) => {
+                        const task = doc.data();
+                        const taskId = doc.id;
+                        const taskElement = document.createElement('div');
+                        taskElement.className = 'p-4 rounded-lg shadow-sm staff-card flex items-center justify-between';
+                        taskElement.innerHTML = `
+                            <div>
+                                <h4 class="font-semibold">${task.title}</h4>
+                                <p class="text-sm text-gray-600">Asignada a: ${task.assigned_to}</p>
+                                <p class="text-xs text-gray-500">Estado: ${task.status === 'completed' ? 'Completada' : 'Pendiente'}</p>
+                            </div>
+                            <input type="checkbox" class="task-checkbox h-5 w-5" data-task-id="${taskId}" ${task.status === 'completed' ? 'checked' : ''}>
+                        `;
+                        tasksContainer.appendChild(taskElement);
+                    });
+                    
+                    document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+                        checkbox.addEventListener('change', async (e) => {
+                            const taskId = e.target.dataset.taskId;
+                            const newStatus = e.target.checked ? 'completed' : 'pending';
+                            const taskDocRef = doc(db, `${publicDataPath}/tasks/${taskId}`);
+                            await updateDoc(taskDocRef, { status: newStatus });
+                        });
+                    });
+                }
+            });
+
+            // Listener para Perfiles de Staff
+            const profilesQuery = query(collection(db, `${privateDataPath}/profile`));
+            onSnapshot(profilesQuery, (querySnapshot) => {
+                profilesContainer.innerHTML = '';
+                if (querySnapshot.empty) {
+                    profilesContainer.innerHTML = '<p class="text-sm text-gray-500">No hay perfiles de staff definidos.</p>';
+                } else {
+                    querySnapshot.forEach(doc => {
+                        const profile = doc.data();
+                        const profileElement = document.createElement('div');
+                        profileElement.className = 'p-6 rounded-lg shadow-md staff-card';
+                        profileElement.innerHTML = `
+                            <h4 class="text-xl font-bold">${profile.name}</h4>
+                            <p class="text-sm mt-1 text-gray-600">${profile.role}</p>
+                            <p class="text-sm mt-1 text-gray-600">Teléfono: ${profile.phone}</p>
+                        `;
+                        profilesContainer.appendChild(profileElement);
+                    });
+                }
+            });
+        }
+
+        // --- Event Listeners y Lógica Inicial ---
+
+        // Lógica de navegación del staff
+        staffLink.addEventListener('click', async (e) => {
+            e.preventDefault();
+            // Autenticación simplificada
+            if (!auth.currentUser) {
+                try {
+                    await signInAnonymously(auth);
+                    console.log("Sesión anónima iniciada.");
+                } catch (error) {
+                    console.error("Error al iniciar sesión anónima: ", error);
+                    alert("No se pudo acceder al portal de staff.");
+                }
+            } else {
+                showView('staff');
+            }
+        });
+
+        logoutButton.addEventListener('click', async () => {
+            await auth.signOut();
+            showView('public');
+            console.log("Sesión cerrada.");
+        });
+
+        // Lógica para agregar una nueva meta
+        addGoalButton.addEventListener('click', async () => {
+            const title = goalTitleInput.value.trim();
+            const description = goalDescriptionInput.value.trim();
+            
+            if (title === '' || description === '') {
+                alert('Por favor, completa ambos campos para agregar una meta.');
+                return;
+            }
+
+            try {
+                const goalsCollection = collection(db, `${publicDataPath}/goals`);
+                await addDoc(goalsCollection, {
+                    title: title,
+                    description: description,
+                    created_by: auth.currentUser.uid, // O puedes usar el nombre del usuario si está en el perfil
+                    created_at: new Date()
+                });
+                goalTitleInput.value = '';
+                goalDescriptionInput.value = '';
+                alert('Meta agregada con éxito.');
+            } catch (e) {
+                console.error("Error al agregar documento: ", e);
+                alert('Ocurrió un error al guardar la meta.');
+            }
+        });
+
+        // Autenticar automáticamente al cargar si hay un token disponible
+        if (initialAuthToken) {
+            signInWithCustomToken(auth, initialAuthToken)
+                .then(() => {
+                    console.log("Sesión iniciada con token personalizado.");
+                    showView('staff');
+                })
+                .catch((error) => {
+                    console.error("Error al iniciar sesión con token personalizado: ", error);
+                    showView('public');
+                });
+        } else {
+            console.log("No se encontró token de autenticación. Iniciando de forma anónima.");
+            signInAnonymously(auth)
+                .then(() => {
+                    console.log("Sesión anónima iniciada.");
+                    showView('staff');
+                })
+                .catch((error) => {
+                    console.error("Error al iniciar sesión anónima: ", error);
+                    showView('public');
+                });
+        }
+
+    </script>
+
 </body>
 </html>
