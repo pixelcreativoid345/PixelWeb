@@ -28,8 +28,8 @@
         
         /* Animación para el logo */
         @keyframes fadeInScale {
-            0% { opacity: 0; transform: scale(0.5); }
-            100% { opacity: 1; transform: scale(1); }
+            0% { opacity: 0; transform: scale(0.5) translate(-50%, -50%); }
+            100% { opacity: 1; transform: scale(1) translate(-50%, -50%); }
         }
         .logo-container {
             position: relative;
@@ -39,8 +39,8 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
             animation: fadeInScale 1s ease-out forwards;
+            /* Se ha corregido la animación moviendo el transform a los keyframes */
         }
     </style>
 </head>
@@ -146,15 +146,11 @@
                         <!-- Tarjeta de Plan Avanzado -->
                         <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                             <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete AVANZADO</h4>
-                            <p class="text-sm mb-4 opacity-80">Para un crecimiento sostenido y mayor impacto.</p>
+                            <p class="text-sm mb-4 opacity-80">Perfecto para escalar tu presencia en redes y generar más impacto.</p>
                             <div class="space-y-4 text-center">
                                 <div class="bg-gray-100 p-3 rounded-md">
                                     <p class="font-medium text-sm">Sin Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 30.000</p>
-                                </div>
-                                <div class="bg-gray-100 p-3 rounded-md">
-                                    <p class="font-medium text-sm">Con Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 45.000</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 140.000</p>
                                 </div>
                             </div>
                         </div>
@@ -162,15 +158,11 @@
                         <!-- Tarjeta de Plan Premium -->
                         <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
                             <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete PREMIUM</h4>
-                            <p class="text-sm mb-4 opacity-80">La solución integral para el máximo posicionamiento.</p>
+                            <p class="text-sm mb-4 opacity-80">La opción más completa para posicionar tu marca y lograr la máxima visibilidad.</p>
                             <div class="space-y-4 text-center">
                                 <div class="bg-gray-100 p-3 rounded-md">
                                     <p class="font-medium text-sm">Sin Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 50.000</p>
-                                </div>
-                                <div class="bg-gray-100 p-3 rounded-md">
-                                    <p class="font-medium text-sm">Con Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 70.000</p>
+                                    <p class="text-2xl font-extrabold mt-1">ARS$ 175.000</p>
                                 </div>
                             </div>
                         </div>
@@ -241,26 +233,5 @@
 
         </main>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const logoImage = document.getElementById('logo-image');
-            const logoContainer = document.querySelector('.logo-container');
-            const h1Element = logoContainer.querySelector('h1');
-
-            // Posicionar la imagen al centro del H1 para la animación
-            const h1Rect = h1Element.getBoundingClientRect();
-            logoImage.style.top = `${h1Rect.height / 2}px`;
-            logoImage.style.left = `${h1Rect.width / 2}px`;
-            
-            // Reajustar la posición del logo si la ventana cambia de tamaño
-            window.addEventListener('resize', () => {
-                const newH1Rect = h1Element.getBoundingClientRect();
-                logoImage.style.top = `${newH1Rect.height / 2}px`;
-                logoImage.style.left = `${newH1Rect.width / 2}px`;
-            });
-        });
-    </script>
-
 </body>
 </html>
