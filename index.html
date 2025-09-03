@@ -3,531 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo</title>
+    <title>Pixel Creativo - Presupuesto Completo</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter para un look moderno -->
+    <!-- Google Fonts: Inter para un look moderno y profesional -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #1f2937;
-            --accent-orange: #ff8c42;
+            --primary-color: #1a202c; /* Azul oscuro casi negro */
+            --secondary-color: #f77f00; /* Naranja vibrante */
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6;
-            color: #1f2937;
+            color: var(--primary-color);
         }
         .themed-card {
             background-color: #ffffff;
             border: 1px solid #e5e7eb;
         }
         .header-bg {
-            background-color: var(--primary-blue);
+            background-color: var(--primary-color);
         }
-        .staff-bg {
-            background-color: #4b5563; /* Color oscuro para la sección de staff */
+        .accent-text {
+            color: var(--secondary-color);
         }
-        .staff-card {
-            background-color: #e5e7eb;
+        .hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .list-item-style {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .list-item-style::before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        .linktree-link {
+            background-color: #000;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .linktree-link:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body class="antialiased text-gray-800">
 
-    <!-- Contenedor Principal de Vistas -->
-    <div id="app" class="min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- Contenedor Principal del Presupuesto -->
+    <main class="w-full max-w-4xl mx-auto my-8 themed-card rounded-3xl shadow-2xl overflow-hidden">
 
-        <!-- Vista Pública: Presupuesto -->
-        <main id="public-view" class="w-full max-w-4xl themed-card rounded-3xl shadow-2xl overflow-hidden my-8">
+        <!-- Sección de Cabecera -->
+        <div class="header-bg text-white p-8 sm:p-12 text-center rounded-t-3xl">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-2 tracking-wider">
+                <span class="text-white">Pixel</span> <span class="accent-text">Creativo</span>
+            </h1>
+            <p class="text-xl sm:text-2xl font-medium opacity-90 mt-2">
+                ¡Tu Emprendimiento, Nuestra Historia!
+            </p>
+            <p class="text-sm sm:text-base mt-2 opacity-75">
+                Transformamos ideas en impacto visual.
+            </p>
+        </div>
 
-            <!-- Sección de Cabecera -->
-            <div class="header-bg text-white p-8 sm:p-12 text-center rounded-t-3xl">
-                <h1 class="text-3xl sm:text-4xl font-extrabold mb-1 tracking-wide">
-                    <span class="text-white">Pixel</span> <span class="text-orange-400">Creativo</span>
-                </h1>
-                <h2 class="text-xl sm:text-2xl font-medium opacity-90 mt-2">
-                    Tu Impulso Digital
-                </h2>
-                <p class="text-sm sm:text-base mt-2 opacity-75">
-                    Transformamos ideas en impacto visual.
-                </p>
-            </div>
+        <!-- Contenido del Presupuesto -->
+        <div class="p-6 sm:p-10 md:p-12 space-y-12">
+            
+            <!-- Sección 1: NUESTROS PRECIOS -->
+            <section>
+                <h3 class="text-2xl font-bold mb-6 text-center md:text-left">
+                    NUESTROS PRECIOS
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Paquete BÁSICO -->
+                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
+                        <h4 class="text-2xl font-extrabold mb-2 text-center accent-text">
+                            Paquete BÁSICO
+                        </h4>
+                        <p class="text-sm mb-4 text-center text-gray-600">
+                            Ideal para negocios que buscan una presencia constante y atractiva en redes sociales sin preocuparse por la gestión diaria.
+                        </p>
+                        <div class="bg-gray-100 p-4 rounded-xl mt-4 text-center">
+                            <p class="text-sm font-medium text-gray-700">Costo Mensual</p>
+                            <p class="text-3xl font-extrabold mt-1 text-gray-900">ARS$ 70.000</p>
+                            <p class="text-sm font-medium text-gray-500 mt-2">O ARS$ 20.000 por semana</p>
+                        </div>
+                    </div>
 
-            <!-- Contenido del Presupuesto -->
-            <div class="p-8 sm:p-12 space-y-12">
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Nuestra Propuesta de Valor
-                    </h3>
-                    <p class="text-sm sm:text-base opacity-90 leading-relaxed">
-                        En **Pixel Creativo** nos dedicamos a colaborar en la identidad visual de los emprendimientos. Te ayudamos a conectar con tu audiencia en redes sociales para encontrar a tus clientes y conocer toda una comunidad detrás. No importa si tu negocio es local; a través de nuestra estrategia, te ayudamos a **romper distancias** y a asegurar clientes en zonas aledañas.
-                    </p>
-                    <div class="mt-6 space-y-4">
-                        <div class="flex items-start">
-                            <span class="text-xl mr-3">💡</span>
-                            <div>
-                                <h4 class="font-semibold">Diseño con Propósito</h4>
-                                <p class="text-sm opacity-80">Cada pieza es creada para contar una historia y tener un objetivo claro.</p>
+                    <!-- Planes de Diseño y Contenido -->
+                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
+                        <h4 class="text-2xl font-extrabold mb-2 text-center accent-text">
+                            Planes de Diseño y Contenido
+                        </h4>
+                        <p class="text-sm mb-4 text-center text-gray-600">
+                            Estos planes están pensados para darte ese empuje visual que tu emprendimiento necesita.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="bg-gray-100 p-4 rounded-xl">
+                                <p class="text-xl font-bold accent-text">Paquete AVANZADO</p>
+                                <p class="text-lg mt-1 font-extrabold text-gray-900">ARS$ 140.000</p>
+                                <p class="text-xs text-gray-600 mt-1">Opciones de paga quincenal con 25% de publicidad paga cubierta.</p>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <span class="text-xl mr-3">🚀</span>
-                            <div>
-                                <h4 class="font-semibold">Servicios "Listos para Publicar"</h4>
-                                <p class="text-sm opacity-80">Entregamos productos optimizados y listos para su uso inmediato.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <span class="text-xl mr-3">🗺️</span>
-                            <div>
-                                <h4 class="font-semibold">Asesoría y Acompañamiento ("Hoja de Ruta")</h4>
-                                <p class="text-sm opacity-80">Brindamos una guía con sugerencias de frecuencia de publicación y una visión estratégica.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <span class="text-xl mr-3">🎨</span>
-                            <div>
-                                <h4 class="font-semibold">Identidad Visual</h4>
-                                <p class="text-sm opacity-80">Apoyo en logos, paletas de colores y tipografías.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <span class="text-xl mr-3">📢</span>
-                            <div>
-                                <h4 class="font-semibold">Difusión Viral Estratégica</h4>
-                                <p class="text-sm opacity-80">Potenciamos tu contenido a través de nuestros propios canales de WhatsApp y grupos de Facebook.</p>
+                            <div class="bg-gray-100 p-4 rounded-xl">
+                                <p class="text-xl font-bold accent-text">Paquete PREMIUM</p>
+                                <p class="text-lg mt-1 font-extrabold text-gray-900">ARS$ 175.000</p>
+                                <p class="text-xs text-gray-600 mt-1">Incluye Community Manager.</p>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Paquetes (Sin Community Manager)
-                    </h3>
-                    <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-6">
-                        Estos paquetes están pensados para darte ese empuje visual que tu emprendimiento necesita, asegurando contenido fresco y estratégico listo para publicar. La renovación de los paquetes es **mensual**, sin contratos de permanencia.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        
-                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete BÁSICO</h4>
-                            <p class="text-sm mb-4 opacity-80">Ideal para comenzar y establecer tu presencia.</p>
-                            <div class="space-y-4 text-center">
-                                <div class="bg-gray-100 p-3 rounded-md">
-                                    <p class="font-medium text-sm">Sin Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 15.000</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete AVANZADO</h4>
-                            <p class="text-sm mb-4 opacity-80">Perfecto para escalar tu presencia en redes y generar más impacto.</p>
-                            <div class="space-y-4 text-center">
-                                <div class="bg-gray-100 p-3 rounded-md">
-                                    <p class="font-medium text-sm">Sin Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 140.000</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete PREMIUM</h4>
-                            <p class="text-sm mb-4 opacity-80">La opción más completa para posicionar tu marca y lograr la máxima visibilidad.</p>
-                            <div class="space-y-4 text-center">
-                                <div class="bg-gray-100 p-3 rounded-md">
-                                    <p class="font-medium text-sm">Sin Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 175.000</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Planes (Con Community Manager)
-                    </h3>
-                    <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-6">
-                        Estos planes incluyen un servicio de **publicidad paga** y gestión profesional de tus redes, asegurando una presencia constante y atractiva para tu negocio. La renovación es **mensual**.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
-                        
-                        <div class="themed-card p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                            <h4 class="text-xl font-bold mb-2" style="color: var(--accent-orange);">Paquete BÁSICO con CM</h4>
-                            <p class="text-sm mb-4 opacity-80">Ideal para comenzar y establecer tu presencia.</p>
-                            <div class="space-y-4 text-center">
-                                <div class="bg-gray-100 p-3 rounded-md">
-                                    <p class="font-medium text-sm">Con Community Manager</p>
-                                    <p class="text-2xl font-extrabold mt-1">ARS$ 25.000</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Flexibilidad y Pagos
-                    </h3>
-                    <p class="text-sm sm:text-base opacity-90 leading-relaxed">
-                        Entendemos la importancia de cuidar la economía de tu emprendimiento. Por ello, el Paquete BÁSICO (con o sin CM) puede ser reactivado semana a semana. Para el resto de los planes, la renovación es mensual, sin contratos de permanencia. Si en algún momento no estás satisfecho con los resultados, puedes optar por no renovar. La flexibilidad es clave en nuestra forma de trabajar, buscando siempre que te sientas cómodo y respaldado en tu decisión de seguir con nosotros.
-                    </p>
-                    <div class="mt-4">
-                        <h4 class="font-semibold text-lg" style="color: var(--accent-orange);">Modalidad de Pago</h4>
-                        <ul class="list-disc list-inside text-sm sm:text-base opacity-90 mt-2">
-                            <li>70% al iniciar el proyecto.</li>
-                            <li>30% al finalizar el trabajo (o al inicio de cada periodo para planes mensuales/semanales).</li>
+            <!-- Sección 2: PRECIOS INDIVIDUALES Y SERVICIOS -->
+            <section>
+                <h3 class="text-2xl font-bold mb-6 text-center md:text-left">
+                    PRECIOS INDIVIDUALES
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Lista de Precios Individuales -->
+                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
+                        <h4 class="text-xl font-bold mb-4 accent-text">
+                            Tarifas por Pieza
+                        </h4>
+                        <p class="text-sm mb-4 text-gray-600">
+                            Estas son las tarifas por servicios específicos si solo necesitas una pieza.
+                        </p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="list-item-style">Pieza estática (Flyer): <span class="font-bold">$7.000 ARS</span></li>
+                            <li class="list-item-style">Reel corto (15-30 segundos): <span class="font-bold">$10.000 ARS</span></li>
+                            <li class="list-item-style">Carrusel (3-5 imágenes): <span class="font-bold">$15.000 ARS</span></li>
+                            <li class="list-item-style">Diseño de Logo (completo): <span class="font-bold">$25.000 ARS</span></li>
                         </ul>
-                        <p class="text-sm sm:text-base opacity-90 mt-4">
-                            Aceptamos pagos vía <strong class="font-bold">Mercado Pago</strong> y <strong class="font-bold">Cuenta del Banco Nación</strong>.
+                    </div>
+
+                    <!-- Descripción de Servicios -->
+                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
+                        <h4 class="text-xl font-bold mb-4 accent-text">
+                            Servicios Destacados
+                        </h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="list-item-style">Diseño con Propósito: Cada pieza es creada para contar una historia.</li>
+                            <li class="list-item-style">Servicios "Listos para Publicar": Productos optimizados para uso inmediato.</li>
+                            <li class="list-item-style">Asesoría y Acompañamiento ("Hoja de Ruta"): Guía con sugerencias de frecuencia.</li>
+                            <li class="list-item-style">Difusión Viral Estratégica: Potenciamos tu contenido a través de nuestros propios canales.</li>
+                            <li class="list-item-style">Identidad Visual: Apoyo en logos, paletas de colores y tipografías.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 3: INFORMACIÓN COMPLEMENTARIA -->
+            <section>
+                <h3 class="text-2xl font-bold mb-6 text-center md:text-left">
+                    INFORMACIÓN COMPLEMENTARIA
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Flexibilidad y Pagos -->
+                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
+                        <h4 class="text-xl font-bold mb-2 accent-text">
+                            Flexibilidad y Pagos
+                        </h4>
+                        <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
+                            El Paquete BÁSICO puede ser reactivado semana a semana. Para el resto de los planes, la renovación es mensual, sin contratos de permanencia.
+                        </p>
+                        <h5 class="font-bold text-lg mb-2">Modalidad de Pago:</h5>
+                        <ul class="space-y-2 text-sm sm:text-base text-gray-700">
+                            <li class="list-item-style">70% al iniciar el proyecto.</li>
+                            <li class="list-item-style">30% al finalizar el trabajo (o al inicio de cada periodo para planes mensuales/semanales).</li>
+                        </ul>
+                        <p class="text-sm sm:text-base text-gray-700 mt-4">
+                            Aceptamos pagos vía <span class="font-bold">Mercado Pago</span> y <span class="font-bold">Transferencia vía CBU</span>.
                         </p>
                     </div>
-                </section>
-
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        ¡Hablemos de tu Proyecto!
-                    </h3>
-                    <p class="text-sm sm:text-base opacity-90 leading-relaxed mb-4">
-                        ¿Listo para llevar tu emprendimiento al siguiente nivel? Queremos escuchar tu idea y crear algo increíble juntos.
-                    </p>
-                    <div class="mt-6 space-y-4">
-                        <div class="flex items-center">
-                            <span class="text-2xl mr-3">📞</span>
-                            <div>
-                                <p class="text-sm font-semibold">Matías (Coordinador y Diseñador): <span class="text-base font-bold text-gray-700">2617484266</span></p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="text-2xl mr-3">📞</span>
-                            <div>
-                                <p class="text-sm font-semibold">Mar (Estratega Social - Mendoza): <span class="text-base font-bold text-gray-700">2612904484</span></p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="text-2xl mr-3">📞</span>
-                            <div>
-                                <p class="text-sm font-semibold">Valentín (Embajador Pixel - San Juan): <span class="text-base font-bold text-gray-700">2645211394</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-            </div>
-            
-            <footer class="flex flex-col sm:flex-row items-center justify-center p-6 text-sm">
-                <a href="https://wa.me/c/5492617484266" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full text-white font-semibold shadow-lg transition-colors duration-300 text-center contact-button-animation" style="background-color: var(--primary-blue);">
-                    CONTÁCTANOS
-                </a>
-                <a href="#" id="staff-link" class="w-full sm:w-auto px-6 py-3 mt-4 sm:mt-0 sm:ml-4 text-sm opacity-50 hover:opacity-100 transition-opacity duration-300 text-center">
-                    Acceso Staff
-                </a>
-            </footer>
-
-        </main>
-
-        <!-- Vista del Staff (Inicialmente oculta) -->
-        <main id="staff-view" class="hidden w-full max-w-4xl themed-card rounded-3xl shadow-2xl overflow-hidden my-8 staff-bg text-white">
-            <div class="header-bg p-8 text-center">
-                <h1 class="text-3xl font-extrabold mb-1 tracking-wide">
-                    <span class="text-white">Portal</span> <span class="text-orange-400">Staff</span>
-                </h1>
-                <h2 class="text-xl font-medium opacity-90 mt-2">
-                    Panel de Control Colaborativo
-                </h2>
-                <p class="text-sm opacity-75 mt-2">
-                    <span id="user-id-display"></span>
-                </p>
-            </div>
-            <div class="p-8 space-y-8 staff-card text-gray-800">
-
-                <!-- Sección de Metas Semanales -->
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Metas Semanales
-                    </h3>
-                    <div id="goals-container" class="space-y-4">
-                        <p class="text-sm">Cargando metas...</p>
-                    </div>
                     
-                    <div id="add-goal-form" class="mt-6 p-4 border-2 border-gray-300 rounded-lg">
-                        <h4 class="font-semibold text-lg mb-2">Agregar Nueva Meta</h4>
-                        <input type="text" id="goal-title" placeholder="Título de la meta" class="w-full p-2 border border-gray-300 rounded-md mb-2">
-                        <textarea id="goal-description" placeholder="Descripción detallada de la meta" rows="3" class="w-full p-2 border border-gray-300 rounded-md mb-2"></textarea>
-                        <button id="add-goal-button" class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600 transition-colors">Guardar Meta</button>
+                    <!-- ¡Hablemos de tu Proyecto! -->
+                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect text-center">
+                        <h4 class="text-xl font-bold mb-2 accent-text">
+                            ¡Hablemos de tu Proyecto o emprendimiento!
+                        </h4>
+                        <p class="text-lg font-semibold text-gray-800 mb-2">
+                            ¿Te gustan los desafíos y querés alcanzar esas metas?
+                        </p>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Somos parte del staff y estamos para ayudarte.
+                        </p>
+                        <div class="space-y-2 text-base font-semibold text-gray-900">
+                            <p>Diseño Audiovisual: Matías - <span class="font-bold">2617484266</span></p>
+                            <p>Difusión Gral. Mendoza: Mar - <span class="font-bold">2612904484</span></p>
+                            <p>Difusión San Juan: Valentín - <span class="font-bold">2645211394</span></p>
+                        </div>
+                        <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="linktree-link mt-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                            ENCONTRANOS ACÁ
+                        </a>
                     </div>
-                </section>
-
-                <!-- Sección de Tareas -->
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Tareas del Equipo
-                    </h3>
-                    <div id="tasks-container" class="space-y-4">
-                        <p class="text-sm">Cargando tareas...</p>
-                    </div>
-                </section>
-                
-                <!-- Sección de Perfiles de Usuario -->
-                <section>
-                    <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">
-                        Perfiles del Staff
-                    </h3>
-                    <div id="profiles-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <p class="text-sm">Cargando perfiles...</p>
-                    </div>
-                </section>
-                
-                <button id="logout-button" class="w-full mt-8 bg-red-500 text-white font-bold py-2 rounded-md hover:bg-red-600 transition-colors">Cerrar Sesión</button>
-            </div>
-        </main>
-    </div>
-
-    <!-- Script de Firebase (Importante: debe ser tipo "module") -->
-    <script type="module">
-        // Importa los módulos de Firebase
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc, collection, query, onSnapshot, addDoc, updateDoc, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // Global variables provided by the environment
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+                </div>
+            </section>
+        </div>
         
-        // Inicializar Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
+        <footer class="p-6 text-center text-sm text-gray-500 border-t border-gray-200 mt-8">
+            <p class="mb-1">
+                Proyecto del e-studio ID345.
+            </p>
+            <p>
+                © 2025 Pixel Creativo. Todos los derechos reservados.
+            </p>
+        </footer>
 
-        // Referencias a los elementos del DOM
-        const publicView = document.getElementById('public-view');
-        const staffView = document.getElementById('staff-view');
-        const staffLink = document.getElementById('staff-link');
-        const goalsContainer = document.getElementById('goals-container');
-        const tasksContainer = document.getElementById('tasks-container');
-        const profilesContainer = document.getElementById('profiles-container');
-        const addGoalButton = document.getElementById('add-goal-button');
-        const goalTitleInput = document.getElementById('goal-title');
-        const goalDescriptionInput = document.getElementById('goal-description');
-        const userIdDisplay = document.getElementById('user-id-display');
-        const logoutButton = document.getElementById('logout-button');
-
-        // Firestore paths
-        const publicDataPath = `/artifacts/${appId}/public/data`;
-        let privateDataPath = '';
-
-        // Definir los datos de los usuarios del staff
-        const staffUsers = {
-            'matias_uid': { name: 'Matías', role: 'Coordinador y Diseñador', phone: '2617484266', is_admin: true },
-            'mar_uid': { name: 'Mar', role: 'Estratega Social - Mendoza', phone: '2612904484', is_admin: false },
-            'valentin_uid': { name: 'Valentín', role: 'Embajador Pixel - San Juan', phone: '2645211394', is_admin: false }
-        };
-
-        // --- Funciones de Lógica y UI ---
-
-        // Función para cambiar de vista
-        function showView(viewId) {
-            publicView.classList.add('hidden');
-            staffView.classList.add('hidden');
-            if (viewId === 'public') {
-                publicView.classList.remove('hidden');
-            } else {
-                staffView.classList.remove('hidden');
-            }
-        }
-        
-        // Listener para la autenticación
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                // El usuario está autenticado
-                const userId = user.uid;
-                userIdDisplay.textContent = `ID de Usuario: ${userId}`;
-                privateDataPath = `/artifacts/${appId}/users/${userId}`;
-
-                // Cargar datos de la base de datos
-                await setupUserInDB(userId);
-                setupRealtimeListeners();
-            } else {
-                // El usuario no está autenticado, redirigir a la vista pública
-                showView('public');
-            }
-        });
-
-        // Configurar el usuario en la base de datos
-        async function setupUserInDB(userId) {
-            const userDocRef = doc(db, `${privateDataPath}/profile/data`);
-            const userDocSnap = await getDoc(userDocRef);
-
-            if (!userDocSnap.exists()) {
-                const staffInfo = staffUsers[userId] || { name: 'Usuario', role: 'Staff', phone: 'N/A', is_admin: false };
-                await setDoc(userDocRef, {
-                    ...staffInfo,
-                    uid: userId
-                });
-                console.log("Documento de usuario creado.");
-            }
-        }
-
-        // Configurar los listeners de Firestore en tiempo real
-        function setupRealtimeListeners() {
-            // Listener para Metas Semanales
-            const goalsQuery = query(collection(db, `${publicDataPath}/goals`), orderBy('created_at', 'desc'), limit(5));
-            onSnapshot(goalsQuery, (querySnapshot) => {
-                goalsContainer.innerHTML = '';
-                if (querySnapshot.empty) {
-                    goalsContainer.innerHTML = '<p class="text-sm text-gray-500">No hay metas semanales definidas aún.</p>';
-                } else {
-                    querySnapshot.forEach((doc) => {
-                        const goal = doc.data();
-                        const goalElement = document.createElement('div');
-                        goalElement.className = 'p-4 rounded-lg shadow-sm staff-card';
-                        goalElement.innerHTML = `
-                            <h4 class="font-bold">${goal.title}</h4>
-                            <p class="text-sm mt-1">${goal.description}</p>
-                            <p class="text-xs text-gray-500 mt-2">Creado por: ${goal.created_by}</p>
-                        `;
-                        goalsContainer.appendChild(goalElement);
-                    });
-                }
-            });
-
-            // Listener para Tareas
-            const tasksQuery = query(collection(db, `${publicDataPath}/tasks`));
-            onSnapshot(tasksQuery, (querySnapshot) => {
-                tasksContainer.innerHTML = '';
-                if (querySnapshot.empty) {
-                    tasksContainer.innerHTML = '<p class="text-sm text-gray-500">No hay tareas asignadas aún.</p>';
-                } else {
-                    querySnapshot.forEach((doc) => {
-                        const task = doc.data();
-                        const taskId = doc.id;
-                        const taskElement = document.createElement('div');
-                        taskElement.className = 'p-4 rounded-lg shadow-sm staff-card flex items-center justify-between';
-                        taskElement.innerHTML = `
-                            <div>
-                                <h4 class="font-semibold">${task.title}</h4>
-                                <p class="text-sm text-gray-600">Asignada a: ${task.assigned_to}</p>
-                                <p class="text-xs text-gray-500">Estado: ${task.status === 'completed' ? 'Completada' : 'Pendiente'}</p>
-                            </div>
-                            <input type="checkbox" class="task-checkbox h-5 w-5" data-task-id="${taskId}" ${task.status === 'completed' ? 'checked' : ''}>
-                        `;
-                        tasksContainer.appendChild(taskElement);
-                    });
-                    
-                    document.querySelectorAll('.task-checkbox').forEach(checkbox => {
-                        checkbox.addEventListener('change', async (e) => {
-                            const taskId = e.target.dataset.taskId;
-                            const newStatus = e.target.checked ? 'completed' : 'pending';
-                            const taskDocRef = doc(db, `${publicDataPath}/tasks/${taskId}`);
-                            await updateDoc(taskDocRef, { status: newStatus });
-                        });
-                    });
-                }
-            });
-
-            // Listener para Perfiles de Staff
-            const profilesQuery = query(collection(db, `${privateDataPath}/profile`));
-            onSnapshot(profilesQuery, (querySnapshot) => {
-                profilesContainer.innerHTML = '';
-                if (querySnapshot.empty) {
-                    profilesContainer.innerHTML = '<p class="text-sm text-gray-500">No hay perfiles de staff definidos.</p>';
-                } else {
-                    querySnapshot.forEach(doc => {
-                        const profile = doc.data();
-                        const profileElement = document.createElement('div');
-                        profileElement.className = 'p-6 rounded-lg shadow-md staff-card';
-                        profileElement.innerHTML = `
-                            <h4 class="text-xl font-bold">${profile.name}</h4>
-                            <p class="text-sm mt-1 text-gray-600">${profile.role}</p>
-                            <p class="text-sm mt-1 text-gray-600">Teléfono: ${profile.phone}</p>
-                        `;
-                        profilesContainer.appendChild(profileElement);
-                    });
-                }
-            });
-        }
-
-        // --- Event Listeners y Lógica Inicial ---
-
-        // Lógica de navegación del staff
-        staffLink.addEventListener('click', async (e) => {
-            e.preventDefault();
-            // Autenticación simplificada
-            if (!auth.currentUser) {
-                try {
-                    await signInAnonymously(auth);
-                    console.log("Sesión anónima iniciada.");
-                } catch (error) {
-                    console.error("Error al iniciar sesión anónima: ", error);
-                    alert("No se pudo acceder al portal de staff.");
-                }
-            } else {
-                showView('staff');
-            }
-        });
-
-        logoutButton.addEventListener('click', async () => {
-            await auth.signOut();
-            showView('public');
-            console.log("Sesión cerrada.");
-        });
-
-        // Lógica para agregar una nueva meta
-        addGoalButton.addEventListener('click', async () => {
-            const title = goalTitleInput.value.trim();
-            const description = goalDescriptionInput.value.trim();
-            
-            if (title === '' || description === '') {
-                alert('Por favor, completa ambos campos para agregar una meta.');
-                return;
-            }
-
-            try {
-                const goalsCollection = collection(db, `${publicDataPath}/goals`);
-                await addDoc(goalsCollection, {
-                    title: title,
-                    description: description,
-                    created_by: auth.currentUser.uid, // O puedes usar el nombre del usuario si está en el perfil
-                    created_at: new Date()
-                });
-                goalTitleInput.value = '';
-                goalDescriptionInput.value = '';
-                alert('Meta agregada con éxito.');
-            } catch (e) {
-                console.error("Error al agregar documento: ", e);
-                alert('Ocurrió un error al guardar la meta.');
-            }
-        });
-
-        // Autenticar automáticamente al cargar si hay un token disponible
-        if (initialAuthToken) {
-            signInWithCustomToken(auth, initialAuthToken)
-                .then(() => {
-                    console.log("Sesión iniciada con token personalizado.");
-                    showView('staff');
-                })
-                .catch((error) => {
-                    console.error("Error al iniciar sesión con token personalizado: ", error);
-                    showView('public');
-                });
-        } else {
-            console.log("No se encontró token de autenticación. Iniciando de forma anónima.");
-            signInAnonymously(auth)
-                .then(() => {
-                    console.log("Sesión anónima iniciada.");
-                    showView('staff');
-                })
-                .catch((error) => {
-                    console.error("Error al iniciar sesión anónima: ", error);
-                    showView('public');
-                });
-        }
-
-    </script>
+    </main>
 
 </body>
 </html>
