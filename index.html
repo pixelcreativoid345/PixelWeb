@@ -4,57 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Creativo</title>
-    <!-- Ícono de la página web (favicón) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial, sans-serif' font-size='80' fill='%236B21A8'%3E%E2%96%A0%3C/text%3E%3C/svg%3E">
+    <!-- Favicón con un píxel SVG, para que se vea en la pestaña del navegador -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='25' y='25' width='50' height='50' fill='%236b21a8'/%3E%3C/svg%3E">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+        }
+        .card-bg {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .card-icon {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
         }
     </style>
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen">
-    <!-- Contenedor principal para el fondo -->
-    <div class="relative w-full h-screen bg-cover bg-center" style="background-image: url('https://drive.google.com/uc?id=1hy5tcRXB-xdQSHqHqn_gh5DdOfIikuOb');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <header class="relative z-10 text-white text-center py-8">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight">Pixel Creativo</h1>
-            <p class="mt-2 text-xl md:text-2xl font-medium text-purple-200">Narrativas visuales que hacen brillar tu marca.</p>
-        </header>
+<body class="bg-gray-100 min-h-screen text-gray-800 flex flex-col">
 
-        <!-- Contenedor para el flyer y el texto -->
-        <main class="relative z-10 flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 px-4 py-12">
-            <!-- Contenedor del flyer -->
-            <div class="bg-white rounded-xl shadow-2xl p-6 transform hover:scale-105 transition-transform duration-300 w-full max-w-sm">
-                <img src="https://drive.google.com/uc?id=165tJXPFd2bqsn8VYqBHD9SUKp9_-0WBu" alt="Flyer de Pixel Creativo" class="rounded-lg shadow-lg w-full h-auto">
-            </div>
-
-            <!-- Contenedor de texto con detalles sobre el servicio -->
-            <div class="bg-white bg-opacity-90 rounded-xl shadow-2xl p-8 max-w-2xl text-center md:text-left">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">¡Tu Impulso Digital!</h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    En Pixel Creativo, queremos que tu marca brille sin enredos ni jerga complicada. Si buscas una presencia constante y atractiva en redes sociales sin preocuparte por la gestión diaria, nuestros planes de diseño y contenido son ideales para ti.
-                </p>
-                <div class="mt-6">
-                    <a href="#" class="inline-block bg-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
-                        Saber más
-                    </a>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- Sección de contacto y pie de página -->
-    <footer class="bg-gray-800 text-gray-300 py-6 mt-auto">
-        <div class="container mx-auto text-center px-4">
-            <p>&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
-            <p class="mt-2 text-sm">
-                Diseñado para emprender y crecer juntos.
+    <!-- Sección principal del anuncio -->
+    <div class="gradient-bg flex-grow flex items-center justify-center py-16 px-4 md:px-8">
+        <div class="text-center text-white max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-glow">
+                ¡Septiembre en Pixel Creativo!
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl font-medium text-purple-200">
+                Un nuevo capítulo de historias visuales.
+            </p>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                Prepárate para llevar tu marca al siguiente nivel. Hemos renovado nuestros planes y servicios para potenciar tu presencia digital.
             </p>
         </div>
+    </div>
+
+    <!-- Sección de los paquetes -->
+    <div class="py-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-gray-900">Nuevos Servicios para Impulsar tu Marca</h2>
+            <p class="mt-4 text-lg text-gray-600">
+                Estos planes están diseñados para darte el impulso visual que necesitas.
+            </p>
+
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+                <!-- Tarjeta del Paquete BÁSICO -->
+                <div class="card-bg rounded-xl shadow-xl p-8 transform transition-transform hover:scale-105">
+                    <div class="flex justify-center mb-4">
+                        <span class="text-6xl text-purple-600 card-icon">⭐</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Paquete BÁSICO</h3>
+                    <p class="mt-2 text-gray-600">El empujón inicial para una presencia profesional. Incluye tu hoja de ruta estratégica.</p>
+                    <div class="mt-4">
+                        <span class="text-3xl font-extrabold text-purple-700">$70.000 ARS</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta del Paquete AVANZADO -->
+                <div class="card-bg rounded-xl shadow-xl p-8 transform transition-transform hover:scale-105">
+                    <div class="flex justify-center mb-4">
+                        <span class="text-6xl text-purple-600 card-icon">🚀</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Paquete AVANZADO</h3>
+                    <p class="mt-2 text-gray-600">Perfecto para escalar tu impacto. Incluye videos y difusión viral para más alcance.</p>
+                    <div class="mt-4">
+                        <span class="text-3xl font-extrabold text-purple-700">$140.000 ARS</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta del Paquete PREMIUM -->
+                <div class="card-bg rounded-xl shadow-xl p-8 transform transition-transform hover:scale-105">
+                    <div class="flex justify-center mb-4">
+                        <span class="text-6xl text-purple-600 card-icon">💎</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Paquete PREMIUM</h3>
+                    <p class="mt-2 text-gray-600">La experiencia definitiva. Nos encargamos del diseño, publicación y gestión diaria.</p>
+                    <div class="mt-4">
+                        <span class="text-3xl font-extrabold text-purple-700">$175.000 ARS</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de contacto -->
+    <div class="bg-gray-800 text-white py-12 px-4 md:px-8 text-center">
+        <h2 class="text-3xl font-bold">¡Hablemos de tu Proyecto!</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+            Estamos listos para escuchar tu idea y crear algo increíble juntos. Contáctanos para una consulta sin cargo.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="https://wa.me/5492617484266" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-colors duration-300 w-full sm:w-auto">
+                Contactar a Matías
+            </a>
+            <a href="https://wa.me/5492612794015" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-colors duration-300 w-full sm:w-auto">
+                Contactar a Mar
+            </a>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+        <p>&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
