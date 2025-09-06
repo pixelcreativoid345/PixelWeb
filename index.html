@@ -4,110 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Creativo</title>
-    <!-- Favicón con un píxel SVG, para que se vea en la pestaña del navegador -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='25' y='25' width='50' height='50' fill='%236b21a8'/%3E%3C/svg%3E">
+    <!-- Favicon para la pestaña, creado con SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%236B21A8' d='M25 25h50v50H25z'/%3E%3C/svg%3E">
+    <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .gradient-bg {
+        .bg-magic-gradient {
             background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
         }
-        .text-glow {
-            text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+        .text-glow-purple {
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
         }
-        .card-bg {
-            background-color: rgba(255, 255, 255, 0.9);
+        .card-bg-light {
+            background-color: rgba(255, 255, 255, 0.95);
         }
-        .card-icon {
-            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        .card-bg-dark {
+            background-color: rgba(31, 41, 55, 0.95);
+        }
+        .shadow-glow-purple {
+            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
+        }
+        @keyframes pulse-once {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        .animate-pulse-once {
+            animation: pulse-once 1.5s ease-in-out;
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen text-gray-800 flex flex-col">
+<body class="bg-gray-100 flex flex-col min-h-screen">
 
-    <!-- Sección principal del anuncio -->
-    <div class="gradient-bg flex-grow flex items-center justify-center py-16 px-4 md:px-8">
-        <div class="text-center text-white max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-none text-glow">
-                ¡Septiembre en Pixel Creativo!
+    <!-- Sección de la Cabecera/Hero -->
+    <div class="bg-magic-gradient flex-grow flex flex-col items-center justify-center text-center py-20 px-4">
+        <div class="relative w-full max-w-4xl mx-auto z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-white text-glow-purple animate-pulse-once">
+                ¡Septiembre Mágico en Pixel Creativo!
             </h1>
             <p class="mt-4 text-xl md:text-2xl font-medium text-purple-200">
-                Un nuevo capítulo de historias visuales.
-            </p>
-            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                Prepárate para llevar tu marca al siguiente nivel. Hemos renovado nuestros planes y servicios para potenciar tu presencia digital.
+                La forma más simple y poderosa de potenciar tu marca.
             </p>
         </div>
     </div>
 
-    <!-- Sección de los paquetes -->
-    <div class="py-16 px-4 md:px-8">
+    <!-- Sección de Precios Individuales -->
+    <section class="py-16 px-4 md:px-8">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-bold text-gray-900">Nuevos Servicios para Impulsar tu Marca</h2>
-            <p class="mt-4 text-lg text-gray-600">
-                Estos planes están diseñados para darte el impulso visual que necesitas.
-            </p>
-
-            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-                <!-- Tarjeta del Paquete BÁSICO -->
-                <div class="card-bg rounded-xl shadow-xl p-8 transform transition-transform hover:scale-105">
-                    <div class="flex justify-center mb-4">
-                        <span class="text-6xl text-purple-600 card-icon">⭐</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900">Paquete BÁSICO</h3>
-                    <p class="mt-2 text-gray-600">El empujón inicial para una presencia profesional. Incluye tu hoja de ruta estratégica.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                Precios de Septiembre: Servicios Individuales
+            </h2>
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Tarjeta Flyer -->
+                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 transform transition-transform hover:scale-105">
+                    <h3 class="text-2xl font-bold text-gray-900">Flyer/Post Estático</h3>
+                    <p class="mt-2 text-gray-600">Una pieza de comunicación única diseñada para destacar.</p>
                     <div class="mt-4">
+                        <span class="text-3xl font-extrabold text-purple-700">$7.000 ARS</span>
+                    </div>
+                </div>
+                <!-- Tarjeta Reel -->
+                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 transform transition-transform hover:scale-105">
+                    <h3 class="text-2xl font-bold text-gray-900">Reel de Narrativa Visual (15s)</h3>
+                    <p class="mt-2 text-gray-600">Storytelling en video para captar la atención de tu audiencia.</p>
+                    <div class="mt-4">
+                        <span class="text-3xl font-extrabold text-purple-700">$10.000 ARS</span>
+                    </div>
+                </div>
+                <!-- Tarjeta Carrusel -->
+                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 transform transition-transform hover:scale-105">
+                    <h3 class="text-2xl font-bold text-gray-900">Carrusel (hasta 5 piezas)</h3>
+                    <p class="mt-2 text-gray-600">Una serie de imágenes para educar y generar valor en tu audiencia.</p>
+                    <div class="mt-4">
+                        <span class="text-3xl font-extrabold text-purple-700">$20.000 ARS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de la Promo de Septiembre -->
+    <section class="bg-gray-200 py-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="card-bg-light rounded-3xl shadow-glow-purple p-8 md:p-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-purple-700 animate-pulse-once">
+                    ✨ Promo Septiembre ✨
+                </h2>
+                <h3 class="mt-4 text-2xl font-semibold text-gray-900">
+                    Pack Digital Mensual
+                </h3>
+                <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">
+                    Tu empujón inicial para una presencia profesional. Recibe 3 flyers listos para publicar.
+                </p>
+                <div class="mt-6 flex flex-col items-center">
+                    <span class="text-4xl md:text-5xl font-extrabold text-purple-700">$18.000 ARS</span>
+                    <a href="https://wa.me/5492617484266" target="_blank" class="mt-6 bg-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
+                        ¡Adquirir la Promo!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Paquetes y Planes -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                Planes Mensuales
+            </h2>
+            <p class="text-gray-600 mb-12">
+                Descubre el plan que mejor se adapta a tu estrategia y presupuesto.
+            </p>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Tarjeta Paquete BÁSICO -->
+                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
+                    <span class="text-5xl mb-4">🌟</span>
+                    <h3 class="text-2xl font-bold text-gray-900">Paquete BÁSICO</h3>
+                    <p class="mt-2 text-center text-gray-600">
+                        Te damos el mapa para que sepas cuándo y cómo usar tus diseños. Incluye una Hoja de Ruta estratégica.
+                    </p>
+                    <div class="mt-auto pt-4">
                         <span class="text-3xl font-extrabold text-purple-700">$70.000 ARS</span>
                     </div>
                 </div>
 
-                <!-- Tarjeta del Paquete AVANZADO -->
-                <div class="card-bg rounded-xl shadow-xl p-8 transform transition-transform hover:scale-105">
-                    <div class="flex justify-center mb-4">
-                        <span class="text-6xl text-purple-600 card-icon">🚀</span>
-                    </div>
+                <!-- Tarjeta Paquete AVANZADO -->
+                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
+                    <span class="text-5xl mb-4">🚀</span>
                     <h3 class="text-2xl font-bold text-gray-900">Paquete AVANZADO</h3>
-                    <p class="mt-2 text-gray-600">Perfecto para escalar tu impacto. Incluye videos y difusión viral para más alcance.</p>
-                    <div class="mt-4">
+                    <p class="mt-2 text-center text-gray-600">
+                        Tu plan para escalar tu impacto. Con más piezas y una Hoja de Ruta detallada para maximizar tu alcance.
+                    </p>
+                    <div class="mt-auto pt-4">
                         <span class="text-3xl font-extrabold text-purple-700">$140.000 ARS</span>
                     </div>
                 </div>
 
-                <!-- Tarjeta del Paquete PREMIUM -->
-                <div class="card-bg rounded-xl shadow-xl p-8 transform transition-transform hover:scale-105">
-                    <div class="flex justify-center mb-4">
-                        <span class="text-6xl text-purple-600 card-icon">💎</span>
-                    </div>
+                <!-- Tarjeta Paquete PREMIUM -->
+                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
+                    <span class="text-5xl mb-4">👑</span>
                     <h3 class="text-2xl font-bold text-gray-900">Paquete PREMIUM</h3>
-                    <p class="mt-2 text-gray-600">La experiencia definitiva. Nos encargamos del diseño, publicación y gestión diaria.</p>
-                    <div class="mt-4">
+                    <p class="mt-2 text-center text-gray-600">
+                        La experiencia definitiva. Nos encargamos del diseño, publicación y gestión diaria.
+                    </p>
+                    <div class="mt-auto pt-4">
                         <span class="text-3xl font-extrabold text-purple-700">$175.000 ARS</span>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Sección de contacto -->
-    <div class="bg-gray-800 text-white py-12 px-4 md:px-8 text-center">
-        <h2 class="text-3xl font-bold">¡Hablemos de tu Proyecto!</h2>
+    <!-- Sección para los curiosos -->
+    <section class="bg-gray-800 py-12 px-4 md:px-8 text-center text-white">
+        <h2 class="text-3xl font-bold">¿Tienes Curiosidad?</h2>
         <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            Estamos listos para escuchar tu idea y crear algo increíble juntos. Contáctanos para una consulta sin cargo.
+            Explora nuestro trabajo, portafolios y mucho más en un solo lugar.
         </p>
-        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="https://wa.me/5492617484266" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-colors duration-300 w-full sm:w-auto">
-                Contactar a Matías
-            </a>
-            <a href="https://wa.me/5492612794015" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-colors duration-300 w-full sm:w-auto">
-                Contactar a Mar
+        <div class="mt-6">
+            <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="inline-block bg-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
+                Ver nuestro Linktree
             </a>
         </div>
-    </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="py-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¡Hablemos de tu Proyecto!</h2>
+            <p class="text-lg text-gray-600 mb-12">
+                Conoce a nuestro equipo y encuentra el mejor contacto para tu región.
+            </p>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Botón de Matías -->
+                <a href="https://wa.me/5492617484266" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-colors duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold">Matías</h3>
+                    <p class="text-sm mt-1 opacity-80">Diseño & Coordinación</p>
+                    <p class="text-sm mt-2 font-light">2617484266</p>
+                </a>
+                <!-- Botón de Mar -->
+                <a href="https://wa.me/5492612794015" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-colors duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold">Mar</h3>
+                    <p class="text-sm mt-1 opacity-80">Estrategia & Difusión (Mendoza)</p>
+                    <p class="text-sm mt-2 font-light">2612794015</p>
+                </a>
+                <!-- Botón de Valentín -->
+                <a href="https://wa.me/5492645211394" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-colors duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-bold">Valentín</h3>
+                    <p class="text-sm mt-1 opacity-80">Estrategia & Difusión (San Juan)</p>
+                    <p class="text-sm mt-2 font-light">2645211394</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Pie de página -->
     <footer class="bg-gray-900 text-gray-400 py-6 text-center">
