@@ -3,210 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo | Tu Impulso Digital en Septiembre</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Pixel Creativo</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
+            color: #E2E8F0;
+            background-color: #0F172A;
         }
-        .text-pixel-brand {
-            background-image: linear-gradient(to right, #8a2be2, #4169e1, #00bfff);
+
+        .bg-magic {
+            background-image: url("https://i.ibb.co/b3w6mY6/header.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .bg-magic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(1px);
+        }
+
+        .gradient-text {
+            background-clip: text;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: transparent;
+            background-image: linear-gradient(to right, #6EE7B7, #3B82F6, #9333EA);
         }
-        .btn-linktree {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        .magic-btn {
+            background-image: linear-gradient(to right, #4F46E5, #9333EA);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .btn-linktree:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+        .magic-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(147, 51, 234, 0.5);
         }
-        /* Discreto contador de visitas */
-        #visitor-counter {
-            background-color: #1f2937;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            color: #94a3b8;
+
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            border: 1px solid rgba(147, 51, 234, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Header y Hero -->
-    <header class="bg-gray-900 shadow-lg py-6 sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-pixel-brand">Pixel Creativo</h1>
-            <a href="#contacto" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
-                ¡Contáctanos!
-            </a>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-4 py-16">
-        <!-- Nueva Presentación para Septiembre -->
-        <section class="text-center mb-16">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-                Impulsa tu <span class="text-pixel-brand">Emprendimiento</span><br>en Septiembre.
-            </h2>
-            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-                Tu visión, nuestra creatividad. Creamos diseños que te conectan con tu audiencia y te ayudan a crecer.
+    <div class="min-h-screen bg-magic flex flex-col items-center py-10 px-4 relative overflow-hidden">
+        
+        <!-- Header con el logo y el texto -->
+        <header class="relative z-10 text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-2">
+                <span class="gradient-text">Pixel Creativo</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300">
+                Donde cada píxel cuenta una historia.
             </p>
-        </section>
+        </header>
 
-        <!-- Oferta de Septiembre -->
-        <section class="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div class="bg-slate-800 p-8 md:p-12 rounded-3xl shadow-2xl border border-indigo-500 transform transition-transform duration-300 hover:scale-105">
-                <h3 class="text-4xl font-bold text-center text-indigo-400 mb-4">¡PROMO SEPTIEMBRE!</h3>
-                <p class="text-center text-gray-300 text-lg mb-8">
-                    La oportunidad perfecta para potenciar tu marca con el pie derecho.
+        <!-- Contenido principal -->
+        <main class="w-full max-w-4xl relative z-10 space-y-12">
+            
+            <!-- Sección de presentación "Ganador" -->
+            <section class="card p-6 md:p-8 text-center animate-pulse-slow">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-emerald-300">
+                    ¡Volvimos con más ganas! Presentación Septiembre ✨
+                </h2>
+                <p class="text-lg text-slate-300">
+                    Estamos de vuelta con el enfoque y la magia para potenciar tu emprendimiento. 
+                    En septiembre, no solo diseñamos, inspiramos.
                 </p>
-                <div class="flex items-center justify-center space-x-4 mb-8">
-                    <span class="text-5xl md:text-6xl font-bold text-white leading-none">3</span>
-                    <span class="text-2xl md:text-3xl font-light text-gray-400 leading-none">Flyers<br>Estáticos</span>
-                    <span class="text-4xl font-bold text-indigo-400 leading-none">x</span>
-                    <span class="text-5xl md:text-6xl font-bold text-white leading-none">ARS$ 15.000</span>
-                </div>
-                <div class="text-center">
-                    <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
+            </section>
+
+            <!-- Promo de Septiembre -->
+            <section class="card p-6 md:p-8 text-center flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div class="flex-1">
+                    <h2 class="text-xl md:text-2xl font-bold mb-2 text-purple-300">
+                        PROMO SEPTIEMBRE
+                    </h2>
+                    <p class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                        3 Flyers por <span class="gradient-text">ARS$ 15.000</span>
+                    </p>
+                    <a href="https://wa.me/5492617484266?text=¡Hola! Quiero información sobre la PROMO DE SEPTIEMBRE de 3 flyers." target="_blank" class="magic-btn text-white font-semibold py-3 px-6 rounded-full inline-block">
                         ¡Quiero esta promo!
                     </a>
                 </div>
-            </div>
-            <div>
-                <img src="https://placehold.co/800x600/1e293b/d1d5db?text=Magia+Visual" alt="Diseño gráfico abstracto" class="rounded-2xl shadow-xl">
-            </div>
-        </section>
+                <div class="flex-1 mt-6 md:mt-0 md:ml-6">
+                    <img src="https://i.ibb.co/L5YwYQ6/promo.jpg" alt="Imagen de tres objetos mágicos profesionales" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+            </section>
 
-        <!-- Precios Individuales -->
-        <section class="mb-16">
-            <h3 class="text-3xl font-bold text-center mb-10">Piezas Individuales (A Tu Medida)</h3>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Flyer Card -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
-                    <h4 class="text-2xl font-semibold mb-2">Flyer/Post Estático</h4>
-                    <p class="text-gray-400 mb-4">Un diseño único para una publicación puntual.</p>
-                    <span class="text-4xl font-bold text-emerald-400">ARS$ 7.000</span>
-                </div>
-                <!-- Reel Card -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
-                    <h4 class="text-2xl font-semibold mb-2">Reel de Narrativa Visual (15 seg)</h4>
-                    <p class="text-gray-400 mb-4">Historias en movimiento que captan la atención.</p>
-                    <span class="text-4xl font-bold text-emerald-400">ARS$ 10.000</span>
-                </div>
-                <!-- Carrusel Card -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
-                    <h4 class="text-2xl font-semibold mb-2">Carrusel (hasta 5 piezas)</h4>
-                    <p class="text-gray-400 mb-4">Una narrativa completa que educa y entretiene.</p>
-                    <span class="text-4xl font-bold text-emerald-400">ARS$ 20.000</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Paquetes y Planes -->
-        <section class="mb-16">
-            <h3 class="text-3xl font-bold text-center mb-10">Nuestros Paquetes y Planes</h3>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Paquete Básico -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
-                    <h4 class="text-2xl font-semibold mb-2 text-yellow-400">Paquete BÁSICO</h4>
-                    <p class="text-gray-400 mb-4">El mapa para que sepas cuándo y cómo usar tus diseños.</p>
-                    <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li>Hoja de Ruta con sugerencias de estrategia.</li>
-                        <li>Contenido visual de alta calidad.</li>
-                        <li>Ideal para empezar con una presencia profesional.</li>
-                    </ul>
-                    <div class="mt-6 text-center">
-                        <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-2 px-6 rounded-full text-sm">Consultar</a>
+            <!-- Precios individuales -->
+            <section class="card p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-indigo-300">
+                    Nuestros Servicios Individuales
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-4 rounded-lg bg-slate-800 border border-purple-500/30 text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-cyan-400">Flyer Estático</h3>
+                        <p class="text-3xl font-bold text-white mb-2">ARS$ 7.000</p>
+                        <p class="text-sm text-slate-400">El arte de captar miradas en un solo post.</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-slate-800 border border-purple-500/30 text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-cyan-400">Reel de Narrativa</h3>
+                        <p class="text-3xl font-bold text-white mb-2">ARS$ 10.000</p>
+                        <p class="text-sm text-slate-400">15 segundos para contar una historia vibrante.</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-slate-800 border border-purple-500/30 text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-cyan-400">Carrusel (5 piezas)</h3>
+                        <p class="text-3xl font-bold text-white mb-2">ARS$ 20.000</p>
+                        <p class="text-sm text-slate-400">Una serie educativa para educar y generar valor.</p>
                     </div>
                 </div>
-                <!-- Paquete Avanzado -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
-                    <h4 class="text-2xl font-semibold mb-2 text-cyan-400">Paquete AVANZADO</h4>
-                    <p class="text-gray-400 mb-4">Tu plan para escalar, con más piezas y guía estratégica.</p>
-                    <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li>Hoja de Ruta detallada para maximizar tu alcance.</li>
-                        <li>Te sentirás acompañado en cada decisión.</li>
-                        <li>Más piezas para mayor impacto.</li>
-                    </ul>
-                    <div class="mt-6 text-center">
-                        <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-2 px-6 rounded-full text-sm">Consultar</a>
+            </section>
+            
+            <!-- Planes de paquetes -->
+            <section class="card p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-pink-400">
+                    Planes de Contenido Mensual
+                </h2>
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <!-- Paquete Básico -->
+                    <div class="p-6 rounded-lg bg-slate-800 border border-indigo-500/30">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Paquete BÁSICO</h3>
+                        <ul class="text-slate-400 space-y-2 mb-4">
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Diseño de 10 piezas estáticas.</li>
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Un video Reel narrativo.</li>
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Hoja de Ruta de contenido.</li>
+                        </ul>
+                        <a href="https://wa.me/5492617484266?text=¡Hola! Quiero consultar sobre el Paquete BÁSICO." target="_blank" class="magic-btn text-white font-semibold py-2 px-4 rounded-full w-full block text-center">
+                            Consultar Precio
+                        </a>
+                    </div>
+                    
+                    <!-- Paquete Avanzado -->
+                    <div class="p-6 rounded-lg bg-slate-800 border border-indigo-500/30">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Paquete AVANZADO</h3>
+                        <ul class="text-slate-400 space-y-2 mb-4">
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Diseño de 20 piezas estáticas.</li>
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Un video Reel por semana.</li>
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Hoja de Ruta detallada.</li>
+                        </ul>
+                        <a href="https://wa.me/5492617484266?text=¡Hola! Quiero consultar sobre el Paquete AVANZADO." target="_blank" class="magic-btn text-white font-semibold py-2 px-4 rounded-full w-full block text-center">
+                            Consultar Precio
+                        </a>
+                    </div>
+                    
+                    <!-- Paquete Premium -->
+                    <div class="p-6 rounded-lg bg-slate-800 border border-indigo-500/30">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Paquete PREMIUM</h3>
+                        <ul class="text-slate-400 space-y-2 mb-4">
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Diseño, publicación y gestión diaria.</li>
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Video Reel por semana.</li>
+                            <li><i class="fas fa-check-circle text-green-400 mr-2"></i> Tu Hoja de Ruta es nuestro manual.</li>
+                        </ul>
+                        <a href="https://wa.me/5492617484266?text=¡Hola! Quiero consultar sobre el Paquete PREMIUM." target="_blank" class="magic-btn text-white font-semibold py-2 px-4 rounded-full w-full block text-center">
+                            Consultar Precio
+                        </a>
                     </div>
                 </div>
-                <!-- Paquete Premium -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
-                    <h4 class="text-2xl font-semibold mb-2 text-pink-400">Paquete PREMIUM</h4>
-                    <p class="text-gray-400 mb-4">La experiencia definitiva. Nos encargamos de todo.</p>
-                    <ul class="list-disc list-inside text-gray-300 space-y-2">
-                        <li>Hoja de Ruta detallada que guía cada paso.</li>
-                        <li>Consistencia total para tu marca.</li>
-                        <li>Gestión y publicación de tus redes.</li>
-                    </ul>
-                    <div class="mt-6 text-center">
-                        <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-2 px-6 rounded-full text-sm">Consultar</a>
+            </section>
+
+            <!-- Sección de Linktree -->
+            <section class="card p-6 md:p-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-emerald-300">
+                    Nuestra Puerta de Acceso
+                </h2>
+                <p class="text-lg text-slate-300 mb-6">
+                    ¿Quieres ver todo nuestro universo? Vuelve a nuestro Linktree para ver más de nuestro trabajo y servicios.
+                </p>
+                <a href="https://linktr.ee/pixelcreativo_estudio" target="_blank" class="magic-btn text-white font-semibold py-3 px-6 rounded-full inline-block">
+                    Ver Nuestro Linktree
+                </a>
+            </section>
+
+            <!-- Sección de Contacto -->
+            <section class="card p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-cyan-300">
+                    ¡Hablemos de tu proyecto!
+                </h2>
+                <div class="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 text-center">
+                    <div>
+                        <p class="font-semibold text-lg text-indigo-300">Matías</p>
+                        <p class="text-slate-400">Coordinador y Diseñador</p>
+                        <a href="https://wa.me/5492617484266" target="_blank" class="text-white hover:text-cyan-400"><i class="fab fa-whatsapp mr-1"></i> 2617484266</a>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg text-indigo-300">Mar</p>
+                        <p class="text-slate-400">Estratega Social (Mendoza)</p>
+                        <a href="https://wa.me/5492612794015" target="_blank" class="text-white hover:text-cyan-400"><i class="fab fa-whatsapp mr-1"></i> 2612794015</a>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg text-indigo-300">Valentín</p>
+                        <p class="text-slate-400">Embajador (San Juan)</p>
+                        <a href="https://wa.me/5492645211394" target="_blank" class="text-white hover:text-cyan-400"><i class="fab fa-whatsapp mr-1"></i> 2645211394</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Sección de Linktree -->
-        <section class="text-center mb-16">
-            <h3 class="text-3xl font-bold mb-4">
-                ¿Querés ver más de nuestra magia?
-            </h3>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-6">
-                Si llegaste aquí desde nuestro Linktree, ¡bienvenido de vuelta! Si no sabes de qué estamos hablando, te invitamos a que te fijes y sacies tu curiosidad. 😉
-            </p>
-            <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="inline-block btn-linktree bg-emerald-500 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">
-                Explora Nuestro Portafolio Aquí
-            </a>
-        </section>
-
-        <!-- Sección de Contacto -->
-        <section id="contacto" class="text-center bg-gray-900 p-12 rounded-3xl shadow-2xl">
-            <h3 class="text-3xl font-bold mb-4">¡Hablemos de tu Proyecto!</h3>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-8">
-                Estamos listos para escuchar tu idea y crear algo increíble juntos.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                <a href="https://wa.me/5492617484266" class="bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
-                    Matías (Coordinador y Diseñador)
-                </a>
-                <a href="https://wa.me/5492612904484" class="bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
-                    Mar (Estratega Social)
-                </a>
-                <a href="https://wa.me/5493416972045" class="bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
-                    Valentín (Embajador Pixel)
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer y Contador de Visitas -->
-    <footer class="py-6 text-center">
-        <p class="text-sm text-gray-500 mb-2">&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
-        <div id="visitor-counter" class="inline-block">
-            <span>Visitas a la página: </span><span id="counter-value">0</span>
+        </main>
+        
+        <!-- Contador de visitas discreto -->
+        <div class="relative z-10 mt-10 text-center text-sm text-slate-500">
+            <span class="mr-2">Visitantes:</span>
+            <span id="visitor-counter" class="text-white font-mono">0</span>
         </div>
-    </footer>
+
+        <!-- Footer -->
+        <footer class="relative z-10 mt-10 text-center text-sm text-slate-500">
+            Desarrollado por e-Studio ID345
+        </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const counterElement = document.getElementById('counter-value');
-            let visitCount = localStorage.getItem('pixelCreativoVisits');
-            
-            if (visitCount) {
-                visitCount = parseInt(visitCount) + 1;
-            } else {
+            // Lógica para el contador de visitas
+            const counterElement = document.getElementById('visitor-counter');
+            let visitCount = localStorage.getItem('visitCount');
+
+            if (!visitCount) {
                 visitCount = 1;
+                localStorage.setItem('visitCount', visitCount);
+            } else {
+                visitCount = parseInt(visitCount) + 1;
+                localStorage.setItem('visitCount', visitCount);
             }
-            
-            localStorage.setItem('pixelCreativoVisits', visitCount);
             counterElement.textContent = visitCount;
         });
     </script>
