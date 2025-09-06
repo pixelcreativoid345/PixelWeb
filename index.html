@@ -3,236 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo - Presupuesto Completo</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Pixel Creativo | Tu Impulso Digital en Septiembre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter para un look moderno y profesional -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #1a202c; /* Azul oscuro casi negro */
-            --secondary-color: #f77f00; /* Naranja vibrante */
-        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: var(--primary-color);
+            background-color: #0f172a;
+            color: #e2e8f0;
         }
-        .themed-card {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
+        .text-pixel-brand {
+            background-image: linear-gradient(to right, #8a2be2, #4169e1, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .header-bg {
-            background-color: var(--primary-color);
+        .btn-linktree {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .accent-text {
-            color: var(--secondary-color);
+        .btn-linktree:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        .hover-effect {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .hover-effect:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .list-item-style {
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        .list-item-style::before {
-            content: '✔️';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-        }
-        .whatsapp-link {
-            background-color: #25D366;
-            color: white;
-            padding: 1rem 2rem;
+        /* Discreto contador de visitas */
+        #visitor-counter {
+            background-color: #1f2937;
+            padding: 0.5rem 1rem;
             border-radius: 9999px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-        .whatsapp-link:hover {
-            background-color: #128C7E;
+            font-size: 0.75rem;
+            color: #94a3b8;
         }
     </style>
 </head>
-<body class="antialiased text-gray-800">
+<body class="antialiased">
 
-    <!-- Contenedor Principal del Presupuesto -->
-    <main class="w-full max-w-4xl mx-auto my-8 themed-card rounded-3xl shadow-2xl overflow-hidden">
-
-        <!-- Sección de Cabecera -->
-        <div class="header-bg text-white p-8 sm:p-12 text-center rounded-t-3xl">
-            <h1 class="text-4xl sm:text-5xl font-extrabold mb-2 tracking-wider">
-                <span class="text-white">Pixel</span> <span class="accent-text">Creativo</span>
-            </h1>
-            <p class="text-xl sm:text-2xl font-medium opacity-90 mt-2">
-                ¡Tu Emprendimiento, Nuestra Historia!
-            </p>
-            <p class="text-sm sm:text-base mt-2 opacity-75">
-                Transformamos ideas en impacto visual.
-            </p>
+    <!-- Header y Hero -->
+    <header class="bg-gray-900 shadow-lg py-6 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-pixel-brand">Pixel Creativo</h1>
+            <a href="#contacto" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
+                ¡Contáctanos!
+            </a>
         </div>
+    </header>
 
-        <!-- Contenido del Presupuesto -->
-        <div class="p-6 sm:p-10 md:p-12 space-y-12">
-            
-            <!-- Sección 1: NUESTROS PRECIOS -->
-            <section>
-                <h3 class="text-2xl font-bold mb-6 text-center md:text-left">
-                    NUESTROS PRECIOS
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <!-- Paquete BÁSICO -->
-                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
-                        <h4 class="text-2xl font-extrabold mb-2 text-center accent-text">
-                            Paquete BÁSICO
-                        </h4>
-                        <p class="text-sm mb-4 text-center text-gray-600">
-                            Ideal para negocios que buscan una presencia constante y atractiva en redes sociales sin preocuparse por la gestión diaria.
-                        </p>
-                        <div class="bg-gray-100 p-4 rounded-xl mt-4 text-center">
-                            <p class="text-sm font-medium text-gray-700">Costo Mensual</p>
-                            <p class="text-3xl font-extrabold mt-1 text-gray-900">ARS$ 70.000</p>
-                            <p class="text-sm font-medium text-gray-500 mt-2">O ARS$ 20.000 por semana</p>
-                        </div>
-                    </div>
-
-                    <!-- Planes de Diseño y Contenido -->
-                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
-                        <h4 class="text-2xl font-extrabold mb-2 text-center accent-text">
-                            Planes de Diseño y Contenido
-                        </h4>
-                        <p class="text-sm mb-4 text-center text-gray-600">
-                            Estos planes están pensados para darte ese empuje visual que tu emprendimiento necesita.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="bg-gray-100 p-4 rounded-xl">
-                                <p class="text-xl font-bold accent-text">Paquete AVANZADO</p>
-                                <p class="text-lg mt-1 font-extrabold text-gray-900">ARS$ 140.000</p>
-                                <p class="text-xs text-gray-600 mt-1">Incluye **20 piezas visuales (Flyers)** y **4 Reels** de alta calidad al mes.</p>
-                                <p class="text-xs text-gray-600 mt-1">Opciones de pago quincenal con 25% de publicidad paga cubierta.</p>
-                            </div>
-                            <div class="bg-gray-100 p-4 rounded-xl">
-                                <p class="text-xl font-bold accent-text">Paquete PREMIUM</p>
-                                <p class="text-lg mt-1 font-extrabold text-gray-900">ARS$ 175.000</p>
-                                <p class="text-xs text-gray-600 mt-1">Servicios de diseño y contenido completos, además de un Community Manager.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección 2: PRECIOS INDIVIDUALES Y SERVICIOS -->
-            <section>
-                <h3 class="text-2xl font-bold mb-6 text-center md:text-left">
-                    PRECIOS INDIVIDUALES
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Lista de Precios Individuales -->
-                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
-                        <h4 class="text-xl font-bold mb-4 accent-text">
-                            Tarifas por Pieza
-                        </h4>
-                        <p class="text-sm mb-4 text-gray-600">
-                            Estas son las tarifas por servicios específicos si solo necesitas una pieza.
-                        </p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="list-item-style">Pieza estática (Flyer): <span class="font-bold">$7.000 ARS</span></li>
-                            <li class="list-item-style">Reel corto (15-30 segundos): <span class="font-bold">$10.000 ARS</span></li>
-                            <li class="list-item-style">Carrusel (3-5 imágenes): <span class="font-bold">$15.000 ARS</span></li>
-                            <li class="list-item-style">Diseño de Logo (completo): <span class="font-bold">$25.000 ARS</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Descripción de Servicios -->
-                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
-                        <h4 class="text-xl font-bold mb-4 accent-text">
-                            Servicios Destacados
-                        </h4>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="list-item-style">Diseño con Propósito: Cada pieza es creada para contar una historia.</li>
-                            <li class="list-item-style">Servicios "Listos para Publicar": Productos optimizados para uso inmediato.</li>
-                            <li class="list-item-style">Asesoría y Acompañamiento ("Hoja de Ruta"): Guía con sugerencias de frecuencia.</li>
-                            <li class="list-item-style">Difusión Viral Estratégica: Potenciamos tu contenido a través de nuestros propios canales.</li>
-                            <li class="list-item-style">Identidad Visual: Apoyo en logos, paletas de colores y tipografías.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sección 3: INFORMACIÓN COMPLEMENTARIA -->
-            <section>
-                <h3 class="text-2xl font-bold mb-6 text-center md:text-left">
-                    INFORMACIÓN COMPLEMENTARIA
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <!-- Flexibilidad y Pagos -->
-                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect">
-                        <h4 class="text-xl font-bold mb-2 accent-text">
-                            Flexibilidad y Pagos
-                        </h4>
-                        <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
-                            El Paquete BÁSICO puede ser reactivado semana a semana. Para el resto de los planes, la renovación es mensual, sin contratos de permanencia.
-                        </p>
-                        <h5 class="font-bold text-lg mb-2">Modalidad de Pago:</h5>
-                        <ul class="space-y-2 text-sm sm:text-base text-gray-700">
-                            <li class="list-item-style">70% al iniciar el proyecto.</li>
-                            <li class="list-item-style">30% al finalizar el trabajo (o al inicio de cada periodo para planes mensuales/semanales).</li>
-                        </ul>
-                        <p class="text-sm sm:text-base text-gray-700 mt-4">
-                            Aceptamos pagos vía <span class="font-bold">Mercado Pago</span> y <span class="font-bold">Transferencia vía CBU</span>.
-                        </p>
-                    </div>
-                    
-                    <!-- ¡Hablemos de tu Proyecto! -->
-                    <div class="themed-card p-6 rounded-2xl shadow-md hover-effect text-center">
-                        <h4 class="text-xl font-bold mb-4 accent-text">
-                            ¡Hablemos de tu Proyecto o emprendimiento!
-                        </h4>
-                        <p class="text-lg font-semibold text-gray-800 mb-4">
-                            ¿Listo para llevar tu marca al siguiente nivel?
-                        </p>
-                        <div class="space-y-2 text-base">
-                            <div class="text-gray-900">
-                                <span class="font-bold">Matías</span> (Diseño Audiovisual):
-                                <span class="block text-gray-600 text-sm mt-1">2617484266</span>
-                            </div>
-                            <div class="text-gray-900">
-                                <span class="font-bold">Mar</span> (Difusión Gral. Mendoza):
-                                <span class="block text-gray-600 text-sm mt-1">2612904484</span>
-                            </div>
-                            <div class="text-gray-900">
-                                <span class="font-bold">Valentín</span> (Difusión San Juan):
-                                <span class="block text-gray-600 text-sm mt-1">2645211394</span>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/+542617484266" target="_blank" class="whatsapp-link mt-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-text"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="13" x2="13" y1="8" y2="12"/><line x1="10" x2="10" y1="8" y2="12"/></svg>
-                            Contacto por WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <footer class="p-6 text-center text-sm text-gray-500 border-t border-gray-200 mt-8">
-            <p class="mb-1">
-                Proyecto del e-studio ID345.
+    <main class="container mx-auto px-4 py-16">
+        <!-- Nueva Presentación para Septiembre -->
+        <section class="text-center mb-16">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                Impulsa tu <span class="text-pixel-brand">Emprendimiento</span><br>en Septiembre.
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
+                Tu visión, nuestra creatividad. Creamos diseños que te conectan con tu audiencia y te ayudan a crecer.
             </p>
-            <p>
-                © 2025 Pixel Creativo. Todos los derechos reservados.
-            </p>
-        </footer>
+        </section>
 
+        <!-- Oferta de Septiembre -->
+        <section class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div class="bg-slate-800 p-8 md:p-12 rounded-3xl shadow-2xl border border-indigo-500 transform transition-transform duration-300 hover:scale-105">
+                <h3 class="text-4xl font-bold text-center text-indigo-400 mb-4">¡PROMO SEPTIEMBRE!</h3>
+                <p class="text-center text-gray-300 text-lg mb-8">
+                    La oportunidad perfecta para potenciar tu marca con el pie derecho.
+                </p>
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <span class="text-5xl md:text-6xl font-bold text-white leading-none">3</span>
+                    <span class="text-2xl md:text-3xl font-light text-gray-400 leading-none">Flyers<br>Estáticos</span>
+                    <span class="text-4xl font-bold text-indigo-400 leading-none">x</span>
+                    <span class="text-5xl md:text-6xl font-bold text-white leading-none">ARS$ 15.000</span>
+                </div>
+                <div class="text-center">
+                    <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
+                        ¡Quiero esta promo!
+                    </a>
+                </div>
+            </div>
+            <div>
+                <img src="https://placehold.co/800x600/1e293b/d1d5db?text=Magia+Visual" alt="Diseño gráfico abstracto" class="rounded-2xl shadow-xl">
+            </div>
+        </section>
+
+        <!-- Precios Individuales -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-10">Piezas Individuales (A Tu Medida)</h3>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Flyer Card -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
+                    <h4 class="text-2xl font-semibold mb-2">Flyer/Post Estático</h4>
+                    <p class="text-gray-400 mb-4">Un diseño único para una publicación puntual.</p>
+                    <span class="text-4xl font-bold text-emerald-400">ARS$ 7.000</span>
+                </div>
+                <!-- Reel Card -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
+                    <h4 class="text-2xl font-semibold mb-2">Reel de Narrativa Visual (15 seg)</h4>
+                    <p class="text-gray-400 mb-4">Historias en movimiento que captan la atención.</p>
+                    <span class="text-4xl font-bold text-emerald-400">ARS$ 10.000</span>
+                </div>
+                <!-- Carrusel Card -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
+                    <h4 class="text-2xl font-semibold mb-2">Carrusel (hasta 5 piezas)</h4>
+                    <p class="text-gray-400 mb-4">Una narrativa completa que educa y entretiene.</p>
+                    <span class="text-4xl font-bold text-emerald-400">ARS$ 20.000</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paquetes y Planes -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-10">Nuestros Paquetes y Planes</h3>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Paquete Básico -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
+                    <h4 class="text-2xl font-semibold mb-2 text-yellow-400">Paquete BÁSICO</h4>
+                    <p class="text-gray-400 mb-4">El mapa para que sepas cuándo y cómo usar tus diseños.</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Hoja de Ruta con sugerencias de estrategia.</li>
+                        <li>Contenido visual de alta calidad.</li>
+                        <li>Ideal para empezar con una presencia profesional.</li>
+                    </ul>
+                    <div class="mt-6 text-center">
+                        <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-2 px-6 rounded-full text-sm">Consultar</a>
+                    </div>
+                </div>
+                <!-- Paquete Avanzado -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
+                    <h4 class="text-2xl font-semibold mb-2 text-cyan-400">Paquete AVANZADO</h4>
+                    <p class="text-gray-400 mb-4">Tu plan para escalar, con más piezas y guía estratégica.</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Hoja de Ruta detallada para maximizar tu alcance.</li>
+                        <li>Te sentirás acompañado en cada decisión.</li>
+                        <li>Más piezas para mayor impacto.</li>
+                    </ul>
+                    <div class="mt-6 text-center">
+                        <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-2 px-6 rounded-full text-sm">Consultar</a>
+                    </div>
+                </div>
+                <!-- Paquete Premium -->
+                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent transition-all duration-300 hover:border-gray-600">
+                    <h4 class="text-2xl font-semibold mb-2 text-pink-400">Paquete PREMIUM</h4>
+                    <p class="text-gray-400 mb-4">La experiencia definitiva. Nos encargamos de todo.</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Hoja de Ruta detallada que guía cada paso.</li>
+                        <li>Consistencia total para tu marca.</li>
+                        <li>Gestión y publicación de tus redes.</li>
+                    </ul>
+                    <div class="mt-6 text-center">
+                        <a href="https://wa.me/5492617484266" class="inline-block bg-white text-gray-900 font-bold py-2 px-6 rounded-full text-sm">Consultar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Linktree -->
+        <section class="text-center mb-16">
+            <h3 class="text-3xl font-bold mb-4">
+                ¿Querés ver más de nuestra magia?
+            </h3>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-6">
+                Si llegaste aquí desde nuestro Linktree, ¡bienvenido de vuelta! Si no sabes de qué estamos hablando, te invitamos a que te fijes y sacies tu curiosidad. 😉
+            </p>
+            <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="inline-block btn-linktree bg-emerald-500 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">
+                Explora Nuestro Portafolio Aquí
+            </a>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="text-center bg-gray-900 p-12 rounded-3xl shadow-2xl">
+            <h3 class="text-3xl font-bold mb-4">¡Hablemos de tu Proyecto!</h3>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8">
+                Estamos listos para escuchar tu idea y crear algo increíble juntos.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="https://wa.me/5492617484266" class="bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
+                    Matías (Coordinador y Diseñador)
+                </a>
+                <a href="https://wa.me/5492612904484" class="bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
+                    Mar (Estratega Social)
+                </a>
+                <a href="https://wa.me/5493416972045" class="bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-gray-200">
+                    Valentín (Embajador Pixel)
+                </a>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer y Contador de Visitas -->
+    <footer class="py-6 text-center">
+        <p class="text-sm text-gray-500 mb-2">&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
+        <div id="visitor-counter" class="inline-block">
+            <span>Visitas a la página: </span><span id="counter-value">0</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counterElement = document.getElementById('counter-value');
+            let visitCount = localStorage.getItem('pixelCreativoVisits');
+            
+            if (visitCount) {
+                visitCount = parseInt(visitCount) + 1;
+            } else {
+                visitCount = 1;
+            }
+            
+            localStorage.setItem('pixelCreativoVisits', visitCount);
+            counterElement.textContent = visitCount;
+        });
+    </script>
 </body>
 </html>
