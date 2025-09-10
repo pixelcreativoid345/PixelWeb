@@ -38,6 +38,21 @@
         .animate-pulse-once {
             animation: pulse-once 1.5s ease-in-out;
         }
+        .collapse-panel {
+            max-height: 0;
+            transition: max-height 0.5s ease-out;
+            overflow: hidden;
+        }
+        .collapse-panel.open {
+            max-height: 500px; /* Suficiente para el contenido */
+            transition: max-height 0.5s ease-in;
+        }
+        .arrow-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .arrow-icon.rotated {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
@@ -104,14 +119,15 @@
                     Pack Digital Mensual
                 </h3>
                 <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">
-                    Tu empujón inicial para una presencia profesional. Recibe 3 piezas listas para publicar.
+                    Tu empujón inicial para una presencia profesional. Recibí 3 piezas listas para publicar.
                 </p>
+                <p class="mt-4 font-bold text-gray-700">¡DESCUENTAZO!</p>
                 <div class="mt-4 text-sm text-gray-500 max-w-2xl mx-auto">
                     Puedes elegir entre:
                     <ul class="list-disc list-inside mt-2">
                         <li>3 flyers estáticos individuales.</li>
-                        <li>1 carrusel (5 piezas) y 1 reel corto.</li>
-                        <li>2 flyers y 1 carrusel.</li>
+                        <li>1 carrusel (3 piezas) y 1 reel corto (5 piezas).</li>
+                        <li>2 flyers y 1 carrusel (de 6 piezas).</li>
                     </ul>
                 </div>
                 <div class="mt-6 flex flex-col items-center">
@@ -134,31 +150,71 @@
                 Descubre el plan que mejor se adapta a tu estrategia y presupuesto.
             </p>
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Tarjeta Paquete BÁSICO (sin precio) -->
+                <!-- Tarjeta Paquete BÁSICO -->
                 <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
                     <span class="text-5xl mb-4">🌟</span>
                     <h3 class="text-2xl font-bold text-gray-900">Paquete BÁSICO</h3>
                     <p class="mt-2 text-center text-gray-600">
                         Aquí no solo te entregamos diseños, sino que te damos el mapa para que sepas cuándo y cómo usarlos. Con este plan recibes tu Hoja de Ruta con sugerencias para una estrategia de publicación efectiva.
                     </p>
+                    <!-- Contenido Desplegable BÁSICO -->
+                    <button class="mt-6 flex items-center justify-center text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300" onclick="toggleCollapse('basic-panel', 'basic-arrow')">
+                        <span class="mr-2">Ver más detalles</span>
+                        <svg id="basic-arrow" class="w-5 h-5 arrow-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div id="basic-panel" class="collapse-panel mt-4 text-left w-full text-gray-600">
+                        <p>Se centra en la constancia y la gestión visual sin la preocupación del día a día.</p>
+                        <p class="mt-2">Incluye: <strong>8 piezas de contenido estáticas al mes</strong>, listas para publicar. El contenido será difundido por el equipo de Difusión Estratégica de manera VIRAL.</p>
+                        <p class="mt-2"><strong>ALCANCE MÍNIMO APROXIMADO: 70 PERSONAS.</strong></p>
+                        <p class="mt-2"><strong>CONSULTÁ POR EL PAQUETE BÁSICO MENSUAL (META APROXIMADA DE 800 PERSONAS).</strong></p>
+                    </div>
                 </div>
 
-                <!-- Tarjeta Paquete AVANZADO (sin precio) -->
+                <!-- Tarjeta Paquete AVANZADO -->
                 <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
                     <span class="text-5xl mb-4">🚀</span>
                     <h3 class="text-2xl font-bold text-gray-900">Paquete AVANZADO</h3>
                     <p class="mt-2 text-center text-gray-600">
                         Este es tu plan para escalar. No solo tendrás más piezas, sino que te entregaremos una Hoja de Ruta detallada que te guiará paso a paso para maximizar tu alcance. Te sentirás acompañado en cada decisión.
                     </p>
+                    <!-- Contenido Desplegable AVANZADO -->
+                    <button class="mt-6 flex items-center justify-center text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300" onclick="toggleCollapse('advanced-panel', 'advanced-arrow')">
+                        <span class="mr-2">Ver más detalles</span>
+                        <svg id="advanced-arrow" class="w-5 h-5 arrow-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div id="advanced-panel" class="collapse-panel mt-4 text-left w-full text-gray-600">
+                        <p>Diseñado para lograr una difusión profunda y aumentar la base de afiliados.</p>
+                        <p class="mt-2">Incluye:</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Contenido:</strong> 20 piezas visuales estáticas (flyers) al mes, con flexibilidad para adaptar a carruseles.</li>
+                            <li><strong>Reels:</strong> 4 Reels de 15 segundos cada uno (el metraje es adaptable).</li>
+                        </ul>
+                        <p class="mt-2">El contenido será difundido por el equipo de Difusión Estratégica de manera VIRAL.</p>
+                    </div>
                 </div>
 
-                <!-- Tarjeta Paquete PREMIUM (sin precio) -->
+                <!-- Tarjeta Paquete PREMIUM -->
                 <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
                     <span class="text-5xl mb-4">👑</span>
                     <h3 class="text-2xl font-bold text-gray-900">Paquete PREMIUM</h3>
                     <p class="mt-2 text-center text-gray-600">
                         La experiencia definitiva. Nos encargamos de todo. Desde el diseño hasta la publicación y la gestión diaria de tus redes. Tu Hoja de Ruta se convierte en nuestro manual de operaciones, garantizando una consistencia total para tu marca.
                     </p>
+                    <!-- Contenido Desplegable PREMIUM -->
+                    <button class="mt-6 flex items-center justify-center text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300" onclick="toggleCollapse('premium-panel', 'premium-arrow')">
+                        <span class="mr-2">Ver más detalles</span>
+                        <svg id="premium-arrow" class="w-5 h-5 arrow-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div id="premium-panel" class="collapse-panel mt-4 text-left w-full text-gray-600">
+                        <p>La opción más completa para posicionar la marca y lograr la máxima visibilidad.</p>
+                        <p class="mt-2">Incluye: Todo lo del Paquete AVANZADO, más el servicio de Community Manager (CM) para la gestión completa de sus redes sociales.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -166,9 +222,9 @@
 
     <!-- Sección para los curiosos -->
     <section class="bg-gray-800 py-12 px-4 md:px-8 text-center text-white">
-        <h2 class="text-3xl font-bold">¿Tienes Curiosidad?</h2>
+        <h2 class="text-3xl font-bold">¿Tenés Curiosidad?</h2>
         <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            Explora nuestro trabajo, portafolios y mucho más en un solo lugar.
+            Explorá nuestro trabajo, portafolios y mucho más en un solo lugar.
         </p>
         <div class="mt-6">
             <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="inline-block bg-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
@@ -182,7 +238,7 @@
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¡Hablemos de tu Proyecto!</h2>
             <p class="text-lg text-gray-600 mb-12">
-                Conoce a nuestro equipo y encuentra el mejor contacto para tu región.
+                Conoce a nuestro equipo y encontrá el mejor contacto para tu región.
             </p>
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <!-- Botón de Matías -->
@@ -227,30 +283,25 @@
         </div>
     </footer>
 
-    <!-- Scripts de Firebase -->
+    <!-- Scripts de Firebase y Lógica -->
     <script type="module">
-        // Importa las librerías necesarias de Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getFirestore, doc, onSnapshot, setDoc, increment } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         
-        // Define las variables globales proporcionadas por el entorno
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
-        // Activa el modo de depuración de Firebase
         setLogLevel('debug');
 
         window.onload = async function() {
             try {
-                // Inicializa la aplicación de Firebase
                 const app = initializeApp(firebaseConfig);
                 const db = getFirestore(app);
                 const auth = getAuth(app);
 
-                // Autentica al usuario usando el token provisto o de forma anónima
                 if (initialAuthToken) {
                     await signInWithCustomToken(auth, initialAuthToken);
                 } else {
@@ -259,22 +310,16 @@
 
                 const userId = auth.currentUser?.uid || crypto.randomUUID();
                 
-                // Referencia al documento para el contador de visitas
                 const statsDocRef = doc(db, `artifacts/${appId}/public/data/site_stats`, 'visit_counter');
 
-                // Escucha los cambios en tiempo real del documento
                 onSnapshot(statsDocRef, (docSnap) => {
                     const counterElement = document.getElementById('visit-counter');
                     if (counterElement) {
                         if (docSnap.exists()) {
-                            // Si el documento existe, muestra el conteo
                             const data = docSnap.data();
                             counterElement.textContent = `Visitas: ${data.count}`;
                         } else {
-                            // Si el documento no existe, lo crea con un conteo de 1
                             counterElement.textContent = 'Visitas: 1';
-                            // Intenta crear el documento solo una vez para evitar race conditions
-                            // Se usa el método setDoc con merge: true para evitar sobrescribir
                             setDoc(statsDocRef, { count: 1 }, { merge: true })
                                 .then(() => console.log("Contador de visitas inicializado."))
                                 .catch(error => console.error("Error al inicializar el contador:", error));
@@ -282,12 +327,20 @@
                     }
                 });
 
-                // Actualiza el contador de visitas cada vez que se carga la página
                 await setDoc(statsDocRef, { count: increment(1) }, { merge: true });
 
             } catch (error) {
                 console.error("Error al inicializar la aplicación o el contador de visitas:", error);
             }
+        };
+
+        // Función para los paneles desplegables
+        window.toggleCollapse = function(panelId, arrowId) {
+            const panel = document.getElementById(panelId);
+            const arrow = document.getElementById(arrowId);
+            
+            panel.classList.toggle('open');
+            arrow.classList.toggle('rotated');
         };
     </script>
 </body>
