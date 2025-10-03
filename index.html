@@ -3,353 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo</title>
-    <!-- Favicon para la pestaña, creado con SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%236B21A8' d='M25 25h50v50H25z'/%3E%3C/svg%3E">
+    <title>Pixel Creativo | Diseño y Difusión Viral Estratégica</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pixel-dark': '#1A1A2E',
+                        'pixel-accent': '#FFD700', // Dorado/Amarillo brillante
+                        'pixel-secondary': '#4A4E69',
+                        'pixel-light': '#F4F4F9',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        /* Estilos generales para un fondo oscuro */
         body {
+            background-color: #1A1A2E;
+            color: #F4F4F9;
             font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-        .bg-magic-gradient {
-            background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
-        }
-        .text-glow-purple {
-            text-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
-        }
-        .card-bg-light {
-            background-color: rgba(255, 255, 255, 0.95);
-        }
-        .card-bg-dark {
-            background-color: rgba(31, 41, 55, 0.95);
-        }
-        .shadow-glow-purple {
-            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
-        }
-        @keyframes pulse-once {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-        .animate-pulse-once {
-            animation: pulse-once 1.5s ease-in-out;
-        }
-        .collapse-panel {
-            max-height: 0;
-            transition: max-height 0.5s ease-out;
-            overflow: hidden;
-        }
-        .collapse-panel.open {
-            max-height: 500px; /* Suficiente para el contenido */
-            transition: max-height 0.5s ease-in;
-        }
-        .arrow-icon {
-            transition: transform 0.3s ease-in-out;
-        }
-        .arrow-icon.rotated {
-            transform: rotate(180deg);
+        .section-heading {
+            border-left: 5px solid #FFD700;
         }
     </style>
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen">
+<body class="antialiased">
 
-    <!-- Sección de la Cabecera/Hero -->
-    <div class="bg-magic-gradient flex-grow flex flex-col items-center justify-center text-center py-20 px-4">
-        <div class="relative w-full max-w-4xl mx-auto z-10">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-white text-glow-purple animate-pulse-once">
-                ¡Septiembre Mágico en Pixel Creativo!
-            </h1>
-            <p class="mt-4 text-xl md:text-2xl font-medium text-purple-200">
-                La forma más simple y poderosa de potenciar tu emprendimiento.
-            </p>
+    <!-- Header / Navbar -->
+    <header class="p-4 sm:p-6 bg-pixel-dark border-b border-pixel-secondary/50 shadow-lg sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-pixel-accent">Pixel Creativo</h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#servicios" class="hover:text-pixel-accent transition duration-200">Piezas Individuales</a>
+                <a href="#paquetes" class="hover:text-pixel-accent transition duration-200">Packs Mensuales</a>
+                <a href="#contacto" class="hover:text-pixel-accent transition duration-200">Contacto</a>
+            </nav>
+            <a href="#paquetes" class="md:hidden bg-pixel-accent text-pixel-dark px-4 py-2 rounded-full font-bold text-sm shadow-md hover:bg-yellow-400 transition duration-200">Ver Packs</a>
         </div>
-    </div>
+    </header>
 
-    <!-- Sección de Precios Individuales (Actualizada con precios base) -->
-    <section class="py-16 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Precios de Septiembre: Servicios Individuales
+    <!-- Hero Section -->
+    <section class="py-16 sm:py-24 text-center bg-pixel-dark">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 text-pixel-light">
+                <span class="text-pixel-accent">Diseño con Propósito.</span> Ventas que Brotan.
             </h2>
-            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Tarjeta Flyer -->
-                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 transform transition-transform hover:scale-105">
-                    <h3 class="text-2xl font-bold text-gray-900">Flyer/Post Estático</h3>
-                    <p class="mt-2 text-gray-600">Una pieza de comunicación única diseñada para destacar.</p>
-                    <div class="mt-4">
-                        <!-- Precio Base: $10.000, Ahora: $7.000 -->
-                        <span class="text-sm line-through text-gray-400 mr-2">$10.000 ARS</span>
-                        <span class="text-3xl font-extrabold text-purple-700">$7.000 ARS</span>
-                    </div>
-                </div>
-                <!-- Tarjeta Reel -->
-                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 transform transition-transform hover:scale-105">
-                    <h3 class="text-2xl font-bold text-gray-900">Reel de Narrativa Visual (15s)</h3>
-                    <p class="mt-2 text-gray-600">
-                        Storytelling (contamos tu historia con ideas) en video para captar la atención de tu audiencia.
-                    </p>
-                    <div class="mt-4">
-                        <!-- Precio Base: $15.000, Ahora: $10.000 -->
-                        <span class="text-sm line-through text-gray-400 mr-2">$15.000 ARS</span>
-                        <span class="text-3xl font-extrabold text-purple-700">$10.000 ARS</span>
-                    </div>
-                </div>
-                <!-- Tarjeta Carrusel -->
-                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 transform transition-transform hover:scale-105">
-                    <h3 class="text-2xl font-bold text-gray-900">Carrusel (hasta 5 piezas)</h3>
-                    <p class="mt-2 text-gray-600">
-                        Una serie de imágenes para informar, generar entendimiento (de horarios, plazos, etc) y valor en tu audiencia.
-                    </p>
-                    <div class="mt-4">
-                        <!-- Precio Base: $25.000, Ahora: $20.000 -->
-                        <span class="text-sm line-through text-gray-400 mr-2">$25.000 ARS</span>
-                        <span class="text-3xl font-extrabold text-purple-700">$20.000 ARS</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de la Promo de Septiembre (Pack Digital Único con precio base) -->
-    <section class="bg-gray-200 py-16 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="card-bg-light rounded-3xl shadow-glow-purple p-8 md:p-12">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-purple-700 animate-pulse-once">
-                    Pack Digital Único
-                </h2>
-                <h3 class="mt-4 text-2xl font-semibold text-gray-900">
-                    Tu empujón inicial para una presencia profesional. Recibí 3 piezas listas para publicar.
-                </h3>
-                <p class="mt-4 font-bold text-gray-700">¡DESCUENTAZO!</p>
-                <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">
-                    3 flyers estáticos individuales para contar sobre tu emprendimiento, ideas o lo que necesites publicar en tus redes sociales.
-                </p>
-                <button class="mt-6 flex items-center justify-center mx-auto text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300" onclick="toggleCollapse('promo-panel', 'promo-arrow')">
-                    <span class="mr-2">Detalles desplegables</span>
-                    <svg id="promo-arrow" class="w-5 h-5 arrow-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-                <div id="promo-panel" class="collapse-panel mt-4 text-left w-full text-gray-600">
-                    <ul class="list-disc list-inside mt-2 text-sm text-gray-600">
-                        <li>La idea es que te facilitemos la posibilidad de compartir de manera efectiva y rapida con una estrategia pensada en agregarle valor a tu idea o emprendimiento.</li>
-                        <li>(Solo incluye visuales).</li>
-                        <li>Los 3 serán compartidos en nuestras redes sociales en una publicacion unica como agradecimiento dandote una difusion minima.</li>
-                    </ul>
-                </div>
-                <div class="mt-6 flex flex-col items-center">
-                    <!-- Precio Base: $30.000, Ahora: $15.000 -->
-                    <p class="text-xl line-through text-gray-500 mb-1">Precio sin descuento: $30.000 ARS</p>
-                    <span class="text-4xl md:text-5xl font-extrabold text-purple-700">$15.000 ARS</span>
-                    <a href="https://wa.me/5492617484266" target="_blank" class="mt-6 bg-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
-                        ¡Adquirir la Promo!
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Paquetes y Planes (Sin cambios, solo para referencia) -->
-    <section class="py-16 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Planes Mensuales
-            </h2>
-            <p class="text-gray-600 mb-12">
-                Descubre el plan que mejor se adapta a tu estrategia y presupuesto.
+            <p class="text-xl text-pixel-secondary mb-8 sm:mb-10">
+                Somos Pixel Creativo. Convertimos tu idea en contenido visual profesional listo para publicar y lo potenciamos con nuestra exclusiva **Difusión Viral Estratégica**.
             </p>
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Tarjeta Paquete BÁSICO -->
-                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
-                    <span class="text-5xl mb-4">🌟</span>
-                    <h3 class="text-2xl font-bold text-gray-900">Paquete BÁSICO</h3>
-                    <p class="mt-2 text-center text-gray-600">
-                        Aquí no solo te entregamos diseños, sino que te damos el mapa para que sepas cuándo y cómo usarlos. Con este plan recibes tu Hoja de Ruta con sugerencias para una estrategia de publicación efectiva.
-                    </p>
-                    <!-- Contenido Desplegable BÁSICO -->
-                    <button class="mt-6 flex items-center justify-center text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300" onclick="toggleCollapse('basic-panel', 'basic-arrow')">
-                        <span class="mr-2">Ver más detalles</span>
-                        <svg id="basic-arrow" class="w-5 h-5 arrow-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="basic-panel" class="collapse-panel mt-4 text-left w-full text-gray-600">
-                        <p>Se centra en la constancia y la gestión visual sin la preocupación del día a día.</p>
-                        <p class="mt-2">Incluye: <strong>8 piezas de contenido estáticas al mes</strong>, listas para publicar. El contenido será difundido por el equipo de Difusión Estratégica de manera VIRAL.</p>
-                        <p class="mt-2"><strong>ALCANCE MÍNIMO APROXIMADO: 70 PERSONAS.</strong></p>
-                        <p class="mt-2"><strong>CONSULTÁ POR EL PAQUETE BÁSICO MENSUAL (META APROXIMADA DE 800 PERSONAS).</strong></p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta Paquete AVANZADO -->
-                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
-                    <span class="text-5xl mb-4">🚀</span>
-                    <h3 class="text-2xl font-bold text-gray-900">Paquete AVANZADO</h3>
-                    <p class="mt-2 text-center text-gray-600">
-                        Este es tu plan para escalar. No solo tendrás más piezas, sino que te entregaremos una Hoja de Ruta detallada que te guiará paso a paso para maximizar tu alcance. Te sentirás acompañado en cada decisión.
-                    </p>
-                    <!-- Contenido Desplegable AVANZADO -->
-                    <button class="mt-6 flex items-center justify-center text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300" onclick="toggleCollapse('advanced-panel', 'advanced-arrow')">
-                        <span class="mr-2">Ver más detalles</span>
-                        <svg id="advanced-arrow" class="w-5 h-5 arrow-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="advanced-panel" class="collapse-panel mt-4 text-left w-full text-gray-600">
-                        <p>Diseñado para lograr una difusión profunda y aumentar la base de afiliados.</p>
-                        <p class="mt-2">Incluye:</p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li><strong>Contenido:</strong> 20 piezas visuales estáticas (flyers) al mes, con flexibilidad para adaptar a carruseles.</li>
-                            <li><strong>Reels:</strong> 4 Reels de 15 segundos cada uno (el metraje es adaptable).</li>
-                        </ul>
-                        <p class="mt-2">El contenido será difundido por el equipo de Difusión Estratégica de manera VIRAL.</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta Paquete PREMIUM -->
-                <div class="card-bg-light rounded-xl shadow-xl p-6 md:p-8 flex flex-col items-center">
-                    <span class="text-5xl mb-4">👑</span>
-                    <h3 class="text-2xl font-bold text-gray-900">Paquete PREMIUM</h3>
-                    <p class="mt-2 text-center text-gray-600">
-                        La experiencia definitiva. Nos encargamos de todo. Desde el diseño hasta la publicación y la gestión diaria de tus redes. Tu Hoja de Ruta se convierte en nuestro manual de operaciones, garantizando una consistencia total para tu marca.
-                    </p>
-                    <!-- Contenido Desplegable PREMIUM -->
-                    <button class="mt-6 flex items-center justify-center text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-300" onclick="toggleCollapse('premium-panel', 'premium-arrow')">
-                        <span class="mr-2">Ver más detalles</span>
-                        <svg id="premium-arrow" class="w-5 h-5 arrow-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="premium-panel" class="collapse-panel mt-4 text-left w-full text-gray-600">
-                        <p>La opción más completa para posicionar la marca y lograr la máxima visibilidad.</p>
-                        <p class="mt-2">Incluye: Todo lo del Paquete AVANZADO, más el servicio de Community Manager (CM) para la gestión completa de sus redes sociales.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección para los curiosos -->
-    <section class="bg-gray-800 py-12 px-4 md:px-8 text-center text-white">
-        <h2 class="text-3xl font-bold">¿Tenés Curiosidad?</h2>
-        <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            Explorá nuestro trabajo, portafolios y mucho más en un solo lugar.
-        </p>
-        <div class="mt-6">
-            <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="inline-block bg-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">
-                Ver nuestro Linktree
+            <a href="#paquetes" class="inline-block bg-pixel-accent text-pixel-dark px-10 py-4 rounded-full font-extrabold text-lg shadow-xl hover:shadow-2xl hover:bg-yellow-400 transform hover:scale-105 transition duration-300 ease-in-out">
+                ¡Quiero mi Difusión Viral!
             </a>
         </div>
     </section>
 
-    <!-- Sección de Contacto (Actualizada con solo 2 miembros y centrada) -->
-    <section class="py-16 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¡Hablemos de tu Proyecto!</h2>
-            <p class="text-lg text-gray-600 mb-12">
-                Conoce a nuestro equipo y encontrá el mejor contacto para tu región.
-            </p>
-            <!-- Grid de dos columnas para los contactos, centrada -->
-            <div class="grid gap-6 sm:grid-cols-2 max-w-lg mx-auto">
-                <!-- Botón de Matías -->
-                <a href="https://wa.me/5492617484266" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-colors duration-300 transform hover:-translate-y-1">
-                    <h3 class="text-xl font-bold">Matías</h3>
-                    <p class="text-sm mt-1 opacity-80">Diseño & Coordinación</p>
-                    <p class="text-sm mt-2 font-light">2617484266</p>
-                </a>
-                <!-- Botón de Mar -->
-                <a href="https://wa.me/5492612794015" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-colors duration-300 transform hover:-translate-y-1">
-                    <h3 class="text-xl font-bold">Mar</h3>
-                    <p class="text-sm mt-1 opacity-80">Estrategia & Difusión (Mendoza)</p>
-                    <p class="text-sm mt-2 font-light">2612794015</p>
-                </a>
+    <!-- Services Section (Piezas Individuales) -->
+    <section id="servicios" class="py-16 sm:py-20 bg-pixel-dark">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading">Piezas Individuales (Tarifas Base Fijas)</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Servicio: Flyer (Pieza Estática) -->
+                <div class="bg-pixel-secondary/30 p-8 rounded-xl shadow-lg border border-pixel-secondary hover:border-pixel-accent transition duration-300">
+                    <div class="text-3xl font-bold text-pixel-accent mb-2">Flyer/Pieza Estática</div>
+                    <p class="text-pixel-light/80 mb-4">El arte visual esencial para comunicar un mensaje directo y captar la atención. Entregado "Listo para Publicar".</p>
+                    <div class="text-4xl font-extrabold mb-6">ARS$ 15.000</div>
+                    <ul class="space-y-3 text-sm text-pixel-light">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Diseño de imagen única de alto impacto.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Servicio "Listo para Publicar".
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-xs text-pixel-accent font-semibold">
+                        *Difusión Viral: Costos aparte. Alcance estándar: 10 personas/día garantizado.
+                    </p>
+                </div>
+
+                <!-- Servicio: Carrusel (hasta 5 piezas) -->
+                <div class="bg-pixel-secondary/30 p-8 rounded-xl shadow-lg border border-pixel-secondary hover:border-pixel-accent transition duration-300">
+                    <div class="text-3xl font-bold text-pixel-accent mb-2">Carrusel Educativo</div>
+                    <p class="text-pixel-light/80 mb-4">Una serie de hasta 5 imágenes diseñada para educar, generar valor profundo y mantener a tu audiencia interactuando.</p>
+                    <div class="text-4xl font-extrabold mb-6">ARS$ 25.000</div>
+                    <ul class="space-y-3 text-sm text-pixel-light">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Diseño y estrategia de contenido de 5 piezas.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Foco en retención y valor para el cliente.
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-xs text-pixel-accent font-semibold">
+                        *Difusión Viral: Costos aparte. Alcance estándar: 10 personas/día garantizado.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de agradecimiento y motivación -->
-    <div class="bg-gray-800 text-white py-12 px-4 md:px-8 text-center">
-        <p class="text-lg md:text-xl italic font-light mb-4 max-w-3xl mx-auto">
-            "Cada paso es tu acción, los resultados no dependen del tiempo sino del avance de las decisiones que tomes..."
-        </p>
-        <p class="font-bold mb-4">― El Staff de Pixel Creativo.</p>
-        <p class="text-lg md:text-xl text-gray-300">
-            Agradecemos sinceramente que hayas explorado nuestra oferta. Te deseamos un camino lleno de éxitos y crecimiento para tu emprendimiento.
-        </p>
-    </div>
+    <!-- Pricing Section (Packs Mensuales) -->
+    <section id="paquetes" class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">Packs Mensuales: Tu aliado estratégico para el despegue</h3>
+            <p class="text-xl mb-12 max-w-3xl">Maximiza tu presencia con planes diseñados para la constancia y el crecimiento. Todos nuestros packs incluyen nuestra **Difusión Viral Estratégica**.</p>
 
-    <!-- Pie de página -->
-    <footer class="bg-gray-900 text-gray-400 py-6 px-4 md:px-8 text-center text-sm">
-        <p>&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
-        <p class="mt-1">Desarrollado por: e-Studio ID345.</p>
-        <div class="mt-4">
-            <p id="visit-counter" class="text-xs text-gray-500"></p>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Plan 1: Digital Inicial (Basado en Pack Digital Mensual - Oct 2025) -->
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-4 border-gray-100 flex flex-col hover:shadow-pixel-accent/50 transition duration-300">
+                    <span class="text-sm font-semibold text-gray-500 uppercase mb-2">Paso 1</span>
+                    <h4 class="text-3xl font-bold mb-4">Digital Inicial</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">El empujón inicial para una presencia visual profesional constante.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">ARS$ 15.000 <span class="text-xl font-normal text-gray-500">/ mes</span></div>
+                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            **3** Flyers listos para publicar.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Difusión Viral Estándar.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Alcance de **10 personas/día** por pieza garantizado.
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover:bg-pixel-secondary transition duration-200">Empezar Ahora</a>
+                </div>
+
+                <!-- Plan 2: Avanzado (Basado en Paquete AVANZADO - Aug 2025) -->
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-4 border-pixel-accent flex flex-col transform scale-105 z-10 hover:shadow-pixel-dark transition duration-300">
+                    <span class="text-sm font-semibold text-pixel-accent uppercase mb-2">Máximo Impacto</span>
+                    <h4 class="text-3xl font-bold mb-4 text-pixel-accent">Paquete AVANZADO</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">Contenido masivo y difusión intensiva para un crecimiento rápido y medible.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">ARS$ 140.000 <span class="text-xl font-normal text-gray-500">/ mes</span></div>
+                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            **20** piezas de contenido estáticas.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            **4** Videos Reels mensuales.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Difusión **Alta** (1500 a 2000 personas/mes por pieza).
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full text-center bg-pixel-accent text-pixel-dark px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition duration-200">Elegir Plan Avanzado</a>
+                </div>
+
+                <!-- Plan 3: Premium (Basado en Paquete PREMIUM - Aug 2025) -->
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-4 border-gray-100 flex flex-col hover:shadow-pixel-accent/50 transition duration-300">
+                    <span class="text-sm font-semibold text-gray-500 uppercase mb-2">Experiencia Definitiva</span>
+                    <h4 class="text-3xl font-bold mb-4">Paquete PREMIUM</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">La gestión total. Nos encargamos de todo: diseño, publicación y Community Manager.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">ARS$ 175.000 <span class="text-xl font-normal text-gray-500">/ mes</span></div>
+                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Servicio de Community Manager completo.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Piezas de contenido **ilimitadas**.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Difusión **Máxima Estratégica** (Metas de leads garantizadas).
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover:bg-pixel-secondary transition duration-200">Solicitar Presupuesto</a>
+                </div>
+
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-10">Todos los precios están expresados en Pesos Argentinos (ARS) y son válidos para el período de Octubre 2025.</p>
         </div>
+    </section>
+
+    <!-- Value Proposition / Viral Diffusion Details -->
+    <section class="py-16 sm:py-20 bg-pixel-secondary/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-4 text-center section-heading inline-block px-2 text-pixel-accent">¿Qué es la Difusión Viral Estratégica?</h3>
+            <p class="text-xl text-center text-pixel-light/80 max-w-3xl mx-auto mb-8">Es el motor que hace brotar tus ventas post-primavera.</p>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-xl bg-pixel-dark/50">
+                    <div class="text-5xl mb-3 text-pixel-accent">🚀</div>
+                    <h4 class="font-bold text-lg mb-2">Impulso Inicial</h4>
+                    <p class="text-sm text-pixel-light/70">Garantizamos un alcance mínimo en canales externos (WhatsApp, grupos de Facebook) para que tu contenido no nazca en el vacío.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-pixel-dark/50">
+                    <div class="text-5xl mb-3 text-pixel-accent">🌱</div>
+                    <h4 class="font-bold text-lg mb-2">Crecimiento Orgánico</h4>
+                    <p class="text-sm text-pixel-light/70">Tras el impulso, dejamos las publicaciones activas para que sigan corriendo de manera pasiva y generen público objetivo a largo plazo.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-pixel-dark/50">
+                    <div class="text-5xl mb-3 text-pixel-accent">👁️</div>
+                    <h4 class="font-bold text-lg mb-2">Alcance, no Clicks</h4>
+                    <p class="text-sm text-pixel-light/70 font-semibold text-pixel-accent">Importante:</p>
+                    <p class="text-xs text-pixel-light/70">La difusión garantiza **visualización o alcance**, no incluye clicks, ventas ni prospectaje directo. Es un crecimiento altamente considerable del público objetivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto / CTA Section -->
+    <section id="contacto" class="py-16 sm:py-20 text-center bg-pixel-dark border-t border-pixel-secondary/50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-4xl font-extrabold mb-4 text-pixel-light">¡Hablemos de tu Proyecto!</h3>
+            <p class="text-xl text-pixel-secondary mb-8">
+                ¿Listo para llevar tu emprendimiento al siguiente nivel y ver brotar tus ventas? Queremos escuchar tu idea y crear algo increíble juntos.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <!-- Matías Contact -->
+                <div class="p-4 rounded-xl bg-pixel-secondary/50 shadow-lg w-full sm:w-auto">
+                    <p class="font-bold text-pixel-accent">Matías (Coordinador y Diseñador)</p>
+                    <a href="tel:2617484266" class="text-lg font-semibold hover:text-pixel-accent transition duration-200">261 7484266</a>
+                </div>
+                <!-- Mar Contact -->
+                <div class="p-4 rounded-xl bg-pixel-secondary/50 shadow-lg w-full sm:w-auto">
+                    <p class="font-bold text-pixel-accent">Mar (Estratega Social - Mendoza)</p>
+                    <p class="text-lg font-semibold"> (Contactar al número provisto)</p>
+                </div>
+            </div>
+            <p class="text-sm text-pixel-secondary mt-6">Contáctanos para una consulta sin cargo.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-4 text-center bg-pixel-secondary/30 text-sm text-pixel-secondary">
+        <p>&copy; 2025 Pixel Creativo. Documento Confidencial. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts de Firebase y Lógica -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getFirestore, doc, onSnapshot, setDoc, increment } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-        setLogLevel('debug');
-
-        window.onload = async function() {
-            try {
-                const app = initializeApp(firebaseConfig);
-                const db = getFirestore(app);
-                const auth = getAuth(app);
-
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    await signInAnonymously(auth);
-                }
-
-                const userId = auth.currentUser?.uid || crypto.randomUUID();
-                
-                const statsDocRef = doc(db, `artifacts/${appId}/public/data/site_stats`, 'visit_counter');
-
-                onSnapshot(statsDocRef, (docSnap) => {
-                    const counterElement = document.getElementById('visit-counter');
-                    if (counterElement) {
-                        if (docSnap.exists()) {
-                            const data = docSnap.data();
-                            counterElement.textContent = `Visitas: ${data.count}`;
-                        } else {
-                            counterElement.textContent = 'Visitas: 1';
-                            setDoc(statsDocRef, { count: 1 }, { merge: true })
-                                .then(() => console.log("Contador de visitas inicializado."))
-                                .catch(error => console.error("Error al inicializar el contador:", error));
-                        }
-                    }
-                });
-
-                await setDoc(statsDocRef, { count: increment(1) }, { merge: true });
-
-            } catch (error) {
-                console.error("Error al inicializar la aplicación o el contador de visitas:", error);
-            }
-        };
-
-        // Función para los paneles desplegables
-        window.toggleCollapse = function(panelId, arrowId) {
-            const panel = document.getElementById(panelId);
-            const arrow = document.getElementById(arrowId);
-            
-            panel.classList.toggle('open');
-            arrow.classList.toggle('rotated');
-        };
-    </script>
 </body>
 </html>
