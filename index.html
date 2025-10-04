@@ -57,8 +57,10 @@
     <!-- Hero Section -->
     <section class="py-16 sm:py-24 text-center bg-pixel-dark">
         <div class="max-w-4xl mx-auto px-4">
+            <!-- Título Modificado y Alineado -->
             <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 text-pixel-light">
-                <span class="text-pixel-accent">Diseño con Propósito.</span> Brotan tus ventas.
+                <span class="text-pixel-accent block">DISEÑO CON PROPÓSITO.</span> 
+                <span class="block">¡Brotan tus ventas!</span>
             </h2>
             <p class="text-xl text-pixel-secondary mb-8 sm:mb-10">
                 Somos Pixel Creativo. Potenciamos tu contenido con nuestra exclusiva Difusión Viral Estratégica para un crecimiento sostenido.
@@ -320,6 +322,7 @@
         function toggleAccordion(id) {
             const details = document.getElementById(id);
             const icon = document.getElementById(id.replace('-details', '-icon'));
+            // Usamos scrollHeight para que la altura sea dinámica y se adapte al contenido
             const isVisible = details.style.maxHeight && details.style.maxHeight !== '0px';
 
             if (isVisible) {
