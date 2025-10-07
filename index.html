@@ -36,6 +36,17 @@
             /* Uso del color de acento para la línea de separación */
             border-left: 5px solid #00BFFF; 
         }
+        /* Clase para la animación del acordeón */
+        .accordion-details {
+            max-height: 0;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            overflow: hidden;
+        }
+        .accordion-open {
+            /* max-height se calcula dinámicamente en el script */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -74,13 +85,13 @@
     <!-- Services Section (Piezas Individuales) -->
     <section id="servicios" class="py-16 sm:py-20 bg-pixel-dark">
         <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading">Piezas Individuales (Tarifas Base Fijas)</h3>
+            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading">1. Piezas Individuales (Tarifas Base Fijas)</h3>
             
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Servicio: Flyer (Pieza Estática) Opción con Publicidad -->
+                <!-- Servicio: Flyer + Viral (Precio ARS$ 10.000) -->
                 <div class="bg-pixel-secondary/20 p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-accent transition duration-300">
-                    <div class="text-3xl font-bold text-pixel-accent mb-2">Flyer + Viral</div>
+                    <div class="text-3xl font-bold text-pixel-accent mb-2">Flyer + Viral (1 Semana)</div>
                     <p class="text-pixel-light/80 mb-4">Flyer digital listo para publicar, impulsado con difusión viral por una semana.</p>
                     <div class="text-4xl font-extrabold mb-6 text-pixel-light">
                         <span class="text-4xl font-extrabold">10.000</span> ARS
@@ -88,22 +99,22 @@
                     <ul class="space-y-3 text-sm text-pixel-light">
                         <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            Flyer digital (1 pieza).
+                            Flyer digital (1 pieza estática).
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            1 semana de Publicidad Viral.
+                            1 semana de Difusión Viral Estándar.
                         </li>
                         <li class="flex items-center text-xs text-pixel-secondary">
-                            Alcance: 10 personas/día garantizado.
+                            Alcance: 10 personas/día garantizado (visibilidad).
                         </li>
                     </ul>
                 </div>
 
-                 <!-- Servicio: Flyer (Pieza Estática) Opción sin Publicidad -->
-                 <div class="bg-pixel-secondary/20 p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-accent transition duration-300">
-                    <div class="text-3xl font-bold text-pixel-accent mb-2">Flyer Solo</div>
-                    <p class="text-pixel-light/80 mb-4">Pieza estática optimizada y lista para su uso inmediato.</p>
+                <!-- Servicio: Flyer Solo (Precio ARS$ 7.000) -->
+                <div class="bg-pixel-secondary/20 p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-accent transition duration-300">
+                    <div class="text-3xl font-bold text-pixel-accent mb-2">Flyer Digital</div>
+                    <p class="text-pixel-light/80 mb-4">Una pieza estática optimizada y lista para su uso inmediato.</p>
                     <div class="text-4xl font-extrabold mb-6 text-pixel-light">
                         <span class="text-4xl font-extrabold">7.000</span> ARS
                     </div>
@@ -117,7 +128,7 @@
                             Entrega "Listo para Publicar".
                         </li>
                         <li class="flex items-center text-xs text-pixel-secondary">
-                            Sin publicidad viral externa.
+                            Difusión cotizada aparte / No incluida en la base.
                         </li>
                     </ul>
                 </div>
@@ -128,7 +139,7 @@
                     <p class="text-pixel-light/80 mb-4">Contenido dinámico (video) o educativo (múltiples imágenes) con enfoque narrativo.</p>
                     <ul class="space-y-3 text-sm text-pixel-light mb-4">
                         <li class="flex justify-between items-center border-b border-pixel-secondary/50 pb-1">
-                            <span>Reel Narrativa Visual</span>
+                            <span>Reel de Narrativa Visual</span>
                             <span class="font-extrabold text-pixel-light"><span class="font-extrabold">15.000</span> ARS</span>
                         </li>
                         <li class="flex justify-between items-center">
@@ -137,7 +148,7 @@
                         </li>
                     </ul>
                     <p class="mt-4 text-xs text-pixel-accent font-semibold">
-                        La Difusión Viral se cotiza aparte para estas piezas.
+                        La Difusión Viral Estratégica se cotiza aparte para estas piezas.
                     </p>
                 </div>
             </div>
@@ -147,7 +158,7 @@
     <!-- Pricing Section (Packs Mensuales) -->
     <section id="paquetes" class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
         <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">Packs Mensuales de Crecimiento Estratégico</h3>
+            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">2. Packs Mensuales de Crecimiento Estratégico</h3>
             <p class="text-xl mb-12 max-w-3xl">Planes diseñados para alcanzar un público objetivo altamente considerable y maximizar tu presencia digital. Elige el que mejor se adapte a tu ritmo de crecimiento.</p>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -168,44 +179,46 @@
                     </button>
 
                     <!-- Detalles del Acordeón (Inicialmente ocultos) -->
-                    <div id="basic-details" class="mt-6 space-y-4 overflow-hidden max-h-0 transition-all duration-500">
+                    <div id="basic-details" class="accordion-details mt-6 space-y-4">
                         
-                        <!-- Opción Semanal -->
+                        <!-- Opción Semanal (Precio Actualizado a 35.000 ARS) -->
                         <div class="p-4 bg-pixel-secondary/20 rounded-lg text-pixel-dark border border-gray-300">
                             <h5 class="text-lg font-bold text-pixel-dark">Opción Semanal</h5>
                             <div class="text-3xl font-extrabold my-2 text-pixel-dark">
-                                <span class="font-extrabold">20.000</span> ARS <span class="text-sm font-normal text-gray-700">/ semana</span>
+                                <span class="font-extrabold">35.000</span> ARS <span class="text-sm font-normal text-gray-700">/ semana</span>
                             </div>
                             <p class="text-xs text-gray-700 font-semibold mb-2">Contenido:</p>
                             <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
-                                <li>5 piezas para publicar (días hábiles).</li>
-                                <li>Difusión viral: Alcance de 50 a 100 personas (solo visibilidad).</li>
-                                <li>Beneficio Extra: 1 semana de publicaciones adicional al no renovar o transferirse al plan mensual.</li>
+                                <li>5 piezas para publicar (días hábiles comerciales).</li>
+                                <li>Linktree incluido.</li>
+                                <li>Difusión viral: Alcance de 50 a 100 personas por semana.</li>
+                                <li>Beneficio Extra: 1 semana de actividad pasiva al no renovar.</li>
                             </ul>
                         </div>
 
-                        <!-- Opción Mensual (Precio Corregido a 100.000 ARS) -->
+                        <!-- Opción Mensual (Precio Actualizado a 150.000 ARS) -->
                         <div class="p-4 bg-pixel-secondary/20 rounded-lg text-pixel-dark border border-gray-300">
                             <h5 class="text-lg font-bold text-pixel-dark">Opción Mensual</h5>
                             <div class="text-3xl font-extrabold my-2 text-pixel-dark">
-                                <span class="font-extrabold">100.000</span> ARS <span class="text-sm font-normal text-gray-700">/ mes</span>
+                                <span class="font-extrabold">150.000</span> ARS <span class="text-sm font-normal text-gray-700">/ mes</span>
                             </div>
                             <p class="text-xs text-gray-700 font-semibold mb-2">Contenido:</p>
                             <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
-                                <li>12 diseños para publicar durante todo el mes.</li>
-                                <li>Difusión viral: Alcance de 100 a 300 personas (solo visibilidad).</li>
+                                <li>8 diseños para publicar durante todo el mes.</li>
+                                <li>Linktree incluido. Sin crecimiento pasivo de seguidores.</li>
+                                <li>Difusión viral: Alcance de 100 a 300 personas por mes.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Plan 2: AVANZADO -->
+                <!-- Plan 2: AVANZADO (Precio Actualizado a 200.000 ARS) -->
                 <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-gray-100 flex flex-col hover:shadow-pixel-accent/50 transition duration-300">
                     <span class="text-sm font-semibold text-gray-500 uppercase mb-2">Crecimiento Sostenido</span>
                     <h4 class="text-3xl font-bold mb-4">Paquete AVANZADO</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">Contenido mixto y difusión masiva para impulsar tus ventas.</p>
+                    <p class="text-gray-600 mb-6 flex-grow">Contenido mixto y difusión media para un crecimiento sostenido.</p>
                     <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
-                        <span class="font-extrabold">140.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
+                        <span class="font-extrabold">200.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
                     </div>
                     <ul class="space-y-3 text-sm text-gray-700 mb-8">
                         <li class="flex items-center">
@@ -218,19 +231,23 @@
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            Difusión Viral de 500 a 1.000 personas.
+                            Difusión Viral de 500 a 1.000 personas por pieza.
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Linktree + crecimiento pasivo de seguidores.
                         </li>
                     </ul>
                     <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover:bg-pixel-secondary transition duration-200">Elegir Plan Avanzado</a>
                 </div>
 
-                <!-- Plan 3: PREMIUM -->
+                <!-- Plan 3: PREMIUM (Precio Actualizado a 350.000 ARS) -->
                 <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-pixel-accent flex flex-col transform scale-105 z-10 hover:shadow-2xl transition duration-300">
                     <span class="text-sm font-semibold text-pixel-accent uppercase mb-2">Máximo Liderazgo</span>
                     <h4 class="text-3xl font-bold mb-4 text-pixel-accent">Paquete PREMIUM</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">Gestión total, alta difusión, soporte CM y apoyo en Facebook ADS.</p>
+                    <p class="text-gray-600 mb-6 flex-grow">La solución definitiva: Gestión total, alta difusión y soporte web.</p>
                     <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
-                        <span class="font-extrabold">250.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
+                        <span class="font-extrabold">350.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
                     </div>
                     <ul class="space-y-3 text-sm text-gray-700 mb-8">
                         <li class="flex items-center">
@@ -262,34 +279,32 @@
         </div>
     </section>
 
-    <!-- Value Proposition / Viral Diffusion Details -->
+    <!-- Value Proposition / Viral Diffusion Details (Content Updated) -->
     <section class="py-16 sm:py-20 bg-pixel-secondary/20">
         <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-4 text-center section-heading inline-block px-2 text-pixel-accent">La Difusión Viral Estratégica</h3>
-            <p class="text-xl text-center text-pixel-light/80 max-w-3xl mx-auto mb-8">El motor que genera un crecimiento considerable de tu público objetivo a largo plazo.</p>
+            <h3 class="text-3xl font-bold mb-4 text-center section-heading inline-block px-2 text-pixel-accent">3. La Difusión Viral Estratégica</h3>
+            
+            <!-- Nuevo Bloque Simplificado -->
+            <p class="text-xl text-center text-pixel-light/80 max-w-5xl mx-auto mb-8">
+                Nuestra difusión viral se enfoca exclusivamente en la **región** y el **público objetivo** correspondiente a tu marca. Utilizamos **estrategias certeras** puestas a prueba con evidencia empírica para garantizar que tu mensaje llegue a las personas adecuadas.
+            </p>
 
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md">
-                    <div class="text-5xl mb-3 text-pixel-accent">🚀</div>
-                    <h4 class="font-bold text-lg mb-2">Alto Alcance</h4>
-                    <p class="text-sm text-pixel-light/70">Potenciamos el contenido a través de nuestros propios canales de WhatsApp y grupos de Facebook con fuerte presencia en Mendoza y San Juan.</p>
-                </div>
-                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md">
-                    <div class="text-5xl mb-3 text-pixel-accent">🌱</div>
-                    <h4 class="font-bold text-lg mb-2">Crecimiento Pasivo</h4>
-                    <p class="text-sm text-pixel-light/70">Dejamos las publicaciones activas para que sigan generando crecimiento pasivo y orgánico a través de nuestros canales.</p>
-                </div>
-                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md">
-                    <div class="text-5xl mb-3 text-pixel-accent">👁️</div>
-                    <h4 class="font-bold text-lg mb-2">Enfoque en Visibilidad</h4>
-                    <p class="text-xs text-pixel-accent font-semibold">Aclaración:</p>
-                    <p class="text-xs text-pixel-light/70">La difusión garantiza visualización o alcance, no incluye clics, ventas ni prospectaje. Es un crecimiento en la base del público objetivo.</p>
+            <!-- Aclaración Importante (Mantener el foco en visibilidad) -->
+            <div class="max-w-xl mx-auto p-6 rounded-xl bg-pixel-dark/50 shadow-lg border-l-4 border-pixel-accent">
+                <div class="flex items-start">
+                    <div class="text-2xl mr-4 text-pixel-accent">⚠️</div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 text-pixel-light">Enfoque Exclusivo en Alcance (Visibilidad)</h4>
+                        <p class="text-sm text-pixel-light/70">
+                            La difusión garantiza **visibilidad** o **alcance**, no incluye clics, ventas, prospectaje ni otro tipo de contacto directo. Nuestro objetivo es el crecimiento de la base de tu público objetivo a largo plazo.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto / CTA Section -->
+    <!-- Contacto / CTA Section (Linktree Added) -->
     <section id="contacto" class="py-16 sm:py-20 text-center bg-pixel-dark border-t border-pixel-secondary/50">
         <div class="max-w-4xl mx-auto px-4">
             <h3 class="text-4xl font-extrabold mb-4 text-pixel-light">¡Hablemos de tu Proyecto!</h3>
@@ -308,6 +323,17 @@
                     <a href="tel:2616904484" class="text-lg font-semibold hover:text-pixel-accent transition duration-200">261 6904484</a>
                 </div>
             </div>
+
+            <!-- Linktree Addition -->
+            <div class="mt-12">
+                <h4 class="text-2xl font-bold mb-4 text-pixel-light">Encuentra todos nuestros enlaces centralizados:</h4>
+                <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="inline-flex items-center bg-pixel-accent text-pixel-dark px-8 py-4 rounded-full font-extrabold text-lg shadow-xl hover:shadow-2xl hover:bg-sky-400 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <!-- Icono simple de enlace (Linktree) -->
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M16 4.707l-1.101 1.102a4 4 0 00-5.656 5.656m6.828 4.646a4 4 0 000-5.656M12 20h9M3 4h9"></path></svg>
+                    Visita nuestro Linktree
+                </a>
+            </div>
+
         </div>
     </section>
 
@@ -322,18 +348,20 @@
         function toggleAccordion(id) {
             const details = document.getElementById(id);
             const icon = document.getElementById(id.replace('-details', '-icon'));
-            // Usamos scrollHeight para que la altura sea dinámica y se adapte al contenido
+            
+            // Si tiene una altura máxima establecida (y no es '0px'), está abierto.
             const isVisible = details.style.maxHeight && details.style.maxHeight !== '0px';
 
             if (isVisible) {
                 // Si está abierto, cerrarlo
-                details.style.maxHeight = null;
-                details.classList.remove('py-4', 'px-4'); // Quitar padding para un cierre limpio
+                details.style.maxHeight = '0px';
+                details.classList.remove('accordion-open');
                 if (icon) icon.classList.remove('rotate-180');
             } else {
                 // Si está cerrado, abrirlo
-                details.classList.add('py-4', 'px-4'); // Añadir padding al abrir
+                // Ajustar la altura máxima al contenido real (scrollHeight)
                 details.style.maxHeight = details.scrollHeight + "px";
+                details.classList.add('accordion-open');
                 if (icon) icon.classList.add('rotate-180');
             }
         }
@@ -342,10 +370,19 @@
         document.addEventListener('DOMContentLoaded', () => {
             const details = document.getElementById('basic-details');
             if (details) {
-                 // Establecer la altura máxima a 0 y quitar padding al cargar para que empiece cerrado
-                details.style.maxHeight = '0';
-                details.classList.remove('py-4', 'px-4'); 
+                 // Asegura que la altura máxima sea 0 y quita la clase de padding al cargar
+                details.style.maxHeight = '0px';
+                details.classList.remove('accordion-open');
             }
+        });
+        
+        // Función para recalcular la altura al redimensionar (Mejora de UX en responsive)
+        window.addEventListener('resize', () => {
+             const details = document.getElementById('basic-details');
+             if (details && details.style.maxHeight !== '0px') {
+                // Si está abierto, recalcular scrollHeight para evitar cortes de contenido
+                details.style.maxHeight = details.scrollHeight + "px";
+             }
         });
     </script>
 </body>
