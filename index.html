@@ -1,281 +1,280 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo | Inversión Estratégica en Contenido Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'pixel-dark': '#131B2B', // Fondo principal (Azul Carbón)
-                        'pixel-accent': '#FF3366', // Acento Principal (Magenta Intenso - Nuevo)
-                        'pixel-secondary': '#00FFFF', // Acento Secundario (Cian Brillante - Nuevo)
-                        'pixel-contrast-dark': '#3B5323', // Verde Oscuro/Militar
-                        'pixel-promotion-bg': '#1E293B', // Fondo oscuro para promoción
-                        'pixel-light': '#F4F4F9', // Texto principal
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #131B2B;
-            color: #F4F4F9;
-            font-family: 'Inter', sans-serif;
-        }
-        .section-heading {
-            border-left: 5px solid #FF3366; 
-        }
-        .promotion-card {
-            background-color: #1E293B; /* Color oscuro para contraste */
-            border: 2px solid #00FFFF;
-            box-shadow: 0 4px 6px -1px rgba(0, 255, 255, 0.2), 0 2px 4px -2px rgba(0, 255, 255, 0.2);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Creativo | Inversión Estratégica en Contenido Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pixel-dark': '#131B2B', // Fondo principal (Azul Carbón)
+                        'pixel-accent': '#FF3366', // Acento Principal (Magenta Intenso)
+                        'pixel-secondary': '#00FFFF', // Acento Secundario (Cian Brillante)
+                        'pixel-promotion-bg': '#1E293B', // Fondo oscuro para promoción
+                        'pixel-light': '#F4F4F9', // Texto principal
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #131B2B;
+            color: #F4F4F9;
+            font-family: 'Inter', sans-serif;
+        }
+        .section-heading {
+            border-left: 5px solid #FF3366; 
+        }
+        .promotion-card {
+            background-color: #1E293B; /* Color oscuro para contraste */
+            border: 2px solid #00FFFF;
+            box-shadow: 0 4px 6px -1px rgba(0, 255, 255, 0.2), 0 2px 4px -2px rgba(0, 255, 255, 0.2);
+        }
+    </style>
 </head>
 <body class="antialiased">
 
-    <header class="p-4 sm:p-6 bg-pixel-dark border-b border-pixel-secondary/50 shadow-lg sticky top-0 z-10">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-extrabold text-pixel-accent">Pixel Creativo</h1>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#promociones" class="hover:text-pixel-accent transition duration-200">Promociones Navideñas</a> 
-                <a href="#servicios" class="hover:text-pixel-accent transition duration-200">Servicios Puntuales</a>
-                <a href="#paquetes" class="hover:text-pixel-accent transition duration-200">Abonos Mensuales</a>
-                <a href="#contacto" class="hover:text-pixel-accent transition duration-200">Contacto</a>
-            </nav>
-            <a href="#paquetes" class="md:hidden bg-pixel-accent text-pixel-dark px-4 py-2 rounded-full font-bold text-sm shadow-md hover:opacity-80 transition duration-200">Ver Packs</a>
-        </div>
-    </header>
+    <header class="p-4 sm:p-6 bg-pixel-dark border-b border-pixel-secondary/50 shadow-lg sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-pixel-accent">Pixel Creativo</h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#promociones" class="hover:text-pixel-accent transition duration-200">Promociones Navideñas</a> 
+                <a href="#servicios" class="hover:text-pixel-accent transition duration-200">Servicios Puntuales</a>
+                <a href="#paquetes" class="hover:text-pixel-accent transition duration-200">Abonos Mensuales</a>
+                <a href="#contacto" class="hover:text-pixel-accent transition duration-200">Contacto</a>
+            </nav>
+            <a href="#paquetes" class="md:hidden bg-pixel-accent text-pixel-dark px-4 py-2 rounded-full font-bold text-sm shadow-md hover:opacity-80 transition duration-200">Ver Packs</a>
+        </div>
+    </header>
 
-    <section class="py-16 sm:py-24 text-center bg-pixel-dark">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 text-pixel-light">
-                <span class="text-pixel-accent block">DISEÑO CON PROPÓSITO.</span> 
-                <span class="block">La Estrategia precede al Diseño.</span>
-            </h2>
-            <p class="text-xl text-pixel-secondary mb-8 sm:mb-10">
-                Nuestra misión es transformar la inversión publicitaria en <span class="font-bold text-pixel-light">confianza y posicionamiento de marca</span>[cite: 6].
-            </p>
-            <a href="#paquetes" class="inline-block bg-pixel-accent text-pixel-dark px-10 py-4 rounded-full font-extrabold text-lg shadow-xl hover:shadow-2xl hover:opacity-90 transform hover:scale-105 transition duration-300 ease-in-out">
-                Conoce los Planes de Crecimiento
-            </a>
-        </div>
-    </section>
-    
-        <section id="promociones" class="py-16 sm:py-20 bg-pixel-promotion-bg text-pixel-light"> 
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="p-8 rounded-2xl shadow-2xl border-4 border-pixel-accent/50 promotion-card">
-                <h3 class="text-4xl font-extrabold mb-4 text-pixel-accent border-b border-pixel-secondary/50 pb-2 inline-block">Promoción Navideña: Adquisición y Volumen</h3>
-                <p class="text-xl text-pixel-light/90 mb-8 max-w-3xl mx-auto">
-                    Paquetes de ejecución inmediata de piezas urgentes, enfocados en solucionar la falta de tiempo para publicar a diario[cite: 15].
-                </p>
-                <p class="text-lg font-bold text-pixel-secondary mb-6">
-                    *Importante: Requiere **Chequeo Rápido de Propósito** completado ($5.000 ARS)[cite: 15].
-                </p>
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="p-6 bg-pixel-dark rounded-xl shadow-lg border-2 border-pixel-accent">
-                        <p class="text-2xl font-bold mb-1 text-pixel-secondary">10 Historias Estratégicas</p>
-                        <p class="text-sm font-medium text-pixel-light/70 mb-3">Automatización de 10 piezas de Historia/Estado de alto impacto (formato Vertical)[cite: 15].</p>
-                        <div class="text-5xl font-extrabold text-pixel-accent mb-2">$17.000 ARS</div>
-                        <p class="text-sm font-semibold text-pixel-light/70">Costo Remanente: $12.000 ARS [cite: 15]</p>
-                    </div>
-                    <div class="p-6 bg-pixel-dark rounded-xl shadow-lg border-4 border-pixel-secondary">
-                        <p class="text-2xl font-bold mb-1 text-pixel-secondary">15 Historias Estratégicas</p>
-                        <p class="text-sm font-medium text-pixel-light/70 mb-3">Automatización de 15 piezas de Historia/Estado. Mayor volumen de caja[cite: 15].</p>
-                        <div class="text-5xl font-extrabold text-pixel-accent mb-2">$23.000 ARS</div>
-                        <p class="text-sm font-semibold text-pixel-light/70">Costo Remanente: $18.000 ARS [cite: 15]</p>
-                    </div>
-                </div>
-                <a href="#contacto" class="inline-block mt-8 bg-pixel-accent text-pixel-dark px-8 py-3 rounded-full font-extrabold text-lg shadow-xl hover:opacity-80 transition duration-300">
-                    ¡Quiero mi Paquete Navideño!
-                </a>
-            </div>
-        </div>
-    </section>
-    
-        <section id="paquetes" class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">2. Abonos Mensuales de Recurrencia (Inversión en Crecimiento)</h3>
-            <p class="text-xl mb-12 max-w-3xl">Planes diseñados para generar un impacto sostenido, basados en el compromiso mutuo y el crecimiento a largo plazo[cite: 17].</p>
+    <section class="py-16 sm:py-24 text-center bg-pixel-dark">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 text-pixel-light">
+                <span class="text-pixel-accent block">DISEÑO CON PROPÓSITO.</span> 
+                <span class="block">La Estrategia precede al Diseño.</span>
+            </h2>
+            <p class="text-xl text-pixel-secondary mb-8 sm:mb-10">
+                Nuestra misión es transformar la inversión publicitaria en <span class="font-bold text-pixel-light">confianza y posicionamiento de marca</span>.
+            </p>
+            <a href="#paquetes" class="inline-block bg-pixel-accent text-pixel-dark px-10 py-4 rounded-full font-extrabold text-lg shadow-xl hover:shadow-2xl hover:opacity-90 transform hover:scale-105 transition duration-300 ease-in-out">
+                Conoce los Planes de Crecimiento
+            </a>
+        </div>
+    </section>
+    
+    <section id="promociones" class="py-16 sm:py-20 bg-pixel-promotion-bg text-pixel-light"> 
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="p-8 rounded-2xl shadow-2xl border-4 border-pixel-accent/50 promotion-card">
+                <h3 class="text-4xl font-extrabold mb-4 text-pixel-accent border-b border-pixel-secondary/50 pb-2 inline-block">Promoción Navideña: Adquisición y Volumen</h3>
+                <p class="text-xl text-pixel-light/90 mb-8 max-w-3xl mx-auto">
+                    Paquetes de ejecución inmediata de piezas urgentes, enfocados en solucionar la falta de tiempo para publicar a diario.
+                </p>
+                <p class="text-lg font-bold text-pixel-secondary mb-6">
+                    Importante: Requiere <span class="text-pixel-accent">Chequeo Rápido de Propósito</span> completado ($5.000 ARS).
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="p-6 bg-pixel-dark rounded-xl shadow-lg border-2 border-pixel-accent">
+                        <p class="text-2xl font-bold mb-1 text-pixel-secondary">10 Historias Estratégicas</p>
+                        <p class="text-sm font-medium text-pixel-light/70 mb-3">Automatización de 10 piezas de Historia/Estado de alto impacto (formato Vertical).</p>
+                        <div class="text-5xl font-extrabold text-pixel-accent mb-2">$17.000 ARS</div>
+                        <p class="text-sm font-semibold text-pixel-light/70">Costo Remanente: $12.000 ARS</p>
+                    </div>
+                    <div class="p-6 bg-pixel-dark rounded-xl shadow-lg border-4 border-pixel-secondary">
+                        <p class="text-2xl font-bold mb-1 text-pixel-secondary">15 Historias Estratégicas</p>
+                        <p class="text-sm font-medium text-pixel-light/70 mb-3">Automatización de 15 piezas de Historia/Estado. Mayor volumen de caja.</p>
+                        <div class="text-5xl font-extrabold text-pixel-accent mb-2">$23.000 ARS</div>
+                        <p class="text-sm font-semibold text-pixel-light/70">Costo Remanente: $18.000 ARS</p>
+                    </div>
+                </div>
+                <a href="#contacto" class="inline-block mt-8 bg-pixel-accent text-pixel-dark px-8 py-3 rounded-full font-extrabold text-lg shadow-xl hover:opacity-80 transition duration-300">
+                    ¡Quiero mi Paquete Navideño!
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="paquetes" class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">2. Abonos Mensuales de Recurrencia (Inversión en Crecimiento)</h3>
+            <p class="text-xl mb-12 max-w-3xl">Planes diseñados para generar un impacto sostenido, basados en el compromiso mutuo y el crecimiento a largo plazo.</p>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                 
-                <div class="bg-white p-6 rounded-xl shadow-xl border-4 border-gray-100 flex flex-col hover:shadow-gray-400/50 transition duration-300">
-                    <span class="text-sm font-semibold text-gray-500 uppercase mb-2">A. Recurrencia Básica</span>
-                    <h4 class="text-3xl font-bold mb-4">Abono Mensual de Propósito</h4>
-                    <p class="text-gray-600 mb-4 flex-grow">Ideal para el cliente que quiere un seguimiento estratégico sin un gran volumen de contenido.</p>
-                     
-                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
-                        <span class="font-extrabold">15.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span> 
-                    </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-6 rounded-xl shadow-xl border-4 border-gray-100 flex flex-col hover:shadow-gray-400/50 transition duration-300">
+                    <span class="text-sm font-semibold text-gray-500 uppercase mb-2">A. Recurrencia Básica</span>
+                    <h4 class="text-3xl font-bold mb-4">Abono Mensual de Propósito</h4>
+                    <p class="text-gray-600 mb-4 flex-grow">Ideal para el cliente que quiere un seguimiento estratégico sin un gran volumen de contenido.</p>
+                    
+                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
+                        <span class="font-extrabold">15.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
+                    </div>
 
-                    <div class="mt-2 space-y-4 px-4 py-4">
-                        <ul class="text-sm text-gray-700 list-disc list-inside space-y-3">
-                            <li>**Composición:** Chequeo de seguimiento mensual.</li>
-                            <li>**4 Piezas de Alto Impacto** (1 por semana) para mantener la autoridad.</li>
-                            <li class="text-xs text-gray-500 font-bold text-red-500">Opcional: Difusión Orgánica Diaria por $5.000 ARS/día[cite: 21, 23].</li>
-                        </ul>
-                    </div>
-                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover:opacity-80 transition duration-200 mt-auto">Elegir Abono Básico</a>
-                </div>
+                    <div class="mt-2 space-y-4 px-4 py-4">
+                        <ul class="text-sm text-gray-700 list-disc list-inside space-y-3">
+                            <li><span class="font-bold">Composición:</span> Chequeo de seguimiento mensual.</li>
+                            <li><span class="font-bold">4 Piezas de Alto Impacto</span> (1 por semana) para mantener la autoridad.</li>
+                            <li class="text-xs text-gray-500 font-bold text-red-500">Opcional: Difusión Orgánica Diaria por $5.000 ARS/día.</li>
+                        </ul>
+                    </div>
+                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover:opacity-80 transition duration-200 mt-auto">Elegir Abono Básico</a>
+                </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-pixel-accent/50 flex flex-col hover:shadow-pixel-accent/50 transition duration-300">
-                    <span class="text-sm font-semibold text-gray-500 uppercase mb-2">B. Compromiso Mutuo (Estructura 50/50)</span>
-                    <h4 class="text-3xl font-bold mb-4">Paquete Mensual de Confianza</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">El cliente invierte en <span class="font-bold">20 Piezas con Estrategia de 7 Puntos</span> para un posicionamiento de 30 días[cite: 25].</p>
-                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
-                        <span class="font-extrabold">150.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span> [cite: 26]
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
-                        <li class="flex items-start">
-                            <span class="font-bold">Contenido:</span> 20 Piezas Totales (12 Centrales + 8 de Soporte)[cite: 26].
-                        </li>
-                        <li class="flex items-start">
-                            <span class="font-bold">Alcance:</span> Visibilidad en 300-500 personas por mes, con triplicación vía difusión viral[cite: 26].
-                        </li>
-                        <li class="text-sm text-pixel-dark font-bold border-t border-gray-300 pt-3 mt-3">
-                            Pago en 2 Hitos de $75.000 ARS (Cláusula de Confianza 50/50)[cite: 33, 34].
-                        </li>
-                    </ul>
-                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover:opacity-80 transition duration-200 mt-auto">Elegir Plan de Confianza</a>
-                </div>
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-pixel-accent/50 flex flex-col hover:shadow-pixel-accent/50 transition duration-300">
+                    <span class="text-sm font-semibold text-gray-500 uppercase mb-2">B. Compromiso Mutuo (Estructura 50/50)</span>
+                    <h4 class="text-3xl font-bold mb-4">Paquete Mensual de Confianza</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">El cliente invierte en <span class="font-bold">20 Piezas con Estrategia de 7 Puntos</span> para un posicionamiento de 30 días.</p>
+                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
+                        <span class="font-extrabold">150.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                        <li class="flex items-start">
+                            <span class="font-bold">Contenido:</span> 20 Piezas Totales (12 Centrales + 8 de Soporte).
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-bold">Alcance:</span> Visibilidad en 300-500 personas por mes, con triplicación vía difusión viral.
+                        </li>
+                        <li class="text-sm text-pixel-dark font-bold border-t border-gray-300 pt-3 mt-3">
+                            Pago en 2 Hitos de $75.000 ARS (Cláusula de Confianza 50/50).
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover:opacity-80 transition duration-200 mt-auto">Elegir Plan de Confianza</a>
+                </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-pixel-secondary flex flex-col transform scale-105 z-10 hover:shadow-2xl transition duration-300">
-                    <span class="text-sm font-semibold text-pixel-accent uppercase mb-2">C. Máximo Crecimiento</span>
-                    <h4 class="text-3xl font-bold mb-4 text-pixel-accent">Paquete de Escalamiento</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">Soluciones Avanzadas y Premium para el máximo liderazgo y soporte[cite: 36].</p>
-                    
-                    <ul class="space-y-4 text-sm text-gray-700 mb-8">
-                        <li class="p-3 border rounded-lg bg-gray-50">
-                            <h5 class="font-extrabold text-lg text-pixel-dark mb-1">AVANZADO: $200.000 ARS/mes</h5> [cite: 36]
-                            <p class="text-xs text-gray-600">12 Diseños Estáticos + 1 Reel por semana. Incluye Linktree + Crecimiento Pasivo[cite: 36].</p>
-                        </li>
-                        <li class="p-3 border-2 border-pixel-accent rounded-lg bg-gray-50">
-                            <h5 class="font-extrabold text-lg text-pixel-accent mb-1">PREMIUM: $350.000 ARS/mes</h5> [cite: 36]
-                            <p class="text-xs text-gray-600">Gestión 360: 24 Diseños + 1 Reel por semana. Incluye Community Manager y Mantenimiento Web[cite: 36].</p>
-                        </li>
-                        <li class="text-xs text-gray-600 font-semibold pt-2">
-                            Extra Premium: Apoyo en Facebook ADS (cubrimos un 15% del costo de inversión cada $15.000)[cite: 36].
-                        </li>
-                    </ul>
-                    <a href="#contacto" class="w-full text-center bg-pixel-accent text-pixel-dark px-6 py-3 rounded-full font-bold hover:opacity-80 transition duration-200 mt-auto">Solicitar Presupuesto</a>
-                </div>
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-pixel-secondary flex flex-col transform scale-105 z-10 hover:shadow-2xl transition duration-300">
+                    <span class="text-sm font-semibold text-pixel-accent uppercase mb-2">C. Máximo Crecimiento</span>
+                    <h4 class="text-3xl font-bold mb-4 text-pixel-accent">Paquete de Escalamiento</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">Soluciones Avanzadas y Premium para el máximo liderazgo y soporte.</p>
+                    
+                    <ul class="space-y-4 text-sm text-gray-700 mb-8">
+                        <li class="p-3 border rounded-lg bg-gray-50">
+                            <h5 class="font-extrabold text-lg text-pixel-dark mb-1">AVANZADO: $200.000 ARS/mes</h5>
+                            <p class="text-xs text-gray-600">12 Diseños Estáticos + 1 Reel por semana. Incluye Linktree + Crecimiento Pasivo.</p>
+                        </li>
+                        <li class="p-3 border-2 border-pixel-accent rounded-lg bg-gray-50">
+                            <h5 class="font-extrabold text-lg text-pixel-accent mb-1">PREMIUM: $350.000 ARS/mes</h5>
+                            <p class="text-xs text-gray-600">Gestión 360: 24 Diseños + 1 Reel por semana. Incluye Community Manager y Mantenimiento Web.</p>
+                        </li>
+                        <li class="text-xs text-gray-600 font-semibold pt-2">
+                            Extra Premium: Apoyo en Facebook ADS (cubrimos un 15% del costo de inversión cada $15.000).
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="w-full text-center bg-pixel-accent text-pixel-dark px-6 py-3 rounded-full font-bold hover:opacity-80 transition duration-200 mt-auto">Solicitar Presupuesto</a>
+                </div>
 
-            </div>
-            <p class="text-center text-sm text-gray-500 mt-10">Todos los precios están expresados en Pesos Argentinos (ARS) y son válidos durante Noviembre de 2025[cite: 2, 4].</p>
-        </div>
-    </section>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-10">Todos los precios están expresados en Pesos Argentinos (ARS) y son válidos durante Noviembre de 2025.</p>
+        </div>
+    </section>
 
-        <section id="servicios" class="py-16 sm:py-20 bg-pixel-dark">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">1. Soluciones Modulares (Servicios Puntuales de Ejecución)</h3>
-            <p class="text-xl text-pixel-secondary mb-12 max-w-3xl">Ideales para complementos o clientes que solo necesitan una pieza específica (y que ya pasaron por el Chequeo)[cite: 42].</p>
-             
-            <div class="grid md:grid-cols-4 gap-8">
-                 
-                                <div class="p-6 rounded-xl shadow-lg border-2 border-pixel-accent/70 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
-                    <div class="text-2xl font-extrabold text-pixel-accent mb-2">Chequeo Rápido de Propósito</div>
-                    <p class="text-pixel-light/80 mb-4 text-sm"><span class="font-bold">PRODUCTO DE ENTRADA OBLIGATORIO.</span> Diagnóstico para garantizar que la inversión sea efectiva[cite: 9, 10].</p>
-                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$5.000 ARS</div> [cite: 11]
-                    <ul class="space-y-2 text-xs text-pixel-light">
-                        <li class="flex items-center">Entrega garantizada en 48 horas[cite: 11].</li>
-                        <li class="flex items-center">Incluye: Nicho, Mecánica de Venta, 5 Ideas de Contenido[cite: 11].</li>
-                    </ul>
-                </div>
+    <section id="servicios" class="py-16 sm:py-20 bg-pixel-dark">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">1. Soluciones Modulares (Servicios Puntuales de Ejecución)</h3>
+            <p class="text-xl text-pixel-secondary mb-12 max-w-3xl">Ideales para complementos o clientes que solo necesitan una pieza específica (y que ya pasaron por el Chequeo).</p>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                
+                <div class="p-6 rounded-xl shadow-lg border-2 border-pixel-accent/70 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
+                    <div class="text-2xl font-extrabold text-pixel-accent mb-2">Chequeo Rápido de Propósito</div>
+                    <p class="text-pixel-light/80 mb-4 text-sm"><span class="font-bold">PRODUCTO DE ENTRADA OBLIGATORIO.</span> Diagnóstico para garantizar que la inversión sea efectiva.</p>
+                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$5.000 ARS</div>
+                    <ul class="space-y-2 text-xs text-pixel-light">
+                        <li class="flex items-center">Entrega garantizada en 48 horas.</li>
+                        <li class="flex items-center">Incluye: Nicho, Mecánica de Venta, 5 Ideas de Contenido.</li>
+                    </ul>
+                </div>
 
-                                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
-                    <div class="text-2xl font-bold text-pixel-secondary mb-2">Pieza Estática</div>
-                    <p class="text-pixel-light/80 mb-4 text-sm">Diseño y formato listo para publicación inmediata[cite: 43].</p>
-                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$7.000 ARS</div> [cite: 43]
-                    <ul class="space-y-2 text-xs text-pixel-light">
-                        <li class="flex items-center">Entrega 24/48h[cite: 43].</li>
-                        <li class="flex items-center text-pixel-secondary">Requiere Chequeo Rápido.</li>
-                    </ul>
-                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
+                    <div class="text-2xl font-bold text-pixel-secondary mb-2">Pieza Estática</div>
+                    <p class="text-pixel-light/80 mb-4 text-sm">Diseño y formato listo para publicación inmediata.</p>
+                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$7.000 ARS</div>
+                    <ul class="space-y-2 text-xs text-pixel-light">
+                        <li class="flex items-center">Entrega 24/48h.</li>
+                        <li class="flex items-center text-pixel-secondary">Requiere Chequeo Rápido.</li>
+                    </ul>
+                </div>
 
-                                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
-                    <div class="text-2xl font-bold text-pixel-secondary mb-2">Reel de Storytelling</div>
-                    <p class="text-pixel-light/80 mb-4 text-sm">Formato de video corto para conexión emocional y alto *reach*[cite: 43].</p>
-                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$15.000 ARS</div> [cite: 43]
-                    <ul class="space-y-2 text-xs text-pixel-light">
-                        <li class="flex items-center">Estructura: 3 Piezas / Máx. 15s total[cite: 43].</li>
-                        <li class="flex items-center">Entrega: 48/72h.</li>
-                        <li class="flex items-center text-pixel-secondary">Requiere Chequeo Rápido.</li>
-                    </ul>
-                </div>
+                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
+                    <div class="text-2xl font-bold text-pixel-secondary mb-2">Reel de Storytelling</div>
+                    <p class="text-pixel-light/80 mb-4 text-sm">Formato de video corto para conexión emocional y alto <span class="italic">reach</span> en plataformas.</p>
+                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$15.000 ARS</div>
+                    <ul class="space-y-2 text-xs text-pixel-light">
+                        <li class="flex items-center">Estructura: 3 Piezas / Máx. 15s total.</li>
+                        <li class="flex items-center">Entrega: 48/72h.</li>
+                        <li class="flex items-center text-pixel-secondary">Requiere Chequeo Rápido.</li>
+                    </ul>
+                </div>
 
-                                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
-                    <div class="text-2xl font-bold text-pixel-secondary mb-2">Carrusel de Valor</div>
-                    <p class="text-pixel-light/80 mb-4 text-sm">Contenido educativo de autoridad. Posicionamiento como referente[cite: 43].</p>
-                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$25.000 ARS</div> [cite: 43]
-                    <ul class="space-y-2 text-xs text-pixel-light">
-                        <li class="flex items-center">Hasta 5 slides (imágenes)[cite: 43].</li>
-                        <li class="flex items-center">Generación de alto *engagement*[cite: 43].</li>
-                        <li class="flex items-center text-pixel-secondary">Requiere Chequeo Rápido.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-pixel-secondary transition duration-300 bg-pixel-promotion-bg">
+                    <div class="text-2xl font-bold text-pixel-secondary mb-2">Carrusel de Valor</div>
+                    <p class="text-pixel-light/80 mb-4 text-sm">Contenido educativo de autoridad. Posicionamiento como referente (hasta 5 slides).</p>
+                    <div class="text-3xl font-extrabold mb-6 text-pixel-light">$25.000 ARS</div>
+                    <ul class="space-y-2 text-xs text-pixel-light">
+                        <li class="flex items-center">Hasta 5 slides (imágenes).</li>
+                        <li class="flex items-center">Generación de alto <span class="italic">engagement</span>.</li>
+                        <li class="flex items-center text-pixel-secondary">Requiere Chequeo Rápido.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section class="py-16 sm:py-20 bg-pixel-secondary/10">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-4 text-center section-heading inline-block px-2 text-pixel-accent">3. Transparencia y Alcance Estratégico</h3>
-            <p class="text-xl text-center text-pixel-light/80 max-w-3xl mx-auto mb-8">
-                La difusión viral estratégica incluida en los paquetes garantiza <span class="font-bold">alcance y visibilidad cualificada</span> dentro de nuestro ecosistema.
-            </p>
+    <section class="py-16 sm:py-20 bg-pixel-secondary/10">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-4 text-center section-heading inline-block px-2 text-pixel-accent">3. Transparencia y Alcance Estratégico</h3>
+            <p class="text-xl text-center text-pixel-light/80 max-w-3xl mx-auto mb-8">
+                La difusión viral estratégica incluida en los paquetes garantiza <span class="font-bold">alcance y visibilidad cualificada</span> dentro de nuestro ecosistema.
+            </p>
 
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md border-t-4 border-pixel-accent">
-                    <h4 class="font-bold text-lg mb-2 text-pixel-accent">Objetivo: Valor a Largo Plazo</h4>
-                    <p class="text-sm text-pixel-light/70">El objetivo es consolidar el público objetivo y aumentar el <span class="font-bold">valor percibido de la marca a largo plazo</span>.</p>
-                </div>
-                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md border-t-4 border-pixel-secondary">
-                    <h4 class="font-bold text-lg mb-2 text-pixel-secondary">Límite de la Garantía</h4>
-                    <p class="text-sm text-pixel-light/70">Nuestra difusión <span class="font-bold">no incluye la garantía de clics, ventas directas o prospectaje.</span></p>
-                </div>
-                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md border-t-4 border-pixel-accent">
-                    <h4 class="font-bold text-lg mb-2 text-pixel-accent">Metodología Clara</h4>
-                    <p class="text-sm text-pixel-light/70">Implementamos una Metodología Estratégica clara para triplicar el alcance orgánico.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md border-t-4 border-pixel-accent">
+                    <h4 class="font-bold text-lg mb-2 text-pixel-accent">Objetivo: Valor a Largo Plazo</h4>
+                    <p class="text-sm text-pixel-light/70">El objetivo es consolidar el público objetivo y aumentar el <span class="font-bold">valor percibido de la marca a largo plazo</span>.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md border-t-4 border-pixel-secondary">
+                    <h4 class="font-bold text-lg mb-2 text-pixel-secondary">Límite de la Garantía</h4>
+                    <p class="text-sm text-pixel-light/70">Nuestra difusión <span class="font-bold">no incluye la garantía de clics, ventas directas o prospectaje.</span></p>
+                </div>
+                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md border-t-4 border-pixel-accent">
+                    <h4 class="font-bold text-lg mb-2 text-pixel-accent">Metodología Clara</h4>
+                    <p class="text-sm text-pixel-light/70">Implementamos una Metodología Estratégica clara para triplicar el alcance orgánico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="contacto" class="py-16 sm:py-20 text-center bg-pixel-dark border-t border-pixel-secondary/50">
-        <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-4xl font-extrabold mb-4 text-pixel-light">¡Hablemos de tu Proyecto!</h3>
-            <p class="text-xl text-pixel-secondary mb-8">
-                Estamos listos para aplicar la estrategia a tu marca. Contáctanos para una consulta sin cargo:
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-                <div class="p-4 rounded-xl bg-pixel-accent/90 shadow-lg w-full sm:w-auto">
-                    <p class="font-bold text-pixel-dark">¡Todos nuestros enlaces!</p>
-                    <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="text-lg font-semibold text-pixel-dark hover:text-pixel-light transition duration-200 underline">Linktree Pixel Creativo</a>
-                </div>
-                <div class="p-4 rounded-xl bg-pixel-secondary/50 shadow-lg w-full sm:w-auto">
-                    <p class="font-bold text-pixel-accent">Matías (Coordinador y Diseñador)</p>
-                    <a href="tel:2617484266" class="text-lg font-semibold hover:text-pixel-accent transition duration-200">261 7484266</a>
-                </div>
-                <div class="p-4 rounded-xl bg-pixel-secondary/50 shadow-lg w-full sm:w-auto">
-                    <p class="font-bold text-pixel-accent">Mar (Estratega Social - Mendoza)</p>
-                    <a href="tel:2616904484" class="text-lg font-semibold hover:text-pixel-accent transition duration-200">261 6904484</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="contacto" class="py-16 sm:py-20 text-center bg-pixel-dark border-t border-pixel-secondary/50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-4xl font-extrabold mb-4 text-pixel-light">¡Hablemos de tu Proyecto!</h3>
+            <p class="text-xl text-pixel-secondary mb-8">
+                Estamos listos para aplicar la estrategia a tu marca. Contáctanos para una consulta sin cargo:
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <div class="p-4 rounded-xl bg-pixel-accent/90 shadow-lg w-full sm:w-auto">
+                    <p class="font-bold text-pixel-dark">¡Todos nuestros enlaces!</p>
+                    <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="text-lg font-semibold text-pixel-dark hover:text-pixel-light transition duration-200 underline">Linktree Pixel Creativo</a>
+                </div>
+                <div class="p-4 rounded-xl bg-pixel-secondary/50 shadow-lg w-full sm:w-auto">
+                    <p class="font-bold text-pixel-accent">Matías (Coordinador y Diseñador)</p>
+                    <a href="tel:2617484266" class="text-lg font-semibold hover:text-pixel-accent transition duration-200">261 7484266</a>
+                </div>
+                <div class="p-4 rounded-xl bg-pixel-secondary/50 shadow-lg w-full sm:w-auto">
+                    <p class="font-bold text-pixel-accent">Mar (Estratega Social - Mendoza)</p>
+                    <a href="tel:2616904484" class="text-lg font-semibold hover:text-pixel-accent transition duration-200">261 6904484</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="p-4 text-center bg-pixel-secondary/30 text-sm text-pixel-secondary">
-        <p>&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
-    </footer>
+    <footer class="p-4 text-center bg-pixel-secondary/30 text-sm text-pixel-secondary">
+        <p>&copy; 2025 Pixel Creativo. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
