@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo | Diseño y Difusión Viral Estratégica - ¡Fin de Año!</title>
-
+    <title>Pixel Creativo | Inversión Estratégica en Narrativa de Marca</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
@@ -13,15 +13,14 @@
             theme: {
                 extend: {
                     colors: {
-                        // Paleta Base Actualizada
+                        // Paleta Base (Festiva y Marca)
                         'pixel-dark': '#0D0D0D',    // Negro Carbón
-                        'pixel-accent': '#7F00FF',  // Violeta Intenso (Acento Principal)
-                        'pixel-secondary': '#7F8C8D', // Soft Gray (Mantenido para contraste secundario)
+                        'pixel-accent': '#7F00FF',  // Violeta Intenso
+                        'pixel-secondary': '#7F8C8D', // Soft Gray
                         'pixel-light': '#FFFFFF',   // Blanco Puro
                         
                         // Colores Festivos
                         'gold-festive': '#FFD700',  // Dorado
-                        'silver-festive': '#C0C0C0', // Plateado
                         'red-festive': '#E3324C',   // Rojo Festivo
                         'green-festive': '#1E8C5A', // Verde Joya
                     },
@@ -34,53 +33,31 @@
     </script>
     
     <style>
-        /* Estilos generales con la nueva paleta de fondo */
-        body {
-            background-color: #0D0D0D; /* Negro Carbón */
-            color: #FFFFFF; /* Blanco Puro */
-            font-family: 'Inter', sans-serif;
-        }
-        .section-heading {
-            /* Uso del color de acento para la línea de separación */
-            border-left: 5px solid #7F00FF; /* Violeta Intenso */
-        }
+        /* Estilos base y de acento */
+        body { background-color: #0D0D0D; color: #FFFFFF; font-family: 'Inter', sans-serif; }
+        .section-heading { border-left: 5px solid #7F00FF; }
 
-        /* ---------------------------------------------------------------- */
-        /* !!! 1. Efecto Hover con Brillo Dorado !!! */
-        /* ---------------------------------------------------------------- */
+        /* Efecto Hover con Brillo Dorado */
         .hover-glow:hover {
-            /* Cambio de color del texto a Dorado */
             color: #FFD700; 
-            /* Sombra sutil de brillo dorado */
             text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
-            /* Opcional: Sombra de caja para un efecto más prominente en botones */
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
         }
 
-        /* ---------------------------------------------------------------- */
-        /* !!! 2. Animación de Luces Navideñas (Keyframes) !!! */
-        /* ---------------------------------------------------------------- */
-        /* Definición de la animación cíclica de colores festivos */
+        /* Keyframes Animación de Luces Navideñas */
         @keyframes twinkle-lights {
-            0%   { background-color: #E3324C; box-shadow: 0 0 10px #E3324C; } /* Rojo */
-            25%  { background-color: #1E8C5A; box-shadow: 0 0 10px #1E8C5A; } /* Verde */
-            50%  { background-color: #7F00FF; box-shadow: 0 0 10px #7F00FF; } /* Violeta */
-            75%  { background-color: #FFD700; box-shadow: 0 0 10px #FFD700; } /* Dorado */
-            100% { background-color: #E3324C; box-shadow: 0 0 10px #E3324C; } /* Rojo */
+            0%   { background-color: #E3324C; box-shadow: 0 0 10px #E3324C; }
+            25%  { background-color: #1E8C5A; box-shadow: 0 0 10px #1E8C5A; }
+            50%  { background-color: #7F00FF; box-shadow: 0 0 10px #7F00FF; }
+            75%  { background-color: #FFD700; box-shadow: 0 0 10px #FFD700; }
+            100% { background-color: #E3324C; box-shadow: 0 0 10px #E3324C; }
         }
 
-        /* Clase aplicada por JavaScript al botón principal durante la inactividad */
+        /* Clase para la animación */
         .btn-xmas-glow {
             animation: twinkle-lights 3.6s infinite ease-in-out; 
-            color: white !important; /* Asegurar que el texto se vea bien sobre el cambio de fondo */
-            border: 2px solid #FFD700; /* Borde dorado fijo para distinción */
-        }
-        
-        /* Ajuste para el acordeón (mantenido del código anterior) */
-        .accordion-open {
-            max-height: 500px !important; 
-            padding-top: 1rem; 
-            padding-bottom: 1rem; 
+            color: white !important; 
+            border: 2px solid #FFD700; 
         }
     </style>
 </head>
@@ -90,126 +67,301 @@
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-extrabold text-pixel-accent">Pixel Creativo</h1>
             <nav class="hidden md:flex space-x-6 text-sm font-medium text-pixel-light">
-                <a href="#servicios" class="hover-glow transition duration-300">Piezas Individuales</a>
-                <a href="#paquetes" class="hover-glow transition duration-300">Packs Mensuales</a>
+                <a href="#diagnostico" class="hover-glow transition duration-300">Diagnóstico</a>
+                <a href="#abonos" class="hover-glow transition duration-300">Abonos</a>
+                <a href="#modulares" class="hover-glow transition duration-300">Modulares</a>
+                <a href="#artistico" class="hover-glow transition duration-300">Pedidos Artísticos</a>
                 <a href="#contacto" class="hover-glow transition duration-300">Contacto</a>
             </nav>
-            <a href="#paquetes" class="md:hidden bg-pixel-accent text-pixel-light px-4 py-2 rounded-full font-bold text-sm shadow-md hover-glow transition duration-300">Ver Packs</a>
+            <a href="#abonos" class="md:hidden bg-pixel-accent text-pixel-light px-4 py-2 rounded-full font-bold text-sm shadow-md hover-glow transition duration-300">Ver Packs</a>
         </div>
     </header>
 
     <section class="py-16 sm:py-24 text-center bg-pixel-dark">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 text-pixel-light">
-                <span class="text-pixel-accent block">DISEÑO CON PROPÓSITO.</span> 
-                <span class="block">¡Brotan tus ventas!</span>
+                <span class="text-pixel-accent block">DE DISEÑADOR A ESTRATEGA.</span>
+                <span class="block text-gold-festive">La estrategia siempre precede al diseño. </span>
             </h2>
             <p class="text-xl text-pixel-secondary mb-8 sm:mb-10">
-                Somos Pixel Creativo. Potenciamos tu contenido con nuestra exclusiva Difusión Viral Estratégica para un crecimiento sostenido.
+                Transformamos la inversión en diseño en confianza y posicionamiento de marca[cite: 6]. Propuesta válida para **Noviembre 2025**.
             </p>
-            <a id="main-cta-button" href="#paquetes" class="inline-block bg-pixel-accent text-pixel-light px-10 py-4 rounded-full font-extrabold text-lg shadow-xl hover-glow transform hover:scale-105 transition duration-300 ease-in-out">
-                ¡Conoce los Packs Estratégicos!
+            <a id="main-cta-button" href="#diagnostico" class="inline-block bg-pixel-accent text-pixel-light px-10 py-4 rounded-full font-extrabold text-lg shadow-xl hover-glow transform hover:scale-105 transition duration-300 ease-in-out">
+                ¡EMPEZAR CON EL DIAGNÓSTICO OBLIGATORIO!
             </a>
         </div>
     </section>
 
-    <section id="servicios" class="py-16 sm:py-20 bg-pixel-dark">
+    <section id="diagnostico" class="py-16 sm:py-20 bg-pixel-secondary/10">
         <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading text-pixel-light">Piezas Individuales (Tarifas Base Fijas)</h3>
-             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-pixel-secondary/20 p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-gold-festive transition duration-300">
-                    <div class="text-3xl font-bold text-pixel-accent mb-2">Flyer + Viral</div>
-                    <p class="text-pixel-light/80 mb-4">Flyer digital listo para publicar, impulsado con difusión viral por una semana.</p>
-                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
-                        <span class="text-4xl font-extrabold">10.000</span> ARS
-                    </div>
-                    <ul class="space-y-3 text-sm text-pixel-light">
-                        <li class="flex items-center hover-glow transition duration-300">
-                            <svg class="w-5 h-5 mr-2 text-pixel-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            Flyer digital (1 pieza).
-                        </li>
+            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading text-pixel-accent">1. Producto de Entrada Obligatorio (El Filtro) </h3>
+            <p class="text-lg text-pixel-light/80 mb-8 max-w-3xl">
+                Este diagnóstico garantiza que la inversión futura sea efectiva, ya que Matías solo diseña con un propósito claro[cite: 10].
+            </p>
+            
+            <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-lg border border-gold-festive/50">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h4 class="text-3xl font-extrabold text-gold-festive mb-2">Chequeo Rápido de Propósito</h4>
+                        <p class="text-pixel-light/90 italic mb-4 max-w-lg">
+                            "Diagnóstico del Propósito, Nicho y Mecánica de Venta del negocio. Convierte la curiosidad en un cliente pagador en 48 horas." [cite: 11]
+                        </p>
+                        <ul class="text-sm text-pixel-light/80 list-disc list-inside space-y-1">
+                            <li>Incluye: Nicho, Mecánica de Venta, 5 Ideas de Contenido[cite: 11].</li>
+                            <li>Entrega garantizada en **48 horas**[cite: 11].</li>
                         </ul>
-                </div>
-
-                 <div class="bg-pixel-secondary/20 p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-gold-festive transition duration-300">
-                    <div class="text-3xl font-bold text-pixel-accent mb-2">Flyer Digital Estándar</div>
-                    <p class="text-pixel-light/80 mb-4">Pieza estática optimizada y lista para su uso inmediato.</p>
-                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
-                        <span class="text-4xl font-extrabold">7.000</span> ARS
                     </div>
-                    <ul class="space-y-3 text-sm text-pixel-light">
-                        </ul>
-                </div>
-
-                <div class="bg-pixel-secondary/20 p-6 rounded-xl shadow-lg border border-pixel-secondary/30 hover:border-gold-festive transition duration-300">
-                    <div class="text-3xl font-bold text-pixel-accent mb-2">Reel / Carrusel</div>
-                    <p class="text-pixel-light/80 mb-4">Contenido dinámico (video) o educativo (múltiples imágenes) con enfoque narrativo.</p>
-                    <ul class="space-y-3 text-sm text-pixel-light mb-4">
-                        <li class="flex justify-between items-center border-b border-pixel-secondary/50 pb-1 hover-glow transition duration-300">
-                            <span>Reel de Narrativa Visual</span>
-                            <span class="font-extrabold text-pixel-light"><span class="font-extrabold">15.000</span> ARS</span>
-                        </li>
-                        <li class="flex justify-between items-center hover-glow transition duration-300">
-                            <span>Carrusel (hasta 5 piezas)</span>
-                            <span class="font-extrabold text-pixel-light"><span class="font-extrabold">25.000</span> ARS</span>
-                        </li>
-                    </ul>
-                    <p class="mt-4 text-xs text-gold-festive font-semibold">
-                        La Difusión se cotiza aparte para estas piezas.
-                    </p>
+                    <div class="mt-6 md:mt-0 text-right">
+                        <span class="text-xl font-semibold text-pixel-light">Inversión Total:</span>
+                        <div class="text-5xl font-extrabold text-red-festive">$5.000 ARS [cite: 11]</div>
+                        <a href="#contacto" class="mt-4 inline-block bg-red-festive text-pixel-light px-6 py-2 rounded-full font-bold hover-glow transition duration-300">Comenzar Chequeo</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="paquetes" class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
+    <section id="paquetes-adquisicion" class="py-16 sm:py-20 bg-pixel-dark">
         <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading border-pixel-dark">Packs Mensuales de Crecimiento Estratégico</h3>
-            <p class="text-xl mb-12 max-w-3xl">Planes diseñados para alcanzar un público objetivo altamente considerable y maximizar tu presencia digital. Elige el que mejor se adapte a tu ritmo de crecimiento.</p>
+            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading text-pixel-light">2. Paquetes de Adquisición y Volumen (Venta Rápida) </h3>
+            <p class="text-lg text-pixel-secondary mb-8 max-w-4xl">
+                Diseñados para clientes que ya poseen el **Chequeo Rápido** y necesitan una ejecución inmediata de las piezas más urgentes[cite: 13].
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-xl shadow-2xl border-4 border-red-festive/70 bg-pixel-secondary/10 flex flex-col hover:shadow-red-festive/50 transition duration-300">
+                    <span class="text-sm font-semibold text-red-festive uppercase mb-2">PAQUETE NAVIDEÑO</span>
+                    <h4 class="text-3xl font-bold mb-4 text-pixel-light">10 Historias Estratégicas</h4>
+                    <p class="text-pixel-light/80 mb-6 flex-grow">
+                        Automatización de 10 piezas de Historia/Estado de alto impacto (formato Vertical)[cite: 15]. Enfocado en el dolor de "no tener tiempo para publicar a diario"[cite: 15].
+                    </p>
+                    <ul class="space-y-2 text-sm text-pixel-light/90 mb-6">
+                        <li><span class="font-bold text-gold-festive">Requisito Previo:</span> Chequeo Rápido Completado ($5.000 ARS)[cite: 15].</li>
+                    </ul>
+                    <div class="text-4xl font-extrabold mb-4 text-pixel-light">
+                        Costo Remanente: <span class="text-gold-festive font-extrabold">$12.000 ARS [cite: 15]</span>
+                    </div>
+                    <p class="text-sm text-pixel-secondary mb-4">Costo Total (con Chequeo incluido): $17.000 ARS [cite: 15]</p>
+                    <a href="#contacto" class="w-full text-center bg-red-festive text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Comprar Pack</a>
+                </div>
+
+                <div class="p-6 rounded-xl shadow-2xl border-4 border-green-festive/70 bg-pixel-secondary/10 flex flex-col hover:shadow-green-festive/50 transition duration-300">
+                    <span class="text-sm font-semibold text-green-festive uppercase mb-2">PAQUETE NAVIDEÑO</span>
+                    <h4 class="text-3xl font-bold mb-4 text-pixel-light">15 Historias Estratégicas</h4>
+                    <p class="text-pixel-light/80 mb-6 flex-grow">
+                        Automatización de 15 piezas de Historia/Estado de alto impacto[cite: 15].
+                    </p>
+                    <ul class="space-y-2 text-sm text-pixel-light/90 mb-6">
+                        <li><span class="font-bold text-gold-festive">Requisito Previo:</span> Chequeo Rápido Completado ($5.000 ARS)[cite: 15].</li>
+                    </ul>
+                    <div class="text-4xl font-extrabold mb-4 text-pixel-light">
+                        Costo Remanente: <span class="text-gold-festive font-extrabold">$18.000 ARS [cite: 15]</span>
+                    </div>
+                    <p class="text-sm text-pixel-secondary mb-4">Costo Total (con Chequeo incluido): $23.000 ARS [cite: 15]</p>
+                    <a href="#contacto" class="w-full text-center bg-green-festive text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Comprar Pack</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="abonos" class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading border-pixel-dark">3. Abonos Mensuales (La Fidelización y Ganancia Recurrente) </h3>
+            <p class="text-xl mb-12 max-w-4xl text-gray-700">Planes diseñados para generar un impacto sostenido, basados en el compromiso mutuo y el crecimiento a largo plazo[cite: 17].</p>
 
             <div class="grid md:grid-cols-3 gap-8">
                  
-                <div class="bg-white p-6 rounded-xl shadow-xl border-4 border-gray-100 flex flex-col hover:shadow-gold-festive/50 transition duration-300">
-                    <button 
-                        onclick="toggleAccordion('basic-details')" 
-                        class="w-full text-center bg-pixel-accent text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300 flex justify-center items-center space-x-2"
-                    >
-                        <span>Ver Opciones y Precios</span>
-                        <svg id="basic-icon" class="w-5 h-5 transform transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
+                <div class="bg-white p-6 rounded-xl shadow-xl border-4 border-pixel-accent/50 flex flex-col hover:shadow-pixel-accent/50 transition duration-300">
+                    <span class="text-sm font-semibold text-pixel-accent uppercase mb-2">A. Recurrencia Básica</span>
+                    <h4 class="text-3xl font-bold mb-4">Abono de Propósito Mensual [cite: 18]</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">
+                        Ideal para el cliente que valida el Chequeo y quiere un seguimiento estratégico sin un gran volumen de contenido[cite: 19].
+                    </p>
+                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
+                        <span class="font-extrabold">15.000</span> ARS [cite: 19] <span class="text-xl font-normal text-gray-500">/ mes</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700 mb-6">
+                        <li><span class="font-bold text-pixel-accent">Composición:</span> Chequeo de seguimiento mensual + 4 Piezas de Alto Impacto (1 por semana)[cite: 19].</li>
+                    </ul>
+                     
+                    <div class="bg-gray-100 p-3 rounded-lg border border-red-festive/50 mb-6 text-center">
+                        <span class="text-sm font-bold text-red-festive">Opción Adicional: Difusión Orgánica Diaria </span>
+                        <span class="text-lg font-extrabold text-pixel-dark block mt-1">$5.000 ARS / día [cite: 21]</span>
+                        <p class="text-xs text-gray-500 mt-1">Mar se encarga de la difusión en puntos estratégicos (WhatsApp/Facebook)[cite: 22].</p>
                     </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-gray-100 flex flex-col hover:border-gold-festive/50 transition duration-300">
-                    <span class="text-sm font-semibold text-gray-500 uppercase mb-2">Crecimiento Sostenido</span>
-                    <h4 class="text-3xl font-bold mb-4">Paquete AVANZADO</h4>
-                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Elegir Plan Avanzado</a>
+                    <a href="#contacto" class="w-full text-center bg-pixel-accent text-pixel-light px-6 py-3 rounded-full font-bold hover:bg-violet-700 transition duration-200">Elegir Abono Básico</a>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-pixel-accent flex flex-col transform scale-105 z-10 hover:shadow-2xl hover:border-gold-festive transition duration-300">
-                    <span class="text-sm font-semibold text-pixel-accent uppercase mb-2">Máximo Liderazgo</span>
-                    <h4 class="text-3xl font-bold mb-4 text-pixel-accent">Paquete PREMIUM</h4>
-                    <a href="#contacto" class="w-full text-center bg-pixel-accent text-pixel-dark px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Solicitar Presupuesto</a>
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-gold-festive flex flex-col transform scale-105 z-10 hover:shadow-2xl transition duration-300">
+                    <span class="text-sm font-semibold text-gold-festive uppercase mb-2">B. Estrategia 50/50 | Recomendado</span>
+                    <h4 class="text-3xl font-bold mb-4 text-pixel-dark">Paquete Mensual de Confianza [cite: 24]</h4>
+                    <p class="text-gray-600 mb-6 flex-grow">
+                        Diseñado para clientes que buscan un crecimiento sólido con 20 Piezas con Estrategia de 7 Puntos[cite: 25].
+                    </p>
+                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
+                        <span class="font-extrabold">150.000</span> ARS [cite: 26] <span class="text-xl font-normal text-gray-500">/ mes</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-700 mb-6">
+                        <li><span class="font-bold text-pixel-accent">Contenido:</span> **20 Piezas Totales** (12 Centrales + 8 de Soporte)[cite: 26].</li>
+                        <li><span class="font-bold text-pixel-accent">Alcance Viral:</span> Visibilidad en 300-500 personas por mes, con triplicación vía difusión viral[cite: 26].</li>
+                        <li>Linktree profesionalizado[cite: 26].</li>
+                    </ul>
+                    <div class="bg-gray-100 p-3 rounded-lg border border-gold-festive mb-6 text-center">
+                        <span class="text-sm font-bold text-gold-festive">Cláusula de Confianza y Plazos (50/50) [cite: 32]</span>
+                        <p class="text-xs text-gray-700 mt-1">
+                            **1er Hito (50%):** Pago inicial de $75.000 ARS. Se entregan 10 piezas en 24h/pieza[cite: 33].<br>
+                            **2do Hito (50%):** Pago final de $75.000 ARS. Al completar las 10 piezas restantes[cite: 34].
+                        </p>
+                    </div>
+
+                    <a href="#contacto" class="w-full text-center bg-gold-festive text-pixel-dark px-6 py-3 rounded-full font-bold hover:bg-yellow-500 transition duration-200">Invertir en Confianza</a>
                 </div>
 
+                <div class="bg-white p-6 rounded-xl shadow-xl border-4 border-pixel-dark flex flex-col hover:shadow-pixel-dark/50 transition duration-300">
+                    <span class="text-sm font-semibold text-pixel-dark uppercase mb-2">C. Escalabilidad</span>
+                    <h4 class="text-3xl font-bold mb-4">Paquetes Avanzado y Premium [cite: 35]</h4>
+                    <p class="text-gray-600 mb-4 flex-grow">
+                        Diseñados para un crecimiento exponencial y gestión integral de marca.
+                    </p>
+                     
+                    <div class="p-4 bg-pixel-secondary/20 rounded-lg text-pixel-dark border border-gray-300 mb-4">
+                        <h5 class="text-lg font-bold text-pixel-dark">AVANZADO</h5>
+                        <div class="text-3xl font-extrabold my-2 text-pixel-dark">
+                            <span class="font-extrabold">200.000</span> ARS [cite: 36] <span class="text-sm font-normal text-gray-700">/ mes</span>
+                        </div>
+                        <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
+                            <li>**Contenido:** 12 Diseños Estáticos + 1 Reel por semana[cite: 36].</li>
+                            <li>**Alcance:** 700 a 2.000 personas mensuales[cite: 36].</li>
+                        </ul>
+                    </div>
+                     
+                    <div class="p-4 bg-pixel-accent/20 rounded-lg text-pixel-dark border border-pixel-accent mb-4">
+                        <h5 class="text-lg font-bold text-pixel-dark">PREMIUM (Gestión 360)</h5>
+                        <div class="text-3xl font-extrabold my-2 text-pixel-dark">
+                            <span class="font-extrabold">350.000</span> ARS [cite: 36] <span class="text-sm font-normal text-gray-700">/ mes</span>
+                        </div>
+                        <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
+                            <li>**Contenido:** 24 Diseños + 1 Reel por semana[cite: 36].</li>
+                            <li>Incluye **Community Manager y Mantenimiento Web** (web estática de una sola página).</li>
+                            <li>**Facebook ADS:** Cubrimos 15% del costo de inversión cada $15.000[cite: 36].</li>
+                        </ul>
+                        <p class="text-xs text-red-festive mt-2">Excluye: Tiendas virtuales o desarrollo de programación elevado[cite: 40].</p>
+                    </div>
+
+                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Solicitar Escalabilidad</a>
+                </div>
             </div>
-            <p class="text-center text-sm text-gray-500 mt-10">Todos los precios están expresados en Pesos Argentinos (ARS) y son válidos durante **Octubre de 2025**.</p>
         </div>
     </section>
 
-    <section class="py-16 sm:py-20 bg-pixel-secondary/20">
+    <section id="modulares" class="py-16 sm:py-20 bg-pixel-secondary/10">
         <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-4 text-center section-heading inline-block px-2 text-pixel-accent">La Difusión Viral Estratégica</h3>
-            <p class="text-xl text-center text-pixel-light/80 max-w-3xl mx-auto mb-8">
-                Es la publicación estratégica de tu contenido en nuestros canales y grupos de alta presencia, dirigida a la **región y público objetivo correcto**. Estrategias certeras y probadas con **evidencias empíricas**.
+            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading text-pixel-accent">4. Soluciones Modulares (Servicios Puntuales de Ejecución) </h3>
+            <p class="text-lg text-pixel-light/80 mb-8 max-w-4xl">
+                Ideales para complementos o clientes que solo necesitan una pieza específica (y que ya pasaron por el Chequeo)[cite: 42].
             </p>
+             
+            <div class="grid md:grid-cols-3 gap-8">
+                 
+                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 bg-pixel-dark/50 hover:border-gold-festive transition duration-300">
+                    <div class="text-3xl font-bold text-gold-festive mb-2">Pieza Estática</div>
+                    <p class="text-pixel-light/80 mb-4">Diseño y formato listo para publicación inmediata[cite: 43].</p>
+                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
+                        <span class="text-4xl font-extrabold">7.000</span> ARS [cite: 43]
+                    </div>
+                    <p class="text-xs text-pixel-secondary">Entrega: 24/48h[cite: 43].</p>
+                </div>
 
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-md">
-                    <div class="text-5xl mb-3 text-gold-festive">⭐</div> <h4 class="font-bold text-lg mb-2">Alto Alcance</h4>
-                    <p class="text-sm text-pixel-light/70">Potenciamos el contenido a través de nuestros propios canales de WhatsApp y grupos de Facebook con fuerte presencia en Mendoza y San Juan.</p>
+                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 bg-pixel-dark/50 hover:border-gold-festive transition duration-300">
+                    <div class="text-3xl font-bold text-gold-festive mb-2">Reel de Storytelling</div>
+                    <p class="text-pixel-light/80 mb-4">Formato de video corto para conexión emocional y alto reach en plataformas[cite: 43].</p>
+                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
+                        <span class="text-4xl font-extrabold">15.000</span> ARS [cite: 43]
+                    </div>
+                    <p class="text-xs text-pixel-secondary">Estructura: 3 Piezas / Máx. 15s total[cite: 43].</p>
                 </div>
+
+                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 bg-pixel-dark/50 hover:border-gold-festive transition duration-300">
+                    <div class="text-3xl font-bold text-gold-festive mb-2">Carrusel de Valor</div>
+                    <p class="text-pixel-light/80 mb-4">Contenido educativo de autoridad (hasta 5 slides)[cite: 43].</p>
+                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
+                        <span class="text-4xl font-extrabold">25.000</span> ARS [cite: 43]
+                    </div>
+                    <p class="text-xs text-pixel-secondary">Generación de alto engagement[cite: 43].</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="artistico" class="py-16 sm:py-20 bg-pixel-dark border-t border-red-festive/50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading text-red-festive">5. Solo Diseños y Pedidos Artísticos (Tu Faceta)</h3>
+            <p class="text-lg text-pixel-secondary mb-8 max-w-4xl">
+                Para proyectos que requieren un enfoque puramente artístico o diseños fuera de la estrategia de venta central, como ilustraciones, material de branding complejo o piezas experimentales.
+            </p>
+            
+            <div class="p-6 rounded-xl bg-green-festive/10 shadow-lg border border-green-festive/50">
+                <h4 class="text-2xl font-extrabold text-green-festive mb-3">Modelo de Presupuesto Base por Día Laborado</h4>
+                <p class="text-pixel-light/90 mb-4">
+                    Estos proyectos se cotizan con un presupuesto base diario, asegurando que la complejidad y el tiempo de diseño sean compensados correctamente. La **Difusión Extra** se cotiza aparte.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-pixel-dark/50 p-4 rounded-lg">
+                        <p class="text-xl font-bold text-gold-festive">Diseño y Arte</p>
+                        <p class="text-lg font-semibold text-pixel-light">Presupuesto Base Diario: A Convenir</p>
+                        <ul class="text-sm text-pixel-secondary mt-2 list-disc list-inside">
+                            <li>Incluye 1 ronda de revisiones sobre el arte.</li>
+                            <li>Ejemplos: Ilustraciones, logotipos complejos, diseño de packaging.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-pixel-dark/50 p-4 rounded-lg">
+                        <p class="text-xl font-bold text-gold-festive">Difusión Extra</p>
+                        <p class="text-lg font-semibold text-pixel-light">Precio Base: A Cotizar por Proyecto</p>
+                        <ul class="text-sm text-pixel-secondary mt-2 list-disc list-inside">
+                            <li>Servicio similar a la Difusión Orgánica Diaria[cite: 21], pero con enfoque puntual.</li>
+                            <li>Se define el costo de Mar según el alcance y la duración del proyecto artístico.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading border-pixel-dark">ANEXO: 🌟 Diferenciación Exclusiva: Storytelling & Narrativa de Marca </h3>
+            <p class="text-xl mb-8 max-w-4xl text-gray-700">
+                La atención no se pide, se conquista[cite: 47]. Como escritor, aplicas técnicas de **Guionismo, Narrativa Transmedia y Psicología Visual**[cite: 48].
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">1. Guionizado de Contenido (Scripting) [cite: 50]</h4>
+                    <p class="text-gray-700">
+                        Cada Reel o video corto tendrá un micro-guion estructurado con **"ganchos" psicológicos** diseñados para retener la atención en los primeros 3 segundos y generar curiosidad[cite: 50].
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">2. Copywriting Narrativo (Micro-Relatos) [cite: 51]</h4>
+                    <p class="text-gray-700">
+                        Los textos (captions) dejan de ser descriptivos para ser narrativos[cite: 51]. Cuentas la historia detrás del producto, el "lore" de la marca o anécdotas[cite: 52].
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">3. Historias Interactivas (Gamificación) [cite: 53]</h4>
+                    <p class="text-gray-700">
+                        Diseño de secuencias de Instagram Stories que funcionan como un juego o una pequeña aventura interactiva[cite: 53]. Elevan drásticamente el Engagement Rate[cite: 54].
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">4. Estética con Identidad (El "Sello de Autor") [cite: 55]</h4>
+                    <p class="text-gray-700">
+                        Aplicación de teoría del color y composición visual para que el feed no sea solo un catálogo, sino una experiencia visual coherente[cite: 55].
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -217,7 +369,7 @@
         <div class="max-w-4xl mx-auto px-4">
             <h3 class="text-4xl font-extrabold mb-4 text-pixel-light">¡Hablemos de tu Proyecto!</h3>
             <p class="text-xl text-pixel-secondary mb-8">
-                Estamos listos para ver brotar tus ventas. Contáctanos para una consulta sin cargo:
+                Contáctanos para una consulta sin cargo:
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
                 
@@ -240,77 +392,39 @@
     </section>
 
     <footer class="p-4 text-center bg-pixel-secondary/30 text-sm text-pixel-secondary">
-        <p>&copy; 2025 Pixel Creativo. Todos los derechos reservados. ¡Felices Fiestas!</p>
+        <p>&copy; 2025 Pixel Creativo. Propuesta de Inversión Estratégica en Contenido Digital[cite: 1]. ¡Felices Fiestas!</p>
     </footer>
 
     <script>
-        // Función para manejar el acordeón
-        function toggleAccordion(id) {
-            const details = document.getElementById(id);
-            const icon = document.getElementById(id.replace('-details', '-icon'));
-            const isVisible = details.classList.contains('accordion-open');
-
-            if (isVisible) {
-                details.classList.remove('accordion-open');
-                details.style.maxHeight = '0';
-                if (icon) icon.classList.remove('rotate-180');
-            } else {
-                details.classList.add('accordion-open');
-                details.style.maxHeight = details.scrollHeight + "px";
-                if (icon) icon.classList.add('rotate-180');
-            }
-        }
-
-        // Script para inicializar correctamente el acordeón
-        document.addEventListener('DOMContentLoaded', () => {
-            const details = document.getElementById('basic-details');
-            if (details) {
-                details.style.maxHeight = '0';
-                details.classList.remove('accordion-open'); 
-            }
-        });
-
-        /* ---------------------------------------------------------------- */
-        /* !!! Control de Inactividad para Animación de Luces Navideñas !!! */
-        /* ---------------------------------------------------------------- */
-        
         let inactivityTimer;
-        const INACTIVITY_THRESHOLD = 3600; // 3.6 segundos en milisegundos
+        const INACTIVITY_THRESHOLD = 3600; // 3.6 segundos
         const ctaButton = document.getElementById('main-cta-button');
 
         function startInactivityTimer() {
-            // Limpiar el temporizador previo si existe
             clearTimeout(inactivityTimer);
-            
-            // Iniciar el temporizador
             inactivityTimer = setTimeout(activateChristmasGlow, INACTIVITY_THRESHOLD);
         }
 
         function activateChristmasGlow() {
-            // Aplicar la clase de animación si el botón existe
             if (ctaButton) {
                 ctaButton.classList.add('btn-xmas-glow');
             }
         }
 
         function stopChristmasGlow() {
-            // Detener la animación y reiniciar el temporizador
             if (ctaButton) {
                 ctaButton.classList.remove('btn-xmas-glow');
             }
-            startInactivityTimer(); // Reiniciar el conteo de inactividad
+            startInactivityTimer();
         }
 
-        // Eventos que resetean el temporizador (interacción del usuario)
         const interactionEvents = ['mousemove', 'scroll', 'keydown'];
 
         interactionEvents.forEach(event => {
             document.addEventListener(event, stopChristmasGlow);
         });
 
-        // Inicializar el temporizador al cargar la página
         startInactivityTimer();
-
     </script>
 </body>
 </html>
