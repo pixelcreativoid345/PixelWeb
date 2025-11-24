@@ -46,11 +46,11 @@
 
         /* Keyframes Animación de Luces Navideñas */
         @keyframes twinkle-lights {
-            0%   { background-color: #C7384B; box-shadow: 0 0 10px #C7384B; } /* Nuevo color */
+            0%   { background-color: #C7384B; box-shadow: 0 0 10px #C7384B; }
             25%  { background-color: #1E8C5A; box-shadow: 0 0 10px #1E8C5A; }
             50%  { background-color: #7F00FF; box-shadow: 0 0 10px #7F00FF; }
             75%  { background-color: #FFD700; box-shadow: 0 0 10px #FFD700; }
-            100% { background-color: #C7384B; box-shadow: 0 0 10px #C7384B; } /* Nuevo color */
+            100% { background-color: #C7384B; box-shadow: 0 0 10px #C7384B; }
         }
 
         /* Clase para la animación */
@@ -80,7 +80,7 @@
     <section class="py-16 sm:py-24 text-center bg-pixel-dark">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 text-pixel-light">
-                <span class="text-pixel-accent block">DE DISEÑADOR A ESTRATEGA.</span>
+                <span class="text-pixel-accent block">DEL ARTE DIGITAL A LA ESTRATEGIA DE CRECIMIENTO.</span>
                 <span class="block text-gold-festive">La estrategia siempre precede al diseño.</span>
             </h2>
             <p class="text-xl text-pixel-secondary mb-8 sm:mb-10">
@@ -389,56 +389,4 @@
                 
                 <div class="p-4 rounded-xl bg-gold-festive shadow-lg w-full sm:w-auto transform hover:scale-105 transition duration-300">
                     <p class="font-bold text-pixel-dark">¡Todos nuestros enlaces!</p>
-                    <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="text-lg font-extrabold text-pixel-dark hover:text-red-festive transition duration-300 underline">Linktree Pixel Creativo</a>
-                </div>
-                
-                <div class="p-4 rounded-xl bg-pixel-light/10 border border-pixel-secondary/50 shadow-lg w-full sm:w-auto hover:border-gold-festive transition duration-300">
-                    <p class="font-bold text-pixel-accent">Matías (Coordinador y Diseñador)</p>
-                    <a href="tel:2617484266" class="text-lg font-semibold text-pixel-light hover-glow transition duration-300">261 7484266</a>
-                </div>
-                
-                <div class="p-4 rounded-xl bg-pixel-light/10 border border-pixel-secondary/50 shadow-lg w-full sm:w-auto hover:border-gold-festive transition duration-300">
-                    <p class="font-bold text-pixel-accent">Mar (Estratega Social - Mendoza)</p>
-                    <a href="tel:2616904484" class="text-lg font-semibold text-pixel-light hover-glow transition duration-300">261 6904484</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="p-4 text-center bg-pixel-secondary/30 text-sm text-pixel-secondary">
-        <p>&copy; 2025 Pixel Creativo. Propuesta de Inversión Estratégica en Contenido Digital. ¡Felices Fiestas!</p>
-    </footer>
-
-    <script>
-        let inactivityTimer;
-        const INACTIVITY_THRESHOLD = 3600; // 3.6 segundos
-        const ctaButton = document.getElementById('main-cta-button');
-
-        function startInactivityTimer() {
-            clearTimeout(inactivityTimer);
-            inactivityTimer = setTimeout(activateChristmasGlow, INACTIVITY_THRESHOLD);
-        }
-
-        function activateChristmasGlow() {
-            if (ctaButton) {
-                ctaButton.classList.add('btn-xmas-glow');
-            }
-        }
-
-        function stopChristmasGlow() {
-            if (ctaButton) {
-                ctaButton.classList.remove('btn-xmas-glow');
-            }
-            startInactivityTimer();
-        }
-
-        const interactionEvents = ['mousemove', 'scroll', 'keydown'];
-
-        interactionEvents.forEach(event => {
-            document.addEventListener(event, stopChristmasGlow);
-        });
-
-        startInactivityTimer();
-    </script>
-</body>
-</html>
+                    <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="text
