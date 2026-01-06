@@ -358,4 +358,19 @@ const App = () => {
             <button onClick={() => setActiveModal(null)} className="absolute top-8 right-8 text-gray-400 hover:text-black"><X /></button>
             <h3 className="text-3xl font-black tracking-tight mb-2 italic uppercase">Sumate al ecosistema.</h3>
             <p className="text-gray-500 text-sm mb-8">Contanos qué querés difundir y lo evaluamos.</p>
-            <div className=
+            <div className="space-y-4">
+              <input type="text" placeholder="Nombre / Marca" className="w-full p-4 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-purple-600 outline-none font-bold text-xs" />
+              <textarea placeholder="¿A cuántas personas querés llegar hoy?" rows="3" className="w-full p-4 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-purple-600 outline-none font-bold text-xs resize-none"></textarea>
+              <button className="w-full bg-black text-white py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center justify-center gap-2 hover:bg-purple-600 transition-colors shadow-lg">
+                Enviar mensaje <Send size={14} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default App;
+
