@@ -1,446 +1,361 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo | Inversión Estratégica en Narrativa de Marca</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // Paleta Base (Festiva y Marca)
-                        'pixel-dark': '#0D0D0D',    // Negro Carbón
-                        'pixel-accent': '#7F00FF',  // Violeta Intenso
-                        'pixel-secondary': '#7F8C8D', // Soft Gray
-                        'pixel-light': '#FFFFFF',   // Blanco Puro
-                        
-                        // Colores Festivos (Red Festive actualizado a un carmesí con toque azulado)
-                        'gold-festive': '#FFD700',  // Dorado
-                        'red-festive': '#C7384B',   // **Carmesí Profundo (Nuevo)**
-                        'green-festive': '#1E8C5A', // Verde Joya
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        /* Estilos base y de acento */
-        body { background-color: #0D0D0D; color: #FFFFFF; font-family: 'Inter', sans-serif; }
-        .section-heading { border-left: 5px solid #7F00FF; }
+import React, { useState, useEffect } from 'react';
+import { 
+  Zap, 
+  Target, 
+  Star, 
+  ArrowRight, 
+  ExternalLink,
+  MessageSquare,
+  Layout,
+  Plus,
+  X,
+  Send,
+  Sparkles,
+  Phone,
+  Heart,
+  TrendingUp,
+  Users,
+  ShieldCheck,
+  Rocket,
+  Share2,
+  Expand,
+  Globe,
+  Radio,
+  Hash
+} from 'lucide-react';
 
-        /* Efecto Hover con Brillo Dorado (Neon) */
-        .hover-glow:hover {
-            color: #FFD700; 
-            text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-        }
+const App = () => {
+  const [activeModal, setActiveModal] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
 
-        /* Keyframes Animación de Luces Navideñas */
-        @keyframes twinkle-lights {
-            0%   { background-color: #C7384B; box-shadow: 0 0 10px #C7384B; }
-            25%  { background-color: #1E8C5A; box-shadow: 0 0 10px #1E8C5A; }
-            50%  { background-color: #7F00FF; box-shadow: 0 0 10px #7F00FF; }
-            75%  { background-color: #FFD700; box-shadow: 0 0 10px #FFD700; }
-            100% { background-color: #C7384B; box-shadow: 0 0 10px #C7384B; }
-        }
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-        /* Clase para la animación */
-        .btn-xmas-glow {
-            animation: twinkle-lights 3.6s infinite ease-in-out; 
-            color: white !important; 
-            border: 2px solid #FFD700; 
-        }
-    </style>
-</head>
-<body class="antialiased">
+  const planes = [
+    {
+      id: 'diagnostico',
+      tag: "El Impulso Inicial",
+      title: "Chequeo de Marca",
+      price: "$5.000 ARS",
+      desc: "Analizamos tu idea actual y trazamos un mapa real para optimizar tu presencia sin que pases desapercibido.",
+      features: ["Análisis de situación", "Estrategia de diseño inicial", "Diagnóstico de imagen"],
+      color: "border-purple-500"
+    },
+    {
+      id: 'mensual',
+      tag: "Potencia Digital",
+      title: "Plan Refuerzo",
+      price: "$150.000 ARS",
+      desc: "Diseños con propósito que elevan tu marca al nivel profesional que tu esfuerzo merece.",
+      features: ["Diseño visual estratégico", "Optimización estética", "Refuerzo de identidad"],
+      color: "border-blue-600"
+    },
+    {
+      id: 'premium',
+      tag: "Alcance Máximo",
+      title: "Ecosistema Viral",
+      price: "$350.000 ARS",
+      desc: "Nuestra estrategia de difusión orgánica pone tu marca frente a miles de ojos en nuestro ecosistema activo.",
+      features: ["Difusión Viral Orgánica", "Diseño de alto impacto", "Posicionamiento en la red"],
+      color: "border-black"
+    }
+  ];
 
-    <header class="p-4 sm:p-6 bg-pixel-dark border-b border-pixel-secondary/50 shadow-lg sticky top-0 z-10">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-extrabold text-pixel-accent">Pixel Creativo</h1>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium text-pixel-light">
-                <a href="#diagnostico" class="hover-glow transition duration-300">Diagnóstico</a>
-                <a href="#abonos" class="hover-glow transition duration-300">Abonos</a>
-                <a href="#reservables" class="hover-glow transition duration-300">Diseños Reservables</a>
-                <a href="#artistico" class="hover-glow transition duration-300">Pedidos Artísticos</a>
-                <a href="#contacto" class="hover-glow transition duration-300">Contacto</a>
-            </nav>
-            <a href="#abonos" class="md:hidden bg-pixel-accent text-pixel-light px-4 py-2 rounded-full font-bold text-sm shadow-md hover-glow transition duration-300">Ver Packs</a>
-        </div>
-    </header>
+  return (
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-purple-100 overflow-x-hidden">
+      
+      {/* Fondo Sutil con Puntos */}
+      <div className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style={{ 
+             backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', 
+             backgroundSize: '30px 30px' 
+           }}>
+      </div>
 
-    <section class="py-16 sm:py-24 text-center bg-pixel-dark">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4 text-pixel-light">
-                <span class="text-pixel-accent block">DEL ARTE DIGITAL A LA ESTRATEGIA DE CRECIMIENTO.</span>
-                <span class="block text-gold-festive">La estrategia siempre precede al diseño.</span>
-            </h2>
-            <p class="text-xl text-pixel-secondary mb-8 sm:mb-10">
-                Implementamos una Metodología Estratégica clara para transformar tu inversión en diseño en confianza y posicionamiento de marca. Propuesta válida para **Diciembre 2025**.
-            </p>
-            <a id="main-cta-button" href="#diagnostico" class="inline-block bg-pixel-accent text-pixel-light px-10 py-4 rounded-full font-extrabold text-lg shadow-xl hover-glow transform hover:scale-105 transition duration-300 ease-in-out">
-                INICIAR EL DIAGNÓSTICO ESTRATÉGICO
-            </a>
-        </div>
-    </section>
-
-    <section id="diagnostico" class="py-16 sm:py-20 bg-pixel-secondary/10">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading text-pixel-accent">1. El Chequeo Rápido: Primer Paso de Confianza</h3>
-            <p class="text-lg text-pixel-light/80 mb-8 max-w-3xl">
-                Este diagnóstico es el primer paso recomendado para cualquier servicio de ejecución. Garantizamos que su inversión futura sea efectiva, ya que cada diseño se realiza con un propósito estratégico claro.
-            </p>
-            
-            <div class="p-6 rounded-xl bg-pixel-dark/50 shadow-lg border border-gold-festive/50">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-                    <div class="md:max-w-xl">
-                        <h4 class="text-3xl font-extrabold text-gold-festive mb-2">Chequeo Rápido de Propósito + Hoja de Ruta</h4>
-                        <p class="text-pixel-light/90 italic mb-4">
-                            Diagnóstico del Propósito, Nicho y Mecánica de Venta del negocio. Convierte la curiosidad en un cliente pagador en 48 horas.
-                        </p>
-                        <ul class="text-sm text-pixel-light/80 list-disc list-inside space-y-1">
-                            <li>Obtendrás un **backup de investigación** sobre tu negocio con una Hoja de Ruta clave.</li>
-                            <li>Incluye: Nicho, Mecánica de Venta, 5 Ideas de Contenido, tips y recomendaciones profundas.</li>
-                            <li>Entrega garantizada en 48 horas.</li>
-                        </ul>
-                        <p class="mt-4 p-2 bg-red-festive/20 text-red-festive font-bold text-sm rounded-md border border-red-festive">
-                            OFERTA EXCLUSIVA: Incluye un Reel de 30 segundos gratuito al adquirir cualquier paquete, oferta oficial o presupuesto personalizado (una vez completada la Hoja de Ruta).
-                        </p>
-                    </div>
-                    <div class="mt-6 md:mt-0 text-right">
-                        <span class="text-xl font-semibold text-pixel-light">Inversión Total:</span>
-                        <div class="text-5xl font-extrabold text-red-festive">$5.000 ARS</div>
-                        <a href="#contacto" class="mt-4 inline-block bg-red-festive text-pixel-light px-6 py-2 rounded-full font-bold hover-glow transition duration-300">Adquirir Hoja de Ruta</a>
-                    </div>
-                </div>
+      {/* Header Transparente con Efecto Cristal */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4 ${scrolled ? 'bg-white/60 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-3 group cursor-pointer">
+            <div className="w-11 h-11 bg-black rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <span className="text-purple-500 text-2xl font-black italic">P</span>
             </div>
-        </div>
-    </section>
-
-    <section id="paquetes-adquisicion" class="py-16 sm:py-20 bg-pixel-dark">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading text-pixel-light">2. Packs de Historias</h3>
-            <p class="text-lg text-pixel-secondary mb-8 max-w-4xl">
-                Diseñados para clientes que ya poseen el Chequeo Rápido y necesitan una ejecución inmediata de las piezas más urgentes. El precio es remanente, considerando el Chequeo ya abonado.
-            </p>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-6 rounded-xl shadow-2xl border-4 border-red-festive/70 bg-pixel-secondary/10 flex flex-col hover:shadow-red-festive/50 transition duration-300">
-                    <span class="text-sm font-semibold text-red-festive uppercase mb-2">PAQUETE NAVIDEÑO</span>
-                    <h4 class="text-3xl font-bold mb-4 text-pixel-light">10 Historias Estratégicas</h4>
-                    <p class="text-pixel-light/80 mb-6 flex-grow">
-                        Automatización de 10 piezas de Historia/Estado de alto impacto (formato Vertical). Enfocado en el dolor de "no tener tiempo para publicar a diario".
-                    </p>
-                    <ul class="space-y-2 text-sm text-pixel-light/90 mb-6 list-disc list-inside">
-                        <li>Requisito Previo: Chequeo Rápido Completado ($5.000 ARS).</li>
-                    </ul>
-                    <div class="text-4xl font-extrabold mb-4 text-pixel-light">
-                        Costo Remanente: <span class="text-gold-festive font-extrabold">$12.000 ARS</span>
-                    </div>
-                    <p class="text-sm text-pixel-secondary mb-4">Costo Total (incluyendo Chequeo): $17.000 ARS</p>
-                    <a href="#contacto" class="w-full text-center bg-red-festive text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Comprar Pack</a>
-                </div>
-
-                <div class="p-6 rounded-xl shadow-2xl border-4 border-green-festive/70 bg-pixel-secondary/10 flex flex-col hover:shadow-green-festive/50 transition duration-300">
-                    <span class="text-sm font-semibold text-green-festive uppercase mb-2">PAQUETE NAVIDEÑO</span>
-                    <h4 class="text-3xl font-bold mb-4 text-pixel-light">15 Historias Estratégicas</h4>
-                    <p class="text-pixel-light/80 mb-6 flex-grow">
-                        Automatización de 15 piezas de Historia/Estado de alto impacto. Mayor volumen de caja.
-                    </p>
-                    <ul class="space-y-2 text-sm text-pixel-light/90 mb-6 list-disc list-inside">
-                        <li>Requisito Previo: Chequeo Rápido Completado ($5.000 ARS).</li>
-                    </ul>
-                    <div class="text-4xl font-extrabold mb-4 text-pixel-light">
-                        Costo Remanente: <span class="text-gold-festive font-extrabold">$18.000 ARS</span>
-                    </div>
-                    <p class="text-sm text-pixel-secondary mb-4">Costo Total (incluyendo Chequeo): $23.000 ARS</p>
-                    <a href="#contacto" class="w-full text-center bg-green-festive text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Comprar Pack</a>
-                </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-black tracking-tighter uppercase leading-none">Pixel</span>
+              <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest leading-none">Creativo</span>
             </div>
+          </div>
+          
+          <div className="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+            {['Servicios', 'Ecosistema', 'Nuestra Mirada', 'Contacto'].map((item) => (
+              <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-purple-600 transition-colors">
+                {item}
+              </a>
+            ))}
+          </div>
+
+          <button onClick={() => setActiveModal('contacto')} className="bg-black text-white px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-purple-600 transition-all shadow-md">
+            Hablemos
+          </button>
         </div>
-    </section>
+      </nav>
 
-    <section id="abonos" class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading border-pixel-dark">3. Opciones Mensuales</h3>
-            <p class="text-xl mb-12 max-w-4xl text-gray-700">Planes diseñados para generar un impacto sostenido, basados en el compromiso mutuo y el crecimiento a largo plazo (en caso de necesitar un presupuesto personalizado te espera un regalito del 30% de descuento).</p>
+      {/* Hero Section */}
+      <section className="relative z-10 pt-48 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-purple-100 rounded-full bg-purple-50/50">
+          <Sparkles size={14} className="text-purple-600" />
+          <span className="text-[10px] font-black uppercase tracking-widest text-purple-700">Resultados Reales sin Ilusiones</span>
+        </div>
+        
+        <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8 text-black">
+          EL ARTE <br />
+          <span className="text-purple-600 italic">DE CONECTAR.</span>
+        </h1>
+        
+        <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-12 font-medium italic">
+          No vendemos "seguidores" vacíos. Ponemos tu marca en el <span className="text-black font-bold">centro de ecosistemas activos</span> con más de 15.000 personas reales en Mendoza.
+        </p>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                 
-                <div class="bg-white p-6 rounded-xl shadow-xl border-4 border-pixel-accent/50 flex flex-col hover:shadow-pixel-accent/50 transition duration-300">
-                    <span class="text-sm font-semibold text-pixel-accent uppercase mb-2">A. Recurrencia Básica</span>
-                    <h4 class="text-3xl font-bold mb-4">Abono de Propósito Mensual</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">
-                        Ideal para el cliente que valida el Chequeo y quiere un seguimiento estratégico sin un gran volumen de contenido.
-                    </p>
-                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
-                        <span class="font-extrabold">15.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-700 mb-6 list-disc list-inside">
-                        <li>Composición: Chequeo de seguimiento mensual + 4 Piezas de Alto Impacto (1 por semana) para mantener la autoridad.</li>
-                    </ul>
-                     
-                    <div class="bg-gray-100 p-3 rounded-lg border border-red-festive/50 mb-6 text-center">
-                        <span class="text-sm font-bold text-red-festive">Opción Adicional: Difusión Orgánica Diaria</span>
-                        <span class="text-lg font-extrabold text-pixel-dark block mt-1">$5.000 ARS / día</span>
-                        <p class="text-xs text-gray-500 mt-1">Mar se encarga de la difusión en puntos estratégicos (grupos de WhatsApp/Facebook, canales de Telegram, etc.).</p>
-                    </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#ecosistema" className="w-full sm:w-auto px-10 py-5 bg-black text-white text-[11px] font-black uppercase tracking-widest rounded-2xl hover:bg-purple-600 transition-all shadow-xl flex items-center justify-center gap-2">
+            Ver Mapa de Alcance Real <ArrowRight size={16} />
+          </a>
+        </div>
+      </section>
 
-                    <a href="#contacto" class="w-full text-center bg-pixel-accent text-pixel-light px-6 py-3 rounded-full font-bold hover:bg-violet-700 transition duration-200">Elegir Abono Básico</a>
-                </div>
+      {/* SECCIÓN ACTUALIZADA: Estrategia de Difusión Real */}
+      <section id="ecosistema" className="relative z-10 py-24 px-6 bg-black text-white rounded-[4rem] mx-4 my-10 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/20 blur-[120px] rounded-full"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full"></div>
+        </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-2xl border-4 border-gold-festive flex flex-col transform scale-105 z-10 hover:shadow-2xl transition duration-300">
-                    <span class="text-sm font-semibold text-gold-festive uppercase mb-2">B. Estrategia 50/50 | Recomendado</span>
-                    <h4 class="text-3xl font-bold mb-4 text-pixel-dark">Paquete Mensual de Confianza</h4>
-                    <p class="text-gray-600 mb-6 flex-grow">
-                        Diseñado para clientes que buscan un crecimiento sólido con 20 Piezas con Estrategia de 7 Puntos.
-                    </p>
-                    <div class="text-5xl font-extrabold mb-6 text-pixel-dark">
-                        <span class="font-extrabold">150.000</span> ARS <span class="text-xl font-normal text-gray-500">/ mes</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-700 mb-6 list-disc list-inside">
-                        <li>Contenido: 20 Piezas Totales (12 Centrales + 8 de Soporte).</li>
-                        <li>Alcance Viral: Visibilidad en 300-500 personas por mes, con triplicación de alcance vía difusión viral.</li>
-                        <li>Linktree profesionalizado.</li>
-                    </ul>
-                    <div class="bg-gray-100 p-3 rounded-lg border border-gold-festive mb-6 text-center">
-                        <span class="text-sm font-bold text-gold-festive">Cláusula de Confianza y Plazos (50/50)</span>
-                        <p class="text-xs text-gray-700 mt-1">
-                            **1er Hito (50%):** Pago inicial de $75.000 ARS. Se entregan 10 piezas en 24h/pieza.<br>
-                            **2do Hito (50%):** Pago final de $75.000 ARS. Se activa al completar y entregar las 10 piezas restantes.
-                        </p>
-                    </div>
-
-                    <a href="#contacto" class="w-full text-center bg-gold-festive text-pixel-dark px-6 py-3 rounded-full font-bold hover:bg-yellow-500 transition duration-200">Invertir en Confianza</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow-xl border-4 border-pixel-dark flex flex-col hover:shadow-pixel-dark/50 transition duration-300">
-                    <span class="text-sm font-semibold text-pixel-dark uppercase mb-2">C. Escalabilidad</span>
-                    <h4 class="text-3xl font-bold mb-4">Paquetes Avanzado y Premium</h4>
-                    <p class="text-gray-600 mb-4 flex-grow">
-                        Diseñados para un crecimiento exponencial y gestión integral de marca.
-                    </p>
-                     
-                    <div class="p-4 bg-pixel-secondary/20 rounded-lg text-pixel-dark border border-gray-300 mb-4">
-                        <h5 class="text-lg font-bold text-pixel-dark">AVANZADO</h5>
-                        <div class="text-3xl font-extrabold my-2 text-pixel-dark">
-                            <span class="font-extrabold">200.000</span> ARS <span class="text-sm font-normal text-gray-700">/ mes</span>
-                        </div>
-                        <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
-                            <li>Contenido: 12 Diseños Estáticos + 1 Reel por semana.</li>
-                            <li>Alcance: 700 a 2.000 personas mensuales.</li>
-                        </ul>
-                    </div>
-                     
-                    <div class="p-4 bg-pixel-accent/20 rounded-lg text-pixel-dark border border-pixel-accent mb-4">
-                        <h5 class="text-lg font-bold text-pixel-dark">PREMIUM (Gestión 360)</h5>
-                        <div class="text-3xl font-extrabold my-2 text-pixel-dark">
-                            <span class="font-extrabold">350.000</span> ARS <span class="text-sm font-normal text-gray-700">/ mes</span>
-                        </div>
-                        <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
-                            <li>Contenido: 24 Diseños + 1 Reel por semana.</li>
-                            <li>Incluye Community Manager y Mantenimiento Web (web estática de una sola página).</li>
-                            <li>Facebook ADS: Cubrimos 15% del costo de inversión cada $15.000.</li>
-                        </ul>
-                    </div>
-
-                    <a href="#contacto" class="w-full text-center bg-pixel-dark text-pixel-light px-6 py-3 rounded-full font-bold hover-glow transition duration-300">Solicitar Escalabilidad</a>
-                </div>
-            </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
             
-            <p class="text-center text-sm text-gray-500 mt-10">
-                **NOTA MONETARIA:** Todos los precios están expresados en Pesos Argentinos (ARS) con **base en la cotización del dólar**.
-            </p>
-        </div>
-    </section>
-
-    <section id="reservables" class="py-16 sm:py-20 bg-pixel-secondary/10">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-10 pl-4 section-heading text-pixel-accent">4. Diseños Reservables (Diseños sin Difusión)</h3>
-            <p class="text-lg text-pixel-light/80 mb-8 max-w-4xl">
-                Ideales para clientes que necesitan piezas de diseño listas para formatos específicos (imprimibles, sublimación, tatuajes, etc.) o contenido listo para ser ejecutado por su propio equipo de CM.
-            </p>
-             
-            <div class="grid md:grid-cols-3 gap-8">
-                 
-                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 bg-pixel-dark/50 hover:border-gold-festive transition duration-300">
-                    <div class="text-3xl font-bold text-gold-festive mb-2">Diseño Estático/Reservable</div>
-                    <p class="text-pixel-light/80 mb-4">Diseño y formato listo para diversos usos y publicación inmediata. **Entregable en alta resolución**.</p>
-                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
-                        <span class="text-4xl font-extrabold">7.000</span> ARS
-                    </div>
-                    <p class="text-xs text-pixel-secondary">Entrega: 24/48h. (Diseño sin Difusión)</p>
-                </div>
-
-                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 bg-pixel-dark/50 hover:border-gold-festive transition duration-300">
-                    <div class="text-3xl font-bold text-gold-festive mb-2">Reel de Storytelling (Reservable)</div>
-                    <p class="text-pixel-light/80 mb-4">Formato de video corto para conexión emocional. Se entrega el metraje para su uso directo o adaptación.</p>
-                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
-                        <span class="text-4xl font-extrabold">15.000</span> ARS
-                    </div>
-                    <p class="text-xs text-pixel-secondary">Estructura: 3 Piezas / Máx. 15s total. (Diseño sin Difusión)</p>
-                </div>
-
-                <div class="p-6 rounded-xl shadow-lg border border-pixel-secondary/30 bg-pixel-dark/50 hover:border-gold-festive transition duration-300">
-                    <div class="text-3xl font-bold text-gold-festive mb-2">Carrusel de Valor (Reservable)</div>
-                    <p class="text-pixel-light/80 mb-4">Contenido educativo de autoridad (hasta 5 slides). Entrega del arte final para publicación directa.</p>
-                    <div class="text-4xl font-extrabold mb-6 text-pixel-light">
-                        <span class="text-4xl font-extrabold">25.000</span> ARS
-                    </div>
-                    <p class="text-xs text-pixel-secondary">Generación de alto engagement. (Diseño sin Difusión)</p>
-                </div>
-                
-                <div class="md:col-span-3 p-4 rounded-xl bg-red-festive/20 text-red-festive font-bold text-center border border-red-festive mt-4">
-                    <span class="text-lg block">Servicio Opcional: Difusión Orgánica (Mar)</span>
-                    <p class="text-sm font-normal mt-1">
-                        Si requiere difusión profesional en puntos estratégicos, se añade por **$5.000 ARS por día/pieza**. También puede adquirir **Difusión Única** (1 Pieza Publicitaria de Diseño Básico + Difusión) a cotizar.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="artistico" class="py-16 sm:py-20 bg-pixel-dark border-t border-red-festive/50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading text-red-festive">5. Solo Diseños y Pedidos Artísticos</h3>
-            <p class="text-lg text-pixel-secondary mb-8 max-w-4xl">
-                Para proyectos que requieren un enfoque puramente artístico o diseños fuera de la estrategia de venta central, como ilustraciones, material de branding complejo o piezas experimentales.
-            </p>
-            
-            <div class="p-6 rounded-xl bg-green-festive/10 shadow-lg border border-green-festive/50">
-                <h4 class="text-2xl font-extrabold text-green-festive mb-3">Modelo de Presupuesto Base por Día Laborado</h4>
-                <p class="text-pixel-light/90 mb-4">
-                    Estos proyectos se cotizan con un presupuesto base diario. Es el camino para una hoja de ruta original siguiendo el lineamiento de tu creatividad.
+            <div className="lg:col-span-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-600/20 border border-green-600/30 rounded-full text-[9px] font-black uppercase tracking-widest mb-8 text-green-400">
+                <ShieldCheck size={12} /> Datos de Tráfico Reales
+              </div>
+              
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9]">
+                DIFUSIÓN <br />
+                <span className="text-purple-500 italic">TRANSPARENTE.</span>
+              </h2>
+              
+              <div className="space-y-6 text-gray-400 font-light italic text-lg leading-relaxed">
+                <p>
+                  No inflamos redes sociales nuevas. Tu impacto no depende de cuántos "likes" tenga tu Instagram hoy, sino de nuestra capacidad para <span className="text-white font-bold">inyectar tu contenido en comunidades consolidadas</span>.
                 </p>
                 
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="bg-pixel-dark/50 p-4 rounded-lg">
-                        <p class="text-xl font-bold text-gold-festive">Diseño y Arte</p>
-                        <p class="text-lg font-semibold text-pixel-light">Presupuesto Base Diario: A Convenir</p>
-                        <ul class="text-sm text-pixel-secondary mt-2 list-disc list-inside">
-                            <li>Incluye 1 ronda de revisiones sobre el arte.</li>
-                            <li>Ejemplos: Ilustraciones, logotipos complejos, diseño de packaging.</li>
-                        </ul>
+                <div className="grid gap-4 mt-8">
+                  <div className="flex gap-4 p-5 rounded-3xl bg-white/5 border border-white/10">
+                    <div className="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center shrink-0">
+                      <MessageSquare size={24} className="text-white" />
                     </div>
-                    <div class="bg-pixel-dark/50 p-4 rounded-lg">
-                        <p class="text-xl font-bold text-gold-festive">Difusión Extra</p>
-                        <p class="text-lg font-semibold text-pixel-light">Precio Base: A Cotizar por Proyecto</p>
-                        <ul class="text-sm text-pixel-secondary mt-2 list-disc list-inside">
-                            <li>Se define el costo de Mar para la Difusión Orgánica según el alcance y la duración del proyecto artístico.</li>
-                        </ul>
+                    <div>
+                      <p className="text-xs font-black uppercase text-white tracking-wider">Canales de Tráfico Directo</p>
+                      <p className="text-[11px] mt-1 text-gray-500">Acceso a canales de WhatsApp y grupos de FB con <span className="text-white">+15.5k miembros activos</span>.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4 p-5 rounded-3xl bg-white/5 border border-white/10">
+                    <div className="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center shrink-0">
+                      <TrendingUp size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-black uppercase text-white tracking-wider">Crecimiento Orgánico Diario</p>
+                      <p className="text-[11px] mt-1 text-gray-500">Impacto genuino garantizado de <span className="text-white">~2.000 impresiones por día</span>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 relative bg-white/5 rounded-[3rem] p-10 border border-white/10 overflow-hidden">
+                <div className="text-center mb-12">
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-purple-500">Arquitectura de Conexión Real</span>
+                  <p className="text-xs text-gray-500 mt-1">Cómo movemos tu diseño por la red</p>
+                </div>
+
+                <div className="relative h-[400px] flex items-center justify-center">
+                    {/* El Núcleo: Diseño con Propósito */}
+                    <div className="relative z-30 flex flex-col items-center">
+                      <div className="w-20 h-20 bg-white rounded-[1.5rem] flex items-center justify-center shadow-2xl rotate-3">
+                        <Layout size={32} className="text-black -rotate-3" />
+                      </div>
+                      <div className="mt-4 bg-purple-600 text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-xl">
+                        Tu Mensaje
+                      </div>
+                    </div>
+
+                    {/* Ecosistema Segmentado */}
+                    <div className="absolute inset-0">
+                      {[
+                        { label: "Canal WhatsApp", val: "9.5k", icon: <Phone size={14}/>, pos: "top-0 left-10", color: "bg-green-500", type: "TRÁFICO ALTO" },
+                        { label: "Grupo FB Propio", val: "6.0k", icon: <Users size={14}/>, pos: "top-0 right-10", color: "bg-blue-600", type: "COMUNIDAD" },
+                        { label: "FB / IG Oficial", val: "150+", icon: <Hash size={14}/>, pos: "bottom-10 left-10", color: "bg-gray-700", type: "VIDRIERA" },
+                        { label: "Alcance Orgánico", val: "2k/día", icon: <Zap size={14}/>, pos: "bottom-10 right-10", color: "bg-purple-500", type: "MOVIMIENTO" }
+                      ].map((nodo, i) => (
+                        <div key={i} className={`absolute ${nodo.pos} flex flex-col items-center`}>
+                          <div className={`w-14 h-14 ${nodo.color} rounded-2xl flex flex-col items-center justify-center mb-2 shadow-lg`}>
+                            {nodo.icon}
+                            <span className="text-[10px] font-black">{nodo.val}</span>
+                          </div>
+                          <div className="text-center">
+                            <span className="block text-[8px] font-black text-purple-400 uppercase tracking-widest mb-1">{nodo.type}</span>
+                            <span className="block text-[9px] font-bold text-gray-300">{nodo.label}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Ondas de choque visuales */}
+                    <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <div className="absolute h-full w-px bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-white/5 rounded-2xl">
+                      <span className="block text-2xl font-black text-white">15.500+</span>
+                      <span className="text-[9px] text-gray-500 font-black uppercase tracking-widest">Base de Datos Activa</span>
+                    </div>
+                    <div className="p-4 bg-white/5 rounded-2xl">
+                      <span className="block text-2xl font-black text-white">~2.000</span>
+                      <span className="text-[9px] text-gray-500 font-black uppercase tracking-widest">Impactos Diarios</span>
                     </div>
                 </div>
             </div>
+          </div>
         </div>
-    </section>
-    
-    <section class="py-16 sm:py-20 bg-pixel-light text-pixel-dark">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold mb-6 pl-4 section-heading border-pixel-dark">ANEXO: 🌟 Diferenciación Exclusiva: Storytelling & Narrativa de Marca</h3>
-            <p class="text-xl mb-8 max-w-4xl text-gray-700">
-                La mayoría de las agencias suben contenido. Nosotros creamos un universo. Aplicamos técnicas de Guionismo, Narrativa Transmedia y Psicología Visual para transformar seguidores en fanáticos de la marca.
-            </p>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">1. Guionizado de Contenido (Scripting)</h4>
-                    <p class="text-gray-700">
-                        Cada Reel o video corto tendrá un micro-guion estructurado con **"ganchos" psicológicos** diseñados para retener la atención en los primeros 3 segundos y generar curiosidad.
-                    </p>
+      </section>
+
+      {/* Servicios / Refuerzos */}
+      <section id="servicios" className="relative z-10 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl font-black tracking-tight mb-2 italic underline decoration-purple-600 decoration-4 underline-offset-8">Inversión Estratégica.</h2>
+            <p className="text-gray-500 text-sm font-medium mt-6">Sin promesas mágicas. Solo diseño técnico y acceso a nuestra red.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {planes.map((p) => (
+              <div 
+                key={p.id}
+                className="group p-8 bg-white border border-gray-100 rounded-[2.5rem] hover:border-purple-600 transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-purple-50"
+              >
+                <span className="text-[9px] font-black uppercase tracking-widest px-3 py-1 bg-gray-100 rounded-full mb-6 w-fit group-hover:bg-purple-100 transition-colors">
+                  {p.tag}
+                </span>
+                <h3 className="text-2xl font-black mb-1">{p.title}</h3>
+                <div className="text-3xl font-black text-purple-600 mb-6 italic">{p.price}</div>
+                <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">{p.desc}</p>
+                
+                <ul className="space-y-4 mb-8">
+                  {p.features.map(f => (
+                    <li key={f} className="flex items-center gap-3 text-xs font-bold text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <button className="w-full py-4 bg-gray-50 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all">
+                  Comenzar Refuerzo
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Diferenciación */}
+      <section id="nuestra-mirada" className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="bg-white border-2 border-black rounded-[3rem] p-10 shadow-xl relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-3xl"></div>
+            <h4 className="text-4xl font-black tracking-tighter mb-6 italic relative z-10">HONESTIDAD <br /> DIGITAL.</h4>
+            <div className="space-y-6 relative z-10">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 bg-black rounded-xl flex items-center justify-center text-white">
+                  <ShieldCheck size={24} />
                 </div>
                 <div>
-                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">2. Copywriting Narrativo (Micro-Relatos)</h4>
-                    <p class="text-gray-700">
-                        Los textos (captions) dejan de ser descriptivos para ser narrativos. Contamos la historia detrás del producto, el "lore" de la marca o anécdotas.
-                    </p>
+                  <p className="font-black text-xs uppercase tracking-tight mb-1">Sin Números Inflados</p>
+                  <p className="text-xs text-gray-500 font-medium italic">Tu web dirá la verdad. Mostramos el impacto real donde sucede, no donde se compra.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-12 h-12 shrink-0 bg-green-50 rounded-xl flex items-center justify-center text-green-600">
+                  <MessageSquare size={24} />
                 </div>
                 <div>
-                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">3. Historias Interactivas (Gamificación)</h4>
-                    <p class="text-gray-700">
-                        Diseño de secuencias de Instagram Stories que funcionan como un juego o una pequeña aventura interactiva. Elevan drásticamente el Rango de Alcance (Engagement Rate).
-                    </p>
+                  <p className="font-black text-xs uppercase tracking-tight mb-1">Tráfico de Calidad</p>
+                  <p className="text-xs text-gray-500 font-medium italic">Un clic de WhatsApp vale más que mil visualizaciones en una red social fantasma.</p>
                 </div>
-                <div>
-                    <h4 class="text-2xl font-bold mb-3 text-pixel-accent">4. Estética con Identidad (El "Sello de Autor")</h4>
-                    <p class="text-gray-700">
-                        Aplicación de teoría del color y composición visual para que el feed no sea solo un catálogo, sino una experiencia visual coherente que transmita la esencia (el "alma") de la marca.
-                    </p>
-                </div>
+              </div>
             </div>
+          </div>
+          <div>
+            <h2 className="text-4xl font-black tracking-tight mb-6 leading-tight text-black">Conectamos con lo que importa.</h2>
+            <p className="text-lg text-gray-500 mb-8 italic">"No te obsesiones con los seguidores de tu perfil. Obsesiónate con que tu mensaje llegue a las manos correctas. Nosotros tenemos el canal."</p>
+          </div>
         </div>
-    </section>
+      </section>
 
+      {/* Footer */}
+      <footer id="contacto" className="py-24 px-6 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 mb-20">
+          <div className="text-center md:text-left">
+            <h4 className="text-6xl font-black tracking-tight mb-4 italic text-black uppercase leading-none">IMPACTO <br /><span className="text-purple-600">REAL.</span></h4>
+            <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em]">Pixel Creativo • Mendoza • 2026</p>
+          </div>
+          
+          <div className="flex flex-col gap-4 w-full md:w-auto min-w-[320px]">
+            <a 
+              href="#" 
+              className="group flex items-center justify-between p-6 bg-white border-2 border-black rounded-[2rem] hover:bg-gray-50 transition-all duration-300 shadow-xl"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center text-white">
+                  <MessageSquare size={20} fill="currentColor" />
+                </div>
+                <div className="text-left">
+                  <span className="block text-[8px] font-black text-green-600 uppercase tracking-widest italic">Canal Activo</span>
+                  <span className="block font-black text-sm text-black">WhatsApp 9.5k</span>
+                </div>
+              </div>
+              <ExternalLink size={18} className="text-black" />
+            </a>
 
-    <section id="contacto" class="py-16 sm:py-20 text-center bg-pixel-dark border-t border-pixel-secondary/50">
-        <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-4xl font-extrabold mb-4 text-pixel-light">¡Hablemos de tu Proyecto!</h3>
-            <p class="text-xl text-pixel-secondary mb-8">
-                Estamos listos para ver brotar tus ventas. Contáctanos para una consulta sin cargo:
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-                
-                <div class="p-4 rounded-xl bg-gold-festive shadow-lg w-full sm:w-auto transform hover:scale-105 transition duration-300">
-                    <p class="font-bold text-pixel-dark">¡Todos nuestros enlaces!</p>
-                    <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="text-lg font-extrabold text-pixel-dark hover:text-red-festive transition duration-300 underline">Linktree Pixel Creativo</a>
-                </div>
-                
-                <div class="p-4 rounded-xl bg-pixel-light/10 border border-pixel-secondary/50 shadow-lg w-full sm:w-auto hover:border-gold-festive transition duration-300">
-                    <p class="font-bold text-pixel-accent">Matías (Coordinador y Diseñador)</p>
-                    <a href="tel:2617484266" class="text-lg font-semibold text-pixel-light hover-glow transition duration-300">261 3602948</a>
-                </div>
-                
-                <div class="p-4 rounded-xl bg-pixel-light/10 border border-pixel-secondary/50 shadow-lg w-full sm:w-auto hover:border-gold-festive transition duration-300">
-                    <p class="font-bold text-pixel-accent">Mar (Estratega Social - Mendoza)</p>
-                    <a href="tel:2616904484" class="text-lg font-semibold text-pixel-light hover-glow transition duration-300">261 6904484</a>
-                </div>
+            <div className="grid grid-cols-2 gap-4">
+              <a href="tel:2613602948" className="flex flex-col p-5 bg-gray-50 border border-gray-100 rounded-[1.5rem] hover:border-black transition-all">
+                <span className="text-[10px] font-black uppercase text-black">Mati - Tech</span>
+              </a>
+              <a href="tel:2616904484" className="flex flex-col p-5 bg-gray-50 border border-gray-100 rounded-[1.5rem] hover:border-black transition-all">
+                <span className="text-[10px] font-black uppercase text-black">Mar - Estrategia</span>
+              </a>
             </div>
+          </div>
         </div>
-    </section>
+        
+        <div className="mt-24 pt-12 border-t border-gray-100 text-center max-w-4xl mx-auto">
+          <p className="text-lg font-black text-purple-600 uppercase tracking-widest mb-4 italic">
+            El valor es real. La estrategia también.
+          </p>
+          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] space-y-2">
+            <p>Hecho en Mendoza • <span className="text-black">"e-Studio ID345"</span> 2026</p>
+          </div>
+        </div>
+      </footer>
 
-    <footer class="p-4 text-center bg-pixel-secondary/30 text-sm text-pixel-secondary">
-        <p>&copy; 2025 Pixel Creativo. Propuesta de Inversión Estratégica en Contenido Digital. ¡Felices Fiestas!</p>
-    </footer>
-
-    <script>
-        let inactivityTimer;
-        const INACTIVITY_THRESHOLD = 3600; // 3.6 segundos
-        const ctaButton = document.getElementById('main-cta-button');
-
-        function startInactivityTimer() {
-            clearTimeout(inactivityTimer);
-            inactivityTimer = setTimeout(activateChristmasGlow, INACTIVITY_THRESHOLD);
-        }
-
-        function activateChristmasGlow() {
-            if (ctaButton) {
-                ctaButton.classList.add('btn-xmas-glow');
-            }
-        }
-
-        function stopChristmasGlow() {
-            if (ctaButton) {
-                ctaButton.classList.remove('btn-xmas-glow');
-            }
-            startInactivityTimer();
-        }
-
-        const interactionEvents = ['mousemove', 'scroll', 'keydown'];
-
-        interactionEvents.forEach(event => {
-            document.addEventListener(event, stopChristmasGlow);
-        });
-
-        startInactivityTimer();
-    </script>
-</body>
-</html>
-
-
+      {/* Modal Contacto */}
+      {activeModal === 'contacto' && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setActiveModal(null)} />
+          <div className="relative bg-white w-full max-w-lg rounded-[2.5rem] p-10 shadow-2xl">
+            <button onClick={() => setActiveModal(null)} className="absolute top-8 right-8 text-gray-400 hover:text-black"><X /></button>
+            <h3 className="text-3xl font-black tracking-tight mb-2 italic uppercase">Sumate al ecosistema.</h3>
+            <p className="text-gray-500 text-sm mb-8">Contanos qué querés difundir y lo evaluamos.</p>
+            <div className=
