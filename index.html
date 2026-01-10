@@ -3,255 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Creativo | Propuesta Estratégica</title>
+    <title>Pixel Creativo | Estrategia y Difusión</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:italic,wght@700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         
         :root {
-            --primary: #6366f1;
-            --accent: #a855f7;
+            --primary: #6366f1; /* Indigo */
+            --accent: #a855f7;  /* Purple */
+            --paper: #fdfbf7;   /* Tono papel periódico suave */
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fafafa;
+            background-color: #ffffff;
+            color: #1e293b;
         }
 
         .serif { font-family: 'Playfair Display', serif; }
 
-        .newspaper-frame {
-            background: #fff;
-            padding: 20px;
+        /* Estilos para el Cuadro "Periódico/Vidriera" */
+        .magazine-rack {
+            background-color: var(--paper);
             border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            position: relative;
+            box-shadow: 
+                0 1px 1px rgba(0,0,0,0.05), 
+                0 10px 30px rgba(0,0,0,0.05),
+                inset 0 0 100px rgba(0,0,0,0.02);
+        }
+
+        /* Líneas de guía estilo periódico */
+        .magazine-rack::before {
+            content: '';
+            position: absolute;
+            top: 20px; bottom: 20px; left: 50%;
+            width: 1px;
+            background: #cbd5e1;
+            display: none; /* Activar en desktop si se quiere dividir en dos grandes columnas */
+        }
+
+        @media (min-width: 768px) {
+            .magazine-rack::before { display: block; }
+        }
+
+        /* Marco de Flyer Individual */
+        .flyer-frame {
+            background: white;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             position: relative;
         }
 
-        .newspaper-frame::after {
+        .flyer-frame:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            z-index: 10;
+            border-color: var(--primary);
+        }
+
+        /* Pin decorativo o cinta adhesiva (opcional, para realismo) */
+        .flyer-frame::after {
             content: '';
             position: absolute;
-            top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid #f1f5f9;
-            pointer-events: none;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 25px;
+            background: rgba(255,255,255,0.4);
+            border: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transform: translateX(-50%) rotate(-2deg);
         }
 
+        /* Tarjetas de Precio */
         .price-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             border: 1px solid #f1f5f9;
         }
-
         .price-card:hover {
-            transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.15);
         }
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-        }
-
-        .news-image {
-            filter: grayscale(20%) contrast(1.1);
-            transition: filter 0.3s ease;
-        }
-
-        .news-image:hover {
-            filter: grayscale(0%);
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 <body class="text-slate-900">
 
     <!-- Navegación -->
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <span class="font-black text-2xl tracking-tighter">PIXEL<span class="text-indigo-600">.</span></span>
+                <span class="font-black text-2xl tracking-tighter uppercase">Pixel <span class="text-indigo-600">Creativo</span></span>
             </div>
-            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-                <a href="#precios" class="hover:text-black">Inversión</a>
-                <a href="#recomendados" class="hover:text-black">Vitrina</a>
-                <a href="#difusion" class="hover:text-black">Alcance</a>
+            <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-500">
+                <a href="#filtro" class="hover:text-black transition-colors">Diagnóstico</a>
+                <a href="#packs" class="hover:text-black transition-colors">Packs</a>
+                <a href="#mensuales" class="hover:text-black transition-colors">Abonos</a>
+                <a href="#vidriera" class="hover:text-black transition-colors">Recomendados</a>
             </div>
+            <a href="#contacto" class="bg-black text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-indigo-600 transition-all shadow-lg">
+                Hablemos
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-40 pb-20 px-6 max-w-5xl mx-auto text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-8">
-            Diseño que <span class="serif text-indigo-600">vende</span>, <br>
-            estrategia que <span class="serif text-purple-600">conecta</span>.
-        </h1>
-        <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            No solo creamos imágenes; construimos la autoridad de tu marca a través de un ecosistema de difusión real y diseño audiovisual de alto impacto.
-        </p>
+    <header class="pt-48 pb-24 px-6 text-center bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block py-1 px-3 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[10px] font-black uppercase tracking-widest mb-6">
+                Estrategia • Diseño • Difusión
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 text-slate-900">
+                Transformamos inversión en <br>
+                <span class="serif gradient-text italic">confianza y posicionamiento.</span>
+            </h1>
+            <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                La estrategia siempre precede al diseño. Implementamos una metodología clara para marcas que buscan dejar de improvisar.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#filtro" class="px-8 py-4 bg-black text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+                    Iniciar Chequeo ($5.000)
+                </a>
+                <a href="#vidriera" class="px-8 py-4 bg-white border border-slate-200 text-slate-900 rounded-xl text-xs font-bold uppercase tracking-widest hover:border-black transition-colors">
+                    Ver Vidriera
+                </a>
+            </div>
+        </div>
     </header>
 
-    <!-- Sección de Precios (Basada en Presupuesto Interno) -->
-    <section id="precios" class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
-                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-indigo-500">Inversión Estratégica</span>
-                <h2 class="text-4xl font-black mt-2">Planes de Crecimiento</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Paso 1 -->
-                <div class="price-card p-8 rounded-[2rem] bg-slate-50">
-                    <div class="w-12 h-12 bg-indigo-600 text-white flex items-center justify-center rounded-2xl mb-6 shadow-lg shadow-indigo-200">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Chequeo Rápido</h3>
-                    <p class="text-slate-500 text-sm mb-6">Diagnóstico de nicho y mecánica de venta. Incluye Hoja de Ruta estratégica.</p>
-                    <div class="text-3xl font-black mb-6">$5.000 <span class="text-sm font-normal text-slate-400">/ inicio</span></div>
-                    <ul class="text-xs space-y-3 text-slate-600 font-semibold uppercase tracking-wider">
-                        <li><i class="fas fa-check text-indigo-500 mr-2"></i> Análisis de Propósito</li>
-                        <li><i class="fas fa-check text-indigo-500 mr-2"></i> 5 Ideas de Contenido</li>
-                        <li><i class="fas fa-check text-indigo-500 mr-2"></i> Entrega 48hs</li>
-                    </ul>
-                </div>
-
-                <!-- Abono Básico -->
-                <div class="price-card p-8 rounded-[2rem] bg-white border-2 border-indigo-100 relative overflow-hidden">
-                    <div class="absolute top-5 right-5 bg-indigo-600 text-white text-[8px] font-bold px-3 py-1 rounded-full">POPULAR</div>
-                    <div class="w-12 h-12 bg-purple-600 text-white flex items-center justify-center rounded-2xl mb-6">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Abono Mensual</h3>
-                    <p class="text-slate-500 text-sm mb-6">Mantenimiento de autoridad constante con 4 piezas de alto impacto.</p>
-                    <div class="text-3xl font-black mb-6">$15.000 <span class="text-sm font-normal text-slate-400">/ mes</span></div>
-                    <ul class="text-xs space-y-3 text-slate-600 font-semibold uppercase tracking-wider">
-                        <li><i class="fas fa-check text-purple-500 mr-2"></i> Seguimiento Mensual</li>
-                        <li><i class="fas fa-check text-purple-500 mr-2"></i> 1 Diseño Semanal</li>
-                        <li><i class="fas fa-check text-purple-500 mr-2"></i> Estrategia de Valor</li>
-                    </ul>
-                </div>
-
-                <!-- Paquete de Confianza -->
-                <div class="price-card p-8 rounded-[2rem] bg-slate-900 text-white">
-                    <div class="w-12 h-12 bg-white text-black flex items-center justify-center rounded-2xl mb-6">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Plan de Confianza</h3>
-                    <p class="text-slate-400 text-sm mb-6">Estrategia 360° con 20 piezas y linktree profesionalizado.</p>
-                    <div class="text-3xl font-black mb-6">$150.000 <span class="text-sm font-normal text-slate-400">/ mes</span></div>
-                    <ul class="text-xs space-y-3 text-slate-400 font-semibold uppercase tracking-wider">
-                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> 20 Piezas Estratégicas</li>
-                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> Difusión Viral</li>
-                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> Gestión 50/50</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección RECOMENDADOS Y MÁS -->
-    <section id="recomendados" class="py-24 px-6 bg-slate-50 overflow-hidden">
-        <div class="max-w-4xl mx-auto">
+    <!-- 1. PRODUCTO DE ENTRADA (EL FILTRO) -->
+    <section id="filtro" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">Curaduría de Contenido</span>
-                <h2 class="text-4xl font-black mt-4 serif italic tracking-tight">RECOMENDADOS Y MÁS</h2>
+                <h2 class="text-3xl font-black mb-4">El Primer Paso Obligatorio</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Para garantizar resultados, no diseñamos sin propósito. Comenzamos con un diagnóstico.</p>
             </div>
 
-            <!-- Cuadro Estilo Periódico Moderno -->
-            <div class="newspaper-frame">
-                <div class="flex flex-col md:flex-row gap-8">
-                    <div class="md:w-2/3 border-r border-slate-100 pr-0 md:pr-8">
-                        <div class="relative overflow-hidden rounded-sm mb-4">
-                            <!-- Aquí se colocarían las imágenes de Google Drive -->
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" alt="Muestra de Diseño" class="news-image w-full h-[400px] object-cover">
-                            <div class="absolute bottom-4 left-4 bg-black/80 text-white text-[9px] px-3 py-1 font-bold tracking-widest uppercase">Diseño de Autor</div>
+            <div class="bg-slate-900 text-white rounded-[2.5rem] p-10 md:p-14 shadow-2xl relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600 rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-10">
+                    <div class="text-left">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fas fa-fingerprint text-indigo-400 text-2xl"></i>
+                            <h3 class="text-2xl font-bold">Chequeo Rápido de Propósito</h3>
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 leading-tight">La estética como herramienta de persuasión.</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed italic">
-                            Cada pieza audiovisual es tratada como una obra individual, diseñada para capturar la atención en menos de 3 segundos y convertir el interés en acción real.
+                        <p class="text-slate-300 mb-6 leading-relaxed max-w-lg">
+                            Diagnóstico de nicho y mecánica de venta. Te entregamos una <strong>Hoja de Ruta</strong> con 5 ideas de contenido y tips profundos. Convierte curiosidad en clientes.
                         </p>
-                    </div>
-                    <div class="md:w-1/3 flex flex-col gap-6">
-                        <div class="border-b border-slate-100 pb-4">
-                            <span class="text-[9px] font-bold text-indigo-600 block mb-1 uppercase">Tendencias</span>
-                            <h4 class="font-bold text-sm">Contenido Vertical Estratégico</h4>
-                            <p class="text-xs text-slate-400 mt-1">Reels y Stories con guionismo profesional.</p>
-                        </div>
-                        <div class="border-b border-slate-100 pb-4">
-                            <span class="text-[9px] font-bold text-purple-600 block mb-1 uppercase">Estructura</span>
-                            <h4 class="font-bold text-sm">Identidad Visual 2026</h4>
-                            <p class="text-xs text-slate-400 mt-1">Cómo proyectar confianza a través del color.</p>
-                        </div>
-                        <div class="mt-auto">
-                            <p class="text-[10px] text-slate-300 font-bold uppercase italic">Actualizado: Enero 2026</p>
+                        <div class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full">
+                            <i class="fas fa-bolt"></i> Entrega garantizada en 48hs
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="https://linktr.ee/TU_LINKTREE_AQUI" target="_blank" class="inline-flex items-center gap-3 bg-black text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-indigo-600 transition-all shadow-xl shadow-black/10">
-                    <i class="fas fa-external-link-alt"></i> Ver Portafolio Completo
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Difusión (Donde se ven los anuncios) -->
-    <section id="difusion" class="py-24 px-6 gradient-bg text-white rounded-[4rem] mx-4 mb-12">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tighter uppercase">¿DÓNDE SE VEN SUS ANUNCIOS?</h2>
-            <p class="text-slate-400 text-lg mb-16 max-w-2xl mx-auto italic font-light">
-                Además de tener nuestro ecosistema viral local, pondremos a circular la información con diseños bien pensados y un alcance estratégico.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-12">
-                <div>
-                    <div class="text-4xl font-black text-indigo-500 mb-2">9.5k+</div>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">WhatsApp Directo</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-black text-purple-500 mb-2">6.0k+</div>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Facebook Ecosistema</p>
-                </div>
-                <div>
-                    <div class="text-4xl font-black text-white mb-2">100%</div>
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Orgánico & Real</p>
+                    <div class="text-center md:text-right min-w-[200px]">
+                        <p class="text-sm text-slate-400 mb-1">Inversión Única</p>
+                        <div class="text-5xl font-black text-white mb-6">$5.000 <span class="text-lg font-normal text-slate-500">ARS</span></div>
+                        <a href="https://wa.me/2613602948?text=Hola,%20quiero%20el%20Chequeo%20Rapido" class="inline-block w-full bg-white text-black py-4 rounded-xl font-bold uppercase text-xs hover:bg-indigo-50 transition-colors">
+                            Solicitar Ahora
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contacto -->
-    <footer class="py-20 px-6 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="text-center md:text-left">
-                <span class="font-black text-3xl">PIXEL CREATIVO</span>
-                <p class="text-slate-400 text-xs mt-2 uppercase tracking-widest">Estrategia & Diseño en Mendoza</p>
+    <!-- 2. PACKS DE HISTORIAS -->
+    <section id="packs" class="py-20 px-6 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-widest">Venta Rápida</span>
+                    <h2 class="text-3xl font-black mt-2">Packs de Historias</h2>
+                </div>
+                <p class="text-xs text-slate-500 max-w-md text-right mt-4 md:mt-0">
+                    *Precios remanentes para quienes ya abonaron el Chequeo ($5.000).<br>
+                    Si no tienes Chequeo, el valor es mayor.
+                </p>
             </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Pack 10 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-lg text-[10px] font-bold uppercase">Formato Vertical</span>
+                        <span class="text-2xl font-black">$17.000 <span class="text-xs text-slate-400 font-normal">Total</span></span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pack 10 Historias</h3>
+                    <p class="text-sm text-slate-500 mb-6">Automatización de alto impacto. Soluciona la falta de tiempo.</p>
+                    <div class="border-t border-slate-100 pt-4 mb-6">
+                        <p class="text-xs font-bold text-slate-700 uppercase mb-2">Desglose de Pago:</p>
+                        <div class="flex justify-between text-sm text-slate-600 mb-1">
+                            <span>Chequeo previo:</span>
+                            <span>$5.000</span>
+                        </div>
+                        <div class="flex justify-between text-sm font-bold text-indigo-600">
+                            <span>Saldo a pagar (Remanente):</span>
+                            <span>$12.000</span>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="block text-center border border-slate-900 text-slate-900 py-3 rounded-lg text-xs font-bold uppercase hover:bg-slate-900 hover:text-white transition-all">Adquirir Pack 10</a>
+                </div>
+
+                <!-- Pack 15 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-[10px] font-bold uppercase">Mayor Volumen</span>
+                        <span class="text-2xl font-black">$23.000 <span class="text-xs text-slate-400 font-normal">Total</span></span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pack 15 Historias</h3>
+                    <p class="text-sm text-slate-500 mb-6">Más presencia para mayor oportunidad de venta.</p>
+                    <div class="border-t border-slate-100 pt-4 mb-6">
+                        <p class="text-xs font-bold text-slate-700 uppercase mb-2">Desglose de Pago:</p>
+                        <div class="flex justify-between text-sm text-slate-600 mb-1">
+                            <span>Chequeo previo:</span>
+                            <span>$5.000</span>
+                        </div>
+                        <div class="flex justify-between text-sm font-bold text-purple-600">
+                            <span>Saldo a pagar (Remanente):</span>
+                            <span>$18.000</span>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="block text-center border border-slate-900 text-slate-900 py-3 rounded-lg text-xs font-bold uppercase hover:bg-slate-900 hover:text-white transition-all">Adquirir Pack 15</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABONOS MENSUALES -->
+    <section id="mensuales" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Crecimiento Sostenido</span>
+                <h2 class="text-4xl font-black mt-2">Planes Mensuales</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Básico -->
+                <div class="price-card p-6 rounded-2xl bg-white border border-slate-100">
+                    <h3 class="font-bold text-lg mb-1">Básico</h3>
+                    <div class="text-2xl font-black mb-4">$15.000<span class="text-xs font-normal">/mes</span></div>
+                    <p class="text-xs text-slate-500 mb-6 min-h-[40px]">Mantenimiento de autoridad con 4 piezas (1 semanal).</p>
+                    <ul class="text-[11px] text-slate-600 space-y-2 mb-6">
+                        <li>• Seguimiento mensual</li>
+                        <li>• Diseños de alto impacto</li>
+                        <li>• 1 publicación por semana</li>
+                    </ul>
+                    <a href="#contacto" class="block w-full py-2 bg-slate-100 text-center rounded-lg text-[10px] font-bold uppercase hover:bg-slate-200">Elegir</a>
+                </div>
+
+                <!-- Confianza -->
+                <div class="price-card p-6 rounded-2xl bg-slate-900 text-white transform md:-translate-y-4 shadow-xl">
+                    <div class="text-[9px] font-bold text-indigo-400 uppercase mb-2">Recomendado 50/50</div>
+                    <h3 class="font-bold text-lg mb-1">Confianza</h3>
+                    <div class="text-2xl font-black mb-4">$150.000<span class="text-xs font-normal opacity-70">/mes</span></div>
+                    <p class="text-xs text-slate-400 mb-6 min-h-[40px]">Estrategia sólida de 20 piezas. Visibilidad 300-500 personas.</p>
+                    <ul class="text-[11px] text-slate-300 space-y-2 mb-6">
+                        <li>• 12 Centrales + 8 Soporte</li>
+                        <li>• Linktree Profesional</li>
+                        <li>• Triplicación Viral</li>
+                    </ul>
+                    <a href="#contacto" class="block w-full py-3 bg-indigo-600 text-center rounded-lg text-[10px] font-bold uppercase hover:bg-indigo-500">Elegir Plan</a>
+                </div>
+
+                <!-- Avanzado -->
+                <div class="price-card p-6 rounded-2xl bg-white border border-slate-100">
+                    <h3 class="font-bold text-lg mb-1">Avanzado</h3>
+                    <div class="text-2xl font-black mb-4">$200.000<span class="text-xs font-normal">/mes</span></div>
+                    <p class="text-xs text-slate-500 mb-6 min-h-[40px]">Para escalar. Alcance de 700 a 2.000 personas.</p>
+                    <ul class="text-[11px] text-slate-600 space-y-2 mb-6">
+                        <li>• 12 Diseños Estáticos</li>
+                        <li>• 1 Reel por semana</li>
+                        <li>• Crecimiento pasivo</li>
+                    </ul>
+                    <a href="#contacto" class="block w-full py-2 bg-slate-100 text-center rounded-lg text-[10px] font-bold uppercase hover:bg-slate-200">Elegir</a>
+                </div>
+
+                <!-- Premium -->
+                <div class="price-card p-6 rounded-2xl bg-white border border-slate-100 relative">
+                    <div class="absolute top-0 right-0 bg-black text-white text-[8px] px-2 py-1 rounded-bl-lg font-bold">FULL</div>
+                    <h3 class="font-bold text-lg mb-1">Premium</h3>
+                    <div class="text-2xl font-black mb-4">$350.000<span class="text-xs font-normal">/mes</span></div>
+                    <p class="text-xs text-slate-500 mb-6 min-h-[40px]">Gestión 360: Diseño, CM y Web básica.</p>
+                    <ul class="text-[11px] text-slate-600 space-y-2 mb-6">
+                        <li>• 24 Diseños + 1 Reel/sem</li>
+                        <li>• Community Manager</li>
+                        <li>• Soporte en Facebook Ads</li>
+                    </ul>
+                    <a href="#contacto" class="block w-full py-2 bg-slate-100 text-center rounded-lg text-[10px] font-bold uppercase hover:bg-slate-200">Elegir</a>
+                </div>
+            </div>
+
+            <!-- Modulares -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t border-slate-100 pt-10">
+                <div>
+                    <p class="text-[10px] font-bold uppercase text-slate-400">Pieza Estática</p>
+                    <p class="text-lg font-black">$7.000</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase text-slate-400">Reel Storytelling</p>
+                    <p class="text-lg font-black">$15.000</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase text-slate-400">Carrusel Valor</p>
+                    <p class="text-lg font-black">$25.000</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase text-slate-400">Difusión Extra</p>
+                    <p class="text-lg font-black">$5.000 <span class="text-xs font-normal">/día</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CLAVE: RECOMENDADOS Y MÁS (Estilo Periódico/Revista) -->
+    <section id="vidriera" class="py-24 px-6 bg-slate-100 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
             
-            <div class="flex flex-col md:flex-row gap-6">
-                <a href="https://wa.me/2613602948" class="flex items-center gap-4 bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-indigo-500 transition-all">
-                    <div class="bg-indigo-100 text-indigo-600 w-10 h-10 flex items-center justify-center rounded-xl">
-                        <i class="fas fa-play"></i>
-                    </div>
+            <!-- Títulos solicitados -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">¿DONDE SE VEN SUS ANUNCIOS?</h2>
+                <p class="text-lg md:text-xl text-slate-500 font-serif italic max-w-3xl mx-auto leading-relaxed">
+                    "Además de tener nuestro ecosistema viral local pondremos a circular la información con diseños bien pensados y un alcance estratégico."
+                </p>
+            </div>
+
+            <!-- Estructura de Revista / Clasificados -->
+            <div class="magazine-rack rounded-sm">
+                <!-- Cabecera decorativa del periódico -->
+                <div class="border-b-2 border-black pb-4 mb-8 flex justify-between items-end">
                     <div>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase">Diseño Audiovisual</p>
-                        <p class="font-black">Matías</p>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.2em]">Edición Mensual</span>
+                        <h3 class="text-3xl font-black serif italic">Recomendados y Más</h3>
                     </div>
-                </a>
-                <a href="https://wa.me/2616904484" class="flex items-center gap-4 bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-purple-500 transition-all">
-                    <div class="bg-purple-100 text-purple-600 w-10 h-10 flex items-center justify-center rounded-xl">
-                        <i class="fas fa-bullhorn"></i>
+                    <div class="text-right hidden md:block">
+                        <span class="text-[10px] font-bold uppercase block">Mendoza • Argentina</span>
+                        <span class="text-[10px] font-bold uppercase text-slate-400">Vol. 2026</span>
                     </div>
-                    <div>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase">Difusión Estratégica</p>
-                        <p class="font-black">Mar</p>
+                </div>
+
+                <!-- Grid de Flyers (Marcos realistas) -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
+                    
+                    <!-- Flyer 1 -->
+                    <div class="flyer-frame rotate-1">
+                        <div class="aspect-[3/4] bg-slate-200 overflow-hidden relative">
+                            <!-- Placeholder: Reemplazar src con imagen real -->
+                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=600" alt="Anuncio 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span class="bg-black/70 text-white text-[10px] font-bold px-2 py-1 uppercase">Tu Marca Aquí</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Flyer 2 -->
+                    <div class="flyer-frame -rotate-1 mt-4">
+                        <div class="aspect-[3/4] bg-slate-200 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=600" alt="Anuncio 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Flyer 3 -->
+                    <div class="flyer-frame rotate-2">
+                        <div class="aspect-[3/4] bg-slate-200 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b799314346d?auto=format&fit=crop&q=80&w=600" alt="Anuncio 3" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Flyer 4 -->
+                    <div class="flyer-frame -rotate-2 mt-6">
+                        <div class="aspect-[3/4] bg-slate-200 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=600" alt="Anuncio 4" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Texto de pie de página del periódico -->
+                <div class="mt-12 pt-4 border-t border-slate-300 text-center">
+                    <p class="text-xs text-slate-500 serif italic">
+                        La vidriera que conecta calidad con oportunidad. Espacio curado por Pixel Creativo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botón Linktree Solicitado -->
+            <div class="text-center mt-12">
+                <a href="https://linktr.ee/portafoliospixelcreativo" target="_blank" class="inline-flex items-center gap-3 bg-black text-white px-10 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-indigo-600 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    <i class="fas fa-link"></i> Ver Más en Linktree
                 </a>
             </div>
+
         </div>
-        
-        <div class="mt-20 text-center border-t border-slate-50 pt-8">
-            <p class="text-[9px] font-bold text-slate-300 uppercase tracking-[0.5em]">© 2026 PIXEL CREATIVO | EL ARTE DE CONECTAR</p>
+    </section>
+
+    <!-- Footer / Contacto Actualizado -->
+    <footer id="contacto" class="py-24 px-6 border-t border-slate-200 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h4 class="text-4xl font-black mb-4">HABLEMOS.</h4>
+                    <p class="text-slate-500 mb-8">Estamos listos para ver brotar tus ventas. Contáctanos para una consulta sin cargo.</p>
+                    <div class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Mendoza • Argentina</div>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Contacto Matias -->
+                    <a href="https://wa.me/2613602948" class="flex items-center justify-between p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-black transition-all group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-wider">Diseño Audiovisual</p>
+                                <p class="font-bold text-lg">Matías</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </a>
+
+                    <!-- Contacto Mar -->
+                    <a href="https://wa.me/2616904484" class="flex items-center justify-between p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-black transition-all group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i class="fas fa-share-nodes"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-black uppercase text-slate-400 tracking-wider">Difusión Estratégica</p>
+                                <p class="font-bold text-lg">Mar</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-arrow-right opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center pt-8 border-t border-slate-100">
+                <p class="text-sm font-medium text-slate-600 mb-2">
+                    Hecho con pasión y creatividad para la comunidad emprendedora. <br class="hidden md:block">
+                    Somos de Mendoza Argentina pero de donde sea que nos mires, gracias.
+                </p>
+                <p class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-8">
+                    Y a vos: ¡Gracias por elegirnos!
+                </p>
+                <p class="text-[9px] font-bold text-slate-300 uppercase tracking-[0.3em]">
+                    Creado por "e-Studio ID345" 2026 Todos los derechos reservados.
+                </p>
+            </div>
         </div>
     </footer>
 
