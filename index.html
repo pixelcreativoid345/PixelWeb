@@ -1,376 +1,194 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Zap, 
-  Target, 
-  Star, 
-  ArrowRight, 
-  ExternalLink,
-  MessageSquare,
-  Layout,
-  Plus,
-  X,
-  Send,
-  Sparkles,
-  Phone,
-  Heart,
-  TrendingUp,
-  Users,
-  ShieldCheck,
-  Rocket,
-  Share2,
-  Expand,
-  Globe,
-  Radio,
-  Hash
-} from 'lucide-react';
-
-const App = () => {
-  const [activeModal, setActiveModal] = useState(null);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const planes = [
-    {
-      id: 'diagnostico',
-      tag: "El Impulso Inicial",
-      title: "Chequeo de Marca",
-      price: "$5.000 ARS",
-      desc: "Analizamos tu idea actual y trazamos un mapa real para optimizar tu presencia sin que pases desapercibido.",
-      features: ["Análisis de situación", "Estrategia de diseño inicial", "Diagnóstico de imagen"],
-      color: "border-purple-500"
-    },
-    {
-      id: 'mensual',
-      tag: "Potencia Digital",
-      title: "Plan Refuerzo",
-      price: "$150.000 ARS",
-      desc: "Diseños con propósito que elevan tu marca al nivel profesional que tu esfuerzo merece.",
-      features: ["Diseño visual estratégico", "Optimización estética", "Refuerzo de identidad"],
-      color: "border-blue-600"
-    },
-    {
-      id: 'premium',
-      tag: "Alcance Máximo",
-      title: "Ecosistema Viral",
-      price: "$350.000 ARS",
-      desc: "Nuestra estrategia de difusión orgánica pone tu marca frente a miles de ojos en nuestro ecosistema activo.",
-      features: ["Difusión Viral Orgánica", "Diseño de alto impacto", "Posicionamiento en la red"],
-      color: "border-black"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-purple-100 overflow-x-hidden">
-      
-      {/* Fondo Sutil con Puntos */}
-      <div className="fixed inset-0 z-0 opacity-[0.03] pointer-events-none" 
-           style={{ 
-             backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', 
-             backgroundSize: '30px 30px' 
-           }}>
-      </div>
-
-      {/* Header Transparente con Efecto Cristal */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4 ${scrolled ? 'bg-white/60 backdrop-blur-md border-b border-gray-100 py-3 shadow-sm' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-11 h-11 bg-black rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <span className="text-purple-500 text-2xl font-black italic">P</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm font-black tracking-tighter uppercase leading-none">Pixel</span>
-              <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest leading-none">Creativo</span>
-            </div>
-          </div>
-          
-          <div className="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-            {['Servicios', 'Ecosistema', 'Nuestra Mirada', 'Contacto'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-purple-600 transition-colors">
-                {item}
-              </a>
-            ))}
-          </div>
-
-          <button onClick={() => setActiveModal('contacto')} className="bg-black text-white px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-purple-600 transition-all shadow-md">
-            Hablemos
-          </button>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative z-10 pt-48 pb-20 px-6 max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border border-purple-100 rounded-full bg-purple-50/50">
-          <Sparkles size={14} className="text-purple-600" />
-          <span className="text-[10px] font-black uppercase tracking-widest text-purple-700">Resultados Reales sin Ilusiones</span>
-        </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Creativo | Diseño & Difusión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap');
         
-        <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8 text-black">
-          EL ARTE <br />
-          <span className="text-purple-600 italic">DE CONECTAR.</span>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .node-line {
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.4), transparent);
+            height: 1px;
+            width: 100%;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 4s infinite;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Navegación -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-xl font-extrabold italic text-xl">P</div>
+                <div class="flex flex-col leading-none">
+                    <span class="text-sm font-black uppercase">Pixel</span>
+                    <span class="text-[10px] text-purple-600 font-bold uppercase tracking-widest">Creativo</span>
+                </div>
+            </div>
+            <a href="#contacto" class="bg-black text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-purple-600 transition-all">Hablemos</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-32 pb-20 px-6 text-center">
+        <div class="inline-block px-4 py-1.5 bg-purple-50 rounded-full border border-purple-100 text-purple-600 text-[10px] font-bold uppercase tracking-widest mb-6">
+            Diseño con Propósito & Alcance Real
+        </div>
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-none mb-6">
+            EL ARTE <br> <span class="gradient-text italic">DE CONECTAR.</span>
         </h1>
-        
-        <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-12 font-medium italic">
-          No vendemos "seguidores" vacíos. Ponemos tu marca en el <span className="text-black font-bold">centro de ecosistemas activos</span> con más de 15.000 personas reales en Mendoza.
+        <p class="max-w-2xl mx-auto text-slate-500 text-lg italic">
+            No somos una agencia de "likes". Somos un motor de <span class="text-black font-bold">difusión orgánica</span> que pone tu marca frente a comunidades que ya están activas.
         </p>
+    </header>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="#ecosistema" className="w-full sm:w-auto px-10 py-5 bg-black text-white text-[11px] font-black uppercase tracking-widest rounded-2xl hover:bg-purple-600 transition-all shadow-xl flex items-center justify-center gap-2">
-            Ver Mapa de Alcance Real <ArrowRight size={16} />
-          </a>
-        </div>
-      </section>
-
-      {/* SECCIÓN ACTUALIZADA: Estrategia de Difusión Real */}
-      <section id="ecosistema" className="relative z-10 py-24 px-6 bg-black text-white rounded-[4rem] mx-4 my-10 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/20 blur-[120px] rounded-full"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full"></div>
+    <!-- Sección de Alcance (Diseño Diferente) -->
+    <section class="bg-black py-24 px-6 rounded-[3rem] mx-4 my-12 overflow-hidden relative">
+        <!-- Fondo Artístico -->
+        <div class="absolute inset-0 pointer-events-none opacity-20">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-purple-600 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 bg-blue-600 rounded-full blur-[120px]"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            
-            <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-600/20 border border-green-600/30 rounded-full text-[9px] font-black uppercase tracking-widest mb-8 text-green-400">
-                <ShieldCheck size={12} /> Datos de Tráfico Reales
-              </div>
-              
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9]">
-                DIFUSIÓN <br />
-                <span className="text-purple-500 italic">TRANSPARENTE.</span>
-              </h2>
-              
-              <div className="space-y-6 text-gray-400 font-light italic text-lg leading-relaxed">
-                <p>
-                  No inflamos redes sociales nuevas. Tu impacto no depende de cuántos "likes" tenga tu Instagram hoy, sino de nuestra capacidad para <span className="text-white font-bold">inyectar tu contenido en comunidades consolidadas</span>.
-                </p>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
                 
-                <div className="grid gap-4 mt-8">
-                  <div className="flex gap-4 p-5 rounded-3xl bg-white/5 border border-white/10">
-                    <div className="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center shrink-0">
-                      <MessageSquare size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-black uppercase text-white tracking-wider">Canales de Tráfico Directo</p>
-                      <p className="text-[11px] mt-1 text-gray-500">Acceso a canales de WhatsApp y grupos de FB con <span className="text-white">+15.5k miembros activos</span>.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4 p-5 rounded-3xl bg-white/5 border border-white/10">
-                    <div className="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center shrink-0">
-                      <TrendingUp size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-black uppercase text-white tracking-wider">Crecimiento Orgánico Diario</p>
-                      <p className="text-[11px] mt-1 text-gray-500">Impacto genuino garantizado de <span className="text-white">~2.000 impresiones por día</span>.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 relative bg-white/5 rounded-[3rem] p-10 border border-white/10 overflow-hidden">
-                <div className="text-center mb-12">
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-purple-500">Arquitectura de Conexión Real</span>
-                  <p className="text-xs text-gray-500 mt-1">Cómo movemos tu diseño por la red</p>
-                </div>
-
-                <div className="relative h-[400px] flex items-center justify-center">
-                    {/* El Núcleo: Diseño con Propósito */}
-                    <div className="relative z-30 flex flex-col items-center">
-                      <div className="w-20 h-20 bg-white rounded-[1.5rem] flex items-center justify-center shadow-2xl rotate-3">
-                        <Layout size={32} className="text-black -rotate-3" />
-                      </div>
-                      <div className="mt-4 bg-purple-600 text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-xl">
-                        Tu Mensaje
-                      </div>
-                    </div>
-
-                    {/* Ecosistema Segmentado */}
-                    <div className="absolute inset-0">
-                      {[
-                        { label: "Canal WhatsApp", val: "9.5k", icon: <Phone size={14}/>, pos: "top-0 left-10", color: "bg-green-500", type: "TRÁFICO ALTO" },
-                        { label: "Grupo FB Propio", val: "6.0k", icon: <Users size={14}/>, pos: "top-0 right-10", color: "bg-blue-600", type: "COMUNIDAD" },
-                        { label: "FB / IG Oficial", val: "150+", icon: <Hash size={14}/>, pos: "bottom-10 left-10", color: "bg-gray-700", type: "VIDRIERA" },
-                        { label: "Alcance Orgánico", val: "2k/día", icon: <Zap size={14}/>, pos: "bottom-10 right-10", color: "bg-purple-500", type: "MOVIMIENTO" }
-                      ].map((nodo, i) => (
-                        <div key={i} className={`absolute ${nodo.pos} flex flex-col items-center`}>
-                          <div className={`w-14 h-14 ${nodo.color} rounded-2xl flex flex-col items-center justify-center mb-2 shadow-lg`}>
-                            {nodo.icon}
-                            <span className="text-[10px] font-black">{nodo.val}</span>
-                          </div>
-                          <div className="text-center">
-                            <span className="block text-[8px] font-black text-purple-400 uppercase tracking-widest mb-1">{nodo.type}</span>
-                            <span className="block text-[9px] font-bold text-gray-300">{nodo.label}</span>
-                          </div>
+                <!-- Texto Estratégico -->
+                <div class="lg:col-span-5">
+                    <h2 class="text-4xl md:text-6xl font-black text-white leading-tight mb-8">
+                        DIFUSIÓN <br> <span class="text-purple-500 italic">TRANSPARENTE.</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg italic mb-10 leading-relaxed">
+                        En lugar de prometer seguidores en perfiles nuevos, conectamos tu mensaje con nuestra <span class="text-white font-bold">red de ecosistemas consolidados</span>. 
+                    </p>
+                    
+                    <div class="grid gap-6">
+                        <div class="glass p-6 rounded-3xl flex items-center gap-5">
+                            <div class="bg-green-600/20 text-green-500 w-12 h-12 flex items-center justify-center rounded-2xl">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-sm">Canal de WhatsApp</p>
+                                <p class="text-slate-500 text-xs">9.500 Miembros Directos</p>
+                            </div>
                         </div>
-                      ))}
+                        <div class="glass p-6 rounded-3xl flex items-center gap-5">
+                            <div class="bg-blue-600/20 text-blue-500 w-12 h-12 flex items-center justify-center rounded-2xl">
+                                <i class="fab fa-facebook-f text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-sm">Grupo Propio FB</p>
+                                <p class="text-slate-500 text-xs">6.000 Personas Activas</p>
+                            </div>
+                        </div>
                     </div>
-
-                    {/* Ondas de choque visuales */}
-                    <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-                    <div className="absolute h-full w-px bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 gap-4">
-                    <div className="p-4 bg-white/5 rounded-2xl">
-                      <span className="block text-2xl font-black text-white">15.500+</span>
-                      <span className="text-[9px] text-gray-500 font-black uppercase tracking-widest">Base de Datos Activa</span>
+                <!-- Representación Visual de los Nodos de Crecimiento -->
+                <div class="lg:col-span-7 bg-white/5 border border-white/10 rounded-[3rem] p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-purple-400">Concepto de Crecimiento Orgánico</p>
                     </div>
-                    <div className="p-4 bg-white/5 rounded-2xl">
-                      <span className="block text-2xl font-black text-white">~2.000</span>
-                      <span className="text-[9px] text-gray-500 font-black uppercase tracking-widest">Impactos Diarios</span>
+
+                    <div class="relative py-20 flex flex-col items-center">
+                        <!-- Nodo Central: Tu Diseño -->
+                        <div class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center shadow-2xl z-20 rotate-12">
+                            <i class="fas fa-pen-nib text-3xl text-black -rotate-12"></i>
+                        </div>
+                        <div class="mt-4 bg-purple-600 text-white px-4 py-1 text-[10px] font-black uppercase tracking-widest rounded-full z-20">Diseño con Propósito</div>
+
+                        <!-- Nodos Externos -->
+                        <div class="absolute top-0 left-0 flex flex-col items-center animate-pulse-slow">
+                            <div class="bg-green-500 w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold">9.5k</div>
+                            <span class="text-[8px] text-slate-500 mt-1 uppercase font-bold">WhatsApp</span>
+                        </div>
+                        <div class="absolute top-0 right-0 flex flex-col items-center animate-pulse-slow" style="animation-delay: 1s">
+                            <div class="bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold">6k</div>
+                            <span class="text-[8px] text-slate-500 mt-1 uppercase font-bold">FB Group</span>
+                        </div>
+                        <div class="absolute bottom-10 left-0 flex flex-col items-center opacity-40">
+                            <div class="bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold">50</div>
+                            <span class="text-[8px] text-slate-500 mt-1 uppercase font-bold">IG (Vidriera)</span>
+                        </div>
+                        <div class="absolute bottom-10 right-0 flex flex-col items-center">
+                            <div class="bg-purple-500 w-10 h-10 rounded-full flex items-center justify-center text-[10px] font-bold">2k</div>
+                            <span class="text-[8px] text-white mt-1 uppercase font-bold italic">Alcance Diario</span>
+                        </div>
+
+                        <!-- Líneas Conectoras (SVG) -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 400 300">
+                            <line x1="200" y1="150" x2="50" y2="50" stroke="white" stroke-width="1" stroke-dasharray="4" />
+                            <line x1="200" y1="150" x2="350" y2="50" stroke="white" stroke-width="1" stroke-dasharray="4" />
+                            <line x1="200" y1="150" x2="50" y2="250" stroke="white" stroke-width="1" stroke-dasharray="4" />
+                            <line x1="200" y1="150" x2="350" y2="250" stroke="white" stroke-width="1" stroke-dasharray="4" />
+                        </svg>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-white/10 flex justify-between items-end">
+                        <div>
+                            <span class="text-3xl font-black text-white">15.5k+</span>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase">Comunidad Activa</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xs text-slate-400 italic italic">"Crecimiento real para marcas reales."</p>
+                        </div>
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      {/* Servicios / Refuerzos */}
-      <section id="servicios" className="relative z-10 py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl font-black tracking-tight mb-2 italic underline decoration-purple-600 decoration-4 underline-offset-8">Inversión Estratégica.</h2>
-            <p className="text-gray-500 text-sm font-medium mt-6">Sin promesas mágicas. Solo diseño técnico y acceso a nuestra red.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {planes.map((p) => (
-              <div 
-                key={p.id}
-                className="group p-8 bg-white border border-gray-100 rounded-[2.5rem] hover:border-purple-600 transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-purple-50"
-              >
-                <span className="text-[9px] font-black uppercase tracking-widest px-3 py-1 bg-gray-100 rounded-full mb-6 w-fit group-hover:bg-purple-100 transition-colors">
-                  {p.tag}
-                </span>
-                <h3 className="text-2xl font-black mb-1">{p.title}</h3>
-                <div className="text-3xl font-black text-purple-600 mb-6 italic">{p.price}</div>
-                <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">{p.desc}</p>
-                
-                <ul className="space-y-4 mb-8">
-                  {p.features.map(f => (
-                    <li key={f} className="flex items-center gap-3 text-xs font-bold text-gray-700">
-                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500" /> {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <button className="w-full py-4 bg-gray-50 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all">
-                  Comenzar Refuerzo
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Diferenciación */}
-      <section id="nuestra-mirada" className="py-24 px-6 bg-gray-50/50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="bg-white border-2 border-black rounded-[3rem] p-10 shadow-xl relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-100 rounded-full opacity-50 blur-3xl"></div>
-            <h4 className="text-4xl font-black tracking-tighter mb-6 italic relative z-10">HONESTIDAD <br /> DIGITAL.</h4>
-            <div className="space-y-6 relative z-10">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 shrink-0 bg-black rounded-xl flex items-center justify-center text-white">
-                  <ShieldCheck size={24} />
-                </div>
-                <div>
-                  <p className="font-black text-xs uppercase tracking-tight mb-1">Sin Números Inflados</p>
-                  <p className="text-xs text-gray-500 font-medium italic">Tu web dirá la verdad. Mostramos el impacto real donde sucede, no donde se compra.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-12 h-12 shrink-0 bg-green-50 rounded-xl flex items-center justify-center text-green-600">
-                  <MessageSquare size={24} />
-                </div>
-                <div>
-                  <p className="font-black text-xs uppercase tracking-tight mb-1">Tráfico de Calidad</p>
-                  <p className="text-xs text-gray-500 font-medium italic">Un clic de WhatsApp vale más que mil visualizaciones en una red social fantasma.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h2 className="text-4xl font-black tracking-tight mb-6 leading-tight text-black">Conectamos con lo que importa.</h2>
-            <p className="text-lg text-gray-500 mb-8 italic">"No te obsesiones con los seguidores de tu perfil. Obsesiónate con que tu mensaje llegue a las manos correctas. Nosotros tenemos el canal."</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer id="contacto" className="py-24 px-6 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 mb-20">
-          <div className="text-center md:text-left">
-            <h4 className="text-6xl font-black tracking-tight mb-4 italic text-black uppercase leading-none">IMPACTO <br /><span className="text-purple-600">REAL.</span></h4>
-            <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em]">Pixel Creativo • Mendoza • 2026</p>
-          </div>
-          
-          <div className="flex flex-col gap-4 w-full md:w-auto min-w-[320px]">
-            <a 
-              href="#" 
-              className="group flex items-center justify-between p-6 bg-white border-2 border-black rounded-[2rem] hover:bg-gray-50 transition-all duration-300 shadow-xl"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center text-white">
-                  <MessageSquare size={20} fill="currentColor" />
-                </div>
-                <div className="text-left">
-                  <span className="block text-[8px] font-black text-green-600 uppercase tracking-widest italic">Canal Activo</span>
-                  <span className="block font-black text-sm text-black">WhatsApp 9.5k</span>
-                </div>
-              </div>
-              <ExternalLink size={18} className="text-black" />
-            </a>
-
-            <div className="grid grid-cols-2 gap-4">
-              <a href="tel:2613602948" className="flex flex-col p-5 bg-gray-50 border border-gray-100 rounded-[1.5rem] hover:border-black transition-all">
-                <span className="text-[10px] font-black uppercase text-black">Mati - Tech</span>
-              </a>
-              <a href="tel:2616904484" className="flex flex-col p-5 bg-gray-50 border border-gray-100 rounded-[1.5rem] hover:border-black transition-all">
-                <span className="text-[10px] font-black uppercase text-black">Mar - Estrategia</span>
-              </a>
-            </div>
-          </div>
-        </div>
+    <!-- Footer -->
+    <footer id="contacto" class="py-20 px-6 text-center border-t border-slate-100">
+        <h3 class="text-4xl font-black mb-4 italic">¿Hablamos sobre <span class="text-purple-600">tu idea?</span></h3>
+        <p class="text-slate-500 mb-10 italic">Estamos en Mendoza, impulsando proyectos con verdad.</p>
         
-        <div className="mt-24 pt-12 border-t border-gray-100 text-center max-w-4xl mx-auto">
-          <p className="text-lg font-black text-purple-600 uppercase tracking-widest mb-4 italic">
-            El valor es real. La estrategia también.
-          </p>
-          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] space-y-2">
-            <p>Hecho en Mendoza • <span className="text-black">"e-Studio ID345"</span> 2026</p>
-          </div>
+        <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
+            <a href="tel:2613602948" class="bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-black transition-all">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Tecnología</p>
+                <p class="font-black">Mati - 2613602948</p>
+            </a>
+            <a href="tel:2616904484" class="bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-black transition-all">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Estrategia</p>
+                <p class="font-black">Mar - 2616904484</p>
+            </a>
         </div>
-      </footer>
 
-      {/* Modal Contacto */}
-      {activeModal === 'contacto' && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setActiveModal(null)} />
-          <div className="relative bg-white w-full max-w-lg rounded-[2.5rem] p-10 shadow-2xl">
-            <button onClick={() => setActiveModal(null)} className="absolute top-8 right-8 text-gray-400 hover:text-black"><X /></button>
-            <h3 className="text-3xl font-black tracking-tight mb-2 italic uppercase">Sumate al ecosistema.</h3>
-            <p className="text-gray-500 text-sm mb-8">Contanos qué querés difundir y lo evaluamos.</p>
-            <div className="space-y-4">
-              <input type="text" placeholder="Nombre / Marca" className="w-full p-4 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-purple-600 outline-none font-bold text-xs" />
-              <textarea placeholder="¿A cuántas personas querés llegar hoy?" rows="3" className="w-full p-4 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-purple-600 outline-none font-bold text-xs resize-none"></textarea>
-              <button className="w-full bg-black text-white py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center justify-center gap-2 hover:bg-purple-600 transition-colors shadow-lg">
-                Enviar mensaje <Send size={14} />
-              </button>
-            </div>
-          </div>
+        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em]">
+            Pixel Creativo | 2026 | Mendoza
+            <br>
+            <span class="text-black">"e-Studio ID345"</span>
         </div>
-      )}
-    </div>
-  );
-};
+    </footer>
 
-export default App;
-
+</body>
+</html>
