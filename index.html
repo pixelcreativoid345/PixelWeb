@@ -4,18 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pixel Creativo | Diseño y Difusión que Genera Resultados</title>
-<meta name="description" content="Ayudamos a negocios y creadores a generar consultas reales desde sus redes. Diseño estratégico, difusión y conversión en Mendoza, Argentina y online.">
+<title>Pixel Creativo | Alquimia Digital</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-font-family:'Inter',sans-serif;
 background:#0B0B0F;
 color:#EAEAEA;
+font-family:'Inter',sans-serif;
 overflow-x:hidden;
 }
 
@@ -23,71 +22,85 @@ h1,h2,h3{
 font-family:'Orbitron',sans-serif;
 }
 
+p{
+font-family:'Playfair Display',serif;
+font-size:18px;
+line-height:1.6;
+color:#d1d1d1;
+}
+
 section{
 padding:80px 20px;
 max-width:1100px;
 margin:auto;
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .hero{
 min-height:100vh;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 }
 
-.glow{
-position:absolute;
-width:900px;
-height:900px;
-background: radial-gradient(circle, rgba(114,9,183,0.25), transparent 70%);
-filter: blur(140px);
-z-index:-1;
+.loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:#0B0B0F;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+flex-direction:column;
+}
+
+.loader h2{
+font-family:'Playfair Display',serif;
+font-weight:400;
+}
+
+.hidden{
+opacity:0;
+pointer-events:none;
 }
 
 .btn{
-display:inline-block;
-margin:10px;
 padding:14px 22px;
 background:linear-gradient(90deg,#7209B7,#F72585);
-color:white;
-text-decoration:none;
 border-radius:10px;
+text-decoration:none;
+color:white;
 font-weight:bold;
-transition:0.3s;
+display:inline-block;
+margin-top:15px;
 }
 
-.btn:hover{
-transform:scale(1.05);
+.grid{
+display:grid;
+gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 }
 
 .card{
 background:rgba(255,255,255,0.05);
 padding:25px;
 border-radius:15px;
-backdrop-filter: blur(10px);
+backdrop-filter:blur(10px);
 }
 
-.grid{
-display:grid;
-gap:20px;
-}
-
-.grid-3{
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-}
-
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:1s;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
+.price-old{
+text-decoration:line-through;
+color:#888;
 }
 
 .whatsapp{
@@ -98,13 +111,7 @@ background:#25D366;
 padding:15px;
 border-radius:50%;
 color:white;
-font-size:20px;
 text-decoration:none;
-}
-
-.small{
-color:#aaa;
-font-size:14px;
 }
 
 </style>
@@ -112,145 +119,143 @@ font-size:14px;
 
 <body>
 
-<div class="glow"></div>
+<!-- LOADER -->
+<div class="loader" id="loader">
+<h2>Preparando tu experiencia…</h2>
+<p>Esto no es solo diseño.</p>
+</div>
 
 <!-- HERO -->
-<section class="hero fade">
-<h1>Tu contenido puede verse bien…<br>o puede generar resultados</h1>
+<section class="hero">
+<h1>Tu contenido puede verse bien…<br>o puede empezar a moverse</h1>
 
-<p>En Pixel Creativo convertimos redes sociales en consultas reales.<br>
-Diseño, difusión y estrategia pensados para que tu negocio se mueva.</p>
+<p>
+Si sentís que estás haciendo todo… pero no pasa nada,
+no es falta de ganas.
+Es falta de dirección.
+</p>
 
-<a href="#sistema" class="btn">Ver cómo funciona</a>
-<a href="https://wa.me/5492613602948" class="btn">Hablar por WhatsApp</a>
+<a href="#sistema" class="btn">Quiero entender</a>
 </section>
 
-<!-- PROBLEMA -->
-<section class="fade">
-<h2>Si esto te pasa…</h2>
+<!-- TRANSICIÓN -->
+<section>
+<h2>No es tu culpa</h2>
 
-<p>Publicás seguido pero no vendés.</p>
-<p>Tenés redes activas pero sin movimiento real.</p>
-
-<p><strong>No es falta de esfuerzo.</strong><br>
-Es falta de dirección.</p>
+<p>
+Hoy la mayoría publica sin estrategia.
+Sin un sistema, el contenido se pierde.
+Y cuando se pierde… no genera nada.
+</p>
 </section>
 
-<!-- SOLUCIÓN -->
-<section id="sistema" class="fade">
-<h2>Lo que hacemos es simple</h2>
+<!-- SISTEMA -->
+<section id="sistema">
+<h2>Acá es donde entra Pixel</h2>
 
-<div class="grid grid-3">
+<div class="grid">
 
 <div class="card">
 <h3>Diseño con intención</h3>
-<p>Cada pieza tiene un objetivo claro: generar acción.</p>
+<p>No es estética. Es comunicación que genera acción.</p>
 </div>
 
 <div class="card">
 <h3>Difusión activa</h3>
-<p>No dejamos el contenido quieto. Lo movemos estratégicamente.</p>
+<p>El contenido no se deja quieto. Se mueve.</p>
 </div>
 
 <div class="card">
-<h3>Conversión</h3>
-<p>Todo apunta a generar consultas en WhatsApp.</p>
+<h3>Resultado</h3>
+<p>Consultas reales en WhatsApp.</p>
 </div>
 
 </div>
-</section>
-
-<!-- PROCESO -->
-<section class="fade">
-<h2>Cómo funciona</h2>
-
-<ol>
-<li>Entendemos tu negocio</li>
-<li>Creamos contenido con intención</li>
-<li>Lo activamos en redes</li>
-<li>Generamos consultas reales</li>
-</ol>
-
 </section>
 
 <!-- CONFIANZA -->
-<section class="fade">
-<h2>Ya hay negocios que lo están aplicando</h2>
+<section>
+<h2>Esto ya está pasando</h2>
 
 <p>
-Acompañamos estratégicamente a profesionales y marcas que hoy ya están
-trabajando su presencia con intención.
+No es teoría. Ya hay personas aplicando este sistema.
 </p>
 
-<div class="grid grid-3">
+<div class="grid">
 
 <div class="card">
-<h3>Mendoza</h3>
-<p>Gerente de sucursal en Medifé</p>
-<p class="small">Acompañamiento visual y estratégico</p>
-<p class="small">Referencia: Stefano Leonel Barrera</p>
-<p class="small">+54 261 2064180</p>
+<p><strong>Mendoza</strong></p>
+<p>Gerente en Medifé</p>
+<p style="font-size:14px;">Acompañamiento visual y estratégico</p>
+<p style="font-size:14px;">Stefano Barrera · +54 261 2064180</p>
 </div>
 
 <div class="card">
-<h3>Trabajo activo local</h3>
-<p>Gasista y plomero matriculado</p>
-<p>Odontología</p>
-<p class="small">Producción de contenido y estrategia</p>
+<p><strong>Trabajo activo</strong></p>
+<p>Gasista matriculado · Odontología</p>
+<p style="font-size:14px;">Contenido + estrategia</p>
 </div>
 
 <div class="card">
-<h3>Proyección internacional</h3>
-<p>Artista de danza (España)</p>
-<p>Cantante de música medicina (México)</p>
-<p class="small">Acompañamiento en posicionamiento y difusión</p>
+<p><strong>Internacional</strong></p>
+<p>España y México</p>
+<p style="font-size:14px;">Posicionamiento y crecimiento</p>
 </div>
 
 </div>
 
 <p style="margin-top:30px;">
-Entre otras colaboraciones semanales con emprendimientos locales.
+La oportunidad está en usar bien tu presencia digital.
 </p>
 
-<p style="margin-top:30px; font-weight:bold;">
-La diferencia no está en estar…<br>
-sino en mantenerse en movimiento.
+<p style="font-weight:bold;">
+El movimiento es lo que marca la diferencia.
 </p>
 
-</section>
-
-<!-- GEO -->
-<section class="fade">
-<h2>Trabajamos con</h2>
-<p>Mendoza · Argentina · Todo el mundo</p>
 </section>
 
 <!-- PLANES -->
-<section class="fade">
-<h2>Planes de trabajo</h2>
+<section>
+<h2>Planes para empezar a moverte</h2>
 
-<div class="grid grid-3">
+<div class="grid">
 
 <div class="card">
 <h3>Plan Normal</h3>
-<p>$63.000 / mes</p>
+<p class="price-old">$90.000</p>
+<p><strong>$63.000 / mes</strong></p>
+<p>Contenido + activación estratégica</p>
 </div>
 
 <div class="card">
 <h3>Plan Reforzado</h3>
-<p>$105.000 / mes</p>
+<p class="price-old">$150.000</p>
+<p><strong>$105.000 / mes</strong></p>
+<p>Incluye difusión + optimización</p>
 </div>
 
 </div>
+
+<p style="margin-top:30px;">
+Este descuento del 30% está pensado para que puedas crecer sin desordenarte económicamente,
+y llegar a junio con una base sólida, más visibilidad y mejores oportunidades.
+</p>
 
 </section>
 
 <!-- CTA -->
-<section class="fade">
-<h2>Empezá hoy</h2>
-<p>Tu negocio puede seguir igual… o empezar a moverse.</p>
+<section>
+<h2>El siguiente paso es simple</h2>
 
-<a href="https://wa.me/5492613602948" class="btn">Ir a WhatsApp</a>
+<p>
+Podés seguir probando…
+o empezar a trabajar con dirección.
+</p>
+
+<a href="https://wa.me/5492613602948" class="btn">
+Hablar por WhatsApp
+</a>
+
 </section>
 
 <!-- FOOTER -->
@@ -261,16 +266,19 @@ Pixel Creativo · Todos los derechos reservados · 2026
 <a href="https://wa.me/5492613602948" class="whatsapp">💬</a>
 
 <script>
-const faders = document.querySelectorAll('.fade');
 
-window.addEventListener('scroll', () => {
-faders.forEach(el => {
-const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
-el.classList.add('show');
-}
+// loader 3 segundos
+setTimeout(()=>{
+document.getElementById('loader').classList.add('hidden');
+
+document.querySelectorAll("section").forEach((el,i)=>{
+setTimeout(()=>{
+el.classList.add("show");
+}, i * 200);
 });
-});
+
+},3000);
+
 </script>
 
 </body>
