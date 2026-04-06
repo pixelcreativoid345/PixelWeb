@@ -5,26 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pixel Creativo | Alquimia Digital</title>
+<meta name="description" content="Convertimos redes sociales en consultas reales. Sistema Alquimia Digital desde Mendoza hacia toda Argentina y el mundo.">
 
-<meta name="description" content="Diseño estratégico, difusión y conversión a WhatsApp. Desde Mendoza a toda Argentina y el mundo.">
-
-<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
+margin:0;
+font-family:'Inter',sans-serif;
 background:#0B0B0F;
-color:#F5F5F5;
-font-family: 'Inter', sans-serif;
+color:#EAEAEA;
 overflow-x:hidden;
 }
 
-/* Glow */
-.glow{
-box-shadow:0 0 25px rgba(114,9,183,0.6);
+h1,h2,h3{
+font-family:'Orbitron',sans-serif;
 }
 
-/* Gradiente */
-.gradient-text{
+section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+/* Glow energía */
+.glow{
+box-shadow:0 0 40px rgba(114,9,183,0.4);
+}
+
+/* Gradiente alquímico */
+.gradient{
 background:linear-gradient(90deg,#7209B7,#F72585,#4895EF);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -32,157 +42,179 @@ background:linear-gradient(90deg,#7209B7,#F72585,#4895EF);
 
 /* Cards */
 .card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
-transition:0.4s;
+background:rgba(255,255,255,0.04);
+padding:25px;
+border-radius:12px;
+backdrop-filter:blur(10px);
+transition:0.3s;
 }
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 40px rgba(247,37,133,0.3);
+transform:translateY(-6px);
+box-shadow:0 0 25px rgba(247,37,133,0.3);
 }
 
-/* Botón */
+/* Botones */
 .btn{
-background:linear-gradient(90deg,#7209B7,#F72585);
+display:inline-block;
+margin-top:15px;
 padding:12px 25px;
+background:#7209B7;
+color:white;
 border-radius:999px;
-font-weight:bold;
+text-decoration:none;
 transition:0.3s;
 }
 .btn:hover{
 transform:scale(1.05);
 }
 
-/* Animación suave */
+.btn-outline{
+background:transparent;
+border:1px solid #7209B7;
+}
+
+/* Separador alquímico */
+.split{
+text-align:center;
+font-size:12px;
+letter-spacing:4px;
+opacity:0.5;
+margin:60px 0;
+}
+
+/* WhatsApp */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* Animación */
 .fade{
-animation:fade 1.2s ease;
+animation:fade 1s ease;
 }
 @keyframes fade{
 from{opacity:0;transform:translateY(20px);}
 to{opacity:1;}
 }
-
-/* Acordeón */
-details{
-background:rgba(255,255,255,0.05);
-padding:15px;
-border-radius:10px;
-}
-summary{
-cursor:pointer;
-font-weight:bold;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="text-center py-32 px-6 fade">
-<h1 class="text-5xl md:text-7xl font-black mb-6">
-<span class="gradient-text">Alquimia Digital</span>
-</h1>
+<!-- SOLVET -->
+<section class="fade">
 
-<p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-Transformamos visibilidad en consultas reales.
-No es diseño. Es movimiento comercial.
+<h1 class="gradient">Solvet</h1>
+
+<h2>¿Publicás pero no pasa nada?</h2>
+
+<p>
+Tenés contenido… pero no clientes.  
+Tenés redes… pero sin movimiento.
 </p>
 
-<a href="https://wa.me/2613602948" class="btn glow">
-Hablar por WhatsApp
-</a>
+<p><strong>No es falta de diseño.</strong></p>
+<p><strong>Es falta de sistema.</strong></p>
+
 </section>
 
-<!-- PROPUESTA -->
-<section class="py-20 px-6 text-center">
-<h2 class="text-3xl font-bold mb-10">¿Qué hacemos?</h2>
+<div class="split">DISOLVER PARA ENTENDER</div>
 
-<p class="max-w-3xl mx-auto text-gray-400">
-Pasamos de redes sin movimiento a consultas reales.
-Diseño estratégico + difusión + conversión directa.
+<!-- PROBLEMA -->
+<section>
+<p>
+El contenido solo no vende.  
+Publicar no es estrategia.  
+Y tener seguidores no significa tener clientes.
 </p>
 </section>
 
-<!-- SISTEMA -->
-<section class="py-20 px-6">
-<h2 class="text-3xl font-bold text-center mb-16">Cómo funciona</h2>
+<!-- COAGULA -->
+<section class="fade">
 
-<div class="grid md:grid-cols-5 gap-6 text-center">
+<h1 class="gradient">Coagula</h1>
 
-<div class="card p-6">Diseño con intención</div>
-<div class="card p-6">Publicación constante</div>
-<div class="card p-6">Difusión activa</div>
-<div class="card p-6">WhatsApp directo</div>
-<div class="card p-6">Optimización</div>
+<h2>Sistema Alquimia Digital</h2>
+
+<p>Transformamos visibilidad en consultas reales.</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Diseño estratégico</h3>
+<p>Contenido pensado para vender.</p>
+</div>
+
+<div class="card">
+<h3>Difusión inteligente</h3>
+<p>Activamos el contenido para que se mueva.</p>
+</div>
+
+<div class="card">
+<h3>Conversión</h3>
+<p>Todo termina en WhatsApp.</p>
+</div>
 
 </div>
+
 </section>
+
+<div class="split">MATERIALIZAR RESULTADOS</div>
 
 <!-- PLANES -->
-<section class="py-20 px-6">
-<h2 class="text-3xl font-bold text-center mb-16">Planes</h2>
+<section>
 
-<div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+<h2>Planes</h2>
 
-<div class="card p-8">
-<h3 class="text-xl font-bold mb-4">Plan Normal</h3>
-<p class="mb-4 text-gray-400">Difusión orgánica con intención.</p>
-<p class="text-2xl font-bold">$63.000 / mes</p>
+<div class="grid">
+
+<div class="card">
+<h3>Plan Normal</h3>
+<p>$63.000 / mes</p>
+<p>Movimiento orgánico con intención.</p>
 </div>
 
-<div class="card p-8 glow border-purple-500">
-<h3 class="text-xl font-bold mb-4">Plan Reforzado</h3>
-<p class="mb-4 text-gray-400">Con Ads + mayor impacto.</p>
-<p class="text-2xl font-bold">$105.000 / mes</p>
+<div class="card glow">
+<h3>Plan Reforzado</h3>
+<p>$105.000 / mes</p>
+<p>Mayor impacto + publicidad integrada.</p>
 </div>
 
 </div>
-</section>
-
-<!-- PACKS -->
-<section class="py-20 px-6 text-center">
-<h2 class="text-3xl font-bold mb-10">Opciones para empezar</h2>
-
-<p class="text-gray-400 mb-6">Pack Emprendedor desde $20.000</p>
-<p class="text-gray-400">Recomendados desde $27.000</p>
 
 </section>
 
-<!-- PRECIOS -->
-<section class="py-20 px-6 text-center">
-<h2 class="text-3xl font-bold mb-10">Precios individuales</h2>
+<!-- GEO -->
+<section>
 
-<p class="text-gray-400">Flyer: $7.000</p>
-<p class="text-gray-400">Reels: $10k / $25k / $35k</p>
+<h2>¿Con quién trabajamos?</h2>
 
-</section>
-
-<!-- ACORDEON -->
-<section class="py-20 px-6 max-w-3xl mx-auto">
-
-<details>
-<summary>Sistema completo</summary>
-<p class="mt-4 text-gray-400">
-Todo contenido tiene intención, CTA y medición.
-El objetivo siempre es generar consultas.
+<p>
+Negocios en Mendoza, emprendedores en Argentina  
+y creadores de contenido en cualquier parte del mundo.
 </p>
-</details>
-
-<details>
-<summary>Cliente ideal</summary>
-<p class="mt-4 text-gray-400">
-Negocios que quieren vender y moverse.
-</p>
-</details>
 
 </section>
 
-<!-- FOOTER -->
-<footer class="text-center py-16 text-gray-500">
-Pixel Creativo · Mendoza · Argentina · 2026
-</footer>
+<!-- CTA -->
+<section>
+
+<h2>Tu contenido puede generar clientes</h2>
+
+<p>O puede seguir igual.</p>
+
+<a href="https://wa.me/5492613602948" class="btn glow">
+Hablar por WhatsApp
+</a>
+
+</section>
+
+<a href="https://wa.me/5492613602948" class="whatsapp">💬</a>
 
 </body>
 </html>
