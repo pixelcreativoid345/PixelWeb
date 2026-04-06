@@ -4,276 +4,279 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pixel Creativo | Generamos consultas reales</title>
-<meta name="description" content="Diseño estratégico + difusión inteligente para transformar redes en consultas reales. Mendoza, Argentina y online.">
+<title>Pixel Creativo | Alquimia Digital</title>
+<meta name="description" content="Transformamos visibilidad en consultas reales. Diseño estratégico, difusión inteligente y conversión en Mendoza, Argentina y el mundo.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-margin:0;
-background:#0B0B0F;
-color:#EAEAEA;
-font-family:'Inter',sans-serif;
+body {
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:#0B0B0F;
+    color:#EAEAEA;
+    overflow-x:hidden;
 }
 
-h1,h2,h3{
-font-family:'Playfair Display',serif;
+/* LOADER */
+#loader {
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#0B0B0F;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:9999;
 }
 
-section{
-padding:90px 20px;
-max-width:1100px;
-margin:auto;
+.symbol {
+    font-size:40px;
+    animation: pulse 2s infinite;
 }
 
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+@keyframes pulse {
+    0% {opacity:0.3;}
+    50% {opacity:1;}
+    100% {opacity:0.3;}
 }
 
-.btn{
-display:inline-block;
-margin:10px;
-padding:14px 26px;
-border-radius:10px;
-background:linear-gradient(90deg,#7209B7,#F72585);
-color:white;
-text-decoration:none;
-font-weight:600;
+/* TRANSICIÓN */
+.fade {
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s ease;
 }
 
-.card{
-background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:16px;
+.fade.show {
+    opacity:1;
+    transform:translateY(0);
 }
 
-.grid{
-display:grid;
-gap:20px;
+/* GENERAL */
+section {
+    max-width:1000px;
+    margin:auto;
+    padding:80px 20px;
 }
 
-.grid-2{
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+h1,h2,h3 {
+    font-family:'Playfair Display', serif;
 }
 
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:all .8s ease;
+.hero {
+    text-align:center;
+    padding-top:120px;
 }
 
-.fade.show{
-opacity:1;
-transform:translateY(0);
+/* BOTONES */
+.btn {
+    display:inline-block;
+    margin:10px;
+    padding:14px 26px;
+    background:linear-gradient(90deg,#7209B7,#F72585);
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
 }
 
-/* loader */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#0B0B0F;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:9999;
-font-size:18px;
-letter-spacing:1px;
+.btn-outline {
+    border:1px solid #7209B7;
+    background:transparent;
+}
+
+/* CARDS */
+.card {
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+/* GRID */
+.grid {
+    display:grid;
+    gap:20px;
+}
+
+.grid-2 {
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+    color:white;
 }
 </style>
 </head>
 
 <body>
 
-<div id="loader">⚗️ Activando sistema...</div>
+<!-- LOADER -->
+<div id="loader">
+    <div class="symbol">⚗️</div>
+    <p>Iniciando sistema...</p>
+</div>
 
 <!-- HERO -->
 <section class="hero fade">
-<div>
-<h1>Transformamos redes en consultas reales</h1>
+<h1>Transformamos visibilidad en consultas reales</h1>
+<p>No es contenido. Es movimiento.</p>
 
-<p>
-No se trata de subir contenido.<br>
-Se trata de generar movimiento.
-</p>
-
-<a href="#planes" class="btn">Ver cómo empezar</a>
 <a href="https://wa.me/5492613602948" class="btn">Hablar por WhatsApp</a>
-</div>
+<a href="#planes" class="btn btn-outline">Ver planes</a>
 </section>
 
-<!-- PROBLEMA -->
+<!-- INTRO -->
 <section class="fade">
-<h2>Si esto te pasa, no estás solo</h2>
-
+<h2>No es que no funcione…</h2>
 <p>
-Publicás… pero no vendés.<br>
-Tenés presencia… pero no movimiento.
+Publicás. Tenés redes. Pero no pasa nada.
+No es falta de esfuerzo. Es falta de sistema.
 </p>
 
 <p>
-No es falta de esfuerzo.<br>
-Es falta de sistema.
+En Pixel Creativo diseñamos con intención,
+activamos el contenido y lo llevamos a donde importa:
+la conversación real.
 </p>
 </section>
 
 <!-- SISTEMA -->
 <section class="fade">
-<h2>Qué hacemos diferente</h2>
+<h2>Cómo funciona</h2>
 
 <div class="grid grid-2">
-
 <div class="card">
-<h3>Diseño con intención</h3>
-<p>Cada pieza tiene un objetivo: generar acción.</p>
-</div>
-
-<div class="card">
-<h3>Activación real</h3>
-<p>El contenido no se deja quieto. Se mueve.</p>
+<h3>Diseño estratégico</h3>
+<p>Contenido pensado para generar acción.</p>
 </div>
 
 <div class="card">
 <h3>Difusión inteligente</h3>
-<p>No dependemos del algoritmo. Lo impulsamos.</p>
+<p>Movimiento real, no publicaciones aisladas.</p>
 </div>
 
 <div class="card">
-<h3>Conversión directa</h3>
-<p>Todo lleva a WhatsApp. Todo busca consultas.</p>
-</div>
-
-</div>
-</section>
-
-<!-- PLANES -->
-<section id="planes" class="fade">
-<h2>Formas de empezar</h2>
-
-<p>
-Podés activar rápido o construir crecimiento sostenido.
-</p>
-
-<div class="grid grid-2">
-
-<div class="card">
-<h3>Impulso Express (Semanal)</h3>
-<p><strong>$19.600</strong> Normal</p>
-<p><strong>$31.150</strong> Reforzado</p>
-<p>Ideal para generar movimiento inmediato.</p>
+<h3>Conversión</h3>
+<p>Todo lleva a WhatsApp.</p>
 </div>
 
 <div class="card">
-<h3>Impulso Express (Quincenal)</h3>
-<p><strong>$33.600</strong> Normal</p>
-<p><strong>$45.150</strong> Reforzado</p>
-<p>Mayor continuidad y visibilidad.</p>
+<h3>Optimización</h3>
+<p>Se ajusta según lo que funciona.</p>
 </div>
-
-<div class="card">
-<h3>Plan Mensual</h3>
-<p><strong>$77.000</strong> Normal</p>
-<p><strong>$88.550</strong> Reforzado</p>
-<p>Para crecer de forma sostenida.</p>
 </div>
-
-</div>
-
-<p style="margin-top:25px;">
-👉 Todos los planes tienen 30% OFF hasta junio para acompañar tu crecimiento.
-</p>
-
 </section>
 
 <!-- GEO -->
 <section class="fade">
-<h2>Desde Mendoza al mundo</h2>
-
+<h2>Trabajamos con</h2>
 <p>
-Trabajamos con emprendimientos locales en Mendoza,<br>
-negocios en toda Argentina<br>
-y creadores digitales en distintos países.
+Emprendedores de Mendoza, negocios en toda Argentina
+y creadores de contenido en distintas partes del mundo.
 </p>
+</section>
 
-<p>
-No importa dónde estés.<br>
-Importa que quieras generar movimiento.
+<!-- PLANES -->
+<section id="planes" class="fade">
+<h2>Planes</h2>
+
+<div class="grid grid-2">
+
+<div class="card">
+<h3>Impulso Express</h3>
+<p>Activación rápida</p>
+
+<p><strong>Precio lista:</strong> $28.000</p>
+<p><strong>Precio actual:</strong> $19.600</p>
+
+<p>También disponible en versión reforzada.</p>
+</div>
+
+<div class="card">
+<h3>Plan Mensual</h3>
+<p>Crecimiento sostenido</p>
+
+<p><strong>Precio lista:</strong> $110.000</p>
+<p><strong>Precio actual:</strong> $77.000</p>
+
+<p>Versión reforzada disponible.</p>
+</div>
+
+</div>
+
+<p style="margin-top:30px;">
+Promoción válida hasta junio.<br>
+Luego se vuelve a precio lista.
 </p>
 </section>
 
 <!-- CONFIANZA -->
 <section class="fade">
-<h2>Confianza real</h2>
+<h2>Confianza</h2>
 
 <p>
-Acompañamiento visual y estratégico en Medifé (Mendoza).
+Trabajamos y acompañamos procesos reales.
+Uno de nuestros clientes es Stefano Leonel Barrera,
+actualmente gerente de sucursal de Medifé en Buenos Aires,
+con quien desarrollamos acompañamiento visual y estratégico.
 </p>
 
 <p>
-<strong>Referencia:</strong><br>
-Stefano Leonel Barrera<br>
-+54 261 2064180
+También trabajamos con profesionales de Mendoza
+y clientes en el exterior.
+Muchos prefieren mantener su anonimato.
 </p>
 
 <p>
-También trabajamos con profesionales de construcción, salud y creadores en etapa de crecimiento en Argentina, España y México.
-</p>
-</section>
-
-<!-- FILOSOFIA -->
-<section class="fade">
-<h2>No hacemos contenido por hacer</h2>
-
-<p>
-El diseño no es decoración.<br>
-Es una herramienta.
-</p>
-
-<p>
-Las redes no son para mostrar.<br>
-Son para generar oportunidades.
+Si necesitás referencias,
+podemos enviarlas por privado.
 </p>
 </section>
 
-<!-- CTA FINAL -->
+<!-- CIERRE -->
 <section class="fade">
-<h2>Esto puede empezar hoy</h2>
+<h2>Esto es simple</h2>
 
 <p>
-Podés seguir igual…<br>
-o empezar a generar consultas.
+Podés seguir publicando sin movimiento…
+o empezar a activar lo que ya tenés.
 </p>
 
 <a href="https://wa.me/5492613602948" class="btn">
-Hablar ahora
+Empezar ahora
 </a>
 </section>
 
-<footer style="text-align:center;padding:40px 20px;">
-Pixel Creativo · Todos los derechos reservados · 2026
-</footer>
+<!-- WHATSAPP -->
+<a href="https://wa.me/5492613602948" class="whatsapp">💬</a>
 
 <script>
+// LOADER
 setTimeout(()=>{
-document.getElementById("loader").style.display="none";
+    document.getElementById("loader").style.display="none";
 },3000);
 
-const faders=document.querySelectorAll(".fade");
+// SCROLL ANIMATION
+const faders = document.querySelectorAll('.fade');
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
+window.addEventListener('scroll',()=>{
+    faders.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
 });
-});
-
-faders.forEach(el=>observer.observe(el));
 </script>
 
 </body>
