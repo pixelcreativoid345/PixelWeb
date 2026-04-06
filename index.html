@@ -33,22 +33,21 @@ body {
 
 .symbol {
     font-size:40px;
-    animation: pulse 2s infinite;
+    animation:pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% {opacity:0.3;}
-    50% {opacity:1;}
-    100% {opacity:0.3;}
+    0%{opacity:0.3;}
+    50%{opacity:1;}
+    100%{opacity:0.3;}
 }
 
-/* TRANSICIÓN */
+/* ANIMACIONES */
 .fade {
     opacity:0;
     transform:translateY(30px);
     transition:1s ease;
 }
-
 .fade.show {
     opacity:1;
     transform:translateY(0);
@@ -60,14 +59,8 @@ section {
     margin:auto;
     padding:80px 20px;
 }
-
 h1,h2,h3 {
     font-family:'Playfair Display', serif;
-}
-
-.hero {
-    text-align:center;
-    padding-top:120px;
 }
 
 /* BOTONES */
@@ -80,18 +73,9 @@ h1,h2,h3 {
     text-decoration:none;
     border-radius:10px;
 }
-
 .btn-outline {
     border:1px solid #7209B7;
     background:transparent;
-}
-
-/* CARDS */
-.card {
-    background:rgba(255,255,255,0.05);
-    padding:25px;
-    border-radius:15px;
-    margin-top:20px;
 }
 
 /* GRID */
@@ -99,9 +83,32 @@ h1,h2,h3 {
     display:grid;
     gap:20px;
 }
-
 .grid-2 {
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+/* CARDS */
+.card {
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:15px;
+}
+
+/* ACORDEON */
+.accordion-btn {
+    width:100%;
+    padding:15px;
+    background:transparent;
+    border:1px solid #7209B7;
+    color:#fff;
+    text-align:left;
+    cursor:pointer;
+    margin-top:20px;
+}
+.accordion-content {
+    max-height:0;
+    overflow:hidden;
+    transition:0.5s ease;
 }
 
 /* WHATSAPP */
@@ -127,7 +134,7 @@ h1,h2,h3 {
 </div>
 
 <!-- HERO -->
-<section class="hero fade">
+<section class="fade" style="text-align:center; padding-top:120px;">
 <h1>Transformamos visibilidad en consultas reales</h1>
 <p>No es contenido. Es movimiento.</p>
 
@@ -138,16 +145,9 @@ h1,h2,h3 {
 <!-- INTRO -->
 <section class="fade">
 <h2>No es que no funcione…</h2>
-<p>
-Publicás. Tenés redes. Pero no pasa nada.
-No es falta de esfuerzo. Es falta de sistema.
-</p>
-
-<p>
-En Pixel Creativo diseñamos con intención,
-activamos el contenido y lo llevamos a donde importa:
-la conversación real.
-</p>
+<p>Publicás, pero no pasa nada.</p>
+<p>No es falta de contenido. Es falta de sistema.</p>
+<p>Diseñamos, activamos y llevamos tu contenido a donde importa: la conversación real.</p>
 </section>
 
 <!-- SISTEMA -->
@@ -155,35 +155,17 @@ la conversación real.
 <h2>Cómo funciona</h2>
 
 <div class="grid grid-2">
-<div class="card">
-<h3>Diseño estratégico</h3>
-<p>Contenido pensado para generar acción.</p>
-</div>
-
-<div class="card">
-<h3>Difusión inteligente</h3>
-<p>Movimiento real, no publicaciones aisladas.</p>
-</div>
-
-<div class="card">
-<h3>Conversión</h3>
-<p>Todo lleva a WhatsApp.</p>
-</div>
-
-<div class="card">
-<h3>Optimización</h3>
-<p>Se ajusta según lo que funciona.</p>
-</div>
+<div class="card"><h3>Diseño</h3><p>Contenido pensado para vender.</p></div>
+<div class="card"><h3>Difusión</h3><p>Movimiento real, no publicaciones aisladas.</p></div>
+<div class="card"><h3>Conversión</h3><p>Todo lleva a WhatsApp.</p></div>
+<div class="card"><h3>Optimización</h3><p>Ajustamos según resultados.</p></div>
 </div>
 </section>
 
 <!-- GEO -->
 <section class="fade">
 <h2>Trabajamos con</h2>
-<p>
-Emprendedores de Mendoza, negocios en toda Argentina
-y creadores de contenido en distintas partes del mundo.
-</p>
+<p>Mendoza, toda Argentina y creadores de contenido en el mundo.</p>
 </section>
 
 <!-- PLANES -->
@@ -195,29 +177,47 @@ y creadores de contenido en distintas partes del mundo.
 <div class="card">
 <h3>Impulso Express</h3>
 <p>Activación rápida</p>
-
-<p><strong>Precio lista:</strong> $28.000</p>
-<p><strong>Precio actual:</strong> $19.600</p>
-
-<p>También disponible en versión reforzada.</p>
+<p><strong>Lista:</strong> $28.000</p>
+<p><strong>Promo:</strong> $19.600</p>
 </div>
 
 <div class="card">
 <h3>Plan Mensual</h3>
 <p>Crecimiento sostenido</p>
-
-<p><strong>Precio lista:</strong> $110.000</p>
-<p><strong>Precio actual:</strong> $77.000</p>
-
-<p>Versión reforzada disponible.</p>
+<p><strong>Lista:</strong> $110.000</p>
+<p><strong>Promo:</strong> $77.000</p>
 </div>
 
 </div>
 
-<p style="margin-top:30px;">
-Promoción válida hasta junio.<br>
-Luego se vuelve a precio lista.
+<p style="margin-top:20px;">
+30% OFF hasta junio. Luego vuelve el precio lista.
 </p>
+
+<button class="accordion-btn">Ver detalle completo</button>
+
+<div class="accordion-content">
+
+<div style="margin-top:20px;">
+
+<h3>Modalidades</h3>
+<p><strong>Impulso Express:</strong> semanal o quincenal para generar movimiento.</p>
+<p><strong>Plan Mensual:</strong> contenido constante hasta 5 publicaciones semanales.</p>
+
+<h3>Versiones</h3>
+<p><strong>Normal:</strong> diseño + publicación + 2 días de impulso orgánico.</p>
+<p><strong>Reforzado:</strong> incluye publicidad + 3 días de impulso intensivo.</p>
+
+<h3>Impulso intensivo</h3>
+<p>Movimiento real: grupos, comentarios, difusión activa.</p>
+
+<h3>Objetivo</h3>
+<p>Generar consultas reales en WhatsApp.</p>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- CONFIANZA -->
@@ -225,32 +225,25 @@ Luego se vuelve a precio lista.
 <h2>Confianza</h2>
 
 <p>
-Trabajamos y acompañamos procesos reales.
-Uno de nuestros clientes es Stefano Leonel Barrera,
-actualmente gerente de sucursal de Medifé en Buenos Aires,
-con quien desarrollamos acompañamiento visual y estratégico.
+Trabajamos con Stefano Leonel Barrera,
+actualmente gerente de Medifé en Buenos Aires,
+en acompañamiento visual y estratégico.
 </p>
 
 <p>
 También trabajamos con profesionales de Mendoza
-y clientes en el exterior.
-Muchos prefieren mantener su anonimato.
+y clientes internacionales que prefieren anonimato.
 </p>
 
 <p>
-Si necesitás referencias,
-podemos enviarlas por privado.
+Si necesitás referencias, podemos compartirlas por privado.
 </p>
 </section>
 
-<!-- CIERRE -->
+<!-- CTA -->
 <section class="fade">
 <h2>Esto es simple</h2>
-
-<p>
-Podés seguir publicando sin movimiento…
-o empezar a activar lo que ya tenés.
-</p>
+<p>Podés seguir igual o empezar a moverte.</p>
 
 <a href="https://wa.me/5492613602948" class="btn">
 Empezar ahora
@@ -261,22 +254,34 @@ Empezar ahora
 <a href="https://wa.me/5492613602948" class="whatsapp">💬</a>
 
 <script>
-// LOADER
+
+// loader
 setTimeout(()=>{
-    document.getElementById("loader").style.display="none";
+document.getElementById("loader").style.display="none";
 },3000);
 
-// SCROLL ANIMATION
+// animación scroll
 const faders = document.querySelectorAll('.fade');
-
 window.addEventListener('scroll',()=>{
-    faders.forEach(el=>{
-        const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            el.classList.add('show');
-        }
-    });
+faders.forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add('show');
+}
 });
+});
+
+// acordeon
+const accBtn = document.querySelector('.accordion-btn');
+const accContent = document.querySelector('.accordion-content');
+
+accBtn.addEventListener('click',()=>{
+if(accContent.style.maxHeight){
+accContent.style.maxHeight = null;
+}else{
+accContent.style.maxHeight = accContent.scrollHeight + "px";
+}
+});
+
 </script>
 
 </body>
