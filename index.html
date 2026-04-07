@@ -27,11 +27,17 @@ body {
     justify-content:center;
     flex-direction:column;
     z-index:9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .symbol {
     font-size:40px;
-    animation:pulse 2s infinite;
+    animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse {
@@ -124,155 +130,177 @@ h1,h2,h3 {
 <body>
 
 <div id="loader">
-<div class="symbol">⚗️</div>
-<p>Iniciando sistema...</p>
+    <div class="symbol">⚗️</div>
+    <p>Cargando página...</p>
 </div>
 
 <section class="fade" style="text-align:center; padding-top:120px;">
-<h1>Transformamos visibilidad en consultas reales</h1>
-<p>No es contenido. Es movimiento.</p>
+    <h1>Transformamos visibilidad en consultas reales</h1>
+    <p>No es contenido. Es movimiento.</p>
 
-<a href="https://wa.me/5492613602948" class="btn">Hablar por WhatsApp</a>
-<a href="#planes" class="btn btn-outline">Ver planes</a>
+    <a href="https://wa.me/5492613602948" class="btn">Hablar por WhatsApp</a>
+    <a href="#planes" class="btn btn-outline">Ver planes</a>
 </section>
 
 <section class="fade">
-<h2>No es que no funcione…</h2>
-<p>Publicás, pero no pasa nada.</p>
-<p>No es falta de contenido. Es falta de sistema.</p>
-<p>Diseñamos, activamos y llevamos tu contenido a donde realmente importa: la conversación.</p>
+    <h2>No es que no funcione…</h2>
+    <p>Publicás, pero no pasa nada.</p>
+    <p>No es falta de contenido. Es falta de sistema.</p>
+    <p>Diseñamos, activamos y llevamos tu contenido a donde realmente importa: la conversación.</p>
 </section>
 
 <section class="fade">
-<h2>Cómo funciona</h2>
+    <h2>Cómo funciona</h2>
 
-<div class="grid grid-2">
-<div class="card"><h3>Diseño estratégico</h3><p>Contenido pensado para generar acción.</p></div>
-<div class="card"><h3>Difusión inteligente</h3><p>Movimiento real, no publicaciones aisladas.</p></div>
-<div class="card"><h3>Conversión</h3><p>Todo dirigido a WhatsApp.</p></div>
-<div class="card"><h3>Optimización</h3><p>Ajustes constantes según resultados.</p></div>
-</div>
+    <div class="grid grid-2">
+        <div class="card"><h3>Diseño estratégico</h3><p>Contenido pensado para generar acción.</p></div>
+        <div class="card"><h3>Difusión inteligente</h3><p>Movimiento real, no publicaciones aisladas.</p></div>
+        <div class="card"><h3>Conversión</h3><p>Todo dirigido a WhatsApp.</p></div>
+        <div class="card"><h3>Optimización</h3><p>Ajustes constantes según resultados.</p></div>
+    </div>
 </section>
 
 <section class="fade">
-<h2>Trabajamos con</h2>
-<p>Mendoza, toda Argentina y creadores de contenido en el mundo.</p>
+    <h2>Trabajamos con:</h2>
+    <p>Mendoza, toda Argentina y creadores de contenido en el mundo.</p>
 </section>
 
 <section id="planes" class="fade">
-<h2>Planes</h2>
+    <h2>Planes</h2>
 
-<div class="grid grid-2">
+    <div class="grid grid-2">
 
-<div class="card">
-<h3>Impulso Express</h3>
-<p>Activación rápida para generar movimiento</p>
-<p><strong>Precio lista:</strong> $28.000</p>
-<p><strong>Precio actual:</strong> $19.600</p>
-</div>
+        <div class="card">
+            <h3>Impulso Express</h3>
+            <p><strong>Objetivo:</strong> Generar movimiento rápido e impacto inmediato.</p>
+            <p><strong>Modalidad:</strong> Semanal o Quincenal.</p>
+            <p><strong>Incluye:</strong> Diseño estratégico, publicación y activación (orgánica o reforzada) pensada para despertar a tu audiencia.</p>
+            <br>
+            <p><strong>Precio lista desde:</strong> $28.000</p>
+            <p><strong>Precio actual desde:</strong> $19.600</p>
+        </div>
 
-<div class="card">
-<h3>Plan Mensual</h3>
-<p>Crecimiento sostenido</p>
-<p><strong>Precio lista:</strong> $110.000</p>
-<p><strong>Precio actual:</strong> $77.000</p>
-<p style="opacity:0.7;">Incluye página web optimizada con SEO y GEO</p>
-</div>
+        <div class="card">
+            <h3>Plan Mensual</h3>
+            <p><strong>Objetivo:</strong> Construir presencia sostenida y flujo constante.</p>
+            <p><strong>Modalidad:</strong> Mensual.</p>
+            <p><strong>Incluye:</strong> Trabajo continuo a lo largo del mes con todas las etapas de la Alquimia Digital integradas.</p>
+            <br>
+            <p><strong>Precio lista:</strong> $110.000</p>
+            <p><strong>Precio actual:</strong> $77.000</p>
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 0.9em; opacity: 0.9;">🎁 <strong>Bonus exclusivo:</strong> Incluye de regalo una página web de una sola cara optimizada con SEO y GEO. Es un sitio ágil, <strong>similar a esta misma página que estás navegando ahora</strong>, pero obviamente adaptada a tu negocio y tus objetivos.</p>
+            </div>
+        </div>
 
-</div>
+    </div>
 
-<p style="margin-top:20px;">
-Promoción del 30% OFF vigente hasta junio. Luego se vuelve al precio lista.
-</p>
+    <p style="margin-top:20px;">
+        Promoción del 30% OFF vigente hasta junio. Luego se vuelve al precio lista.
+    </p>
 
-<button class="accordion-btn">Ver detalle completo</button>
+    <button class="accordion-btn">Ver detalle completo</button>
 
-<div class="accordion-content">
+    <div class="accordion-content">
 
-<div style="margin-top:20px;">
+        <div style="margin-top:20px;">
 
-<h3>Frecuencia de trabajo</h3>
-<p>Se trabaja durante 5 días a la semana (días hábiles), con publicación constante y activación del contenido.</p>
+            <h3>Frecuencia de trabajo</h3>
+            <p>Se trabaja durante 5 días a la semana (días hábiles), con publicación constante y activación del contenido.</p>
 
-<h3>Versiones del servicio</h3>
+            <h3>Versiones del servicio</h3>
 
-<p><strong>Plan Normal (orgánico)</strong></p>
-<ul>
-<li>Difusión orgánica durante los 5 días</li>
-<li>Activación manual (grupos, comentarios, mensajes)</li>
-<li>2 días de refuerzo intensivo orgánico</li>
-</ul>
+            <p><strong>Plan Normal (Orgánico)</strong></p>
+            <ul>
+                <li>Difusión orgánica durante los 5 días.</li>
+                <li>Activación manual (grupos, comentarios, mensajes).</li>
+                <li>2 días de refuerzo intensivo orgánico.</li>
+            </ul>
 
-<p><strong>Plan Reforzado</strong></p>
-<ul>
-<li>Incluye todo lo anterior</li>
-<li>3 días de refuerzo intensivo</li>
-<li>Difusión orgánica + publicidad paga (Meta Ads)</li>
-</ul>
+            <p><strong>Plan Reforzado</strong></p>
+            <ul>
+                <li>Incluye todo lo anterior (los 5 días de difusión orgánica base).</li>
+                <li><strong>+ 3 días</strong> de difusión orgánica agresiva e intensiva.</li>
+                <li><strong>+ 3 días</strong> de difusión con publicidad paga (Meta Ads).</li>
+            </ul>
 
-<h3>Qué significa activar contenido</h3>
-<p>No esperamos a que el algoritmo actúe.</p>
-<p>El contenido se mueve, se distribuye y se posiciona estratégicamente.</p>
+            <h3>Qué significa activar contenido</h3>
+            <p>No esperamos a que el algoritmo actúe.</p>
+            <p>El contenido se mueve, se distribuye y se posiciona estratégicamente.</p>
 
-<h3>Objetivo</h3>
-<p>Generar consultas reales en WhatsApp y oportunidades de venta.</p>
+            <h3>Objetivo</h3>
+            <p>Generar consultas reales en WhatsApp y oportunidades de venta.</p>
 
-</div>
-</div>
+        </div>
+    </div>
 </section>
 
 <section class="fade">
-<h2>Referencias</h2>
+    <h2>Referencias</h2>
 
-<p>
-Trabajamos con Stefano Leonel Barrera (+54 261 2064180),
-actualmente gerente de sucursal de Medifé en Buenos Aires,
-en acompañamiento visual y estratégico.
-</p>
+    <p>
+    Trabajamos con Stefano Leonel Barrera (+54 261 2064180),
+    actualmente gerente de sucursal de Medifé en Buenos Aires,
+    en acompañamiento visual y estratégico.
+    </p>
 
-<p>
-También trabajamos con profesionales en Mendoza (identidad reservada)
-y clientes en España y México que prefieren mantener anonimato.
-</p>
+    <p>
+    También trabajamos con profesionales en Mendoza (identidad reservada)
+    y clientes en España y México que prefieren mantener anonimato.
+    </p>
 
-<p>
-Si necesitás referencias, podés solicitarlas de forma privada.
-</p>
+    <p>
+    Si necesitás referencias, podés solicitarlas de forma privada.
+    </p>
 </section>
 
 <section class="fade">
-<h2>Esto es simple</h2>
-<p>Podés seguir publicando… o empezar a generar movimiento real.</p>
+    <h2>Esto es simple</h2>
+    <p>Podés seguir publicando… o empezar a generar movimiento real.</p>
 
-<a href="https://wa.me/5492613602948" class="btn">
-Empezar ahora
-</a>
+    <a href="https://wa.me/5492613602948" class="btn">
+        Empezar ahora
+    </a>
 </section>
 
 <a href="https://wa.me/5492613602948" class="whatsapp">💬</a>
 
 <script>
-setTimeout(()=>{document.getElementById("loader").style.display="none";},3000);
+    // Inicialización rápida: Ocultamos el loader suavemente y mostramos la web sin demoras excesivas
+    window.onload = () => {
+        setTimeout(()=>{
+            document.getElementById("loader").classList.add("hidden");
+            
+            // Forzamos la primera aparición de elementos en pantalla de inmediato
+            document.querySelectorAll('.fade').forEach(el=>{
+                if(el.getBoundingClientRect().top < window.innerHeight){
+                    el.classList.add('show');
+                }
+            });
+        }, 1200); // 1.2 segundos: tiempo suficiente para ver el logo parpadear y que la web ya esté lista
+    };
 
-const faders=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-faders.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add('show');
-}
-});
-});
+    // Funcionalidad de scroll
+    const faders=document.querySelectorAll('.fade');
+    window.addEventListener('scroll',()=>{
+        faders.forEach(el=>{
+            if(el.getBoundingClientRect().top < window.innerHeight - 100){
+                el.classList.add('show');
+            }
+        });
+    });
 
-const accBtn=document.querySelector('.accordion-btn');
-const accContent=document.querySelector('.accordion-content');
+    // Acordeón de detalles
+    const accBtn=document.querySelector('.accordion-btn');
+    const accContent=document.querySelector('.accordion-content');
 
-accBtn.addEventListener('click',()=>{
-if(accContent.style.maxHeight){
-accContent.style.maxHeight=null;
-}else{
-accContent.style.maxHeight=accContent.scrollHeight+"px";
-}
-});
+    accBtn.addEventListener('click',()=>{
+        if(accContent.style.maxHeight){
+            accContent.style.maxHeight=null;
+        }else{
+            accContent.style.maxHeight=accContent.scrollHeight+"px";
+        }
+    });
 </script>
 
 </body>
