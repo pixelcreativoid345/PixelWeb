@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pixel Creativo | Alquimia Digital</title>
-<meta name="description" content="Convertimos contenido en movimiento real. Diseño estratégico + activación digital para generar consultas. Mendoza, Argentina y online.">
+<meta name="description" content="Activamos contenido para generar consultas reales. Sistema de difusión estratégica en Mendoza, Argentina y online.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -14,21 +14,18 @@
   --bg:#0B0B0F;
   --text:#F5F5F5;
   --gold:#FFD166;
-  --glass: rgba(255,255,255,0.06);
+  --glass:rgba(255,255,255,0.05);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
+  margin:0;
   font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
-  overflow-x:hidden;
 }
 
 h1,h2,h3{
   font-family:'Playfair Display',serif;
-  font-weight:500;
 }
 
 section{
@@ -48,51 +45,30 @@ section{
   transform:translateY(0);
 }
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:20px;
-}
-
 .btn{
   display:inline-block;
+  margin-top:15px;
   padding:12px 22px;
-  border-radius:10px;
   background:var(--gold);
   color:black;
+  border-radius:10px;
   text-decoration:none;
-  margin-top:10px;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:scale(1.05);
 }
 
 .card{
   background:var(--glass);
-  backdrop-filter:blur(12px);
   padding:25px;
   border-radius:15px;
-}
-
-.grid{
-  display:grid;
-  gap:20px;
-}
-
-.grid-2{
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  backdrop-filter:blur(10px);
+  margin-top:20px;
 }
 
 .accordion{
-  cursor:pointer;
-  padding:15px;
-  background:var(--glass);
-  border-radius:10px;
   margin-top:10px;
+  cursor:pointer;
+  padding:12px;
+  background:rgba(255,255,255,0.08);
+  border-radius:8px;
 }
 
 .panel{
@@ -106,11 +82,10 @@ section{
   bottom:20px;
   right:20px;
   background:#25D366;
+  color:white;
   padding:15px;
   border-radius:50%;
   text-decoration:none;
-  color:white;
-  font-size:20px;
 }
 
 /* PRELOADER */
@@ -144,157 +119,161 @@ section{
 
 <body>
 
-<!-- PRELOADER -->
 <div id="loader">
   <div class="symbol"></div>
 </div>
 
-<!-- HERO -->
-<section class="hero fade">
-<h1>El contenido sin movimiento… no genera resultados</h1>
+<section class="fade">
+<h1>El contenido sin movimiento no genera resultados.</h1>
 <p>No se trata de publicar más. Se trata de activar mejor.</p>
-<a href="https://wa.me/542613602948" class="btn" onclick="clickSound()">Hablar por WhatsApp</a>
+<a href="https://wa.me/542613602948" class="btn">Hablar por WhatsApp</a>
 </section>
 
-<!-- PROBLEMA -->
 <section class="fade">
 <h2>¿Qué está pasando hoy?</h2>
-<p>Muchos negocios publican contenido todos los días… pero no logran generar consultas reales.</p>
-<p>El problema no es la frecuencia. Es la falta de dirección.</p>
+<p>Muchos negocios publican contenido de forma constante, pero no logran generar consultas reales.</p>
+<p>El problema no es la cantidad. Es la falta de dirección y activación.</p>
 </section>
 
-<!-- CONCEPTO -->
 <section class="fade">
 <h2>Contenido en movimiento</h2>
-<p>El contenido no está hecho para quedarse quieto.</p>
-<p>Cuando se activa correctamente, empieza a circular, a llegar y a generar respuesta.</p>
+<p>El contenido no está hecho para quedarse quieto. Cuando se activa correctamente, empieza a circular, a llegar y a generar respuesta.</p>
 </section>
 
-<!-- SISTEMA -->
 <section class="fade">
 <h2>Alquimia Digital</h2>
 <p>Un sistema pensado para transformar visibilidad en conversaciones reales.</p>
-
-<div class="grid grid-2">
-<div class="card">
-<h3>Estrategia</h3>
-<p>Cada pieza tiene intención.</p>
-</div>
-<div class="card">
-<h3>Activación</h3>
-<p>El contenido se mueve, no se deja al algoritmo.</p>
-</div>
-</div>
 </section>
 
-<!-- COMO FUNCIONA -->
 <section class="fade">
 <h2>Cómo funciona</h2>
 <ol>
-<li>Definimos enfoque</li>
-<li>Construimos contenido</li>
-<li>Activamos en redes</li>
-<li>Refuerzo estratégico</li>
+<li>Definimos el enfoque.</li>
+<li>Creamos contenido estratégico.</li>
+<li>Activamos el contenido en redes.</li>
+<li>Aplicamos refuerzo para generar movimiento.</li>
 </ol>
 </section>
 
-<!-- PLANES -->
 <section class="fade">
 <h2>Planes</h2>
 
 <div class="card">
-<h3>Plan Impulso (15 días)</h3>
-<p><strong>Lista:</strong> $35.000 / $75.000</p>
-<p><strong>Actual:</strong> $25.000 / $55.000</p>
-<div class="accordion">Ver detalle</div>
+<h3>Plan Impulso — 15 días hábiles</h3>
+
+<p><strong>Precio de lista:</strong> $35.000 / $75.000</p>
+<p><strong>Precio actual:</strong> $25.000 / $55.000</p>
+
+<div class="accordion">Ver detalle completo</div>
 <div class="panel">
-<p><strong>Orgánico:</strong><br>
-15 días de movimiento<br>
-6 días intensivos</p>
 
-<p><strong>Reforzado:</strong><br>
-15 días de movimiento<br>
-9 días intensivos<br>
-3 días con publicidad paga</p>
+<p><strong>Opción A — Difusión Orgánica</strong></p>
+<p>Incluye:</p>
+<ul>
+<li>15 días hábiles de difusión activa.</li>
+<li>Activación manual del contenido.</li>
+<li>6 días de difusión intensiva distribuidos estratégicamente.</li>
+</ul>
 
-<p>Incluye 1 flyer estratégico</p>
+<p><strong>Opción B — Difusión Reforzada</strong></p>
+<ul>
+<li>15 días hábiles de difusión activa.</li>
+<li>Activación manual completa.</li>
+<li>9 días de difusión intensiva.</li>
+<li>3 días con publicidad paga (Meta Ads).</li>
+</ul>
+
+<p><strong>Incluye:</strong> 1 flyer estratégico.</p>
+
+<p><strong>No incluye:</strong> Producción adicional de piezas.</p>
+<p>Las piezas extra se cotizan por separado.</p>
+
 </div>
 </div>
 
 <div class="card">
-<h3>Plan Mensual</h3>
-<p><strong>Lista:</strong> $110.000</p>
-<p><strong>Actual:</strong> $77.000</p>
-<div class="accordion">Ver detalle</div>
+<h3>Plan Mensual — Crecimiento sostenido</h3>
+
+<p><strong>Precio de lista:</strong> $110.000</p>
+<p><strong>Precio actual:</strong> $77.000</p>
+
+<div class="accordion">Ver detalle completo</div>
 <div class="panel">
-<p>Movimiento continuo</p>
-<p>3 días intensivos por semana</p>
-<p>Publicidad incluida: $20.000</p>
-<p>Incluye 1 flyer + 1 reel con voz en off</p>
-<p><strong>Además:</strong> Página web simple de regalo, similar a esta, adaptada a tu negocio.</p>
+
+<p>Incluye:</p>
+<ul>
+<li>Difusión continua en días hábiles.</li>
+<li>3 días intensivos por semana.</li>
+<li>Activación manual constante.</li>
+</ul>
+
+<p><strong>Contenido incluido:</strong></p>
+<ul>
+<li>1 flyer.</li>
+<li>1 reel con voz en off.</li>
+</ul>
+
+<p><strong>Publicidad incluida:</strong></p>
+<ul>
+<li>$20.000 mensuales.</li>
+<li>Distribuidos en 4 campañas de $5.000.</li>
+</ul>
+
+<p><strong>Resultados esperados:</strong></p>
+<ul>
+<li>Primeros movimientos entre 4 y 7 días.</li>
+<li>Mayor impacto a partir de los 15 días.</li>
+</ul>
+
+<p><strong>Bonus:</strong></p>
+<p>Página web simple (una sola sección), similar a esta, adaptada a tu negocio.</p>
+<p>Disponible sin costo al contratar 3 meses.</p>
+
 </div>
 </div>
 
 </section>
 
-<!-- SERVICIOS -->
 <section class="fade">
 <h2>Servicios adicionales</h2>
-<p>Reels, flyers, ideas estratégicas y packs completos para redes.</p>
+<p>Se pueden solicitar piezas individuales o packs completos para redes.</p>
 <p>Al combinar servicios, se accede a mejores condiciones.</p>
 </section>
 
-<!-- CONDICIONES -->
 <section class="fade">
 <h2>Condiciones</h2>
-<p>Precios promocionales hasta junio.</p>
-<p>Luego se vuelve a precio de lista.</p>
-<p>Cupos limitados.</p>
+<p>Los precios promocionales se mantienen hasta junio.</p>
+<p>Luego se vuelve al precio de lista.</p>
+<p>Los cupos son limitados y el trabajo es personalizado.</p>
 </section>
 
-<!-- CTA -->
 <section class="fade">
-<h2>Si tu negocio está quieto…</h2>
-<p>Podemos activarlo.</p>
-<a href="https://wa.me/542613602948" class="btn" onclick="clickSound()">Escribir ahora</a>
+<h2>Si tu negocio está quieto, podemos activarlo.</h2>
+<a href="https://wa.me/542613602948" class="btn">Iniciar conversación</a>
 </section>
 
 <a href="https://wa.me/542613602948" class="whatsapp">💬</a>
 
 <script>
-
-// LOADER
 setTimeout(()=>{
- document.getElementById("loader").style.opacity="0";
- setTimeout(()=>document.getElementById("loader").style.display="none",500);
-},1500);
+ document.getElementById("loader").style.display="none";
+},1200);
 
-// SCROLL ANIMATION
+document.querySelectorAll('.accordion').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  let panel=btn.nextElementSibling;
+  panel.style.maxHeight=panel.style.maxHeight?null:panel.scrollHeight+"px";
+ });
+});
+
 const faders=document.querySelectorAll('.fade');
 window.addEventListener('scroll',()=>{
  faders.forEach(el=>{
-  const rect=el.getBoundingClientRect().top;
-  if(rect<window.innerHeight-100){
+  if(el.getBoundingClientRect().top<window.innerHeight-100){
     el.classList.add('show');
   }
  });
 });
-
-// ACCORDION
-document.querySelectorAll(".accordion").forEach(acc=>{
- acc.onclick=function(){
-  const panel=this.nextElementSibling;
-  panel.style.maxHeight=panel.style.maxHeight?null:panel.scrollHeight+"px";
- }
-});
-
-// SOUND
-function clickSound(){
- let audio=new Audio("https://assets.mixkit.co/sfx/preview/mixkit-metallic-click-1100.mp3");
- audio.volume=0.2;
- audio.play();
-}
-
 </script>
 
 </body>
