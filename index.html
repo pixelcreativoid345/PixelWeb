@@ -4,18 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pixel Creativo | Alquimia Digital</title>
-<meta name="description" content="Sistema de contenido y difusión para generar consultas reales en Mendoza, Argentina y el mundo.">
+<title>TutLab | Movimiento Digital Estratégico</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+--bg:#0B0B0F;
+--text:#F5F5F5;
+--gold:#FFD166;
+--glass:rgba(255,255,255,0.05);
+}
 
 body{
 margin:0;
-background:#0B0B0F;
-color:#EAEAEA;
 font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
 overflow-x:hidden;
 }
 
@@ -28,101 +33,126 @@ section{
 padding:80px 20px;
 max-width:1100px;
 margin:auto;
-opacity:0;
-transform:translateY(30px);
-transition:all .8s ease;
+position:relative;
 }
 
-section.visible{
-opacity:1;
-transform:translateY(0);
+/* LÍNEAS DORADAS */
+section::before{
+content:"";
+position:absolute;
+top:0;
+left:50%;
+width:0;
+height:1px;
+background:var(--gold);
+transform:translateX(-50%);
+animation:lineGrow 1.2s ease forwards;
+}
+
+@keyframes lineGrow{
+to{width:80%;}
 }
 
 /* PRELOADER */
-#preloader{
+#loader{
 position:fixed;
 width:100%;
-height:100vh;
+height:100%;
 background:#0B0B0F;
 display:flex;
 align-items:center;
 justify-content:center;
-z-index:9999;
-flex-direction:column;
+z-index:999;
 }
 
 .symbol{
 width:60px;
 height:60px;
-border:2px solid gold;
+border:2px solid var(--gold);
 border-radius:50%;
-animation:pulse 1.5s infinite;
+animation:pulse 1.2s infinite;
 }
 
 @keyframes pulse{
-0%{opacity:.3; transform:scale(.9);}
-50%{opacity:1; transform:scale(1);}
-100%{opacity:.3; transform:scale(.9);}
+0%{transform:scale(1);opacity:.6;}
+50%{transform:scale(1.2);opacity:1;}
+100%{transform:scale(1);opacity:.6;}
+}
+
+.fade-out{
+opacity:0;
+pointer-events:none;
+transition:.6s;
 }
 
 /* HERO */
 .hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding-top:120px;
+flex-direction:column;
 }
 
 .hero h1{
 font-size:42px;
-line-height:1.3;
+line-height:1.4;
 }
 
-.gold-line{
-width:120px;
-height:2px;
-background:gold;
-margin:20px auto;
-animation:expand 1.5s ease;
+.hero h1 span{
+display:block;
 }
 
-@keyframes expand{
-from{width:0}
-to{width:120px}
+.hero h1 span:last-child{
+font-weight:700;
+color:var(--gold);
+}
+
+.hero p{
+max-width:600px;
+opacity:.85;
 }
 
 .btn{
-display:inline-block;
 margin-top:20px;
-padding:14px 24px;
-border-radius:8px;
-background:gold;
+padding:12px 25px;
+background:var(--gold);
 color:black;
 text-decoration:none;
+border-radius:8px;
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.05);
-}
-
-/* CARDS */
-.grid{
-display:grid;
-gap:20px;
-}
-
-.grid-3{
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+transform:translateY(-2px);
 }
 
 .card{
-background:rgba(255,255,255,0.04);
+background:var(--glass);
 padding:25px;
 border-radius:12px;
-backdrop-filter:blur(8px);
-border:1px solid rgba(255,215,0,0.2);
+backdrop-filter:blur(10px);
+margin-top:20px;
 }
 
-/* WHATSAPP */
+.grid{
+display:grid;
+gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+.reveal{
+opacity:0;
+transform:translateY(20px);
+transition:.6s;
+}
+
+.reveal.active{
+opacity:1;
+transform:none;
+}
+
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -132,232 +162,133 @@ color:white;
 padding:15px;
 border-radius:50%;
 text-decoration:none;
+font-size:20px;
 }
-
-/* TITULO ESPECIAL */
-.title-main{
-font-size:36px;
-line-height:1.4;
-text-align:center;
-}
-
-.title-main span{
-display:block;
-font-weight:700;
-}
-
-/* LIST */
-ul{
-padding-left:20px;
-}
-
 </style>
 </head>
 
 <body>
 
-<div id="preloader">
+<div id="loader">
 <div class="symbol"></div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-<h1 class="title-main">
+<section class="hero reveal">
+<h1>
 <span>No es sólo CONTENIDO.</span>
 <span>Es MOVIMIENTO.</span>
 </h1>
 
-<div class="gold-line"></div>
-
 <p>
-Sistema de contenido y difusión pensado para generar consultas reales.
-No se trata de publicar.
-Se trata de activar.
+Activamos tus ideas para que circulen, lleguen a personas reales y generen conversaciones.
 </p>
 
 <a href="https://wa.me/542613602948" class="btn">Hablar por WhatsApp</a>
 </section>
 
-<!-- PROBLEMA -->
-<section>
-<h2>El problema actual</h2>
-<div class="gold-line"></div>
+<section class="reveal">
+<h2>De Pixel Creativo a TutLab</h2>
 
+<div class="card">
 <p>
-Hoy muchas marcas crean contenido… pero no pasa nada.
-Se publica, se ve… y se pierde.
+TutLab no nace de cero.
 </p>
 
 <p>
-El contenido sin movimiento es solo contenido.
+Es la evolución de Pixel Creativo, un experimento real donde todo comenzó de forma artesanal.
 </p>
-</section>
-
-<!-- SISTEMA -->
-<section>
-<h2>Alquimia Digital</h2>
-<div class="gold-line"></div>
 
 <p>
-Un sistema diseñado para transformar visibilidad en consultas reales.
+Ese proceso fue nuestra propia prueba de Alquimia Digital:
+Tomar ideas simples, moverlas, ajustarlas y transformarlas en un sistema funcional.
 </p>
 
-<div class="grid grid-3">
-<div class="card">Estrategia</div>
-<div class="card">Diseño</div>
-<div class="card">Activación</div>
+<p>
+Hoy TutLab representa esa transformación.
+No como concepto… sino como evidencia.
+</p>
 </div>
 </section>
 
-<!-- KIT -->
-<section>
-<h2>Kit de Suministro Semanal</h2>
-<div class="gold-line"></div>
+<section class="reveal">
+<h2>Kit de Movimiento Semanal</h2>
 
-<p><strong>$10000 🇦🇷 / $10 USD 🌐</strong></p>
-<p>Gratis con tu contratación.</p>
+<div class="card">
 
-<p>
-Pensado para que no solo se vea bien…
-Sino que venda más.
-</p>
+<p><strong>$10.000 🇦🇷 / $10 USD 🌐</strong></p>
 
-<h3>Entrega única</h3>
-<ul>
-<li>Plantilla Menú optimizada</li>
-<li>Flyer digital listo para redes</li>
-<li>Imagen de perfil + portada</li>
-</ul>
+<p>Este kit está pensado para que tengas recursos visuales y estratégicos cada semana.</p>
 
-<h3>Entrega semanal</h3>
-<ul>
-<li>Texto vendedor listo</li>
-<li>2 guiones con prompts para IA</li>
-</ul>
+<p><strong>Incluye:</strong></p>
 
-<p>Entrega en 48 hs.</p>
+<p><u>Entrega única:</u></p>
+<p>✔ Plantilla estática tipo menú optimizada.</p>
+<p>✔ Flyer digital listo para redes.</p>
+<p>✔ Imagen de perfil + portada.</p>
 
-<p>
-Si querés, vemos tu rubro y te explico cómo adaptarlo.
-</p>
+<p><u>Entrega semanal:</u></p>
+<p>✔ Texto vendedor listo para copiar y pegar.</p>
+<p>✔ 2 guiones estratégicos con prompts.</p>
 
-<p>📲 2613602948</p>
+<p><strong>Entrega en 48 hs.</strong></p>
+
+<p>La idea es que no solo se vea bien… sino que venda más. 🔥</p>
+
+<p><strong>👉 Gratis al contratar un plan.</strong></p>
+
+</div>
 </section>
 
-<!-- PLAN 15 DIAS -->
-<section>
-<h2>Conócenos en 15 días</h2>
-<div class="gold-line"></div>
-
-<p>Durante 15 días trabajamos así:</p>
-
-<ul>
-<li>Flyer + Reel con voz en off</li>
-<li>Carrusel de regalo</li>
-<li>Difusión diaria en circuito estratégico</li>
-</ul>
-
-<p>
-Esto genera visualizaciones y conversaciones reales.
-</p>
-
-<p>
-Desde el día 1 hay interacción.
-Desde el día 3–4 empieza el movimiento fuerte.
-</p>
-
-<p>
-Alcance mínimo estimado: 100 personas por día.
-</p>
-
-<p><strong>$50.000 🇦🇷 / $50 USD 🌐</strong></p>
-
-<p>
-Si te gusta, extendemos otros 15 días sin costo.
-</p>
-</section>
-
-<!-- SERVICIOS -->
-<section>
-<h2>Servicios adicionales</h2>
-<div class="gold-line"></div>
-
-<ul>
-<li>Edición audiovisual (Audio 3D, mezcla y master)</li>
-<li>Reels y videos para redes</li>
-<li>Videos para YouTube</li>
-<li>Diseño web y mantenimiento</li>
-<li>Planes mensuales</li>
-</ul>
-
-<p>
-TutLab nace desde la creatividad humana para potenciar emprendimientos.
-</p>
-
-<p>
-Ayudamos a emprendedores a ahorrar tiempo, crecer y mejorar su presencia digital.
-</p>
-</section>
-
-<!-- REFERENCIAS -->
-<section>
+<section class="reveal">
 <h2>Referencias</h2>
-<div class="gold-line"></div>
+
+<div class="card">
 
 <p><strong>Luisa Inés Vicente</strong><br>
-Profesional matriculada en gasista y plomería.<br>
-“Matías es uno de los pilares para difundir mis servicios en Mendoza.”<br>
-+542614167638
-</p>
+Profesional matriculada en servicios de gasista y plomería.<br>
+“Matías es uno de los pilares para difundir mis servicios en todo Mendoza.”<br>
++542614167638</p>
+
+<br>
 
 <p><strong>Stefano Leonel Barrera</strong><br>
-Gerente de sucursal en Medifé Buenos Aires.<br>
-“Muy conforme con el trabajo, metodología e ideas.”<br>
-+542612064180
-</p>
+Gerente de sucursal en Medifé.<br>
+“Muy conforme con el trabajo y la metodología.”<br>
++542612064180</p>
+
+<br>
 
 <p><strong>Samantha Racziel</strong><br>
-Instructora de Danzas Creativas y entrenamiento fitness en Madrid.<br>
+Trainer de danzas creativas y entrenamientos fitness para gyms con rutinas personalizadas, en Madrid, España.<br>
 “Creatividad y movimiento es lo que necesitaba.”<br>
-+34641201802
-</p>
++34641201802</p>
 
+</div>
 </section>
 
-<!-- CTA FINAL -->
-<section>
-<h2>Mantenerse en movimiento</h2>
-<div class="gold-line"></div>
-
-<p>
-Lo importante no es estar presente.
-Es mantenerse activo.
-</p>
-
-<a href="https://wa.me/542613602948" class="btn">Iniciar conversación</a>
+<section class="reveal">
+<h2>Movimiento o estancamiento</h2>
+<p>Tu contenido puede quedarse quieto… o empezar a generar resultados.</p>
+<a href="https://wa.me/542613602948" class="btn">Empezar ahora</a>
 </section>
 
 <a href="https://wa.me/542613602948" class="whatsapp">💬</a>
 
 <script>
-
-// PRELOADER
 setTimeout(()=>{
-document.getElementById("preloader").style.display="none";
+document.getElementById("loader").classList.add("fade-out");
 },1200);
 
-// SCROLL
-const sections=document.querySelectorAll("section");
+const reveals=document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-const top=sec.getBoundingClientRect().top;
+reveals.forEach(r=>{
+const top=r.getBoundingClientRect().top;
 if(top<window.innerHeight-100){
-sec.classList.add("visible");
+r.classList.add("active");
 }
 });
 });
-
 </script>
 
 </body>
