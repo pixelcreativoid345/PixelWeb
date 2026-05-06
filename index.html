@@ -23,6 +23,8 @@ font-family:'DM Sans',sans-serif;
 background:var(--bg);
 color:var(--text);
 overflow-x:hidden;
+opacity:0;
+transition:opacity 1.2s ease;
 }
 
 /* LOADER */
@@ -34,22 +36,70 @@ background:#0B0B0F;
 display:flex;
 align-items:center;
 justify-content:center;
+flex-direction:column;
 z-index:9999;
 transition:opacity .8s ease;
 }
 
 .alchemy{
-font-size:46px;
-animation:pulse 1.4s infinite ease-in-out;
+font-size:50px;
+animation:pulse 1.5s infinite ease-in-out;
 }
 
 @keyframes pulse{
 0%{opacity:.3; transform:scale(1);}
-50%{opacity:1; transform:scale(1.2);}
+50%{opacity:1; transform:scale(1.25);}
 100%{opacity:.3; transform:scale(1);}
 }
 
-/* HERO ENTRADA AUTOMÁTICA */
+/* TIPOGRAFÍA */
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+text-align:center;
+}
+
+p{
+line-height:1.9;
+font-size:17px;
+opacity:.9;
+max-width:680px;
+margin:auto;
+}
+
+/* SECCIONES */
+section{
+padding:100px 20px;
+max-width:1000px;
+margin:auto;
+position:relative;
+opacity:0;
+transform:translateY(60px);
+transition:all 1.2s ease;
+}
+
+section.visible{
+opacity:1;
+transform:none;
+}
+
+/* LÍNEAS DORADAS MEJORADAS */
+section::before{
+content:"";
+position:absolute;
+top:0;
+left:50%;
+width:0;
+height:1px;
+background:linear-gradient(90deg, transparent, var(--gold), transparent);
+transform:translateX(-50%);
+animation:lineGrow 1.8s ease forwards;
+}
+
+@keyframes lineGrow{
+to{width:75%;}
+}
+
+/* HERO */
 .hero{
 min-height:90vh;
 display:flex;
@@ -57,25 +107,12 @@ align-items:center;
 justify-content:center;
 text-align:center;
 flex-direction:column;
-opacity:0;
-transform:translateY(40px);
-transition:all 1.2s ease;
-}
-
-.hero.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* TITULOS */
-h1,h2,h3{
-font-family:'Playfair Display',serif;
-text-align:center;
 }
 
 .hero h1{
-font-size:44px;
+font-size:46px;
 line-height:1.6;
+letter-spacing:.5px;
 }
 
 .hero h1 span{
@@ -87,79 +124,40 @@ color:var(--gold);
 font-weight:700;
 }
 
-p{
-line-height:1.8;
-font-size:17px;
-opacity:.9;
-max-width:650px;
-margin:auto;
+.hero p{
+margin-top:25px;
 }
 
-/* SECTIONS */
-section{
-padding:90px 20px;
-max-width:1000px;
-margin:auto;
-position:relative;
-}
-
-/* LINEA DORADA */
-section::before{
-content:"";
-position:absolute;
-top:0;
-left:50%;
-width:0;
-height:1px;
-background:var(--gold);
-transform:translateX(-50%);
-animation:lineGrow 1.5s ease forwards;
-}
-
-@keyframes lineGrow{
-to{width:70%;}
-}
-
-/* BOTON */
+/* BOTÓN */
 .btn{
 margin-top:30px;
-padding:13px 30px;
+padding:14px 32px;
 background:var(--gold);
 color:black;
 text-decoration:none;
-border-radius:8px;
+border-radius:10px;
 transition:.3s;
 font-weight:500;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(255,209,102,0.3);
 }
 
 /* CARDS */
 .card{
 background:var(--glass);
-padding:30px;
+padding:32px;
 border-radius:16px;
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 margin-top:30px;
 transition:.4s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-transform:translateY(-5px);
-}
-
-/* SCROLL SECTIONS */
-.reveal{
-opacity:0;
-transform:translateY(50px);
-transition:all 1s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:none;
+transform:translateY(-6px);
 }
 
 /* WHATSAPP */
@@ -185,7 +183,7 @@ font-size:20px;
 </div>
 
 <!-- HERO -->
-<section class="hero" id="hero">
+<section class="hero">
 <h1>
 <span>No es sólo CONTENIDO.</span>
 <span>Es MOVIMIENTO.</span>
@@ -199,77 +197,126 @@ Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y g
 </section>
 
 <!-- HISTORIA -->
-<section class="reveal">
+<section>
 <h2>De Pixel Creativo a TutLab</h2>
 
 <div class="card">
 <p>Esto no empezó como una agencia.</p>
-<p>Pixel Creativo fue un experimento real, construido desde cero.</p>
+
+<p>Pixel Creativo fue un experimento real, construido desde cero y de forma artesanal.</p>
+
 <p>Ahí entendimos algo clave: el problema no es el contenido… es que nadie lo mueve.</p>
-<p>Ese proceso fue nuestra propia alquimia.</p>
-<p>Hoy TutLab es esa evolución convertida en sistema.</p>
+
+<p>Ese proceso fue nuestra propia alquimia digital.</p>
+
+<p>Probar. Ajustar. Activar. Medir.</p>
+
+<p>Hoy TutLab es esa evolución convertida en un sistema.</p>
 </div>
 </section>
 
 <!-- EXPLICACIÓN -->
-<section class="reveal">
+<section>
 <h2>Qué hago exactamente</h2>
 
 <div class="card">
 <p>No se trata de diseñar por diseñar.</p>
+
 <p>Se trata de mover tu contenido todos los días.</p>
+
 <p>Para que llegue a personas reales y genere conversaciones.</p>
+
+<p>Ese es el trabajo.</p>
 </div>
 </section>
 
 <!-- KIT -->
-<section class="reveal">
+<section>
 <h2>Kit de Movimiento Semanal</h2>
 
 <div class="card">
 <p><strong>$10.000 🇦🇷 / $10 USD 🌐</strong></p>
 
-<p>Recursos visuales y estratégicos todas las semanas.</p>
+<p>Este kit está pensado para que tengas recursos visuales y estratégicos cada semana.</p>
 
 <p><strong>Incluye:</strong></p>
 
 <p><u>Entrega única:</u></p>
-<p>✔ Plantilla tipo menú optimizada</p>
-<p>✔ Flyer listo para redes</p>
-<p>✔ Perfil + portada</p>
+<p>✔ Plantilla tipo menú optimizada.</p>
+<p>✔ Flyer listo para redes.</p>
+<p>✔ Imagen de perfil + portada.</p>
 
 <p><u>Entrega semanal:</u></p>
-<p>✔ Texto vendedor</p>
-<p>✔ 2 guiones estratégicos</p>
+<p>✔ Texto vendedor listo para usar.</p>
+<p>✔ 2 guiones estratégicos con prompts.</p>
 
-<p><strong>Entrega en 48 hs</strong></p>
+<p><strong>Entrega en 48 hs.</strong></p>
 
-<p><strong>👉 Gratis con tu plan</strong></p>
+<p>La idea no es que se vea lindo… sino que venda más.</p>
+
+<p><strong>👉 Este kit es GRATIS al contratar un plan.</strong></p>
 </div>
 </section>
 
 <!-- OFERTA -->
-<section class="reveal">
+<section>
 <h2>Conocenos en 15 días</h2>
 
 <div class="card">
-<p>• Flyer + reel con voz en off</p>
-<p>• Carrusel de regalo</p>
-<p>• Activación diaria</p>
+<p>Durante 15 días trabajamos así:</p>
 
-<p>Movimiento real. No solo contenido.</p>
+<p>• Creamos un flyer + un reel con voz en off.</p>
+<p>• Sumamos un carrusel de regalo.</p>
+<p>• Activamos ese contenido todos los días.</p>
 
-<p><strong>💰 $50.000 🇦🇷 / $50 USD 🌐</strong></p>
+<p>Lo importante no es la pieza.</p>
+<p>Es el movimiento constante.</p>
 
-<p>👉 Si funciona, extendemos otros 15 días sin costo</p>
+<p>📊 Esto genera visualizaciones reales y conversaciones.</p>
+
+<p>Los contenidos empiezan a responder desde el primer día y se potencian entre el día 3 y 4.</p>
+
+<p><strong>💰 Inversión: $50.000 🇦🇷 / $50 USD 🌐</strong></p>
+
+<p>👉 Si te gusta cómo responde, extendemos otros 15 días sin costo.</p>
+</div>
+</section>
+
+<!-- REFERENCIAS -->
+<section>
+<h2>Referencias</h2>
+
+<div class="card">
+
+<p><strong>Luisa Inés Vicente</strong><br>
+Profesional matriculada en gasista y plomería.<br>
+“Matías es uno de los pilares para difundir mis servicios en Mendoza.”<br>
++542614167638</p>
+
+<br>
+
+<p><strong>Stefano Leonel Barrera</strong><br>
+Gerente de sucursal en Medifé (Buenos Aires).<br>
+“Muy conforme con el trabajo y la metodología.”<br>
++542612064180</p>
+
+<br>
+
+<p><strong>Samantha Racziel</strong><br>
+Trainer de danzas creativas y entrenamientos fitness para gyms con rutinas personalizadas, en Madrid, España.<br>
+“Creatividad y movimiento es lo que necesitaba.”<br>
++34641201802</p>
+
 </div>
 </section>
 
 <!-- CTA -->
-<section class="reveal">
+<section>
 <h2>Movimiento o estancamiento</h2>
 
-<p>Tu contenido puede quedarse quieto… o empezar a generar resultados.</p>
+<p>
+Tu contenido puede quedarse quieto… o empezar a generar resultados.
+</p>
 
 <a href="https://wa.me/542613602948" class="btn">Empezar ahora</a>
 </section>
@@ -277,32 +324,25 @@ Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y g
 <a href="https://wa.me/542613602948" class="whatsapp">💬</a>
 
 <script>
-// LOADER CONTROL REAL
+// LOADER + ENTRADA SUAVE
 window.addEventListener("load",()=>{
 setTimeout(()=>{
 document.getElementById("loader").style.opacity="0";
+document.body.style.opacity="1";
 
 setTimeout(()=>{
 document.getElementById("loader").style.display="none";
 
-/* ACTIVAR HERO SIN SCROLL */
-document.getElementById("hero").classList.add("show");
+// ACTIVAR TODAS LAS SECCIONES AUTOMÁTICAMENTE
+document.querySelectorAll("section").forEach((el,i)=>{
+setTimeout(()=>{
+el.classList.add("visible");
+}, i * 150);
+});
 
 },800);
 
-},2500); // ⬅️ duración real: 2.5s
-});
-
-// SCROLL ANIMATIONS
-const reveals=document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll",()=>{
-reveals.forEach(r=>{
-const top=r.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-r.classList.add("active");
-}
-});
+},2500);
 });
 </script>
 
