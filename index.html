@@ -23,8 +23,6 @@ font-family:'DM Sans',sans-serif;
 background:var(--bg);
 color:var(--text);
 overflow-x:hidden;
-opacity:0;
-transition:opacity 1.5s ease;
 }
 
 /* LOADER */
@@ -36,13 +34,12 @@ background:#0B0B0F;
 display:flex;
 align-items:center;
 justify-content:center;
-flex-direction:column;
 z-index:9999;
 transition:opacity .8s ease;
 }
 
 .alchemy{
-font-size:42px;
+font-size:46px;
 animation:pulse 1.4s infinite ease-in-out;
 }
 
@@ -52,10 +49,42 @@ animation:pulse 1.4s infinite ease-in-out;
 100%{opacity:.3; transform:scale(1);}
 }
 
+/* HERO ENTRADA AUTOMÁTICA */
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+opacity:0;
+transform:translateY(40px);
+transition:all 1.2s ease;
+}
+
+.hero.show{
+opacity:1;
+transform:translateY(0);
+}
+
 /* TITULOS */
 h1,h2,h3{
 font-family:'Playfair Display',serif;
 text-align:center;
+}
+
+.hero h1{
+font-size:44px;
+line-height:1.6;
+}
+
+.hero h1 span{
+display:block;
+}
+
+.hero h1 span:last-child{
+color:var(--gold);
+font-weight:700;
 }
 
 p{
@@ -91,34 +120,7 @@ animation:lineGrow 1.5s ease forwards;
 to{width:70%;}
 }
 
-/* HERO */
-.hero{
-min-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-flex-direction:column;
-}
-
-.hero h1{
-font-size:44px;
-line-height:1.6;
-}
-
-.hero h1 span{
-display:block;
-}
-
-.hero h1 span:last-child{
-color:var(--gold);
-font-weight:700;
-}
-
-.hero p{
-margin-top:25px;
-}
-
+/* BOTON */
 .btn{
 margin-top:30px;
 padding:13px 30px;
@@ -148,7 +150,7 @@ transition:.4s;
 transform:translateY(-5px);
 }
 
-/* SCROLL */
+/* SCROLL SECTIONS */
 .reveal{
 opacity:0;
 transform:translateY(50px);
@@ -183,7 +185,7 @@ font-size:20px;
 </div>
 
 <!-- HERO -->
-<section class="hero reveal">
+<section class="hero" id="hero">
 <h1>
 <span>No es sólo CONTENIDO.</span>
 <span>Es MOVIMIENTO.</span>
@@ -202,13 +204,9 @@ Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y g
 
 <div class="card">
 <p>Esto no empezó como una agencia.</p>
-
 <p>Pixel Creativo fue un experimento real, construido desde cero.</p>
-
 <p>Ahí entendimos algo clave: el problema no es el contenido… es que nadie lo mueve.</p>
-
 <p>Ese proceso fue nuestra propia alquimia.</p>
-
 <p>Hoy TutLab es esa evolución convertida en sistema.</p>
 </div>
 </section>
@@ -279,18 +277,23 @@ Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y g
 <a href="https://wa.me/542613602948" class="whatsapp">💬</a>
 
 <script>
-// LOADER
+// LOADER CONTROL REAL
 window.addEventListener("load",()=>{
 setTimeout(()=>{
 document.getElementById("loader").style.opacity="0";
-document.body.style.opacity="1";
+
 setTimeout(()=>{
 document.getElementById("loader").style.display="none";
+
+/* ACTIVAR HERO SIN SCROLL */
+document.getElementById("hero").classList.add("show");
+
 },800);
-},800);
+
+},2500); // ⬅️ duración real: 2.5s
 });
 
-// SCROLL
+// SCROLL ANIMATIONS
 const reveals=document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll",()=>{
