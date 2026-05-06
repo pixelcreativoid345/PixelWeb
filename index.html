@@ -6,7 +6,7 @@
 
 <title>TutLab | Movimiento Digital Estratégico</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -16,12 +16,19 @@
 --glass:rgba(255,255,255,0.05);
 }
 
+/* BASE */
 body{
 margin:0;
 font-family:'Inter',sans-serif;
 background:var(--bg);
 color:var(--text);
 overflow-x:hidden;
+opacity:0;
+animation:fadePage 1.5s ease forwards;
+}
+
+@keyframes fadePage{
+to{opacity:1;}
 }
 
 h1,h2,h3{
@@ -29,9 +36,15 @@ font-family:'Playfair Display',serif;
 text-align:center;
 }
 
+p{
+line-height:1.7;
+font-size:16px;
+opacity:.9;
+}
+
 section{
-padding:80px 20px;
-max-width:1100px;
+padding:90px 20px;
+max-width:1000px;
 margin:auto;
 position:relative;
 }
@@ -46,43 +59,11 @@ width:0;
 height:1px;
 background:var(--gold);
 transform:translateX(-50%);
-animation:lineGrow 1.2s ease forwards;
+animation:lineGrow 1.5s ease forwards;
 }
 
 @keyframes lineGrow{
-to{width:80%;}
-}
-
-/* PRELOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#0B0B0F;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-
-.symbol{
-width:60px;
-height:60px;
-border:2px solid var(--gold);
-border-radius:50%;
-animation:pulse 1.2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);opacity:.6;}
-50%{transform:scale(1.2);opacity:1;}
-100%{transform:scale(1);opacity:.6;}
-}
-
-.fade-out{
-opacity:0;
-pointer-events:none;
-transition:.6s;
+to{width:70%;}
 }
 
 /* HERO */
@@ -97,7 +78,7 @@ flex-direction:column;
 
 .hero h1{
 font-size:42px;
-line-height:1.4;
+line-height:1.5;
 }
 
 .hero h1 span{
@@ -105,18 +86,18 @@ display:block;
 }
 
 .hero h1 span:last-child{
-font-weight:700;
 color:var(--gold);
+font-weight:700;
 }
 
 .hero p{
 max-width:600px;
-opacity:.85;
+margin-top:20px;
 }
 
 .btn{
-margin-top:20px;
-padding:12px 25px;
+margin-top:25px;
+padding:12px 28px;
 background:var(--gold);
 color:black;
 text-decoration:none;
@@ -125,27 +106,28 @@ transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-2px);
+transform:translateY(-3px);
 }
 
+/* CARDS */
 .card{
 background:var(--glass);
-padding:25px;
-border-radius:12px;
+padding:28px;
+border-radius:14px;
 backdrop-filter:blur(10px);
-margin-top:20px;
+margin-top:25px;
+transition:.4s;
 }
 
-.grid{
-display:grid;
-gap:20px;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.card:hover{
+transform:translateY(-4px);
 }
 
+/* ANIMACIONES SCROLL MÁS FLUIDAS */
 .reveal{
 opacity:0;
-transform:translateY(20px);
-transition:.6s;
+transform:translateY(40px) scale(.98);
+transition:all .9s ease;
 }
 
 .reveal.active{
@@ -153,6 +135,7 @@ opacity:1;
 transform:none;
 }
 
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -169,10 +152,7 @@ font-size:20px;
 
 <body>
 
-<div id="loader">
-<div class="symbol"></div>
-</div>
-
+<!-- HERO -->
 <section class="hero reveal">
 <h1>
 <span>No es sólo CONTENIDO.</span>
@@ -180,36 +160,51 @@ font-size:20px;
 </h1>
 
 <p>
-Activamos tus ideas para que circulen, lleguen a personas reales y generen conversaciones.
+Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y genera conversaciones reales.
 </p>
 
 <a href="https://wa.me/542613602948" class="btn">Hablar por WhatsApp</a>
 </section>
 
+<!-- HISTORIA -->
 <section class="reveal">
 <h2>De Pixel Creativo a TutLab</h2>
 
 <div class="card">
-<p>
-TutLab no nace de cero.
-</p>
 
-<p>
-Es la evolución de Pixel Creativo, un experimento real donde todo comenzó de forma artesanal.
-</p>
+<p>Esto no empezó como una agencia.</p>
 
-<p>
-Ese proceso fue nuestra propia prueba de Alquimia Digital:
-Tomar ideas simples, moverlas, ajustarlas y transformarlas en un sistema funcional.
-</p>
+<p>Pixel Creativo fue un experimento. Un proceso real donde todo se construyó desde cero, de forma artesanal.</p>
 
-<p>
-Hoy TutLab representa esa transformación.
-No como concepto… sino como evidencia.
-</p>
+<p>Ahí entendimos algo clave: el problema no es el contenido… es que nadie lo mueve.</p>
+
+<p>Ese proceso fue nuestra propia alquimia.</p>
+
+<p>Probar. Ajustar. Activar. Medir.</p>
+
+<p>Hoy TutLab es la evolución de ese camino. No como idea… sino como sistema probado.</p>
+
 </div>
 </section>
 
+<!-- EXPLICACIÓN CLARA -->
+<section class="reveal">
+<h2>Qué hago exactamente</h2>
+
+<div class="card">
+
+<p>No se trata de diseñar por diseñar.</p>
+
+<p>Se trata de agarrar tu contenido y hacerlo circular todos los días.</p>
+
+<p>Para que llegue a personas reales y genere conversaciones.</p>
+
+<p>Ese es el trabajo.</p>
+
+</div>
+</section>
+
+<!-- KIT -->
 <section class="reveal">
 <h2>Kit de Movimiento Semanal</h2>
 
@@ -222,37 +217,64 @@ No como concepto… sino como evidencia.
 <p><strong>Incluye:</strong></p>
 
 <p><u>Entrega única:</u></p>
-<p>✔ Plantilla estática tipo menú optimizada.</p>
-<p>✔ Flyer digital listo para redes.</p>
+<p>✔ Plantilla tipo menú optimizada.</p>
+<p>✔ Flyer listo para redes.</p>
 <p>✔ Imagen de perfil + portada.</p>
 
 <p><u>Entrega semanal:</u></p>
-<p>✔ Texto vendedor listo para copiar y pegar.</p>
+<p>✔ Texto vendedor listo para usar.</p>
 <p>✔ 2 guiones estratégicos con prompts.</p>
 
 <p><strong>Entrega en 48 hs.</strong></p>
 
-<p>La idea es que no solo se vea bien… sino que venda más. 🔥</p>
+<p>La idea no es que se vea lindo… sino que venda más.</p>
 
-<p><strong>👉 Gratis al contratar un plan.</strong></p>
+<p><strong>👉 Este kit es GRATIS al contratar un plan.</strong></p>
 
 </div>
 </section>
 
+<!-- OFERTA 15 DÍAS -->
+<section class="reveal">
+<h2>Conocenos en 15 días</h2>
+
+<div class="card">
+
+<p>Durante 15 días trabajamos así:</p>
+
+<p>• Creamos un flyer + un reel con voz en off.</p>
+<p>• Sumamos un carrusel de regalo.</p>
+<p>• Activamos ese contenido todos los días.</p>
+
+<p>Lo importante no es la pieza.</p>
+<p>Es el movimiento constante.</p>
+
+<p>📊 Esto genera visualizaciones reales y conversaciones.</p>
+
+<p>Los contenidos empiezan a responder desde el primer día y se potencian entre el día 3 y 4.</p>
+
+<p><strong>💰 Inversión: $50.000 🇦🇷 / $50 USD 🌐</strong></p>
+
+<p>👉 Si te gusta cómo responde, extendemos otros 15 días sin costo.</p>
+
+</div>
+</section>
+
+<!-- REFERENCIAS -->
 <section class="reveal">
 <h2>Referencias</h2>
 
 <div class="card">
 
 <p><strong>Luisa Inés Vicente</strong><br>
-Profesional matriculada en servicios de gasista y plomería.<br>
-“Matías es uno de los pilares para difundir mis servicios en todo Mendoza.”<br>
+Profesional matriculada en gasista y plomería.<br>
+“Matías es uno de los pilares para difundir mis servicios en Mendoza.”<br>
 +542614167638</p>
 
 <br>
 
 <p><strong>Stefano Leonel Barrera</strong><br>
-Gerente de sucursal en Medifé.<br>
+Gerente de sucursal en Medifé (Buenos Aires).<br>
 “Muy conforme con el trabajo y la metodología.”<br>
 +542612064180</p>
 
@@ -266,19 +288,21 @@ Trainer de danzas creativas y entrenamientos fitness para gyms con rutinas perso
 </div>
 </section>
 
+<!-- CTA -->
 <section class="reveal">
 <h2>Movimiento o estancamiento</h2>
-<p>Tu contenido puede quedarse quieto… o empezar a generar resultados.</p>
+
+<p>
+Tu contenido puede quedarse quieto…
+o empezar a generar resultados.
+</p>
+
 <a href="https://wa.me/542613602948" class="btn">Empezar ahora</a>
 </section>
 
 <a href="https://wa.me/542613602948" class="whatsapp">💬</a>
 
 <script>
-setTimeout(()=>{
-document.getElementById("loader").classList.add("fade-out");
-},1200);
-
 const reveals=document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll",()=>{
