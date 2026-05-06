@@ -4,114 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pixel Creativo | Alquimia Digital</title>
-<meta name="description" content="Activamos contenido para generar consultas reales. Sistema de difusión estratégica en Mendoza, Argentina y online.">
+<title>TutLab | Movimiento Digital Estratégico</title>
+<meta name="description" content="Activamos contenido para generar movimiento real. Diseño estratégico, difusión y crecimiento para emprendedores en Mendoza, Argentina y el mundo.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-  --bg:#0B0B0F;
-  --text:#F5F5F5;
-  --gold:#FFD166;
-  --glass:rgba(255,255,255,0.05);
+--bg:#0B0B0F;
+--text:#F5F5F5;
+--gold:#FFD166;
+--glass:rgba(255,255,255,0.05);
 }
 
 body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
+margin:0;
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
 }
 
 h1,h2,h3{
-  font-family:'Playfair Display',serif;
+font-family:'Playfair Display',serif;
 }
 
 section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-  transition:all .8s ease;
-}
-
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 22px;
-  background:var(--gold);
-  color:black;
-  border-radius:10px;
-  text-decoration:none;
-}
-
-.card{
-  background:var(--glass);
-  padding:25px;
-  border-radius:15px;
-  backdrop-filter:blur(10px);
-  margin-top:20px;
-}
-
-.accordion{
-  margin-top:10px;
-  cursor:pointer;
-  padding:12px;
-  background:rgba(255,255,255,0.08);
-  border-radius:8px;
-}
-
-.panel{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .5s ease;
-}
-
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  text-decoration:none;
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 /* PRELOADER */
 #loader{
-  position:fixed;
-  width:100%;
-  height:100vh;
-  background:#0B0B0F;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
+position:fixed;
+width:100%;
+height:100%;
+background:#0B0B0F;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:999;
+transition:opacity .6s ease;
 }
 
 .symbol{
-  width:40px;
-  height:40px;
-  border:2px solid var(--gold);
-  border-radius:50%;
-  animation:pulse 1.2s infinite;
+width:60px;
+height:60px;
+border:2px solid var(--gold);
+border-radius:50%;
+animation:pulse 1.2s infinite;
 }
 
 @keyframes pulse{
-  0%{opacity:.3; transform:scale(.9);}
-  50%{opacity:1; transform:scale(1.1);}
-  100%{opacity:.3; transform:scale(.9);}
+0%{transform:scale(1);opacity:.6;}
+50%{transform:scale(1.2);opacity:1;}
+100%{transform:scale(1);opacity:.6;}
+}
+
+.fade-out{
+opacity:0;
+pointer-events:none;
+}
+
+/* HERO */
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
+}
+
+.hero h1{
+font-size:42px;
+max-width:700px;
+}
+
+.hero p{
+max-width:600px;
+opacity:.8;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 25px;
+background:var(--gold);
+color:black;
+text-decoration:none;
+border-radius:8px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+/* CARDS */
+.card{
+background:var(--glass);
+padding:25px;
+border-radius:12px;
+backdrop-filter:blur(10px);
+margin-top:20px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+/* ANIMACIONES */
+.reveal{
+opacity:0;
+transform:translateY(20px);
+transition:all .6s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:20px;
 }
 
 </style>
@@ -120,160 +150,130 @@ section{
 <body>
 
 <div id="loader">
-  <div class="symbol"></div>
+<div class="symbol"></div>
 </div>
 
-<section class="fade">
-<h1>El contenido sin movimiento no genera resultados.</h1>
-<p>No se trata de publicar más. Se trata de activar mejor.</p>
+<!-- HERO -->
+<section class="hero reveal">
+<h1>No es contenido. Es movimiento.</h1>
+<p>Activamos tus ideas para que lleguen a personas reales y generen conversaciones.</p>
 <a href="https://wa.me/542613602948" class="btn">Hablar por WhatsApp</a>
 </section>
 
-<section class="fade">
+<!-- PROBLEMA -->
+<section class="reveal">
 <h2>¿Qué está pasando hoy?</h2>
-<p>Muchos negocios publican contenido de forma constante, pero no logran generar consultas reales.</p>
-<p>El problema no es la cantidad. Es la falta de dirección y activación.</p>
+<p>Muchos negocios publican… pero no pasa nada.</p>
+<p>No es falta de contenido. Es falta de movimiento.</p>
 </section>
 
-<section class="fade">
-<h2>Contenido en movimiento</h2>
-<p>El contenido no está hecho para quedarse quieto. Cuando se activa correctamente, empieza a circular, a llegar y a generar respuesta.</p>
-</section>
-
-<section class="fade">
+<!-- CONCEPTO -->
+<section class="reveal">
 <h2>Alquimia Digital</h2>
-<p>Un sistema pensado para transformar visibilidad en conversaciones reales.</p>
+<p>Transformamos contenido en circulación, visibilidad en interacción y presencia en consultas reales.</p>
 </section>
 
-<section class="fade">
-<h2>Cómo funciona</h2>
-<ol>
-<li>Definimos el enfoque.</li>
-<li>Creamos contenido estratégico.</li>
-<li>Activamos el contenido en redes.</li>
-<li>Aplicamos refuerzo para generar movimiento.</li>
-</ol>
-</section>
-
-<section class="fade">
-<h2>Planes</h2>
+<!-- KIT -->
+<section class="reveal">
+<h2>Kit de Movimiento Semanal</h2>
 
 <div class="card">
-<h3>Plan Impulso — 15 días hábiles</h3>
-
-<p><strong>Precio de lista:</strong> $35.000 / $75.000</p>
-<p><strong>Precio actual:</strong> $25.000 / $55.000</p>
-
-<div class="accordion">Ver detalle completo</div>
-<div class="panel">
-
-<p><strong>Opción A — Difusión Orgánica</strong></p>
-<p>Incluye:</p>
-<ul>
-<li>15 días hábiles de difusión activa.</li>
-<li>Activación manual del contenido.</li>
-<li>6 días de difusión intensiva distribuidos estratégicamente.</li>
-</ul>
-
-<p><strong>Opción B — Difusión Reforzada</strong></p>
-<ul>
-<li>15 días hábiles de difusión activa.</li>
-<li>Activación manual completa.</li>
-<li>9 días de difusión intensiva.</li>
-<li>3 días con publicidad paga (Meta Ads).</li>
-</ul>
-
-<p><strong>Incluye:</strong> 1 flyer estratégico.</p>
-
-<p><strong>No incluye:</strong> Producción adicional de piezas.</p>
-<p>Las piezas extra se cotizan por separado.</p>
-
-</div>
-</div>
-
-<div class="card">
-<h3>Plan Mensual — Crecimiento sostenido</h3>
-
-<p><strong>Precio de lista:</strong> $110.000</p>
-<p><strong>Precio actual:</strong> $77.000</p>
-
-<div class="accordion">Ver detalle completo</div>
-<div class="panel">
+<p><strong>$10.000 🇦🇷 / $10 USD 🌐</strong></p>
 
 <p>Incluye:</p>
+
 <ul>
-<li>Difusión continua en días hábiles.</li>
-<li>3 días intensivos por semana.</li>
-<li>Activación manual constante.</li>
+<li>Plantilla menú optimizada</li>
+<li>Flyer digital listo</li>
+<li>Imagen de perfil + portada</li>
+<li>Texto vendedor listo</li>
+<li>2 guiones estratégicos</li>
 </ul>
 
-<p><strong>Contenido incluido:</strong></p>
-<ul>
-<li>1 flyer.</li>
-<li>1 reel con voz en off.</li>
-</ul>
+<p><strong>Entrega en 48 hs</strong></p>
 
-<p><strong>Publicidad incluida:</strong></p>
-<ul>
-<li>$20.000 mensuales.</li>
-<li>Distribuidos en 4 campañas de $5.000.</li>
-</ul>
-
-<p><strong>Resultados esperados:</strong></p>
-<ul>
-<li>Primeros movimientos entre 4 y 7 días.</li>
-<li>Mayor impacto a partir de los 15 días.</li>
-</ul>
-
-<p><strong>Bonus:</strong></p>
-<p>Página web simple (una sola sección), similar a esta, adaptada a tu negocio.</p>
-<p>Disponible sin costo al contratar 3 meses.</p>
-
+<p>👉 Incluido GRATIS con cualquier plan.</p>
 </div>
-</div>
-
 </section>
 
-<section class="fade">
+<!-- OFERTA -->
+<section class="reveal">
+<h2>Conocenos en 15 días</h2>
+
+<div class="card">
+<p>Durante 15 días trabajamos así:</p>
+
+<ul>
+<li>Flyer + Reel con voz</li>
+<li>Carrusel de regalo</li>
+<li>Difusión diaria dentro del sistema</li>
+</ul>
+
+<p>Esto genera movimiento real y conversaciones.</p>
+
+<p><strong>Inversión: $50.000 🇦🇷 / $50 USD 🌐</strong></p>
+
+<p>👉 Si funciona, extendemos otros 15 días sin costo.</p>
+</div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="reveal">
 <h2>Servicios adicionales</h2>
-<p>Se pueden solicitar piezas individuales o packs completos para redes.</p>
-<p>Al combinar servicios, se accede a mejores condiciones.</p>
+
+<div class="grid">
+<div class="card">Edición audiovisual</div>
+<div class="card">Reels y YouTube</div>
+<div class="card">Diseño web</div>
+<div class="card">Planes mensuales</div>
+</div>
 </section>
 
-<section class="fade">
-<h2>Condiciones</h2>
-<p>Los precios promocionales se mantienen hasta junio.</p>
-<p>Luego se vuelve al precio de lista.</p>
-<p>Los cupos son limitados y el trabajo es personalizado.</p>
+<!-- REFERENCIAS -->
+<section class="reveal">
+<h2>Referencias</h2>
+
+<div class="card">
+<p><strong>Luisa Vicente</strong><br>
+“Matías cumple su palabra y es clave para difundir mis servicios.”</p>
+
+<p><strong>Stefano Barrera</strong><br>
+Gerente Medifé Buenos Aires<br>
++542612064180</p>
+
+<p><strong>Samantha Racziel</strong><br>
+Madrid, España<br>
++34641201802</p>
+</div>
 </section>
 
-<section class="fade">
-<h2>Si tu negocio está quieto, podemos activarlo.</h2>
-<a href="https://wa.me/542613602948" class="btn">Iniciar conversación</a>
+<!-- CTA -->
+<section class="reveal">
+<h2>Si tu negocio está quieto…</h2>
+<p>Podemos moverlo.</p>
+<a href="https://wa.me/542613602948" class="btn">Escribirme ahora</a>
 </section>
 
 <a href="https://wa.me/542613602948" class="whatsapp">💬</a>
 
 <script>
+
+// loader
 setTimeout(()=>{
- document.getElementById("loader").style.display="none";
+document.getElementById("loader").classList.add("fade-out");
 },1200);
 
-document.querySelectorAll('.accordion').forEach(btn=>{
- btn.addEventListener('click',()=>{
-  let panel=btn.nextElementSibling;
-  panel.style.maxHeight=panel.style.maxHeight?null:panel.scrollHeight+"px";
- });
+// scroll animation
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+reveals.forEach(r=>{
+const top=r.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+r.classList.add("active");
+}
+});
 });
 
-const faders=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
- faders.forEach(el=>{
-  if(el.getBoundingClientRect().top<window.innerHeight-100){
-    el.classList.add('show');
-  }
- });
-});
 </script>
 
 </body>
