@@ -6,7 +6,7 @@
 
 <title>TutLab | Movimiento Digital Estratégico</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -19,29 +19,54 @@
 /* BASE */
 body{
 margin:0;
-font-family:'Inter',sans-serif;
+font-family:'DM Sans',sans-serif;
 background:var(--bg);
 color:var(--text);
 overflow-x:hidden;
 opacity:0;
-animation:fadePage 1.5s ease forwards;
+transition:opacity 1.5s ease;
 }
 
-@keyframes fadePage{
-to{opacity:1;}
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#0B0B0F;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+z-index:9999;
+transition:opacity .8s ease;
 }
 
+.alchemy{
+font-size:42px;
+animation:pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pulse{
+0%{opacity:.3; transform:scale(1);}
+50%{opacity:1; transform:scale(1.2);}
+100%{opacity:.3; transform:scale(1);}
+}
+
+/* TITULOS */
 h1,h2,h3{
 font-family:'Playfair Display',serif;
 text-align:center;
 }
 
 p{
-line-height:1.7;
-font-size:16px;
+line-height:1.8;
+font-size:17px;
 opacity:.9;
+max-width:650px;
+margin:auto;
 }
 
+/* SECTIONS */
 section{
 padding:90px 20px;
 max-width:1000px;
@@ -49,7 +74,7 @@ margin:auto;
 position:relative;
 }
 
-/* LÍNEAS DORADAS */
+/* LINEA DORADA */
 section::before{
 content:"";
 position:absolute;
@@ -77,8 +102,8 @@ flex-direction:column;
 }
 
 .hero h1{
-font-size:42px;
-line-height:1.5;
+font-size:44px;
+line-height:1.6;
 }
 
 .hero h1 span{
@@ -91,18 +116,18 @@ font-weight:700;
 }
 
 .hero p{
-max-width:600px;
-margin-top:20px;
+margin-top:25px;
 }
 
 .btn{
-margin-top:25px;
-padding:12px 28px;
+margin-top:30px;
+padding:13px 30px;
 background:var(--gold);
 color:black;
 text-decoration:none;
 border-radius:8px;
 transition:.3s;
+font-weight:500;
 }
 
 .btn:hover{
@@ -112,22 +137,22 @@ transform:translateY(-3px);
 /* CARDS */
 .card{
 background:var(--glass);
-padding:28px;
-border-radius:14px;
-backdrop-filter:blur(10px);
-margin-top:25px;
+padding:30px;
+border-radius:16px;
+backdrop-filter:blur(12px);
+margin-top:30px;
 transition:.4s;
 }
 
 .card:hover{
-transform:translateY(-4px);
+transform:translateY(-5px);
 }
 
-/* ANIMACIONES SCROLL MÁS FLUIDAS */
+/* SCROLL */
 .reveal{
 opacity:0;
-transform:translateY(40px) scale(.98);
-transition:all .9s ease;
+transform:translateY(50px);
+transition:all 1s ease;
 }
 
 .reveal.active{
@@ -152,6 +177,11 @@ font-size:20px;
 
 <body>
 
+<!-- LOADER -->
+<div id="loader">
+<div class="alchemy">⚗️</div>
+</div>
+
 <!-- HERO -->
 <section class="hero reveal">
 <h1>
@@ -171,36 +201,26 @@ Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y g
 <h2>De Pixel Creativo a TutLab</h2>
 
 <div class="card">
-
 <p>Esto no empezó como una agencia.</p>
 
-<p>Pixel Creativo fue un experimento. Un proceso real donde todo se construyó desde cero, de forma artesanal.</p>
+<p>Pixel Creativo fue un experimento real, construido desde cero.</p>
 
 <p>Ahí entendimos algo clave: el problema no es el contenido… es que nadie lo mueve.</p>
 
 <p>Ese proceso fue nuestra propia alquimia.</p>
 
-<p>Probar. Ajustar. Activar. Medir.</p>
-
-<p>Hoy TutLab es la evolución de ese camino. No como idea… sino como sistema probado.</p>
-
+<p>Hoy TutLab es esa evolución convertida en sistema.</p>
 </div>
 </section>
 
-<!-- EXPLICACIÓN CLARA -->
+<!-- EXPLICACIÓN -->
 <section class="reveal">
 <h2>Qué hago exactamente</h2>
 
 <div class="card">
-
 <p>No se trata de diseñar por diseñar.</p>
-
-<p>Se trata de agarrar tu contenido y hacerlo circular todos los días.</p>
-
+<p>Se trata de mover tu contenido todos los días.</p>
 <p>Para que llegue a personas reales y genere conversaciones.</p>
-
-<p>Ese es el trabajo.</p>
-
 </div>
 </section>
 
@@ -209,82 +229,41 @@ Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y g
 <h2>Kit de Movimiento Semanal</h2>
 
 <div class="card">
-
 <p><strong>$10.000 🇦🇷 / $10 USD 🌐</strong></p>
 
-<p>Este kit está pensado para que tengas recursos visuales y estratégicos cada semana.</p>
+<p>Recursos visuales y estratégicos todas las semanas.</p>
 
 <p><strong>Incluye:</strong></p>
 
 <p><u>Entrega única:</u></p>
-<p>✔ Plantilla tipo menú optimizada.</p>
-<p>✔ Flyer listo para redes.</p>
-<p>✔ Imagen de perfil + portada.</p>
+<p>✔ Plantilla tipo menú optimizada</p>
+<p>✔ Flyer listo para redes</p>
+<p>✔ Perfil + portada</p>
 
 <p><u>Entrega semanal:</u></p>
-<p>✔ Texto vendedor listo para usar.</p>
-<p>✔ 2 guiones estratégicos con prompts.</p>
+<p>✔ Texto vendedor</p>
+<p>✔ 2 guiones estratégicos</p>
 
-<p><strong>Entrega en 48 hs.</strong></p>
+<p><strong>Entrega en 48 hs</strong></p>
 
-<p>La idea no es que se vea lindo… sino que venda más.</p>
-
-<p><strong>👉 Este kit es GRATIS al contratar un plan.</strong></p>
-
+<p><strong>👉 Gratis con tu plan</strong></p>
 </div>
 </section>
 
-<!-- OFERTA 15 DÍAS -->
+<!-- OFERTA -->
 <section class="reveal">
 <h2>Conocenos en 15 días</h2>
 
 <div class="card">
+<p>• Flyer + reel con voz en off</p>
+<p>• Carrusel de regalo</p>
+<p>• Activación diaria</p>
 
-<p>Durante 15 días trabajamos así:</p>
+<p>Movimiento real. No solo contenido.</p>
 
-<p>• Creamos un flyer + un reel con voz en off.</p>
-<p>• Sumamos un carrusel de regalo.</p>
-<p>• Activamos ese contenido todos los días.</p>
+<p><strong>💰 $50.000 🇦🇷 / $50 USD 🌐</strong></p>
 
-<p>Lo importante no es la pieza.</p>
-<p>Es el movimiento constante.</p>
-
-<p>📊 Esto genera visualizaciones reales y conversaciones.</p>
-
-<p>Los contenidos empiezan a responder desde el primer día y se potencian entre el día 3 y 4.</p>
-
-<p><strong>💰 Inversión: $50.000 🇦🇷 / $50 USD 🌐</strong></p>
-
-<p>👉 Si te gusta cómo responde, extendemos otros 15 días sin costo.</p>
-
-</div>
-</section>
-
-<!-- REFERENCIAS -->
-<section class="reveal">
-<h2>Referencias</h2>
-
-<div class="card">
-
-<p><strong>Luisa Inés Vicente</strong><br>
-Profesional matriculada en gasista y plomería.<br>
-“Matías es uno de los pilares para difundir mis servicios en Mendoza.”<br>
-+542614167638</p>
-
-<br>
-
-<p><strong>Stefano Leonel Barrera</strong><br>
-Gerente de sucursal en Medifé (Buenos Aires).<br>
-“Muy conforme con el trabajo y la metodología.”<br>
-+542612064180</p>
-
-<br>
-
-<p><strong>Samantha Racziel</strong><br>
-Trainer de danzas creativas y entrenamientos fitness para gyms con rutinas personalizadas, en Madrid, España.<br>
-“Creatividad y movimiento es lo que necesitaba.”<br>
-+34641201802</p>
-
+<p>👉 Si funciona, extendemos otros 15 días sin costo</p>
 </div>
 </section>
 
@@ -292,10 +271,7 @@ Trainer de danzas creativas y entrenamientos fitness para gyms con rutinas perso
 <section class="reveal">
 <h2>Movimiento o estancamiento</h2>
 
-<p>
-Tu contenido puede quedarse quieto…
-o empezar a generar resultados.
-</p>
+<p>Tu contenido puede quedarse quieto… o empezar a generar resultados.</p>
 
 <a href="https://wa.me/542613602948" class="btn">Empezar ahora</a>
 </section>
@@ -303,6 +279,18 @@ o empezar a generar resultados.
 <a href="https://wa.me/542613602948" class="whatsapp">💬</a>
 
 <script>
+// LOADER
+window.addEventListener("load",()=>{
+setTimeout(()=>{
+document.getElementById("loader").style.opacity="0";
+document.body.style.opacity="1";
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},800);
+},800);
+});
+
+// SCROLL
 const reveals=document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll",()=>{
