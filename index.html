@@ -1,349 +1,1058 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>TutLab | Movimiento Digital Estratégico</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="TutLab transforma ideas en contenido que se mueve, conecta y genera conversaciones reales. Diseño estratégico, activación y movimiento digital."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --bg:#0B0B0F;
+--bg-soft:#111117;
 --text:#F5F5F5;
+--text-soft:rgba(245,245,245,.78);
 --gold:#FFD166;
+--gold-soft:rgba(255,209,102,.18);
 --glass:rgba(255,255,255,0.05);
+--border:rgba(255,255,255,0.08);
+
+--radius:24px;
+--transition:all .5s ease;
 }
 
-/* BASE */
-body{
+/* RESET */
+
+*{
 margin:0;
-font-family:'DM Sans',sans-serif;
-background:var(--bg);
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:
+radial-gradient(circle at top, rgba(255,209,102,.06), transparent 30%),
+linear-gradient(to bottom, #0B0B0F, #0F1015);
 color:var(--text);
+font-family:'DM Sans',sans-serif;
 overflow-x:hidden;
 opacity:0;
 transition:opacity 1.2s ease;
 }
 
 /* LOADER */
+
 #loader{
 position:fixed;
-width:100%;
-height:100%;
+inset:0;
 background:#0B0B0F;
 display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
-z-index:9999;
-transition:opacity .8s ease;
+z-index:999999;
+transition:opacity .9s ease;
 }
 
-.alchemy{
-font-size:50px;
-animation:pulse 1.5s infinite ease-in-out;
+.loader-symbol{
+font-size:60px;
+animation:alchemy 1.5s ease-in-out infinite;
+filter:drop-shadow(0 0 18px rgba(255,209,102,.35));
 }
 
-@keyframes pulse{
-0%{opacity:.3; transform:scale(1);}
-50%{opacity:1; transform:scale(1.25);}
-100%{opacity:.3; transform:scale(1);}
+.loader-text{
+margin-top:20px;
+font-size:14px;
+letter-spacing:3px;
+text-transform:uppercase;
+opacity:.6;
 }
 
-/* TIPOGRAFÍA */
+@keyframes alchemy{
+0%{
+opacity:.3;
+transform:scale(1);
+}
+50%{
+opacity:1;
+transform:scale(1.18);
+}
+100%{
+opacity:.3;
+transform:scale(1);
+}
+}
+
+/* BACKGROUND DETAILS */
+
+.bg-orb{
+position:fixed;
+border-radius:50%;
+filter:blur(120px);
+pointer-events:none;
+z-index:-1;
+opacity:.18;
+}
+
+.bg-orb.one{
+width:300px;
+height:300px;
+background:#FFD166;
+top:-100px;
+right:-100px;
+}
+
+.bg-orb.two{
+width:260px;
+height:260px;
+background:#6d4cff;
+bottom:-100px;
+left:-100px;
+opacity:.10;
+}
+
+/* TYPOGRAPHY */
+
 h1,h2,h3{
 font-family:'Playfair Display',serif;
-text-align:center;
+font-weight:700;
+letter-spacing:.3px;
+}
+
+h1{
+font-size:clamp(42px,7vw,74px);
+line-height:1.15;
+}
+
+h2{
+font-size:clamp(30px,5vw,52px);
+line-height:1.2;
+margin-bottom:25px;
 }
 
 p{
-line-height:1.9;
 font-size:17px;
-opacity:.9;
-max-width:680px;
-margin:auto;
+line-height:1.95;
+color:var(--text-soft);
 }
 
-/* SECCIONES */
+/* LAYOUT */
+
+main{
+width:100%;
+position:relative;
+}
+
 section{
-padding:100px 20px;
-max-width:1000px;
+position:relative;
+width:100%;
+padding:120px 24px;
+overflow:hidden;
+}
+
+.container{
+width:100%;
+max-width:1180px;
 margin:auto;
 position:relative;
-opacity:0;
-transform:translateY(60px);
-transition:all 1.2s ease;
+z-index:2;
 }
 
-section.visible{
-opacity:1;
-transform:none;
-}
+/* GOLD LINES */
 
-/* LÍNEAS DORADAS MEJORADAS */
-section::before{
-content:"";
-position:absolute;
-top:0;
-left:50%;
-width:0;
+.section-line{
+width:0%;
 height:1px;
-background:linear-gradient(90deg, transparent, var(--gold), transparent);
-transform:translateX(-50%);
+margin:0 auto 60px;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,209,102,.8),
+transparent
+);
 animation:lineGrow 1.8s ease forwards;
 }
 
 @keyframes lineGrow{
-to{width:75%;}
+to{
+width:78%;
+}
 }
 
 /* HERO */
+
 .hero{
-min-height:90vh;
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-flex-direction:column;
+padding-top:140px;
+padding-bottom:140px;
 }
 
-.hero h1{
-font-size:46px;
-line-height:1.6;
-letter-spacing:.5px;
+.hero-content{
+max-width:920px;
+margin:auto;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:28px;
+animation:heroEntry 1.2s ease forwards;
+opacity:0;
+transform:translateY(60px);
+}
+
+@keyframes heroEntry{
+to{
+opacity:1;
+transform:none;
+}
 }
 
 .hero h1 span{
 display:block;
 }
 
-.hero h1 span:last-child{
-color:var(--gold);
-font-weight:700;
+.hero h1 .gold{
+background:linear-gradient(
+90deg,
+#FFD166,
+#ffe7a1
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-margin-top:25px;
+max-width:720px;
+font-size:19px;
 }
 
-/* BOTÓN */
+.hero-sub{
+font-size:14px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:rgba(255,209,102,.7);
+}
+
+/* BUTTONS */
+
+.btn-group{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:16px;
+margin-top:10px;
+}
+
 .btn{
-margin-top:30px;
-padding:14px 32px;
-background:var(--gold);
-color:black;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:16px 30px;
+border-radius:14px;
+font-weight:600;
 text-decoration:none;
-border-radius:10px;
-transition:.3s;
-font-weight:500;
+transition:var(--transition);
+font-size:15px;
+min-width:210px;
+border:1px solid transparent;
 }
 
-.btn:hover{
+.btn-primary{
+background:linear-gradient(
+135deg,
+#FFD166,
+#f0b93c
+);
+color:#111;
+box-shadow:0 10px 30px rgba(255,209,102,.18);
+}
+
+.btn-primary:hover{
 transform:translateY(-4px);
-box-shadow:0 10px 30px rgba(255,209,102,0.3);
+box-shadow:0 18px 40px rgba(255,209,102,.24);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+color:var(--text);
+backdrop-filter:blur(10px);
+}
+
+.btn-secondary:hover{
+transform:translateY(-4px);
+background:rgba(255,255,255,.07);
+}
+
+/* SCROLL INDICATOR */
+
+.scroll-indicator{
+margin-top:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+opacity:.65;
+animation:float 2.5s ease-in-out infinite;
+}
+
+.scroll-indicator span{
+font-size:12px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.scroll-line{
+width:1px;
+height:50px;
+background:linear-gradient(
+to bottom,
+rgba(255,209,102,.9),
+transparent
+);
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(8px);}
+100%{transform:translateY(0);}
 }
 
 /* CARDS */
+
 .card{
-background:var(--glass);
-padding:32px;
-border-radius:16px;
-backdrop-filter:blur(14px);
-margin-top:30px;
-transition:.4s;
-border:1px solid rgba(255,255,255,0.05);
+position:relative;
+background:linear-gradient(
+180deg,
+rgba(255,255,255,.05),
+rgba(255,255,255,.025)
+);
+border:1px solid var(--border);
+backdrop-filter:blur(16px);
+padding:42px;
+border-radius:var(--radius);
+overflow:hidden;
+transition:var(--transition);
+}
+
+.card::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+135deg,
+rgba(255,209,102,.08),
+transparent 30%
+);
+pointer-events:none;
 }
 
 .card:hover{
 transform:translateY(-6px);
+border-color:rgba(255,209,102,.22);
+}
+
+/* CONTENT BLOCKS */
+
+.text-block{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.center{
+text-align:center;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+gap:28px;
+}
+
+.grid-2{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+/* PRICE */
+
+.price{
+font-size:34px;
+font-weight:700;
+line-height:1.3;
+color:var(--gold);
+margin-bottom:10px;
+}
+
+/* LISTS */
+
+.feature-list{
+display:flex;
+flex-direction:column;
+gap:16px;
+margin-top:10px;
+}
+
+.feature-list div{
+padding-left:10px;
+border-left:1px solid rgba(255,209,102,.28);
+}
+
+/* QUOTES */
+
+.quote{
+margin-top:18px;
+font-style:italic;
+color:#fff;
+}
+
+/* REFERENCES */
+
+.reference{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.reference strong{
+font-size:20px;
+color:#fff;
+}
+
+/* CTA FINAL */
+
+.cta-final{
+text-align:center;
+}
+
+.cta-final p{
+max-width:720px;
+margin:0 auto 30px;
+}
+
+/* FOOTER */
+
+footer{
+padding:60px 24px 90px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer p{
+font-size:14px;
+opacity:.6;
 }
 
 /* WHATSAPP */
+
 .whatsapp{
 position:fixed;
-bottom:20px;
 right:20px;
-background:#25D366;
-color:white;
-padding:15px;
+bottom:20px;
+width:60px;
+height:60px;
 border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(
+135deg,
+#25D366,
+#1da851
+);
+color:#fff;
+font-size:24px;
 text-decoration:none;
-font-size:20px;
+z-index:999;
+box-shadow:0 10px 30px rgba(37,211,102,.25);
+transition:var(--transition);
 }
+
+.whatsapp:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+/* REVEAL */
+
+.reveal{
+opacity:0;
+transform:translateY(80px);
+transition:
+opacity 1s ease,
+transform 1s ease;
+}
+
+.reveal.visible{
+opacity:1;
+transform:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:980px){
+
+.grid-2{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding-top:120px;
+padding-bottom:120px;
+}
+
+.card{
+padding:34px;
+}
+
+}
+
+@media(max-width:640px){
+
+section{
+padding:90px 20px;
+}
+
+.hero h1{
+line-height:1.2;
+}
+
+.hero p{
+font-size:17px;
+}
+
+p{
+font-size:16px;
+line-height:1.85;
+}
+
+.card{
+padding:28px 24px;
+}
+
+.btn{
+width:100%;
+}
+
+.btn-group{
+width:100%;
+}
+
+.price{
+font-size:28px;
+}
+
+.whatsapp{
+width:56px;
+height:56px;
+font-size:22px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <!-- LOADER -->
+
 <div id="loader">
-<div class="alchemy">⚗️</div>
+<div class="loader-symbol">⚗️</div>
+<div class="loader-text">Activando Movimiento</div>
 </div>
 
+<!-- BG -->
+
+<div class="bg-orb one"></div>
+<div class="bg-orb two"></div>
+
+<main>
+
 <!-- HERO -->
+
 <section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-sub">
+TutLab • Alquimia Digital
+</div>
+
 <h1>
 <span>No es sólo CONTENIDO.</span>
-<span>Es MOVIMIENTO.</span>
+<span class="gold">Es MOVIMIENTO.</span>
 </h1>
 
 <p>
-Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y genera conversaciones reales.
+Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y genera conversaciones reales. Diseño estratégico, activación visual y movimiento digital pensado para crecer.
 </p>
 
-<a href="https://wa.me/542613602948" class="btn">Hablar por WhatsApp</a>
+<div class="btn-group">
+
+<a href="https://wa.me/542613602948" class="btn btn-primary">
+Hablar por WhatsApp
+</a>
+
+<a href="#historia" class="btn btn-secondary">
+Conocer TutLab
+</a>
+
+</div>
+
+<div class="scroll-indicator">
+<span>Explorar</span>
+<div class="scroll-line"></div>
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- HISTORIA -->
-<section>
-<h2>De Pixel Creativo a TutLab</h2>
+
+<section id="historia" class="reveal">
+
+<div class="container">
+
+<div class="section-line"></div>
+
+<div class="grid grid-2">
+
+<div class="text-block">
+
+<h2>
+De Pixel Creativo a TutLab
+</h2>
+
+<p>
+Esto no empezó como una agencia.
+</p>
+
+<p>
+Pixel Creativo fue un experimento real, construido desde cero y de forma artesanal.
+</p>
+
+<p>
+Ahí entendimos algo clave: El problema no es el contenido… es que nadie lo mueve.
+</p>
+
+<p>
+Ese proceso fue nuestra propia alquimia digital.
+</p>
+
+</div>
 
 <div class="card">
-<p>Esto no empezó como una agencia.</p>
 
-<p>Pixel Creativo fue un experimento real, construido desde cero y de forma artesanal.</p>
+<div class="text-block">
 
-<p>Ahí entendimos algo clave: el problema no es el contenido… es que nadie lo mueve.</p>
+<p>
+Probar. Ajustar. Activar. Medir.
+</p>
 
-<p>Ese proceso fue nuestra propia alquimia digital.</p>
+<p>
+Hoy TutLab es la evolución de ese camino convertido en un sistema creativo y estratégico.
+</p>
 
-<p>Probar. Ajustar. Activar. Medir.</p>
+<p>
+No buscamos solamente diseñar piezas visuales. Buscamos generar movimiento, circulación y conversaciones reales alrededor de cada emprendimiento.
+</p>
 
-<p>Hoy TutLab es esa evolución convertida en un sistema.</p>
+<p>
+La idea no es publicar por publicar. La idea es activar presencia digital con intención.
+</p>
+
 </div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- EXPLICACIÓN -->
-<section>
-<h2>Qué hago exactamente</h2>
+<!-- QUÉ HACEMOS -->
 
-<div class="card">
-<p>No se trata de diseñar por diseñar.</p>
+<section class="reveal">
 
-<p>Se trata de mover tu contenido todos los días.</p>
+<div class="container">
 
-<p>Para que llegue a personas reales y genere conversaciones.</p>
+<div class="section-line"></div>
 
-<p>Ese es el trabajo.</p>
+<div class="center text-block">
+
+<h2>
+Qué hago exactamente
+</h2>
+
+<p>
+No se trata de diseñar por diseñar.
+</p>
+
+<p>
+Se trata de agarrar tu contenido y hacerlo circular todos los días.
+</p>
+
+<p>
+Para que llegue a personas reales y genere conversaciones.
+</p>
+
+<p>
+Ese es el trabajo.
+</p>
+
 </div>
+
+</div>
+
 </section>
 
 <!-- KIT -->
-<section>
-<h2>Kit de Movimiento Semanal</h2>
+
+<section class="reveal">
+
+<div class="container">
+
+<div class="section-line"></div>
 
 <div class="card">
-<p><strong>$10.000 🇦🇷 / $10 USD 🌐</strong></p>
 
-<p>Este kit está pensado para que tengas recursos visuales y estratégicos cada semana.</p>
+<div class="text-block">
 
-<p><strong>Incluye:</strong></p>
+<h2 class="center">
+Kit de Movimiento Semanal
+</h2>
 
-<p><u>Entrega única:</u></p>
-<p>✔ Plantilla tipo menú optimizada.</p>
-<p>✔ Flyer listo para redes.</p>
-<p>✔ Imagen de perfil + portada.</p>
-
-<p><u>Entrega semanal:</u></p>
-<p>✔ Texto vendedor listo para usar.</p>
-<p>✔ 2 guiones estratégicos con prompts.</p>
-
-<p><strong>Entrega en 48 hs.</strong></p>
-
-<p>La idea no es que se vea lindo… sino que venda más.</p>
-
-<p><strong>👉 Este kit es GRATIS al contratar un plan.</strong></p>
+<div class="price center">
+$10.000 🇦🇷 / $10 USD 🌐
 </div>
+
+<p class="center">
+Este kit está pensado para que tengas recursos visuales y estratégicos cada semana.
+</p>
+
+<div class="grid grid-2">
+
+<div>
+
+<h3>
+Entrega única
+</h3>
+
+<div class="feature-list">
+
+<div>
+✔ Plantilla estática tipo menú optimizada.
+</div>
+
+<div>
+✔ Flyer digital listo para WhatsApp, Instagram y Facebook.
+</div>
+
+<div>
+✔ Imagen de perfil + portada.
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<h3>
+Entrega semanal
+</h3>
+
+<div class="feature-list">
+
+<div>
+✔ Texto vendedor listo para copiar y pegar.
+</div>
+
+<div>
+✔ 2 guiones estratégicos con prompts.
+</div>
+
+<div>
+✔ Recursos pensados para reels, flyers y publicaciones.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<p>
+Entrega en 48 hs.
+</p>
+
+<p>
+La idea no es que se vea lindo… sino que venda más.
+</p>
+
+<p>
+👉 Este kit es GRATIS al contratar cualquier plan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- OFERTA -->
-<section>
-<h2>Conocenos en 15 días</h2>
+
+<section class="reveal">
+
+<div class="container">
+
+<div class="section-line"></div>
 
 <div class="card">
-<p>Durante 15 días trabajamos así:</p>
 
-<p>• Creamos un flyer + un reel con voz en off.</p>
-<p>• Sumamos un carrusel de regalo.</p>
-<p>• Activamos ese contenido todos los días.</p>
+<div class="text-block">
 
-<p>Lo importante no es la pieza.</p>
-<p>Es el movimiento constante.</p>
+<h2 class="center">
+Conocenos en 15 días
+</h2>
 
-<p>📊 Esto genera visualizaciones reales y conversaciones.</p>
+<p>
+Durante 15 días trabajamos así:
+</p>
 
-<p>Los contenidos empiezan a responder desde el primer día y se potencian entre el día 3 y 4.</p>
+<div class="feature-list">
 
-<p><strong>💰 Inversión: $50.000 🇦🇷 / $50 USD 🌐</strong></p>
-
-<p>👉 Si te gusta cómo responde, extendemos otros 15 días sin costo.</p>
+<div>
+• Creamos un flyer + un reel con voz en off.
 </div>
+
+<div>
+• Sumamos un carrusel de regalo.
+</div>
+
+<div>
+• Activamos ese contenido todos los días.
+</div>
+
+</div>
+
+<p>
+Lo importante no es la pieza.
+</p>
+
+<p>
+Es el movimiento constante.
+</p>
+
+<p>
+📊 Esto genera visualizaciones reales y conversaciones.
+</p>
+
+<p>
+Los contenidos empiezan a responder desde el primer día y se potencian entre el día 3 y 4.
+</p>
+
+<div class="price">
+💰 $50.000 🇦🇷 / $50 USD 🌐
+</div>
+
+<p>
+👉 Si te gusta cómo responde, extendemos otros 15 días sin costo.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- REFERENCIAS -->
-<section>
-<h2>Referencias</h2>
 
-<div class="card">
+<section class="reveal">
 
-<p><strong>Luisa Inés Vicente</strong><br>
-Profesional matriculada en gasista y plomería.<br>
-“Matías es uno de los pilares para difundir mis servicios en Mendoza.”<br>
-+542614167638</p>
+<div class="container">
 
-<br>
+<div class="section-line"></div>
 
-<p><strong>Stefano Leonel Barrera</strong><br>
-Gerente de sucursal en Medifé (Buenos Aires).<br>
-“Muy conforme con el trabajo y la metodología.”<br>
-+542612064180</p>
+<h2 class="center">
+Referencias
+</h2>
 
-<br>
+<div class="grid grid-2">
 
-<p><strong>Samantha Racziel</strong><br>
-Trainer de danzas creativas y entrenamientos fitness para gyms con rutinas personalizadas, en Madrid, España.<br>
-“Creatividad y movimiento es lo que necesitaba.”<br>
-+34641201802</p>
+<div class="card reference">
+
+<strong>
+Luisa Inés Vicente
+</strong>
+
+<p>
+Profesional matriculada en gasista y plomería.
+</p>
+
+<p class="quote">
+“Matías es uno de los pilares para difundir mis servicios en Mendoza.”
+</p>
+
+<p>
++542614167638
+</p>
 
 </div>
+
+<div class="card reference">
+
+<strong>
+Stefano Leonel Barrera
+</strong>
+
+<p>
+Gerente de sucursal en Medifé (Buenos Aires).
+</p>
+
+<p class="quote">
+“Muy conforme con el trabajo y la metodología.”
+</p>
+
+<p>
++542612064180
+</p>
+
+</div>
+
+<div class="card reference">
+
+<strong>
+Samantha Racziel
+</strong>
+
+<p>
+Entrenamientos personalizados deportivos para distintos niveles de entrenamiento con base musical destinados al bienestar y la salud.
+</p>
+
+<p class="quote">
+“Encontré el orden y la atención a los detalles que mi proyecto necesitaba para realizarse.”
+</p>
+
+<p>
++34641201802
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- CTA -->
-<section>
-<h2>Movimiento o estancamiento</h2>
+
+<section class="cta-final reveal">
+
+<div class="container">
+
+<div class="section-line"></div>
+
+<div class="text-block center">
+
+<h2>
+Movimiento o estancamiento
+</h2>
 
 <p>
 Tu contenido puede quedarse quieto… o empezar a generar resultados.
 </p>
 
-<a href="https://wa.me/542613602948" class="btn">Empezar ahora</a>
+<div class="btn-group">
+
+<a href="https://wa.me/542613602948" class="btn btn-primary">
+Empezar ahora
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<a href="https://wa.me/542613602948" class="whatsapp">💬</a>
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+TutLab • Todos los derechos reservados © 2026
+</p>
+
+</footer>
+
+</main>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/542613602948" class="whatsapp">
+💬
+</a>
 
 <script>
-// LOADER + ENTRADA SUAVE
+
+/* LOADER */
+
 window.addEventListener("load",()=>{
+
 setTimeout(()=>{
-document.getElementById("loader").style.opacity="0";
+
 document.body.style.opacity="1";
 
-setTimeout(()=>{
-document.getElementById("loader").style.display="none";
+const loader=document.getElementById("loader");
 
-// ACTIVAR TODAS LAS SECCIONES AUTOMÁTICAMENTE
-document.querySelectorAll("section").forEach((el,i)=>{
+loader.style.opacity="0";
+
+setTimeout(()=>{
+loader.style.display="none";
+},900);
+
+document.querySelectorAll(".reveal").forEach((el,i)=>{
+
 setTimeout(()=>{
 el.classList.add("visible");
-}, i * 150);
-});
+}, i * 120);
 
-},800);
+});
 
 },2500);
+
 });
+
 </script>
 
 </body>
