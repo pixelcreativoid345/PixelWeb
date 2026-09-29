@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TutLab | Movimiento Digital Estratégico</title>
+<title>TutLab | No es contenido. Es movimiento.</title>
 
-<meta name="description" content="TutLab transforma ideas en contenido que se mueve, conecta y genera conversaciones reales. Diseño estratégico, activación y movimiento digital."/>
+<meta name="description" content="TutLab es un laboratorio creativo y digital que ayuda a poner emprendimientos, propuestas e ideas en movimiento mediante contenido, distribución y experimentación.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,17 +19,14 @@
 --bg:#0B0B0F;
 --bg-soft:#111117;
 --text:#F5F5F5;
---text-soft:rgba(245,245,245,.78);
+--text-soft:rgba(245,245,245,.76);
 --gold:#FFD166;
---gold-soft:rgba(255,209,102,.18);
---glass:rgba(255,255,255,0.05);
---border:rgba(255,255,255,0.08);
-
+--gold-soft:rgba(255,209,102,.14);
+--border:rgba(255,255,255,.08);
+--glass:rgba(255,255,255,.045);
 --radius:24px;
---transition:all .5s ease;
+--transition:all .45s ease;
 }
-
-/* RESET */
 
 *{
 margin:0;
@@ -43,16 +40,15 @@ scroll-behavior:smooth;
 
 body{
 background:
-radial-gradient(circle at top, rgba(255,209,102,.06), transparent 30%),
-linear-gradient(to bottom, #0B0B0F, #0F1015);
+radial-gradient(circle at 15% 0%,rgba(255,209,102,.07),transparent 30%),
+radial-gradient(circle at 100% 80%,rgba(109,76,255,.06),transparent 30%),
+linear-gradient(to bottom,#0B0B0F,#0F1015);
 color:var(--text);
 font-family:'DM Sans',sans-serif;
 overflow-x:hidden;
 opacity:0;
-transition:opacity 1.2s ease;
+transition:opacity 1s ease;
 }
-
-/* LOADER */
 
 #loader{
 position:fixed;
@@ -63,39 +59,33 @@ align-items:center;
 justify-content:center;
 flex-direction:column;
 z-index:999999;
-transition:opacity .9s ease;
+transition:opacity .8s ease;
 }
 
 .loader-symbol{
-font-size:60px;
-animation:alchemy 1.5s ease-in-out infinite;
+font-size:58px;
+animation:alchemy 1.6s ease-in-out infinite;
 filter:drop-shadow(0 0 18px rgba(255,209,102,.35));
 }
 
 .loader-text{
-margin-top:20px;
-font-size:14px;
-letter-spacing:3px;
+margin-top:18px;
+font-size:12px;
+letter-spacing:4px;
 text-transform:uppercase;
-opacity:.6;
+opacity:.55;
 }
 
 @keyframes alchemy{
-0%{
+0%,100%{
 opacity:.3;
 transform:scale(1);
 }
 50%{
 opacity:1;
-transform:scale(1.18);
-}
-100%{
-opacity:.3;
-transform:scale(1);
+transform:scale(1.15);
 }
 }
-
-/* BACKGROUND DETAILS */
 
 .bg-orb{
 position:fixed;
@@ -103,52 +93,52 @@ border-radius:50%;
 filter:blur(120px);
 pointer-events:none;
 z-index:-1;
-opacity:.18;
 }
 
 .bg-orb.one{
-width:300px;
-height:300px;
+width:320px;
+height:320px;
 background:#FFD166;
-top:-100px;
-right:-100px;
+top:-140px;
+right:-120px;
+opacity:.13;
 }
 
 .bg-orb.two{
-width:260px;
-height:260px;
+width:280px;
+height:280px;
 background:#6d4cff;
-bottom:-100px;
-left:-100px;
-opacity:.10;
+bottom:-120px;
+left:-120px;
+opacity:.08;
 }
-
-/* TYPOGRAPHY */
 
 h1,h2,h3{
 font-family:'Playfair Display',serif;
 font-weight:700;
-letter-spacing:.3px;
+letter-spacing:.2px;
 }
 
 h1{
-font-size:clamp(42px,7vw,74px);
-line-height:1.15;
+font-size:clamp(44px,7vw,76px);
+line-height:1.12;
 }
 
 h2{
-font-size:clamp(30px,5vw,52px);
-line-height:1.2;
+font-size:clamp(31px,5vw,52px);
+line-height:1.18;
 margin-bottom:25px;
+}
+
+h3{
+font-size:22px;
 }
 
 p{
 font-size:17px;
-line-height:1.95;
+line-height:1.85;
 color:var(--text-soft);
 }
-
-/* LAYOUT */
 
 main{
 width:100%;
@@ -164,31 +154,27 @@ overflow:hidden;
 
 .container{
 width:100%;
-max-width:1180px;
+max-width:1120px;
 margin:auto;
 position:relative;
 z-index:2;
 }
 
-/* GOLD LINES */
-
 .section-line{
 width:0%;
 height:1px;
-margin:0 auto 60px;
+margin:0 auto 65px;
 background:linear-gradient(
 90deg,
 transparent,
 rgba(255,209,102,.8),
 transparent
 );
-animation:lineGrow 1.8s ease forwards;
+animation:lineGrow 1.5s ease forwards;
 }
 
 @keyframes lineGrow{
-to{
-width:78%;
-}
+to{width:78%;}
 }
 
 /* HERO */
@@ -199,20 +185,20 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding-top:140px;
-padding-bottom:140px;
+padding-top:120px;
+padding-bottom:100px;
 }
 
 .hero-content{
-max-width:920px;
+max-width:900px;
 margin:auto;
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:28px;
-animation:heroEntry 1.2s ease forwards;
+gap:26px;
+animation:heroEntry 1.1s ease forwards;
 opacity:0;
-transform:translateY(60px);
+transform:translateY(45px);
 }
 
 @keyframes heroEntry{
@@ -220,6 +206,13 @@ to{
 opacity:1;
 transform:none;
 }
+}
+
+.hero-sub{
+font-size:13px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:rgba(255,209,102,.72);
 }
 
 .hero h1 span{
@@ -241,11 +234,10 @@ max-width:720px;
 font-size:19px;
 }
 
-.hero-sub{
-font-size:14px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:rgba(255,209,102,.7);
+.hero-note{
+font-size:13px;
+letter-spacing:1px;
+opacity:.5;
 }
 
 /* BUTTONS */
@@ -254,22 +246,21 @@ color:rgba(255,209,102,.7);
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:16px;
-margin-top:10px;
+gap:14px;
+margin-top:8px;
 }
 
 .btn{
 display:inline-flex;
 align-items:center;
 justify-content:center;
-padding:16px 30px;
+padding:16px 28px;
 border-radius:14px;
 font-weight:600;
 text-decoration:none;
 transition:var(--transition);
 font-size:15px;
 min-width:210px;
-border:1px solid transparent;
 }
 
 .btn-primary{
@@ -279,17 +270,17 @@ background:linear-gradient(
 #f0b93c
 );
 color:#111;
-box-shadow:0 10px 30px rgba(255,209,102,.18);
+box-shadow:0 10px 30px rgba(255,209,102,.15);
 }
 
 .btn-primary:hover{
 transform:translateY(-4px);
-box-shadow:0 18px 40px rgba(255,209,102,.24);
+box-shadow:0 18px 40px rgba(255,209,102,.23);
 }
 
 .btn-secondary{
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.035);
+border:1px solid var(--border);
 color:var(--text);
 backdrop-filter:blur(10px);
 }
@@ -299,27 +290,27 @@ transform:translateY(-4px);
 background:rgba(255,255,255,.07);
 }
 
-/* SCROLL INDICATOR */
+/* SCROLL */
 
 .scroll-indicator{
-margin-top:40px;
+margin-top:35px;
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:12px;
-opacity:.65;
+gap:10px;
+opacity:.5;
 animation:float 2.5s ease-in-out infinite;
 }
 
 .scroll-indicator span{
-font-size:12px;
+font-size:11px;
 letter-spacing:2px;
 text-transform:uppercase;
 }
 
 .scroll-line{
 width:1px;
-height:50px;
+height:45px;
 background:linear-gradient(
 to bottom,
 rgba(255,209,102,.9),
@@ -328,9 +319,8 @@ transparent
 }
 
 @keyframes float{
-0%{transform:translateY(0);}
+0%,100%{transform:translateY(0);}
 50%{transform:translateY(8px);}
-100%{transform:translateY(0);}
 }
 
 /* CARDS */
@@ -340,7 +330,7 @@ position:relative;
 background:linear-gradient(
 180deg,
 rgba(255,255,255,.05),
-rgba(255,255,255,.025)
+rgba(255,255,255,.022)
 );
 border:1px solid var(--border);
 backdrop-filter:blur(16px);
@@ -357,30 +347,26 @@ inset:0;
 background:
 linear-gradient(
 135deg,
-rgba(255,209,102,.08),
-transparent 30%
+rgba(255,209,102,.07),
+transparent 32%
 );
 pointer-events:none;
 }
 
 .card:hover{
-transform:translateY(-6px);
-border-color:rgba(255,209,102,.22);
+transform:translateY(-5px);
+border-color:rgba(255,209,102,.2);
 }
-
-/* CONTENT BLOCKS */
 
 .text-block{
 display:flex;
 flex-direction:column;
-gap:22px;
+gap:20px;
 }
 
 .center{
 text-align:center;
 }
-
-/* GRID */
 
 .grid{
 display:grid;
@@ -391,59 +377,69 @@ gap:28px;
 grid-template-columns:repeat(2,minmax(0,1fr));
 }
 
-/* PRICE */
+.grid-3{
+grid-template-columns:repeat(3,minmax(0,1fr));
+}
 
-.price{
-font-size:34px;
-font-weight:700;
-line-height:1.3;
+/* LABEL */
+
+.label{
+display:inline-block;
+font-size:11px;
+letter-spacing:3px;
+text-transform:uppercase;
 color:var(--gold);
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
-/* LISTS */
+/* PROCESS */
 
-.feature-list{
-display:flex;
-flex-direction:column;
-gap:16px;
-margin-top:10px;
+.process-number{
+font-size:42px;
+font-family:'Playfair Display',serif;
+color:rgba(255,209,102,.65);
+margin-bottom:12px;
 }
 
-.feature-list div{
-padding-left:10px;
-border-left:1px solid rgba(255,209,102,.28);
+.process-card{
+min-height:230px;
 }
 
-/* QUOTES */
+/* EXPERIMENT */
+
+.experiment{
+border-color:rgba(255,209,102,.17);
+}
+
+.experiment-tag{
+display:inline-block;
+padding:7px 12px;
+border:1px solid rgba(255,209,102,.2);
+border-radius:30px;
+font-size:11px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--gold);
+margin-bottom:18px;
+}
+
+/* QUOTE */
 
 .quote{
-margin-top:18px;
 font-style:italic;
 color:#fff;
-}
-
-/* REFERENCES */
-
-.reference{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.reference strong{
 font-size:20px;
-color:#fff;
+line-height:1.6;
 }
 
-/* CTA FINAL */
+/* CTA */
 
 .cta-final{
 text-align:center;
 }
 
 .cta-final p{
-max-width:720px;
+max-width:700px;
 margin:0 auto 30px;
 }
 
@@ -456,8 +452,8 @@ border-top:1px solid rgba(255,255,255,.06);
 }
 
 footer p{
-font-size:14px;
-opacity:.6;
+font-size:13px;
+opacity:.5;
 }
 
 /* WHATSAPP */
@@ -481,7 +477,7 @@ color:#fff;
 font-size:24px;
 text-decoration:none;
 z-index:999;
-box-shadow:0 10px 30px rgba(37,211,102,.25);
+box-shadow:0 10px 30px rgba(37,211,102,.22);
 transition:var(--transition);
 }
 
@@ -493,10 +489,10 @@ transform:translateY(-5px) scale(1.05);
 
 .reveal{
 opacity:0;
-transform:translateY(80px);
+transform:translateY(70px);
 transition:
-opacity 1s ease,
-transform 1s ease;
+opacity .9s ease,
+transform .9s ease;
 }
 
 .reveal.visible{
@@ -508,13 +504,14 @@ transform:none;
 
 @media(max-width:980px){
 
-.grid-2{
+.grid-2,
+.grid-3{
 grid-template-columns:1fr;
 }
 
 .hero{
-padding-top:120px;
-padding-bottom:120px;
+padding-top:100px;
+padding-bottom:90px;
 }
 
 .card{
@@ -530,7 +527,7 @@ padding:90px 20px;
 }
 
 .hero h1{
-line-height:1.2;
+line-height:1.16;
 }
 
 .hero p{
@@ -539,11 +536,11 @@ font-size:17px;
 
 p{
 font-size:16px;
-line-height:1.85;
+line-height:1.8;
 }
 
 .card{
-padding:28px 24px;
+padding:28px 23px;
 }
 
 .btn{
@@ -552,10 +549,6 @@ width:100%;
 
 .btn-group{
 width:100%;
-}
-
-.price{
-font-size:28px;
 }
 
 .whatsapp{
@@ -575,10 +568,8 @@ font-size:22px;
 
 <div id="loader">
 <div class="loader-symbol">⚗️</div>
-<div class="loader-text">Activando Movimiento</div>
+<div class="loader-text">Activando movimiento</div>
 </div>
-
-<!-- BG -->
 
 <div class="bg-orb one"></div>
 <div class="bg-orb two"></div>
@@ -603,19 +594,23 @@ TutLab • Alquimia Digital
 </h1>
 
 <p>
-Ayudo a emprendedores a transformar ideas en contenido que se mueve, conecta y genera conversaciones reales. Diseño estratégico, activación visual y movimiento digital pensado para crecer.
+TutLab es un laboratorio creativo y digital donde probamos formas de hacer que las propuestas de emprendedores, negocios y proyectos lleguen a más personas, circulen y generen conversaciones.
 </p>
 
 <div class="btn-group">
 
-<a href="https://wa.me/542613602948" class="btn btn-primary">
-Hablar por WhatsApp
+<a href="https://wa.me/542613602948?text=Hola%20Mat%C3%ADas%2C%20quiero%20conocer%20el%20laboratorio%20de%20movimiento%20de%20TutLab." class="btn btn-primary">
+Quiero conocer TutLab
 </a>
 
-<a href="#historia" class="btn btn-secondary">
-Conocer TutLab
+<a href="#laboratorio" class="btn btn-secondary">
+Explorar el laboratorio
 </a>
 
+</div>
+
+<div class="hero-note">
+Probar · Crear · Distribuir · Medir · Ajustar
 </div>
 
 <div class="scroll-indicator">
@@ -629,9 +624,10 @@ Conocer TutLab
 
 </section>
 
-<!-- HISTORIA -->
 
-<section id="historia" class="reveal">
+<!-- QUÉ ES -->
+
+<section id="laboratorio" class="reveal">
 
 <div class="container">
 
@@ -640,47 +636,47 @@ Conocer TutLab
 <div class="grid grid-2">
 
 <div class="text-block">
+
+<div class="label">
+El concepto
+</div>
 
 <h2>
-De Pixel Creativo a TutLab
+No queremos publicar por publicar.
 </h2>
 
 <p>
-Esto no empezó como una agencia.
+Una buena pieza de contenido puede quedarse quieta si nadie la encuentra.
 </p>
 
 <p>
-Pixel Creativo fue un experimento real, construido desde cero y de forma artesanal.
+Por eso TutLab trabaja con una idea sencilla: crear una propuesta, ponerla en circulación, observar qué sucede y aprender de la respuesta.
 </p>
 
 <p>
-Ahí entendimos algo clave: El problema no es el contenido… Es que nadie lo mueve.
-</p>
-
-<p>
-Ese proceso fue nuestra propia alquimia digital.
+No prometemos resultados mágicos. Experimentamos con movimiento real.
 </p>
 
 </div>
 
-<div class="card">
+<div class="card experiment">
+
+<div class="experiment-tag">
+Laboratorio activo
+</div>
 
 <div class="text-block">
 
+<h3>
+¿Qué ponemos en movimiento?
+</h3>
+
 <p>
-Probar. Ajustar. Activar. Medir.
+Emprendimientos, servicios, productos, propuestas culturales, proyectos e ideas que necesitan encontrar a las personas adecuadas.
 </p>
 
 <p>
-Hoy TutLab es la evolución de ese camino convertido en un sistema creativo y estratégico.
-</p>
-
-<p>
-No buscamos solamente diseñar piezas visuales. Buscamos generar movimiento, circulación y conversaciones reales alrededor de cada emprendimiento.
-</p>
-
-<p>
-La idea no es publicar por publicar. La idea es activar presencia digital con intención.
+El contenido es una herramienta. El movimiento es el objetivo.
 </p>
 
 </div>
@@ -693,7 +689,8 @@ La idea no es publicar por publicar. La idea es activar presencia digital con in
 
 </section>
 
-<!-- QUÉ HACEMOS -->
+
+<!-- MÉTODO -->
 
 <section class="reveal">
 
@@ -701,27 +698,107 @@ La idea no es publicar por publicar. La idea es activar presencia digital con in
 
 <div class="section-line"></div>
 
-<div class="center text-block">
+<div class="center">
+
+<div class="label">
+El método
+</div>
 
 <h2>
-¿Qué hago exactamente?
+Del contenido al movimiento
 </h2>
 
-<p>
-No se trata de diseñar por diseñar.
+<p style="max-width:720px;margin:0 auto 50px;">
+Cada experiencia puede ser diferente. El proceso, sin embargo, parte de una misma lógica.
 </p>
 
-<p>
-Se trata de agarrar tu contenido y hacerlo circular todos los días.
-</p>
+</div>
+
+<div class="grid grid-3">
+
+<div class="card process-card">
+
+<div class="process-number">01</div>
+
+<h3>
+Probar
+</h3>
 
 <p>
-Para que llegue a personas reales y genere conversaciones.
+Partimos de una idea, una propuesta o una necesidad concreta.
 </p>
 
+</div>
+
+<div class="card process-card">
+
+<div class="process-number">02</div>
+
+<h3>
+Crear
+</h3>
+
 <p>
-Ese es el trabajo.
+Convertimos esa propuesta en piezas visuales, textos, historias o formatos que puedan circular.
 </p>
+
+</div>
+
+<div class="card process-card">
+
+<div class="process-number">03</div>
+
+<h3>
+Distribuir
+</h3>
+
+<p>
+Buscamos espacios y comunidades donde esa propuesta pueda encontrar personas reales.
+</p>
+
+</div>
+
+<div class="card process-card">
+
+<div class="process-number">04</div>
+
+<h3>
+Observar
+</h3>
+
+<p>
+Miramos qué genera atención, interacción, preguntas y conversaciones.
+</p>
+
+</div>
+
+<div class="card process-card">
+
+<div class="process-number">05</div>
+
+<h3>
+Ajustar
+</h3>
+
+<p>
+Lo que funciona se potencia. Lo que no, se modifica.
+</p>
+
+</div>
+
+<div class="card process-card">
+
+<div class="process-number">06</div>
+
+<h3>
+Volver a mover
+</h3>
+
+<p>
+Porque una publicación aislada termina. Un sistema de movimiento puede continuar.
+</p>
+
+</div>
 
 </div>
 
@@ -729,93 +806,277 @@ Ese es el trabajo.
 
 </section>
 
-<!-- KIT -->
+
+<!-- COMUNIDAD -->
 
 <section class="reveal">
 
 <div class="container">
 
 <div class="section-line"></div>
+
+<div class="grid grid-2">
+
+<div class="card">
+
+<div class="label">
+Comunidad
+</div>
+
+<h2>
+El laboratorio también ocurre aquí.
+</h2>
+
+<p>
+TutLab nace y experimenta dentro de comunidades reales.
+</p>
+
+<p>
+Administramos y participamos en espacios donde miles de personas de Mendoza comparten emprendimientos, servicios, empleos y oportunidades.
+</p>
+
+<p>
+La comunidad no es solamente un lugar donde publicar. También es un espacio para observar qué necesita la gente y encontrar nuevas formas de conectar propuestas con personas.
+</p>
+
+</div>
+
+<div class="text-block">
+
+<div class="label">
+Una experiencia diferente
+</div>
+
+<h2>
+No buscamos llenar grupos de publicidad.
+</h2>
+
+<p>
+Queremos generar conversaciones.
+</p>
+
+<p>
+Por eso algunas experiencias de TutLab pueden comenzar simplemente con una publicación, una historia, una presentación o una pregunta.
+</p>
+
+<p>
+Si existe interés real, la conversación continúa.
+</p>
+
+<div class="quote">
+“Primero ponemos algo en movimiento. Después vemos hacia dónde nos lleva.”
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCIAS -->
+
+<section class="reveal">
+
+<div class="container">
+
+<div class="section-line"></div>
+
+<div class="center">
+
+<div class="label">
+Experiencias
+</div>
+
+<h2>
+¿Qué podemos poner en movimiento?
+</h2>
+
+<p style="max-width:720px;margin:0 auto 50px;">
+No todas las propuestas necesitan lo mismo. Por eso trabajamos con diferentes combinaciones de contenido y distribución.
+</p>
+
+</div>
+
+<div class="grid grid-2">
+
+<div class="card">
+
+<h3>
+Una propuesta que ya existe
+</h3>
+
+<p>
+Tenés un flyer, catálogo, publicación o material que querés hacer circular.
+</p>
+
+<p>
+Podemos trabajar sobre ese material y desarrollar una estrategia de distribución.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Una propuesta que necesita contenido
+</h3>
+
+<p>
+Tenés algo que ofrecer, pero todavía no encontraste la mejor forma de mostrarlo.
+</p>
+
+<p>
+Podemos convertir la idea en una pieza visual, carrusel, reel, texto o concepto narrativo.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Una propuesta que necesita presencia
+</h3>
+
+<p>
+No se trata solamente de una publicación. Podemos pensar una pequeña secuencia para mantener la propuesta activa durante un periodo determinado.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Una experiencia para probar
+</h3>
+
+<p>
+Si todavía no sabés qué formato funciona para tu proyecto, podemos plantear una experiencia pequeña, medir la respuesta y aprender antes de escalar.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIMENTO ACTUAL -->
+
+<section class="reveal">
+
+<div class="container">
+
+<div class="section-line"></div>
+
+<div class="card experiment">
+
+<div class="text-block center">
+
+<div class="experiment-tag">
+Experimento abierto
+</div>
+
+<h2>
+Estamos buscando propuestas para poner en movimiento.
+</h2>
+
+<p>
+TutLab está desarrollando nuevas experiencias con emprendimientos y proyectos de Mendoza.
+</p>
+
+<p>
+La intención es probar formatos de presentación, contenido y distribución dentro de distintas comunidades.
+</p>
+
+<p>
+No necesitás tener una gran marca ni una enorme cantidad de seguidores.
+</p>
+
+<p>
+Necesitamos una propuesta real y ganas de participar en el experimento.
+</p>
+
+<div class="btn-group">
+
+<a href="https://wa.me/542613602948?text=Hola%20Mat%C3%ADas%2C%20vi%20el%20experimento%20de%20TutLab%20y%20quiero%20poner%20mi%20propuesta%20en%20movimiento." class="btn btn-primary">
+Quiero participar
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUIÉN ESTÁ DETRÁS -->
+
+<section class="reveal">
+
+<div class="container">
+
+<div class="section-line"></div>
+
+<div class="grid grid-2">
+
+<div class="text-block">
+
+<div class="label">
+Detrás del laboratorio
+</div>
+
+<h2>
+Soy Matías.
+</h2>
+
+<p>
+TutLab nació de años de experimentar con contenido, comunicación, sonido, narrativa y comunidades digitales.
+</p>
+
+<p>
+No vengo de una gran agencia ni de una estructura empresarial enorme.
+</p>
+
+<p>
+Estoy construyendo esto de forma artesanal, aprendiendo de cada experiencia y convirtiendo cada resultado en información para el siguiente experimento.
+</p>
+
+</div>
 
 <div class="card">
 
 <div class="text-block">
 
-<h2 class="center">
-Kit de Movimiento Semanal
-</h2>
-
-<div class="price center">
-$15.000 🇦🇷 / $15 USD 🌐
-</div>
-
-<p class="center">
-Este kit está pensado para que tengas recursos visuales y estratégicos mientras dure el periodo contratado.
-</p>
-
-<div class="grid grid-2">
-
-<div>
-
 <h3>
-Entrega única:
+¿Por qué “Lab”?
 </h3>
 
-<div class="feature-list">
-
-<div>
-✔ Plantilla estática tipo menú optimizada.
-</div>
-
-<div>
-✔ Flyer digital listo para WhatsApp, Instagram y Facebook.
-</div>
-
-<div>
-✔ Imagen de perfil + portada.
-</div>
-
-</div>
-
-</div>
-
-<div>
-
-<h3>
-Entrega periodica:
-</h3>
-
-<div class="feature-list">
-
-<div>
-✔ Texto vendedor listo para copiar y pegar.
-</div>
-
-<div>
-✔ 2 guiones estratégicos con prompts.
-</div>
-
-<div>
-✔ Recursos pensados para reels, flyers y publicaciones.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 <p>
-Duración: Una semana. Entrega en 48 hs.
+Porque no quiero vender una fórmula cerrada.
 </p>
 
 <p>
-La idea no es que se vea lindo… Sino que venda más.
+Quiero probar, observar y mejorar.
 </p>
 
 <p>
-👉 Este kit es GRATIS al contratar cualquier plan (tiene la misma duración del plan contratado).
+Cada emprendimiento tiene una realidad diferente.
 </p>
+
+<p>
+TutLab existe para encontrar formas de generar movimiento dentro de esa realidad.
+</p>
+
+</div>
 
 </div>
 
@@ -825,155 +1086,8 @@ La idea no es que se vea lindo… Sino que venda más.
 
 </section>
 
-<!-- OFERTA -->
 
-<section class="reveal">
-
-<div class="container">
-
-<div class="section-line"></div>
-
-<div class="card">
-
-<div class="text-block">
-
-<h2 class="center">
-Conocenos en 15 días
-</h2>
-
-<p>
-Durante 15 días trabajamos así:
-</p>
-
-<div class="feature-list">
-
-<div>
-• Creamos un flyer + un reel con voz en off (propia o nos encargamos).
-</div>
-
-<div>
-• Sumamos un carrusel de regalo (máximo 5 slides).
-</div>
-
-<div>
-• Activamos ese contenido todos los días (divulgando por nuestro ecosistema viral y alianzas estrategicas).
-</div>
-
-</div>
-
-<p>
-Lo importante no es la pieza.
-</p>
-
-<p>
-Es el movimiento constante.
-</p>
-
-<p>
-📊 Esto genera visualizaciones reales y conversaciones.
-</p>
-
-<p>
-Los contenidos empiezan a responder desde el primer día y se potencian entre el día 3 y 4.
-</p>
-
-<div class="price">
-💰 $75.000 🇦🇷 / $75 USD 🌐
-</div>
-
-<p>
-👉 Si te gusta cómo responde, extendemos el plan otros 15 días sin costo.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- REFERENCIAS -->
-
-<section class="reveal">
-
-<div class="container">
-
-<div class="section-line"></div>
-
-<h2 class="center">
-Referencias
-</h2>
-
-<div class="grid grid-2">
-
-<div class="card reference">
-
-<strong>
-Luisa Inés Vicente
-</strong>
-
-<p>
-Profesional matriculada en gasista y plomería.
-</p>
-
-<p class="quote">
-“Matías es uno de los pilares para difundir mis servicios en Mendoza.”
-</p>
-
-<p>
-+542614167638
-</p>
-
-</div>
-
-<div class="card reference">
-
-<strong>
-Stefano Leonel Barrera
-</strong>
-
-<p>
-Actual Gerente de sucursal en Medifé (Buenos Aires).
-</p>
-
-<p class="quote">
-“Muy conforme con el trabajo y la metodología.”
-</p>
-
-<p>
-+542612064180
-</p>
-
-</div>
-
-<div class="card reference">
-
-<strong>
-Samantha Racziel
-</strong>
-
-<p>
-Entrenamientos personalizados deportivos para distintos niveles de entrenamiento con base musical destinados al bienestar y la salud (Madrid, España).
-</p>
-
-<p class="quote">
-“Encontré el orden y la atención a los detalles que mi proyecto necesitaba para realizarse.”
-</p>
-
-<p>
-+34641201802
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
+<!-- CIERRE -->
 
 <section class="cta-final reveal">
 
@@ -983,18 +1097,27 @@ Entrenamientos personalizados deportivos para distintos niveles de entrenamiento
 
 <div class="text-block center">
 
+<div class="label">
+El siguiente experimento
+</div>
+
 <h2>
-Movimiento o estancamiento
+¿Tu propuesta está quieta?
 </h2>
 
 <p>
-Tu contenido puede quedarse quieto… O empezar a generar resultados.
+Quizás no necesitás publicar más.
+Quizás necesitás encontrar una forma diferente de poner lo que ya tenés en movimiento.
 </p>
 
 <div class="btn-group">
 
-<a href="https://wa.me/542613602948" class="btn btn-primary">
-Empezar ahora.
+<a href="https://wa.me/542613602948?text=Hola%20Mat%C3%ADas%2C%20quiero%20hablar%20sobre%20una%20propuesta%20para%20TutLab." class="btn btn-primary">
+Hablemos
+</a>
+
+<a href="#laboratorio" class="btn btn-secondary">
+Volver al laboratorio
 </a>
 
 </div>
@@ -1005,23 +1128,33 @@ Empezar ahora.
 
 </section>
 
+
 <!-- FOOTER -->
 
 <footer>
 
 <p>
-TutLab • Todos los derechos reservados © 2026
+TutLab • Alquimia Digital • 2026
+</p>
+
+<p style="margin-top:10px;">
+Probar · Crear · Distribuir · Medir · Ajustar
 </p>
 
 </footer>
 
 </main>
 
+
 <!-- WHATSAPP -->
 
-<a href="https://wa.me/542613602948" class="whatsapp">
+<a
+href="https://wa.me/542613602948?text=Hola%20Mat%C3%ADas%2C%20quiero%20conocer%20TutLab."
+class="whatsapp"
+aria-label="Hablar por WhatsApp">
 💬
 </a>
+
 
 <script>
 
@@ -1039,18 +1172,35 @@ loader.style.opacity="0";
 
 setTimeout(()=>{
 loader.style.display="none";
-},900);
+},800);
 
-document.querySelectorAll(".reveal").forEach((el,i)=>{
-
-setTimeout(()=>{
-el.classList.add("visible");
-}, i * 120);
+},1500);
 
 });
 
-},2500);
 
+/* REVEAL ON SCROLL */
+
+const reveals=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{
+threshold:.12
+});
+
+reveals.forEach(el=>{
+observer.observe(el);
 });
 
 </script>
