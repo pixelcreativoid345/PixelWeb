@@ -122,15 +122,19 @@ a {
   box-shadow: 0 0 12px rgba(255,209,102,.6);
 }
 
+/* Sección Perfil y Marca - Ajuste de simetría */
 .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 10px 8px 26px;
+  padding: 10px 0 26px;
+  width: 100%;
 }
 
-/* Marca Isotipo Neomórfico inspirado en el "Tut / 4" y Alquimia */
 .mark {
-  width: 82px;
-  height: 82px;
+  width: 84px;
+  height: 84px;
   margin: 0 auto 18px;
   border: 1px solid rgba(255,209,102,.35);
   border-radius: 26px;
@@ -145,7 +149,7 @@ a {
 }
 
 .mark:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
   border-color: var(--gold);
 }
 
@@ -155,6 +159,7 @@ a {
   font-size: 22px;
   color: var(--text);
   line-height: 1;
+  text-align: center;
 }
 
 .mark-text span {
@@ -163,6 +168,7 @@ a {
 
 .mark-dots {
   display: flex;
+  justify-content: center;
   gap: 4px;
   margin-top: 6px;
 }
@@ -174,17 +180,21 @@ a {
   color: var(--gold);
   margin-bottom: 12px;
   font-weight: 700;
+  text-align: center;
+  width: 100%;
 }
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
+  text-align: center;
 }
 
 h1 {
   font-size: clamp(34px, 9vw, 48px);
   line-height: 1.08;
   letter-spacing: -.025em;
+  width: 100%;
 }
 
 h1 span {
@@ -198,6 +208,7 @@ h1 span {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.75;
+  text-align: center;
 }
 
 .actions {
@@ -380,7 +391,7 @@ h1 span {
   </div>
 
   <header class="profile">
-    <!-- Emblemático 4 Huarpe / TutLab / Alquimia Digital -->
+    <!-- Emblemático TutLab / Alquimia Digital -->
     <div class="mark" aria-hidden="true" title="TutLab: El 4 Huarpe / 4 Elementos">
       <div class="mark-text">Tut<span>Lab</span></div>
       <div class="mark-dots">
@@ -430,7 +441,7 @@ h1 span {
 
     <a class="link track-link"
        data-link="consulta_experimento"
-       href="https://wa.me/542613602948?text=Hola%20Mat%C3%_as%2C%20vi%20la%20p%C3%A1gina%20de%20TutLab%20y%20quiero%20consultar%20por%20una%20experiencia."
+       href="https://wa.me/542613602948?text=Hola%20Mat%C3%adas%2C%20vi%20la%20p%C3%A1gina%20de%20TutLab%20y%20quiero%20consultar%20por%20una%20experiencia."
        target="_blank" rel="noopener noreferrer">
       <span class="link-icon" aria-hidden="true">◈</span>
       <span class="link-copy">
