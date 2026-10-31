@@ -72,6 +72,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
     }
 
     .brand {
@@ -108,21 +109,27 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       font-size: .9rem;
       color: var(--muted);
     }
 
     .nav-links a:hover { color: var(--gold); }
     
+    /* Botón superior adaptado para que no se corte jamás */
     .nav-cta {
       color: var(--bg) !important;
       background: var(--gold);
-      padding: 10px 18px;
+      padding: 10px 16px;
       border-radius: 999px;
       font-weight: 700;
+      font-size: 0.85rem;
       box-shadow: 0 0 20px var(--gold-glow);
       transition: transform .2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
     }
     .nav-cta:hover { transform: scale(1.04); }
 
@@ -191,6 +198,7 @@
       font-size: .95rem;
       transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -213,38 +221,30 @@
       border-color: var(--gold);
     }
 
-    /* NANO-RELATO INTERACTIVO CON EFECTO DE HUMO ALQUÍMICO */
+    /* NANO-RELATO INTERACTIVO CON HUMO EXTERIOR Y BUEN MARGEN SUPERIOR */
     .nano-stage {
       background: var(--panel-glass);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 209, 102, 0.25);
       border-radius: 28px;
-      padding: 36px;
+      padding: 48px 36px 36px; /* Más espacio arriba para que el texto no toque el borde */
       position: relative;
       box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-      min-height: 270px;
+      min-height: 290px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      overflow: hidden;
-      touch-action: pan-y; /* Permite scroll vertical pero atrapa gestos horizontales */
-      transition: box-shadow 0.4s ease;
-    }
-
-    /* Efecto de vapor / humo alquímico en los bordes al interactuar */
-    .nano-stage::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 28px;
-      box-shadow: inset 0 0 0 rgba(157, 123, 176, 0);
-      pointer-events: none;
+      overflow: visible;
+      touch-action: pan-y;
       transition: box-shadow 0.5s ease;
     }
 
-    .nano-stage.alchemical-smoke::after {
-      box-shadow: inset 0 0 25px rgba(157, 123, 176, 0.35), inset 0 0 50px rgba(255, 209, 102, 0.15);
+    /* Efecto de vapor / humo alquímico por FUERA del recuadro */
+    .nano-stage.alchemical-smoke {
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4), 
+                  0 0 35px rgba(157, 123, 176, 0.35), 
+                  0 0 70px rgba(255, 209, 102, 0.18);
     }
 
     .nano-stage::before {
@@ -267,7 +267,7 @@
       font-size: clamp(1.15rem, 2.1vw, 1.45rem);
       line-height: 1.55;
       color: var(--text);
-      min-height: 120px;
+      min-height: 130px;
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
@@ -334,7 +334,7 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 28px;
     }
 
@@ -375,7 +375,7 @@
     }
 
     .price-amount {
-      font-size: 2.4rem;
+      font-size: 2.1rem;
       font-family: "Playfair Display", serif;
       font-weight: 700;
       color: var(--text);
@@ -462,7 +462,8 @@
 
     @media (max-width: 820px) {
       .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .pricing-grid, .grid-3 { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
       .nav-links a:not(.nav-cta) { display: none; }
       .radar-banner { flex-direction: column; text-align: center; }
     }
@@ -486,14 +487,14 @@
       <nav class="nav-links">
         <a href="#radar">Radar TutLab</a>
         <a href="#que-hacemos">Qué hacemos</a>
-        <a href="#metodo">Enfoque</a>
+        <a href="#radar">Presencia Web</a>
         <a class="nav-cta" href="tutlab-enlaces.html">Todos los enlaces ↗</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO SECTION CON NANO-RELATO INTERACTIVO Y EFECTO DE HUMO -->
+    <!-- HERO SECTION CON NANO-RELATO Y EFECTO DE HUMO EXTERIOR -->
     <section class="hero" id="inicio" style="border-top:0">
       <div class="wrap hero-grid">
         <div>
@@ -508,25 +509,26 @@
           </div>
         </div>
 
-        <!-- EL NANO-RELATO TÁCTIL CON HUMO ALQUÍMICO -->
+        <!-- EL NANO-RELATO TÁCTIL CON HUMO EXTERIOR -->
         <div class="nano-stage" id="nanoStage">
           <div class="nano-text" id="nanoText">
             "Sintonizate con la realidad que querés. Alimentar lo que suma no resta."
           </div>
           <div class="nano-footer">
-            <span id="nanoSub">Frecuencia y dirección</span>
+            <span id="nanoSub">Frecuencia y dirección /tutlab</span>
             <div class="nano-dots" id="nanoDotsContainer">
               <span class="n-dot active" data-index="0"></span>
               <span class="n-dot" data-index="1"></span>
               <span class="n-dot" data-index="2"></span>
               <span class="n-dot" data-index="3"></span>
+              <span class="n-dot" data-index="4"></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN RADAR TUTLAB (OFERTA COMERCIAL DESTACADA) -->
+    <!-- SECCIÓN RADAR TUTLAB (OFERTA COMERCIAL) -->
     <section id="radar">
       <div class="wrap">
         <div class="section-head">
@@ -592,6 +594,29 @@
 
             <a class="btn btn-secondary" href="https://wa.me/542613602948?text=Hola%20TutLab%2C%20quiero%20la%20Edici%C3%B3n%20Especial%20del%20Radar." target="_blank" rel="noopener" style="width:100%; justify-content:center;">Solicitar Edición Especial ↗</a>
           </article>
+
+          <!-- Opción 3: Presencia Web -->
+          <article class="price-card">
+            <div>
+              <div class="eyebrow" style="color:var(--gold)">Opción 03</div>
+              <h3>Presencia Web Oficial</h3>
+              <p style="color:var(--muted); font-size: 0.9rem;">Página web simple e interactiva, similar a esta plantilla.</p>
+              
+              <div class="price-amount">
+                $100.000 <span>/ web completa</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--gold);">$50.000 / mes de mantenimiento opcional.</p>
+            </div>
+
+            <ul class="price-features">
+              <li>Diseño interactivo de una sola página (plantilla base).</li>
+              <li>Adaptada a la identidad cromática de tu emprendimiento.</li>
+              <li>Estructura optimizada para móviles (fast & light).</li>
+              <li>Sección de enlaces, servicios básicos y contacto.</li>
+            </ul>
+
+            <a class="btn btn-secondary" href="https://wa.me/542613602948?text=Hola%20TutLab%2C%20quiero%20consultar%20por%20una%20p%C3%A1gina%20web." target="_blank" rel="noopener" style="width:100%; justify-content:center;">Consultar Precio ↗</a>
+          </article>
         </div>
       </div>
     </section>
@@ -632,12 +657,12 @@
     </div>
   </footer>
 
-  <!-- SCRIPT DE NANO-RELATOS TÁCTILES + HUMO ALQUÍMICO -->
+  <!-- SCRIPT DE NANO-RELATOS TÁCTILES + HUMO ALQUÍMICO EXTERIOR -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const nanoQuotes = [
-      { text: "“Sintonizate con la realidad que querés. Alimentar lo que suma no resta.”", sub: "Frecuencia y dirección" },
+      { text: "“Sintonizate con la realidad que querés. Alimentar lo que suma no resta.”", sub: "Frecuencia y dirección /tutlab" },
       { text: "“Cada pequeño esfuerzo diario es una chispa que enciende la llama de lo que estás construyendo.”", sub: "Constancia en movimiento" },
       { text: "“Mereces lo que sueñas.” — Gustavo Cerati", sub: "Inspiración de autor" },
       { text: "“No se trata de hacer ruido, sino de encontrar la frecuencia exacta donde tu idea resuena.”", sub: "Claridad antes que cantidad" },
@@ -685,7 +710,6 @@
       renderNano(currentIndex);
     }
 
-    // Control manual haciendo clic en los puntos indicadores de abajo
     dots.forEach((dot, idx) => {
       dot.addEventListener('click', () => {
         currentIndex = idx;
@@ -693,7 +717,6 @@
       });
     });
 
-    // Control táctil: deslizar a la izquierda o derecha sobre el cuadro para cambiar de relato
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -707,18 +730,17 @@
     }, { passive: true });
 
     function handleSwipe() {
-      const threshold = 40; // Mínimo de desplazamiento táctil para registrar el gesto
+      const threshold = 40;
       if (touchEndX < touchStartX - threshold) {
-        nextNano(); // Deslizó hacia la izquierda -> Siguiente relato
+        nextNano();
       } else if (touchEndX > touchStartX + threshold) {
-        prevNano(); // Deslizó hacia la derecha -> Relato anterior
+        prevNano();
       }
     }
 
-    // Efecto de vapor alquímico también sutil al hacer scroll general en la página
     let scrollTimeout;
     window.addEventListener('scroll', () => {
-      nanoStage.classList.add('alchemical-smoke');
+      triggerSmokeEffect();
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         nanoStage.classList.remove('alchemical-smoke');
