@@ -29,6 +29,12 @@
   --muted: #a39eb0;
   --gold: #ffd166;
   --purple: #9d7bb0;
+  
+  /* Paleta conceptual: 4 elementos / Alquimia Digital */
+  --c-blue: #0055ff;
+  --c-red: #ff2a2a;
+  --c-yellow: #ffd166;
+
   --line: rgba(255,255,255,.08);
 }
 
@@ -75,6 +81,20 @@ a {
   text-transform: uppercase;
 }
 
+.topline-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-dots-mini {
+  display: flex;
+  gap: 3px;
+}
+.dot-b { width: 4px; height: 4px; border-radius: 50%; background: var(--c-blue); }
+.dot-r { width: 4px; height: 4px; border-radius: 50%; background: var(--c-red); }
+.dot-y { width: 4px; height: 4px; border-radius: 50%; background: var(--c-yellow); }
+
 .status {
   display: inline-flex;
   align-items: center;
@@ -107,22 +127,44 @@ a {
   padding: 10px 8px 26px;
 }
 
+/* Marca Isotipo Neomórfico inspirado en el "Tut / 4" y Alquimia */
 .mark {
-  width: 76px;
-  height: 76px;
+  width: 82px;
+  height: 82px;
   margin: 0 auto 18px;
   border: 1px solid rgba(255,209,102,.35);
-  border-radius: 25px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(145deg, rgba(255,209,102,.15), rgba(255,255,255,.025));
-  box-shadow: 0 15px 45px rgba(0,0,0,.3);
-  font-size: 37px;
-  transition: transform .3s ease;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(255,209,102,.12), rgba(17,17,24,.8));
+  box-shadow: 0 15px 45px rgba(0,0,0,.35), inset 0 0 15px rgba(255,209,102,.08);
+  transition: transform .3s ease, border-color .3s ease;
+  position: relative;
 }
 
 .mark:hover {
   transform: scale(1.05);
+  border-color: var(--gold);
+}
+
+.mark-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--text);
+  line-height: 1;
+}
+
+.mark-text span {
+  color: var(--gold);
+}
+
+.mark-dots {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
 }
 
 .eyebrow {
@@ -314,19 +356,10 @@ h1 span {
 }
 
 @media (max-width: 420px) {
-  .topline {
-    font-size: 10px;
-  }
-  .status {
-    padding: 7px 9px;
-  }
-  .link {
-    gap: 10px;
-    padding: 13px;
-  }
-  .link-title {
-    font-size: 14px;
-  }
+  .topline { font-size: 10px; }
+  .status { padding: 7px 9px; }
+  .link { gap: 10px; padding: 13px; }
+  .link-title { font-size: 14px; }
 }
 </style>
 </head>
@@ -335,12 +368,28 @@ h1 span {
 <main class="shell">
 
   <div class="topline">
-    <span>TutLab · Alquimia Digital</span>
+    <div class="topline-brand">
+      <span>TutLab · Alquimia Digital</span>
+      <div class="brand-dots-mini">
+        <span class="dot-b"></span>
+        <span class="dot-r"></span>
+        <span class="dot-y"></span>
+      </div>
+    </div>
     <a href="index.html" class="status"><i class="dot"></i> Laboratorio creativo</a>
   </div>
 
   <header class="profile">
-    <div class="mark" aria-hidden="true">⚗️</div>
+    <!-- Emblemático 4 Huarpe / Tut / Alquimia Digital -->
+    <div class="mark" aria-hidden="true" title="Tut: El 4 Huarpe / 4 Elementos">
+      <div class="mark-text">Tu<span>t</span></div>
+      <div class="mark-dots">
+        <span class="dot-b"></span>
+        <span class="dot-r"></span>
+        <span class="dot-y"></span>
+      </div>
+    </div>
+
     <div class="eyebrow">Probar · Crear · Medir</div>
 
     <h1>
@@ -374,7 +423,7 @@ h1 span {
       <span class="link-icon" aria-hidden="true">⌘</span>
       <span class="link-copy">
         <span class="link-title">Conocé el laboratorio</span>
-        <span class="link-desc">Qué hacemos y cómo trabajamos</span>
+        <span class="link-desc">Qué hacemos, Radar TutLab y precios</span>
       </span>
       <span class="arrow" aria-hidden="true">↗</span>
     </a>
@@ -412,7 +461,6 @@ h1 span {
 
     <nav class="actions" aria-label="Comunidades y redes sociales">
 
-      <!-- Grupo de WhatsApp con el enlace actualizado -->
       <a class="link track-link"
          data-link="grupo_whatsapp_emprendimientos"
          href="https://chat.whatsapp.com/JResPlvni1iJ9WTnTb2pSY?s=sh&amp;p=a&amp;iam=2"
