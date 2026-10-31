@@ -12,8 +12,8 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b0b0f">
-<meta name="description" content="Encontrá los enlaces, servicios y experiencias de TutLab · Alquimia Digital.">
+<meta name="theme-color" content="#07070a">
+<meta name="description" content="Encontrá los enlaces, servicios y accesos de TutLab · Alquimia Digital.">
 <title>TutLab · Enlaces y movimiento</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,14 +22,14 @@
 
 <style>
 :root {
-  --bg: #0b0b0f;
-  --panel: #13131b;
-  --panel2: #191923;
-  --text: #f5f5f5;
-  --muted: #b9b9c5;
+  --bg: #07070a;
+  --panel: #111118;
+  --panel2: #181822;
+  --text: #f5f2eb;
+  --muted: #a39eb0;
   --gold: #ffd166;
-  --line: rgba(255,255,255,.1);
-  --radius: 22px;
+  --purple: #9d7bb0;
+  --line: rgba(255,255,255,.08);
 }
 
 * {
@@ -44,12 +44,12 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 50% -10%, rgba(255,209,102,.13), transparent 38%),
-    radial-gradient(ellipse at 100% 75%, rgba(109,76,255,.08), transparent 30%),
-    var(--bg);
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(ellipse at 50% -10%, rgba(255,209,102,.14), transparent 40%),
+    radial-gradient(ellipse at 100% 75%, rgba(157,123,176,.09), transparent 35%);
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', system-ui, sans-serif;
   padding: 24px 16px 40px;
 }
 
@@ -81,17 +81,14 @@ a {
   gap: 7px;
   border: 1px solid var(--line);
   border-radius: 99px;
-  padding: 8px 11px;
+  padding: 8px 12px;
   letter-spacing: .04em;
   text-transform: none;
   white-space: nowrap;
+  background: rgba(255,255,255,.02);
+  transition: border-color .2s, color .2s;
 }
 
-/* Enlace interactivo superior para volver al laboratorio */
-.topline a.status {
-  color: var(--muted);
-  transition: border-color 0.2s, color 0.2s;
-}
 .topline a.status:hover {
   border-color: var(--gold);
   color: var(--gold);
@@ -119,8 +116,13 @@ a {
   display: grid;
   place-items: center;
   background: linear-gradient(145deg, rgba(255,209,102,.15), rgba(255,255,255,.025));
-  box-shadow: 0 15px 55px rgba(0,0,0,.22);
+  box-shadow: 0 15px 45px rgba(0,0,0,.3);
   font-size: 37px;
+  transition: transform .3s ease;
+}
+
+.mark:hover {
+  transform: scale(1.05);
 }
 
 .eyebrow {
@@ -129,6 +131,7 @@ a {
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 12px;
+  font-weight: 700;
 }
 
 h1, h2 {
@@ -157,7 +160,7 @@ h1 span {
 
 .actions {
   display: grid;
-  gap: 11px;
+  gap: 12px;
   margin-top: 24px;
 }
 
@@ -168,26 +171,27 @@ h1 span {
   min-height: 74px;
   padding: 15px 17px;
   border: 1px solid var(--line);
-  border-radius: 17px;
-  background: linear-gradient(120deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+  border-radius: 18px;
+  background: linear-gradient(120deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
   transition: transform .2s ease, border-color .2s ease, background .2s ease;
 }
 
 .link:hover, .link:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(255,209,102,.42);
+  border-color: rgba(255,209,102,.4);
   background: var(--panel2);
   outline: none;
 }
 
 .link.primary {
-  background: linear-gradient(115deg, #ffd166, #f0bb4b);
+  background: linear-gradient(135deg, var(--gold), #f0bb4b);
   color: #15130d;
   border-color: transparent;
+  box-shadow: 0 8px 25px rgba(255,209,102,.2);
 }
 
 .link.primary:hover, .link.primary:focus-visible {
-  background: #ffe09a;
+  background: linear-gradient(135deg, #ffe09a, #ffd166);
 }
 
 .link-icon {
@@ -226,7 +230,7 @@ h1 span {
 }
 
 .primary .link-desc {
-  color: rgba(21,19,13,.75);
+  color: rgba(21,19,13,.78);
 }
 
 .arrow {
@@ -235,14 +239,14 @@ h1 span {
 }
 
 .section {
-  margin-top: 34px;
+  margin-top: 36px;
 }
 
 .section-head {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 13px;
+  margin-bottom: 14px;
 }
 
 .section-head h2 {
@@ -257,10 +261,10 @@ h1 span {
 }
 
 .note {
-  padding: 18px;
+  padding: 20px;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: rgba(255,255,255,.025);
+  background: rgba(255,255,255,.02);
 }
 
 .note p {
@@ -284,7 +288,7 @@ h1 span {
 .pill {
   border: 1px solid rgba(255,209,102,.22);
   border-radius: 99px;
-  padding: 7px 10px;
+  padding: 7px 11px;
   color: #f4d995;
   font-size: 11px;
   letter-spacing: .04em;
@@ -292,7 +296,7 @@ h1 span {
 
 .footer {
   text-align: center;
-  padding: 30px 10px 8px;
+  padding: 32px 10px 8px;
   color: #858593;
   font-size: 11px;
   line-height: 1.8;
@@ -305,68 +309,26 @@ h1 span {
   text-underline-offset: 3px;
 }
 
-:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 4px;
+.footer a:hover {
+  color: var(--gold);
 }
 
 @media (max-width: 420px) {
   .topline {
-    align-items: flex-start;
     font-size: 10px;
-    letter-spacing: .06em;
   }
-
   .status {
-    font-size: 10px;
-    padding: 7px 8px;
+    padding: 7px 9px;
   }
-
   .link {
     gap: 10px;
     padding: 13px;
   }
-
   .link-title {
     font-size: 14px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-}
 </style>
-
-<!-- MÉTRICAS:
-     Para activar Google Analytics 4, reemplazá G-XXXXXXXXXX
-     por tu identificador de medición real.
--->
-<script>
-const GA_MEASUREMENT_ID = "G-BWQ14XPXSP";
-
-if (GA_MEASUREMENT_ID !== "G-XXXXXXXXXX") {
-  const gaScript = document.createElement("script");
-  gaScript.async = true;
-  gaScript.src =
-    "https://www.googletagmanager.com/gtag/js?id=" +
-    encodeURIComponent(GA_MEASUREMENT_ID);
-
-  document.head.appendChild(gaScript);
-
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-
-  window.gtag = gtag;
-  window.gtag("js", new Date());
-  window.gtag("config", GA_MEASUREMENT_ID);
-}
-</script>
 </head>
 
 <body>
@@ -374,7 +336,6 @@ if (GA_MEASUREMENT_ID !== "G-XXXXXXXXXX") {
 
   <div class="topline">
     <span>TutLab · Alquimia Digital</span>
-    <!-- Botón superior corregido para que vuelva correctamente al index/laboratorio -->
     <a href="index.html" class="status"><i class="dot"></i> Laboratorio creativo</a>
   </div>
 
@@ -409,8 +370,7 @@ if (GA_MEASUREMENT_ID !== "G-XXXXXXXXXX") {
 
     <a class="link track-link"
        data-link="web_tutlab"
-       href="index.html"
-       rel="noopener noreferrer">
+       href="index.html">
       <span class="link-icon" aria-hidden="true">⌘</span>
       <span class="link-copy">
         <span class="link-title">Conocé el laboratorio</span>
@@ -452,9 +412,10 @@ if (GA_MEASUREMENT_ID !== "G-XXXXXXXXXX") {
 
     <nav class="actions" aria-label="Comunidades y redes sociales">
 
+      <!-- Grupo de WhatsApp con el enlace actualizado -->
       <a class="link track-link"
          data-link="grupo_whatsapp_emprendimientos"
-         href="https://chat.whatsapp.com/HTW4sIh1UW38yUsG7wqikH?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4"
+         href="https://chat.whatsapp.com/JResPlvni1iJ9WTnTb2pSY?s=sh&amp;p=a&amp;iam=2"
          target="_blank" rel="noopener noreferrer">
         <span class="link-icon" aria-hidden="true">◉</span>
         <span class="link-copy">
@@ -528,9 +489,9 @@ if (GA_MEASUREMENT_ID !== "G-XXXXXXXXXX") {
   <footer class="footer">
     <p>TutLab · Alquimia Digital · 2026</p>
     <p>Una idea puede ser el comienzo de un movimiento.</p>
-    <p>
+    <p style="margin-top:4px;">
       <a href="index.html">
-        Visitar la web institucional
+        Visitar la web institucional ↗
       </a>
     </p>
   </footer>
@@ -538,7 +499,6 @@ if (GA_MEASUREMENT_ID !== "G-XXXXXXXXXX") {
 </main>
 
 <script>
-// Envía eventos de clic a Google Analytics 4 cuando esté configurado.
 document.querySelectorAll(".track-link").forEach(link => {
   link.addEventListener("click", () => {
     if (typeof window.gtag === "function") {
