@@ -35,6 +35,11 @@
   --c-red: #ff2a2a;
   --c-yellow: #ffd166;
 
+  /* Colores de redes sociales */
+  --brand-wa: #25d366;
+  --brand-fb: #1877f2;
+  --brand-ig: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+
   --line: rgba(255,255,255,.08);
 }
 
@@ -122,7 +127,7 @@ a {
   box-shadow: 0 0 12px rgba(255,209,102,.6);
 }
 
-/* Sección Perfil y Marca - Ajuste de simetría */
+/* Sección Perfil y Encabezado */
 .profile {
   display: flex;
   flex-direction: column;
@@ -130,47 +135,6 @@ a {
   text-align: center;
   padding: 10px 0 26px;
   width: 100%;
-}
-
-.mark {
-  width: 84px;
-  height: 84px;
-  margin: 0 auto 18px;
-  border: 1px solid rgba(255,209,102,.35);
-  border-radius: 26px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, rgba(255,209,102,.12), rgba(17,17,24,.8));
-  box-shadow: 0 15px 45px rgba(0,0,0,.35), inset 0 0 15px rgba(255,209,102,.08);
-  transition: transform .3s ease, border-color .3s ease;
-  position: relative;
-}
-
-.mark:hover {
-  transform: scale(1.04);
-  border-color: var(--gold);
-}
-
-.mark-text {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--text);
-  line-height: 1;
-  text-align: center;
-}
-
-.mark-text span {
-  color: var(--gold);
-}
-
-.mark-dots {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 6px;
 }
 
 .eyebrow {
@@ -256,10 +220,42 @@ h1 span {
   place-items: center;
   background: rgba(255,255,255,.07);
   font-size: 20px;
+  transition: border-color .2s, background .2s;
 }
 
 .primary .link-icon {
   background: rgba(0,0,0,.08);
+}
+
+/* Estilos cromáticos por Red Social */
+.link.social-wa .link-icon {
+  background: rgba(37, 211, 102, 0.15);
+  color: var(--brand-wa);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.link.social-wa:hover {
+  border-color: rgba(37, 211, 102, 0.5);
+}
+
+.link.social-fb .link-icon {
+  background: rgba(24, 119, 242, 0.15);
+  color: var(--brand-fb);
+  border: 1px solid rgba(24, 119, 242, 0.3);
+}
+
+.link.social-fb:hover {
+  border-color: rgba(24, 119, 242, 0.5);
+}
+
+.link.social-ig .link-icon {
+  background: var(--brand-ig);
+  color: #ffffff;
+  border: none;
+}
+
+.link.social-ig:hover {
+  border-color: rgba(253, 29, 29, 0.4);
 }
 
 .link-copy {
@@ -391,16 +387,6 @@ h1 span {
   </div>
 
   <header class="profile">
-    <!-- Emblemático TutLab / Alquimia Digital -->
-    <div class="mark" aria-hidden="true" title="TutLab: El 4 Huarpe / 4 Elementos">
-      <div class="mark-text">Tut<span>Lab</span></div>
-      <div class="mark-dots">
-        <span class="dot-b"></span>
-        <span class="dot-r"></span>
-        <span class="dot-y"></span>
-      </div>
-    </div>
-
     <div class="eyebrow">Probar · Crear · Medir</div>
 
     <h1>
@@ -472,7 +458,7 @@ h1 span {
 
     <nav class="actions" aria-label="Comunidades y redes sociales">
 
-      <a class="link track-link"
+      <a class="link social-wa track-link"
          data-link="grupo_whatsapp_emprendimientos"
          href="https://chat.whatsapp.com/JResPlvni1iJ9WTnTb2pSY?s=sh&amp;p=a&amp;iam=2"
          target="_blank" rel="noopener noreferrer">
@@ -484,7 +470,7 @@ h1 span {
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
 
-      <a class="link track-link"
+      <a class="link social-fb track-link"
          data-link="grupo_facebook_emprendimientos"
          href="https://www.facebook.com/share/g/19Z6688FWQ"
          target="_blank" rel="noopener noreferrer">
@@ -496,7 +482,7 @@ h1 span {
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
 
-      <a class="link track-link"
+      <a class="link social-fb track-link"
          data-link="facebook_tutlab"
          href="https://www.facebook.com/tutlab"
          target="_blank" rel="noopener noreferrer">
@@ -508,7 +494,7 @@ h1 span {
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
 
-      <a class="link track-link"
+      <a class="link social-ig track-link"
          data-link="instagram_tutlab"
          href="https://www.instagram.com/tutlaboratoriocreativo?psln=b3MwMzhxM25ybzls"
          target="_blank" rel="noopener noreferrer">
